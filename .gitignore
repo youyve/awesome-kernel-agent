@@ -1,0 +1,28 @@
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editors
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.~lock.*
+
+# Python (in case of helper scripts)
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+
+# Node (in case of link-check tooling)
+node_modules/
+package-lock.json
+
+# Local notes (private)
+/private/
+/drafts/
+*.local.md
