@@ -15,22 +15,23 @@ Eligible entries are LLM-driven systems, papers, datasets, or benchmarks that ta
 
 ### Format
 
-Inside the appropriate `## Agents by Primary DSL > ### <DSL>` section, follow this format:
+Inside the appropriate `## Agents by Primary DSL > ### <DSL>` section, use a **two-line** entry: a header line, then one description line that folds in the key result and any links.
 
 ```markdown
-- [Name](code-link) — Team · YYYY-MM · **[Route]** · Open-source status
-  Short description (one line).
-  Paper: [arXiv:XXXX.XXXXX](https://arxiv.org/abs/XXXX.XXXXX)
-  Result: key numerical claim (if applicable).
+- [Name](primary-link) — Team · YYYY-MM · **[Route]** · Open-source status · also: <other DSLs>
+  One-line description with the key numeric result. [Paper](https://arxiv.org/abs/XXXX.XXXXX)
 ```
 
-If there is no code link, omit the inline link:
+- `primary-link` points to the code repo when one exists, otherwise the paper/project page.
+- Drop the `· also:` tag if the system targets a single DSL.
+- If there is no public code, make the name bold instead of a link and put the paper link at the end of the description:
 
 ```markdown
-- **Name** — Team · YYYY-MM · **[Route]** · Open-source status
-  Short description.
-  Paper: [arXiv:XXXX.XXXXX](https://arxiv.org/abs/XXXX.XXXXX)
+- **Name** — Team · YYYY-MM · **[Route]** · ⚪ CLOSED
+  One-line description with the key result. [Paper](https://arxiv.org/abs/XXXX.XXXXX)
 ```
+
+List a multi-DSL system **once**, under its primary DSL. In secondary-DSL sections, add a one-line cross-reference (`— *see [Triton](#triton)*`) rather than a full duplicate entry.
 
 ### Required fields
 
@@ -54,7 +55,7 @@ If an agent's primary DSL is not yet in the README:
 1. Add a new `### <DSL>` subsection under `## Agents by Primary DSL`
 2. Add the DSL to the TOC
 3. Add the DSL to the [DSL Languages](#dsl-languages) section
-4. Update the agent count in `### <DSL> (N agents)` headings as you go
+4. Update the summary table at the top of the README (system count, DSL/backend count)
 
 ## Pull request checklist
 
@@ -63,8 +64,8 @@ If an agent's primary DSL is not yet in the README:
 - [ ] All links return HTTP 200 (verified by clicking)
 - [ ] Open-source badge matches actual repo state
 - [ ] Route classification justified (mention which paper section indicates this)
-- [ ] Agent counts in section headings updated
-- [ ] TOC updated if new DSL section added
+- [ ] Multi-DSL system listed once (cross-reference, not duplicated)
+- [ ] TOC + top summary table updated if a new DSL section was added
 - [ ] No marketing language ("best", "revolutionary"); facts and numbers only
 
 ## Reporting issues
