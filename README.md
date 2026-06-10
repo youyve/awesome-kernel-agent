@@ -8,7 +8,7 @@ A **Kernel Agent** uses an LLM (a single model or a multi-agent system) to autom
 |:---|:---|
 | **Systems & agents** | 75+ |
 | **DSLs / backends covered** | 13 — Triton · CUDA · CUTLASS/CuTe · Ascend C · HIP/ROCm · NKI · SYCL · TileLang · cuTile · MUSA · TT-Lang · MTIA · TPU |
-| **Benchmarks** | 20+ purpose-built · ~70 [substrate suites](BENCHMARKS.md) (PolyBench · NPB · XSBench · HeCBench · …) |
+| **Benchmarks** | 151 in the companion list → [awesome-kernel-benchmark](https://github.com/youyve/awesome-kernel-benchmark) |
 | **Competitions** | 4 active leaderboards |
 | **Last updated** | 2026-06-05 |
 
@@ -29,12 +29,9 @@ A **Kernel Agent** uses an LLM (a single model or a multi-agent system) to autom
   - [SYCL (Intel)](#sycl-intel)
   - [TileLang](#tilelang)
   - [Emerging DSLs & other accelerators](#emerging-dsls--other-accelerators)
-- [Benchmarks](#benchmarks)
-  - [Purpose-built agent benchmarks](#purpose-built-agent-benchmarks)
-  - [Benchmark substrate suites](#benchmark-substrate-suites)
+- [Benchmarks](#benchmarks) → full catalog: [**awesome-kernel-benchmark**](https://github.com/youyve/awesome-kernel-benchmark)
   - [Evaluation integrity & reward-hacking](#evaluation-integrity--reward-hacking)
   - [Competitions & leaderboards](#competitions--leaderboards)
-- [Benchmark inventory (BENCHMARKS.md)](BENCHMARKS.md)
 - [Datasets](#datasets)
 - [DSL Languages](#dsl-languages)
 - [Infrastructure & Tools](#infrastructure--tools)
@@ -156,7 +153,7 @@ Entry shape: `Name — Team · Date · [Route] · Status` then a one-line descri
 - [KernelSkill](https://github.com/0satan0/KernelMem) — Beihang University · 2026-03 · **[E]** · 🟢 OPEN
   Dual-level memory with reusable expert skills; KernelBench L1=5.44×, L2=2.82×, L3=1.92×. [Paper](https://arxiv.org/abs/2603.10085)
 - [CUDAMaster](https://hanyx2021.github.io/MSKernelBenchDemo/) — Tsinghua · 2026-03 · **[D]** · 🟡 PARTIAL
-  Bottleneck-aware filtered-profiling multi-agent + full toolchain generation across algebra / LLM / sparse / scientific kernels; ~35% over Astra, occasionally matches cuBLAS. Introduces [MSKernelBench](#purpose-built-agent-benchmarks). [Paper](https://arxiv.org/abs/2603.07169)
+  Bottleneck-aware filtered-profiling multi-agent + full toolchain generation across algebra / LLM / sparse / scientific kernels; ~35% over Astra, occasionally matches cuBLAS. Introduces [MSKernelBench](https://github.com/youyve/awesome-kernel-benchmark#layer-1--purpose-built-agent-benchmarks). [Paper](https://arxiv.org/abs/2603.07169)
 - [InCoder-32B](https://github.com/CSJianYang/Industrial-Coder) — Beihang University · 2026-03 · **[A]** · 🟢 OPEN
   Industrial code foundation model; the 2026-04 **InCoder-32B-Thinking** variant adds an industrial code world model (ICWM) for pre-compilation self-verification, 38.0% on KernelBench, runs on RTX 4090. [Paper](https://arxiv.org/abs/2604.03144)
 - [CUDA Agent](https://cuda-agent.github.io/) — ByteDance × Tsinghua · 2026-02 · **[B]** · 🟡 PARTIAL
@@ -250,7 +247,7 @@ Entry shape: `Name — Team · Date · [Route] · Status` then a one-line descri
 - **Neuron Agentic Development** — AWS · 2026-04 · **[D]** · ⚫ PROPRIETARY
   Official AWS announcement of agentic NKI kernel development. [Announcement](https://aws.amazon.com/about-aws/whats-new/2026/04/announcing-neuron-agentic-development/)
 - [AccelOpt](https://github.com/zhang677/AccelOpt) — Stanford × AWS · 2025-11 (MLSys'26) · **[E]** · 🟠 WIP
-  Self-improving agentic system for accelerator kernels; 45%→71% peak throughput on Trainium 1/2. Ships the [NKIBench](#purpose-built-agent-benchmarks) suite. [Paper](https://arxiv.org/abs/2511.15915)
+  Self-improving agentic system for accelerator kernels; 45%→71% peak throughput on Trainium 1/2. Ships the [NKIBench](https://github.com/youyve/awesome-kernel-benchmark#layer-1--purpose-built-agent-benchmarks) suite. [Paper](https://arxiv.org/abs/2511.15915)
 
 ### SYCL (Intel)
 
@@ -283,61 +280,18 @@ Entry shape: `Name — Team · Date · [Route] · Status` then a one-line descri
 - **Standard Kernel** — Standard Kernel (startup) · 2026-03 · **[D]** · ⚪ CLOSED · PTX layer
   Hybrid program-analysis + LLM reasoning at the PTX layer across Triton / TileLang / ThunderKittens / CUTLASS; reports 80%–4× end-to-end gains on H100. Raised $20M seed (Mar 2026; angels incl. Jeff Dean, Jonathan Frankle). [Announcement](https://standardkernel.com/blog/announcing-our-seed-round-is-kernel-generation-solved/)
 - **ThunderKittens** — *no dedicated agent.* TK 2.0 (2026-01) adds Blackwell + MXFP8/NVFP4 support, but kernels remain hand-written.
-- **Pallas (TPU)** — *no dedicated generation agent.* Evaluated only via [MultiKernelBench](#purpose-built-agent-benchmarks).
+- **Pallas (TPU)** — *no dedicated generation agent.* Evaluated only via [MultiKernelBench](https://github.com/youyve/awesome-kernel-benchmark#layer-1--purpose-built-agent-benchmarks).
 - **Triton Gluon** — *no dedicated agent yet.* The lower-level Gluon dialect is an open coverage gap.
 
 ---
 
 ## Benchmarks
 
-Kernel agents are evaluated in **two distinct layers** — keep them separate when comparing results:
+> 📊 **The full benchmark catalog has moved to its own repo: [awesome-kernel-benchmark](https://github.com/youyve/awesome-kernel-benchmark)** — **151 benchmarks** across two layers and 13 families, with a faceted (Berkeley-motif × abstraction) schema, a [motif × family coverage matrix](https://github.com/youyve/awesome-kernel-benchmark#motif--family-coverage-matrix), an [agent ↔ substrate map](https://github.com/youyve/awesome-kernel-benchmark#agent--substrate-map), and a machine-readable [`benchmarks.yaml`](https://github.com/youyve/awesome-kernel-benchmark/blob/main/data/benchmarks.yaml).
 
-- **Purpose-built agent benchmarks** — harnesses *designed* to score LLM kernel generation (the headline numbers below).
-- **Foundational / substrate suites** — classic HPC / GPU / DL benchmark suites that agents are evaluated *on*, fine-tuned *against*, or asked to *optimize / translate* (e.g. [CUDAnalyst](#cuda--cuda-c) optimizes **PolyBench-ACC / NPB / XSBench**; [LASSI](#benchmark-substrate-suites)/[OMPar](#benchmark-substrate-suites) run on **HeCBench**). Many agents report *only* on these, so a list that omits them undercounts the field. Full deduplicated inventory (~70 suites, 6 families) + the agent↔substrate map: **[BENCHMARKS.md](BENCHMARKS.md)**.
+Kernel agents are evaluated in **two layers**: *purpose-built agent benchmarks* — [KernelBench](https://github.com/ScalingIntelligence/KernelBench), [TritonBench](https://github.com/thunlp/TritonBench), [CUDABench](https://github.com/CUDA-Bench/CUDABench), [SOL-ExecBench](https://research.nvidia.com/benchmarks/sol-execbench), [FlashInfer-Bench](https://github.com/flashinfer-ai/flashinfer-bench), … — that score LLM kernel generation directly, and *foundational substrate suites* — PolyBench, NPB, XSBench, Rodinia, HeCBench, … — that agents are evaluated *on* or asked to *optimize / translate*. An agent reporting "we optimize PolyBench-ACC / NPB / XSBench" (e.g. [CUDAnalyst](#cuda--cuda-c)) is using a substrate, not a purpose-built benchmark. **The four comparability anchors are PolyBench · NPB · XSBench · HeCBench.** Full tables, per-agent usage, and verification/auditability flags live in the [dedicated repo](https://github.com/youyve/awesome-kernel-benchmark).
 
-### Purpose-built agent benchmarks
-
-Correctness & performance harnesses built specifically to score LLM kernel generation.
-
-| Benchmark | Venue | Scale | Hardware | Focus |
-|:---|:---:|:---|:---|:---|
-| [KernelBench](https://github.com/ScalingIntelligence/KernelBench) | ICML'25 | 250 tasks × 4 levels | NVIDIA | The de facto standard ([arXiv:2502.10517](https://arxiv.org/abs/2502.10517)) |
-| [TritonBench](https://github.com/thunlp/TritonBench) | ACL'25 | 184 Triton operators | NV + AMD | Triton-specific ([arXiv:2502.14752](https://arxiv.org/abs/2502.14752)) |
-| [TritonGym](https://openreview.net/forum?id=oaKd1fVgWc) | OpenReview | Agent workflow | NV Triton | Agentic Triton evaluation |
-| [MultiKernelBench](https://github.com/wzzll123/MultiKernelBench) | arXiv | 285 tasks × 14 cats | NV + Ascend + TPU | Cross-platform CUDA / AscendC / Pallas ([arXiv:2507.17773](https://arxiv.org/abs/2507.17773)) |
-| [GEAK Benchmarks](https://github.com/AMD-AGI/GEAK) | arXiv | 184 + 30 ROCm | AMD MI300X | AMD Triton ([arXiv:2507.23194](https://arxiv.org/abs/2507.23194)) |
-| [MSKernelBench](https://hanyx2021.github.io/MSKernelBenchDemo/) | arXiv | algebra/LLM/sparse/sci × FP32+BF16 | NVIDIA | Multi-scenario CUDA ([arXiv:2603.07169](https://arxiv.org/abs/2603.07169)) |
-| [CUDABench](https://github.com/CUDA-Bench/CUDABench) | arXiv | 1,500 prompts (500 × 3) | NVIDIA | Text-to-CUDA, roofline score ([arXiv:2603.02236](https://arxiv.org/abs/2603.02236)) |
-| [AgentKernelArena](https://github.com/AMD-AGI/AgentKernelArena) | arXiv | 196 tasks (HIP/Triton) | AMD | Generalization to unseen configs ([arXiv:2605.16819](https://arxiv.org/abs/2605.16819)) |
-| [NPUEval](https://github.com/AMDResearch/NPUEval) | arXiv | 102 ML operators | AMD XDNA/Ryzen AI | First NPU-kernel vectorization bench ([arXiv:2507.14403](https://arxiv.org/abs/2507.14403)) |
-| [NKIBench](https://github.com/zhang677/AccelOpt) | MLSys'26 | real-workload NKI kernels | AWS Trainium | Ships with AccelOpt ([arXiv:2511.15915](https://arxiv.org/abs/2511.15915)) |
-| [NPUKernelBench](https://openi.pcl.ac.cn/PCL-Benchmark/NPUKernelBench) | PCL | Ascend tasks | Ascend | AscendKernelGen companion |
-| [CANN Bench](https://gitcode.com/cann/cann-bench) | repo | CANN ops | Ascend | Huawei CANN framework |
-| [FlashInfer-Bench](https://mlsys26.flashinfer.ai/) | MLSys'26 | 3 tracks (MoE / DSA / GDN) | B200 | Real LLM serving + contest ([arXiv:2601.00227](https://arxiv.org/abs/2601.00227)) |
-| [SOL-ExecBench](https://research.nvidia.com/benchmarks/sol-execbench) | NVIDIA | 235 problems / 124 models | Blackwell | Speed-of-Light scoring ([arXiv:2603.19173](https://arxiv.org/abs/2603.19173)) |
-| [ISO-Bench](https://github.com/Lossfunk/ISO-Bench) | arXiv | production workload | NVIDIA | Real-world inference ([arXiv:2602.19594](https://arxiv.org/abs/2602.19594)) |
-| [ComputeEval](https://github.com/NVIDIA/compute-eval) | repo | 566 problems (2026.1) | NVIDIA | NVIDIA CUDA-C++ suite, versioned datapacks |
-| [BackendBench](https://github.com/meta-pytorch/BackendBench) | repo | — | NVIDIA | Meta PyTorch backend |
-| [KernelBenchX](https://github.com/BonnieW05/KernelBenchX) | arXiv | 176 tasks × 15 cats | NVIDIA | Category-aware ([arXiv:2605.04956](https://arxiv.org/abs/2605.04956)) |
-| [KernelCraft](https://arxiv.org/abs/2603.08721) | arXiv | emerging hardware | misc | Close-to-metal generation |
-| [KernelBench-v3](https://github.com/Infatoshi/KernelBench-v3) | repo | hard variant | NVIDIA | Community reform |
-| [robust-kbench](https://github.com/SakanaAI/robust-kbench) | arXiv | hardened KernelBench | NVIDIA | Anti-reward-hacking ([arXiv:2509.14279](https://arxiv.org/abs/2509.14279)) |
-| [ParEval](https://github.com/parallelcodefoundry/ParEval) | arXiv | parallel code | misc | Pioneer parallel benchmark ([arXiv:2401.12554](https://arxiv.org/abs/2401.12554)) |
-
-### Benchmark substrate suites
-
-> The classic HPC / GPU / DL suites kernel agents actually run on. One representative row per family — see **[BENCHMARKS.md](BENCHMARKS.md)** for the full ~70-suite inventory with verification / ships-kernels / used-by columns.
-
-| Family | Key suites | Languages | Used by agents (substrate) |
-|:---|:---|:---|:---|
-| **Polyhedral / loop-nest** | [PolyBench/C](https://github.com/MatthiasJReisinger/PolyBenchC-4.2.1) · [PolyBench-ACC](https://github.com/cavazos-lab/PolyBench-ACC) · [PolyBench/GPU](https://github.com/sgrauerg/polybenchGpu) | C · CUDA · OpenCL · OpenACC | **CUDAnalyst**, Performance-Aligned LLMs, MEP, ComPilot |
-| **HPC proxy / mini-apps** | [NPB](https://www.nas.nasa.gov/software/npb.html) · [XSBench](https://github.com/ANL-CESAR/XSBench) · [RSBench](https://github.com/ANL-CESAR/RSBench) · [miniFE](https://github.com/Mantevo/miniFE) · [LULESH](https://github.com/LLNL/LULESH) | Fortran · C · CUDA · OpenMP-target · SYCL | **CUDAnalyst**, AutoParLLM, LLMPerf-Opt |
-| **Classic GPU / heterogeneous** | [HeCBench](https://github.com/zjin-lcf/HeCBench) (700+) · [Rodinia](https://github.com/yuhc/gpu-rodinia) · [Parboil](https://github.com/yuhc/gpu-parboil) · [SHOC](https://github.com/vetter/shoc) | CUDA · HIP · SYCL · OpenCL · OpenMP | **LASSI**, OMPar, AutoParLLM, MIREncoder |
-| **Graph analytics** | [GAPBS](https://github.com/sbeamer/gapbs) · [LonestarGPU](https://github.com/IntelligentSoftwareSystems/GaloisGPU) · [Pannotia](https://github.com/pannotia/pannotia) · [Indigo3](https://github.com/burtscher/Indigo3Suite) | C++ · CUDA · OpenCL · HIP | (coverage gap — bug-labeled Indigo3 is anti-hack-ready) |
-| **DL op micro-benchmarks** | [DeepBench](https://github.com/baidu-research/DeepBench) · [Triton tutorials](https://github.com/triton-lang/triton/tree/main/python/tutorials) · [Liger-Kernel](https://github.com/linkedin/Liger-Kernel) · cuDNN/cuBLAS | CUDA · Triton · HIP | TritonBench, GEAK, AI CUDA Engineer (the `torch` bar) |
-| **Tensor-compiler / autotuning** | [TenSet](https://github.com/tlc-pack/tenset) (52M) · [TVM/Ansor](https://github.com/apache/tvm) · [AKG](https://github.com/mindspore-ai/akg) · [CUTLASS Profiler](https://github.com/NVIDIA/cutlass) | TVM TIR · Python DSL · CUDA · MLIR | AKG kernel Agent; learned-cost-model substrates |
-
-**The four most-used classic substrates — PolyBench · NPB · XSBench · HeCBench** — are the comparability anchors: a new HPC-kernel agent should report on at least one. Agents that ship re-runnable kernels on these (CUDAnalyst, AI CUDA Engineer, Astra) are the auditable [reward-hacking](#evaluation-integrity--reward-hacking) targets. Full per-agent breakdown: [BENCHMARKS.md › agent ↔ substrate map](BENCHMARKS.md#agent--substrate-map).
+The two evaluation sub-topics most tightly coupled to *agents* are tracked here:
 
 ### Evaluation integrity & reward-hacking
 
