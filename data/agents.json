@@ -1,0 +1,1483 @@
+[
+  {
+    "id": "kernelpilot",
+    "name": "KernelPilot",
+    "org": "BBuf",
+    "date": "2026-05",
+    "route": "D",
+    "status": "open",
+    "dsl": "Triton",
+    "dsl_also": [
+      "CUDA"
+    ],
+    "hardware": [
+      "NVIDIA"
+    ],
+    "code": "https://github.com/BBuf/kernel-pilot",
+    "desc": "Autonomous Triton/CUDA optimization with NCU feedback over a Humanize RLCR runtime; 84-iteration budget.",
+    "evaluated_on": [],
+    "claim_baseline": "unknown",
+    "ships_kernels": "unknown",
+    "budget_disclosed": "yes"
+  },
+  {
+    "id": "drtriton",
+    "name": "DRTriton",
+    "org": "Texas A&M",
+    "date": "2026-03",
+    "route": "C",
+    "status": "wip",
+    "dsl": "Triton",
+    "hardware": [
+      "NVIDIA"
+    ],
+    "code": "https://arxiv.org/abs/2603.21465",
+    "paper": "https://arxiv.org/abs/2603.21465",
+    "desc": "Scalable RL (CSP-DAG synthetic data + curriculum RL + test-time search); DRTriton-7B speeds up 92% of KernelBench L2 vs 23% for GPT-5.2.",
+    "evaluated_on": [
+      "KernelBench"
+    ],
+    "claim_baseline": "PyTorch eager (KernelBench fast_1)",
+    "ships_kernels": "unknown",
+    "budget_disclosed": "partial"
+  },
+  {
+    "id": "kernel-smith",
+    "name": "Kernel-Smith",
+    "org": "Shanghai AI Lab",
+    "date": "2026-03",
+    "route": "E",
+    "status": "closed",
+    "dsl": "Triton",
+    "hardware": [
+      "NVIDIA"
+    ],
+    "paper": "https://arxiv.org/abs/2603.28342",
+    "desc": "Evolutionary kernel optimization; upstream contributions to SGLang/LMDeploy.",
+    "evaluated_on": [],
+    "claim_baseline": "unknown",
+    "ships_kernels": "no",
+    "budget_disclosed": "unknown"
+  },
+  {
+    "id": "pytorch-kernelagent",
+    "name": "PyTorch KernelAgent",
+    "org": "Meta / PyTorch",
+    "date": "2026-03",
+    "route": "D",
+    "status": "open",
+    "dsl": "Triton",
+    "hardware": [
+      "NVIDIA"
+    ],
+    "code": "https://github.com/meta-pytorch/KernelAgent",
+    "blog": "https://pytorch.org/blog/kernelagent-hardware-guided-gpu-kernel-optimization-via-multi-agent-orchestration/",
+    "desc": "5-agent system (Profiler / Judge / Analyze / Orchestrator / Benchmark) + NCU + roofline. H100 89% of roofline, 1.56x over torch.compile.",
+    "evaluated_on": [],
+    "claim_baseline": "torch.compile (+ roofline fraction)",
+    "ships_kernels": "unknown",
+    "budget_disclosed": "unknown"
+  },
+  {
+    "id": "ako",
+    "name": "AKO / AKO4ALL",
+    "org": "TLAIC",
+    "date": "2026-03",
+    "route": "D",
+    "status": "open",
+    "dsl": "Triton",
+    "dsl_also": [
+      "CUDA",
+      "TileLang"
+    ],
+    "hardware": [
+      "NVIDIA"
+    ],
+    "code": "https://github.com/TongmingLAIC/AKO4ALL",
+    "blog": "https://tongminglaic.github.io/AKO/",
+    "desc": "Generic coding-agent harness for kernel optimization; 10/13 kernels beat the NVIDIA baseline on SOL-ExecBench.",
+    "evaluated_on": [
+      "SOL-ExecBench"
+    ],
+    "claim_baseline": "SOL-ExecBench agent-optimized baseline",
+    "ships_kernels": "unknown",
+    "budget_disclosed": "unknown"
+  },
+  {
+    "id": "dr-kernel",
+    "name": "Dr. Kernel",
+    "org": "HKUST-NLP",
+    "date": "2026-02",
+    "route": "C",
+    "status": "open",
+    "dsl": "Triton",
+    "hardware": [
+      "NVIDIA"
+    ],
+    "code": "https://github.com/hkust-nlp/KernelGYM",
+    "paper": "https://arxiv.org/abs/2602.05885",
+    "desc": "14B model trained in the KernelGYM RL environment; matches Claude 4.5 Sonnet on KernelBench.",
+    "evaluated_on": [
+      "KernelBench"
+    ],
+    "claim_baseline": "PyTorch eager (KernelBench)",
+    "ships_kernels": "unknown",
+    "budget_disclosed": "unknown"
+  },
+  {
+    "id": "geak-triton-v2",
+    "name": "GEAK-Triton v2",
+    "org": "AMD-AGI",
+    "date": "2026-01",
+    "route": "D",
+    "status": "open",
+    "dsl": "Triton",
+    "hardware": [
+      "AMD"
+    ],
+    "code": "https://github.com/AMD-AGI/GEAK",
+    "blog": "https://rocm.blogs.amd.com/artificial-intelligence/geak-agents-family/README.html",
+    "desc": "Extension of the GEAK family for AMD GPUs.",
+    "evaluated_on": [
+      "GEAK benchmarks (TritonBench-revised + ROCm)"
+    ],
+    "claim_baseline": "expert reference kernels",
+    "ships_kernels": "unknown",
+    "budget_disclosed": "yes"
+  },
+  {
+    "id": "xe-forge",
+    "name": "Xe-Forge",
+    "org": "Intel Labs",
+    "date": "2026-01",
+    "route": "D",
+    "status": "open",
+    "dsl": "Triton",
+    "hardware": [
+      "Intel-GPU"
+    ],
+    "code": "https://github.com/IntelLabs/Xe-Forge",
+    "desc": "Multi-stage LLM agent pipeline optimizing Triton kernels on Intel XPU.",
+    "evaluated_on": [],
+    "claim_baseline": "unknown",
+    "ships_kernels": "unknown",
+    "budget_disclosed": "unknown"
+  },
+  {
+    "id": "akg-agent",
+    "name": "AKG-AGENT",
+    "org": "Huawei x Hunan U",
+    "date": "2025-12",
+    "route": "A",
+    "status": "open",
+    "dsl": "Triton",
+    "dsl_also": [
+      "TileLang",
+      "AscendC",
+      "CUDA"
+    ],
+    "hardware": [
+      "NVIDIA",
+      "Ascend-NPU",
+      "CPU"
+    ],
+    "code": "https://github.com/mindspore-ai/akg/tree/master/akg_agents",
+    "paper": "https://arxiv.org/abs/2512.23424",
+    "desc": "Multi-agent (Designer / Coder / Verifier / Conductor) builds a DSL-agnostic 'Unified Sketch' then lowers to 5 backends across NVIDIA GPU + Ascend NPU + CPU; 100% on KernelBench L1 (Triton-CUDA pass@4); 1.46x geomean over PyTorch eager on Triton-Ascend.",
+    "evaluated_on": [
+      "KernelBench"
+    ],
+    "claim_baseline": "PyTorch eager",
+    "ships_kernels": "unknown",
+    "budget_disclosed": "yes"
+  },
+  {
+    "id": "tritonforge",
+    "name": "TritonForge",
+    "org": "RLsys-Foundation",
+    "date": "2025-12",
+    "route": "C",
+    "status": "open",
+    "dsl": "Triton",
+    "hardware": [
+      "NVIDIA",
+      "AMD"
+    ],
+    "code": "https://github.com/RLsys-Foundation/TritonForge",
+    "paper": "https://arxiv.org/abs/2512.09196",
+    "desc": "SFT + RL for PyTorch-to-Triton conversion; NVIDIA + AMD cross-platform.",
+    "evaluated_on": [],
+    "claim_baseline": "unknown",
+    "ships_kernels": "unknown",
+    "budget_disclosed": "unknown"
+  },
+  {
+    "id": "tritorx",
+    "name": "TritorX",
+    "org": "Meta",
+    "date": "2025-12",
+    "route": "D",
+    "status": "closed",
+    "dsl": "Triton",
+    "hardware": [
+      "MTIA"
+    ],
+    "paper": "https://arxiv.org/abs/2512.10977",
+    "desc": "Generates functionally-correct Triton ATen kernels at scale for emerging accelerators; 481 ATen operators passing 20,000+ PyTorch OpInfo tests.",
+    "note": "Targets MTIA.",
+    "evaluated_on": [
+      "PyTorch OpInfo (correctness)"
+    ],
+    "claim_baseline": "correctness-only (no speedup claim)",
+    "ships_kernels": "no",
+    "budget_disclosed": "unknown"
+  },
+  {
+    "id": "kernelfalcon",
+    "name": "KernelFalcon",
+    "org": "Meta / PyTorch",
+    "date": "2025-11",
+    "route": "D",
+    "status": "open",
+    "dsl": "Triton",
+    "hardware": [
+      "NVIDIA"
+    ],
+    "code": "https://github.com/meta-pytorch/KernelAgent",
+    "blog": "https://pytorch.org/blog/kernelfalcon-autonomous-gpu-kernel-generation-via-deep-agents/",
+    "desc": "Predecessor of PyTorch KernelAgent; 100% correctness on all 250 KernelBench L1/L2/L3 tasks.",
+    "evaluated_on": [
+      "KernelBench"
+    ],
+    "claim_baseline": "PyTorch eager (KernelBench)",
+    "ships_kernels": "unknown",
+    "budget_disclosed": "unknown"
+  },
+  {
+    "id": "kernelband",
+    "name": "KernelBand",
+    "org": "PKU",
+    "date": "2025-11",
+    "route": "D",
+    "status": "closed",
+    "dsl": "Triton",
+    "hardware": [
+      "NVIDIA"
+    ],
+    "paper": "https://arxiv.org/abs/2511.18868",
+    "desc": "Hierarchical multi-armed bandit for hardware-aware optimization.",
+    "evaluated_on": [],
+    "claim_baseline": "unknown",
+    "ships_kernels": "no",
+    "budget_disclosed": "unknown"
+  },
+  {
+    "id": "pragma",
+    "name": "PRAGMA",
+    "org": "Beihang University",
+    "date": "2025-11",
+    "route": "D",
+    "status": "closed",
+    "dsl": "Triton",
+    "hardware": [
+      "NVIDIA"
+    ],
+    "paper": "https://arxiv.org/abs/2511.06345",
+    "desc": "Profiling-reasoned multi-agent framework.",
+    "evaluated_on": [],
+    "claim_baseline": "unknown",
+    "ships_kernels": "no",
+    "budget_disclosed": "unknown"
+  },
+  {
+    "id": "tritonrl",
+    "name": "TritonRL",
+    "org": "Princeton / UW",
+    "date": "2025-10",
+    "route": "C",
+    "status": "closed",
+    "dsl": "Triton",
+    "hardware": [
+      "NVIDIA"
+    ],
+    "paper": "https://arxiv.org/abs/2510.17891",
+    "desc": "Trains LLMs to write Triton without 'cheating' (reward-hacking sanitization).",
+    "evaluated_on": [
+      "KernelBench"
+    ],
+    "claim_baseline": "unknown",
+    "ships_kernels": "no",
+    "budget_disclosed": "unknown"
+  },
+  {
+    "id": "concur",
+    "name": "ConCuR",
+    "org": "HKUST",
+    "date": "2025-10",
+    "route": "A",
+    "status": "open",
+    "dsl": "Triton",
+    "hardware": [
+      "NVIDIA"
+    ],
+    "code": "https://huggingface.co/lkongam/KernelCoder",
+    "paper": "https://arxiv.org/abs/2510.07356",
+    "desc": "Conciseness-driven SFT for kernel generation.",
+    "evaluated_on": [
+      "KernelBench"
+    ],
+    "claim_baseline": "unknown",
+    "ships_kernels": "unknown",
+    "budget_disclosed": "unknown"
+  },
+  {
+    "id": "kernelgen-flagos",
+    "name": "KernelGen (Flagos)",
+    "org": "Flagos",
+    "date": "2025-10",
+    "route": "D",
+    "status": "open",
+    "dsl": "Triton",
+    "hardware": [
+      "NVIDIA"
+    ],
+    "code": "https://github.com/flagos-ai/kernelgen",
+    "blog": "https://kernelgen.flagos.io/",
+    "desc": "Interactive kernel generation platform.",
+    "evaluated_on": [],
+    "claim_baseline": "unknown",
+    "ships_kernels": "unknown",
+    "budget_disclosed": "unknown"
+  },
+  {
+    "id": "swizzleperf",
+    "name": "SwizzlePerf",
+    "org": "Harvard x AMD",
+    "date": "2025-08",
+    "route": "D",
+    "status": "closed",
+    "dsl": "Triton",
+    "hardware": [
+      "AMD"
+    ],
+    "paper": "https://arxiv.org/abs/2508.20258",
+    "desc": "Hardware-aware LLM for GPU kernel performance optimization.",
+    "evaluated_on": [],
+    "claim_baseline": "unknown",
+    "ships_kernels": "no",
+    "budget_disclosed": "unknown"
+  },
+  {
+    "id": "geak",
+    "name": "GEAK",
+    "org": "AMD-AGI",
+    "date": "2025-07",
+    "route": "D",
+    "status": "open",
+    "dsl": "Triton",
+    "hardware": [
+      "AMD"
+    ],
+    "code": "https://github.com/AMD-AGI/GEAK",
+    "paper": "https://arxiv.org/abs/2507.23194",
+    "desc": "4-module agent (generator / reflector / evaluator / optimizer); 2.59x speedup on MI300X.",
+    "evaluated_on": [
+      "TritonBench-revised (184 kernels) + 30 ROCm kernels"
+    ],
+    "claim_baseline": "expert reference kernels",
+    "ships_kernels": "unknown",
+    "budget_disclosed": "yes",
+    "note": "The only system decomposing sequential@k vs parallel@k budget."
+  },
+  {
+    "id": "autotriton",
+    "name": "AutoTriton",
+    "org": "THUNLP / AI9Stars",
+    "date": "2025-07",
+    "route": "C",
+    "status": "open",
+    "dsl": "Triton",
+    "hardware": [
+      "NVIDIA"
+    ],
+    "code": "https://github.com/AI9Stars/AutoTriton",
+    "paper": "https://arxiv.org/abs/2507.05687",
+    "desc": "8B model trained via SFT + GRPO on 14.1K torch-triton pairs.",
+    "evaluated_on": [
+      "KernelBench",
+      "TritonBench"
+    ],
+    "claim_baseline": "unknown",
+    "ships_kernels": "unknown",
+    "budget_disclosed": "unknown"
+  },
+  {
+    "id": "kernelllm",
+    "name": "KernelLLM",
+    "org": "Meta",
+    "date": "2025-05",
+    "route": "A",
+    "status": "partial",
+    "dsl": "Triton",
+    "hardware": [
+      "NVIDIA"
+    ],
+    "code": "https://huggingface.co/facebook/KernelLLM",
+    "desc": "Llama 3.1 8B fine-tuned on KernelBook (~25K torch-triton pairs); beats GPT-4o on KernelBench-Triton L1.",
+    "evaluated_on": [
+      "KernelBench-Triton"
+    ],
+    "claim_baseline": "PyTorch eager (KernelBench)",
+    "ships_kernels": "unknown",
+    "budget_disclosed": "unknown"
+  },
+  {
+    "id": "adaexplore",
+    "name": "AdaExplore",
+    "org": "CMU",
+    "date": "2026-04",
+    "route": "E",
+    "status": "open",
+    "dsl": "CUDA",
+    "hardware": [
+      "NVIDIA"
+    ],
+    "code": "https://github.com/StigLidu/AdaExplore",
+    "paper": "https://arxiv.org/abs/2604.16625",
+    "desc": "Failure-driven, diversity-preserving exploration.",
+    "evaluated_on": [
+      "KernelBench"
+    ],
+    "claim_baseline": "unknown",
+    "ships_kernels": "unknown",
+    "budget_disclosed": "unknown"
+  },
+  {
+    "id": "avo",
+    "name": "AVO",
+    "org": "NVIDIA x OctoML (23 authors)",
+    "date": "2026-03",
+    "route": "E",
+    "status": "partial",
+    "dsl": "CUDA",
+    "dsl_also": [
+      "PTX"
+    ],
+    "hardware": [
+      "NVIDIA"
+    ],
+    "code": "https://github.com/austin1997/AVO",
+    "paper": "https://arxiv.org/abs/2603.24517",
+    "desc": "Paradigm shift: the agent IS the variation operator (propose / repair / critique / verify), not just a candidate generator. After 7 days of autonomous evolution on B200 MHA: +3.5% over cuDNN, +10.5% over FlashAttention-4.",
+    "note": "Linked repo is a community reimplementation.",
+    "evaluated_on": [
+      "B200 MHA workloads"
+    ],
+    "claim_baseline": "cuDNN / FlashAttention-4 (vendor & expert tier)",
+    "ships_kernels": "no",
+    "budget_disclosed": "yes"
+  },
+  {
+    "id": "autokernel",
+    "name": "AutoKernel",
+    "org": "RightNow AI (YC)",
+    "date": "2026-03",
+    "route": "B",
+    "status": "open",
+    "dsl": "CUDA",
+    "dsl_also": [
+      "Triton"
+    ],
+    "hardware": [
+      "NVIDIA"
+    ],
+    "code": "https://github.com/RightNow-AI/autokernel",
+    "paper": "https://arxiv.org/abs/2603.21331",
+    "desc": "Keep/revert agent loop with Amdahl-law profiling and a 5-stage correctness harness (~40 experiments/hr); H100 RMSNorm 5.29x over eager / 2.83x over torch.compile.",
+    "evaluated_on": [],
+    "claim_baseline": "PyTorch eager AND torch.compile (both reported)",
+    "ships_kernels": "unknown",
+    "budget_disclosed": "yes"
+  },
+  {
+    "id": "kernelskill",
+    "name": "KernelSkill",
+    "org": "Beihang University",
+    "date": "2026-03",
+    "route": "E",
+    "status": "open",
+    "dsl": "CUDA",
+    "hardware": [
+      "NVIDIA"
+    ],
+    "code": "https://github.com/0satan0/KernelMem",
+    "paper": "https://arxiv.org/abs/2603.10085",
+    "desc": "Dual-level memory with reusable expert skills; KernelBench L1=5.44x, L2=2.82x, L3=1.92x.",
+    "evaluated_on": [
+      "KernelBench"
+    ],
+    "claim_baseline": "PyTorch eager (KernelBench)",
+    "ships_kernels": "unknown",
+    "budget_disclosed": "unknown"
+  },
+  {
+    "id": "cudamaster",
+    "name": "CUDAMaster",
+    "org": "Tsinghua",
+    "date": "2026-03",
+    "route": "D",
+    "status": "partial",
+    "dsl": "CUDA",
+    "hardware": [
+      "NVIDIA"
+    ],
+    "code": "https://hanyx2021.github.io/MSKernelBenchDemo/",
+    "paper": "https://arxiv.org/abs/2603.07169",
+    "desc": "Bottleneck-aware filtered-profiling multi-agent + full toolchain generation across algebra / LLM / sparse / scientific kernels; ~35% over Astra, occasionally matches cuBLAS. Introduces MSKernelBench.",
+    "evaluated_on": [
+      "MSKernelBench"
+    ],
+    "claim_baseline": "Astra (prior agent); cuBLAS occasionally matched",
+    "ships_kernels": "unknown",
+    "budget_disclosed": "unknown"
+  },
+  {
+    "id": "incoder-32b",
+    "name": "InCoder-32B",
+    "org": "Beihang University",
+    "date": "2026-03",
+    "route": "A",
+    "status": "open",
+    "dsl": "CUDA",
+    "hardware": [
+      "NVIDIA"
+    ],
+    "code": "https://github.com/CSJianYang/Industrial-Coder",
+    "paper": "https://arxiv.org/abs/2604.03144",
+    "desc": "Industrial code foundation model; the 2026-04 InCoder-32B-Thinking variant adds an industrial code world model (ICWM) for pre-compilation self-verification, 38.0% on KernelBench, runs on RTX 4090.",
+    "evaluated_on": [
+      "KernelBench"
+    ],
+    "claim_baseline": "PyTorch eager (KernelBench)",
+    "ships_kernels": "unknown",
+    "budget_disclosed": "unknown"
+  },
+  {
+    "id": "cuda-agent",
+    "name": "CUDA Agent",
+    "org": "ByteDance x Tsinghua",
+    "date": "2026-02",
+    "route": "B",
+    "status": "partial",
+    "dsl": "CUDA",
+    "hardware": [
+      "NVIDIA"
+    ],
+    "code": "https://cuda-agent.github.io/",
+    "paper": "https://huggingface.co/papers/2602.24286",
+    "desc": "Large-scale agentic RL on Seed-1.6 MoE (OpenHands ReAct loop, 200 turns, 131K ctx); first open agent to beat Claude Opus and Gemini 3 Pro on KernelBench (2.11x geomean over torch.compile).",
+    "note": "Companion model repo: ByteDance-Seed/cudaLLM.",
+    "evaluated_on": [
+      "KernelBench"
+    ],
+    "claim_baseline": "torch.compile (geomean)",
+    "ships_kernels": "unknown",
+    "budget_disclosed": "yes"
+  },
+  {
+    "id": "kernelblaster",
+    "name": "KernelBlaster",
+    "org": "NVIDIA x UC Berkeley",
+    "date": "2026-02",
+    "route": "E",
+    "status": "closed",
+    "dsl": "CUDA",
+    "hardware": [
+      "NVIDIA"
+    ],
+    "paper": "https://arxiv.org/abs/2602.14293",
+    "desc": "Memory-augmented in-context RL; persistent CUDA knowledge base.",
+    "evaluated_on": [],
+    "claim_baseline": "unknown",
+    "ships_kernels": "no",
+    "budget_disclosed": "unknown"
+  },
+  {
+    "id": "k-search",
+    "name": "K-Search",
+    "org": "UC Berkeley",
+    "date": "2026-02",
+    "route": "E",
+    "status": "open",
+    "dsl": "CUDA",
+    "hardware": [
+      "NVIDIA"
+    ],
+    "code": "https://github.com/caoshiyi/K-Search",
+    "paper": "https://arxiv.org/abs/2602.19128",
+    "desc": "Co-evolving intrinsic world model for kernel generation.",
+    "evaluated_on": [],
+    "claim_baseline": "unknown",
+    "ships_kernels": "unknown",
+    "budget_disclosed": "unknown"
+  },
+  {
+    "id": "cudanalyst",
+    "name": "CUDAnalyst",
+    "org": "Yee Hin Chong et al.",
+    "date": "2026-01",
+    "route": "E",
+    "status": "open",
+    "dsl": "CUDA",
+    "hardware": [
+      "NVIDIA"
+    ],
+    "code": "https://github.com/yuxuan-z19/cudanalyst",
+    "paper": "https://openreview.net/forum?id=s70zO5Lvvj",
+    "desc": "Self-evolving agent (OpenEvolve + LLM4AD/EoH) that decouples feedback acquisition (Debugger / Analyzer / Profiler) from plan generation, doing causal generation-level attribution of which feedback signal drives the next plan. ICML'26.",
+    "evaluated_on": [
+      "PolyBench-ACC",
+      "NPB",
+      "XSBench"
+    ],
+    "claim_baseline": "substrate reference implementations",
+    "ships_kernels": "yes",
+    "budget_disclosed": "unknown",
+    "note": "Ships generated sol.cu kernels - auditable."
+  },
+  {
+    "id": "kernelevolve",
+    "name": "KernelEvolve",
+    "org": "Meta",
+    "date": "2025-12",
+    "route": "E",
+    "status": "proprietary",
+    "dsl": "CUDA",
+    "dsl_also": [
+      "Triton",
+      "TileLang",
+      "CUTLASS",
+      "HIP"
+    ],
+    "hardware": [
+      "NVIDIA",
+      "MTIA"
+    ],
+    "paper": "https://arxiv.org/abs/2512.23236",
+    "blog": "https://engineering.fb.com/2026/04/02/developer-tools/kernelevolve-how-metas-ranking-engineer-agent-optimizes-ai-infrastructure/",
+    "desc": "Six-component agent (synthesizer + MCTS/evolutionary tree search + self-evolving RAG skill library + agentic RL) deployed on Andromeda ads: NVIDIA +60% / MTIA +25% / peak 17x; 100% on KernelBench. ISCA'26.",
+    "evaluated_on": [
+      "KernelBench",
+      "production Andromeda workloads"
+    ],
+    "claim_baseline": "production incumbents (internal)",
+    "ships_kernels": "no",
+    "budget_disclosed": "unknown"
+  },
+  {
+    "id": "cuda-l2",
+    "name": "CUDA-L2",
+    "org": "DeepReinforce",
+    "date": "2025-12",
+    "route": "C",
+    "status": "open",
+    "dsl": "CUDA",
+    "hardware": [
+      "NVIDIA"
+    ],
+    "code": "https://github.com/deepreinforce-ai/CUDA-L2",
+    "paper": "https://arxiv.org/abs/2512.02551",
+    "desc": "Surpasses cuBLAS for matrix multiplication.",
+    "evaluated_on": [
+      "matmul suite"
+    ],
+    "claim_baseline": "cuBLAS (vendor tier)",
+    "ships_kernels": "unknown",
+    "budget_disclosed": "unknown"
+  },
+  {
+    "id": "cupilot",
+    "name": "cuPilot",
+    "org": "Southeast U x Tsinghua",
+    "date": "2025-12",
+    "route": "D",
+    "status": "partial",
+    "dsl": "CUDA",
+    "hardware": [
+      "NVIDIA"
+    ],
+    "code": "https://github.com/champloo2878/cuPilot-Kernels",
+    "paper": "https://arxiv.org/abs/2512.16465",
+    "desc": "Strategy-coordinated multi-agent framework.",
+    "note": "Linked repo holds generated kernel outputs.",
+    "evaluated_on": [
+      "KernelBench"
+    ],
+    "claim_baseline": "unknown",
+    "ships_kernels": "yes",
+    "budget_disclosed": "unknown"
+  },
+  {
+    "id": "peak",
+    "name": "PEAK",
+    "org": "Stanford x MSR Redmond",
+    "date": "2025-12",
+    "route": "D",
+    "status": "closed",
+    "dsl": "CUDA",
+    "dsl_also": [
+      "HIP"
+    ],
+    "hardware": [
+      "NVIDIA",
+      "AMD"
+    ],
+    "paper": "https://arxiv.org/abs/2512.19018",
+    "desc": "Natural-language transformation for kernel optimization.",
+    "evaluated_on": [],
+    "claim_baseline": "unknown",
+    "ships_kernels": "no",
+    "budget_disclosed": "unknown"
+  },
+  {
+    "id": "cudaforge",
+    "name": "CudaForge",
+    "org": "UMN OptimAI Lab",
+    "date": "2025-11",
+    "route": "D",
+    "status": "open",
+    "dsl": "CUDA",
+    "hardware": [
+      "NVIDIA"
+    ],
+    "code": "https://github.com/OptimAI-Lab/CudaForge",
+    "paper": "https://arxiv.org/abs/2511.01884",
+    "desc": "Training-free Coder + Judge dual-agent with NCU profiling; A100 97.6% correctness, 1.68x / 2.27x - beats Kevin-32B.",
+    "evaluated_on": [
+      "KernelBench"
+    ],
+    "claim_baseline": "PyTorch eager (KernelBench)",
+    "ships_kernels": "unknown",
+    "budget_disclosed": "unknown"
+  },
+  {
+    "id": "kforge",
+    "name": "KForge",
+    "org": "Gimlet Labs",
+    "date": "2025-11",
+    "route": "D",
+    "status": "closed",
+    "dsl": "CUDA",
+    "hardware": [
+      "NVIDIA"
+    ],
+    "paper": "https://arxiv.org/abs/2511.13274",
+    "desc": "Program synthesis for diverse AI hardware accelerators.",
+    "evaluated_on": [],
+    "claim_baseline": "unknown",
+    "ships_kernels": "no",
+    "budget_disclosed": "unknown"
+  },
+  {
+    "id": "stark",
+    "name": "STARK",
+    "org": "Meta",
+    "date": "2025-10",
+    "route": "D",
+    "status": "closed",
+    "dsl": "CUDA",
+    "hardware": [
+      "NVIDIA"
+    ],
+    "paper": "https://arxiv.org/abs/2510.16996",
+    "desc": "Strategic team of agents for refining kernels.",
+    "evaluated_on": [],
+    "claim_baseline": "unknown",
+    "ships_kernels": "no",
+    "budget_disclosed": "unknown"
+  },
+  {
+    "id": "evoengineer",
+    "name": "EvoEngineer",
+    "org": "City University of Hong Kong",
+    "date": "2025-10",
+    "route": "E",
+    "status": "closed",
+    "dsl": "CUDA",
+    "hardware": [
+      "NVIDIA"
+    ],
+    "paper": "https://arxiv.org/abs/2510.03760",
+    "desc": "Automated CUDA kernel code evolution; median 2.72x, peak 36.75x speedup.",
+    "evaluated_on": [
+      "KernelBench"
+    ],
+    "claim_baseline": "PyTorch eager (KernelBench)",
+    "ships_kernels": "no",
+    "budget_disclosed": "unknown"
+  },
+  {
+    "id": "astra",
+    "name": "Astra",
+    "org": "Stanford",
+    "date": "2025-09",
+    "route": "D",
+    "status": "open",
+    "dsl": "CUDA",
+    "hardware": [
+      "NVIDIA"
+    ],
+    "code": "https://github.com/Anjiang-Wei/Astra",
+    "paper": "https://arxiv.org/abs/2509.07506",
+    "desc": "Multi-agent GPU kernel optimization on SGLang; 1.32x average zero-shot with o4-mini. NeurIPS'25.",
+    "evaluated_on": [
+      "SGLang kernels"
+    ],
+    "claim_baseline": "SGLang incumbent kernels",
+    "ships_kernels": "unknown",
+    "budget_disclosed": "yes"
+  },
+  {
+    "id": "kevin",
+    "name": "Kevin",
+    "org": "Cognition",
+    "date": "2025-07",
+    "route": "C",
+    "status": "partial",
+    "dsl": "CUDA",
+    "hardware": [
+      "NVIDIA"
+    ],
+    "paper": "https://arxiv.org/abs/2507.11948",
+    "desc": "Multi-turn RL on QwQ-32B with GRPO; KernelBench correctness 56%->82%, speedup 0.53x->1.10x.",
+    "evaluated_on": [
+      "KernelBench"
+    ],
+    "claim_baseline": "PyTorch eager (KernelBench)",
+    "ships_kernels": "unknown",
+    "budget_disclosed": "yes"
+  },
+  {
+    "id": "cuda-l1",
+    "name": "CUDA-L1",
+    "org": "DeepReinforce",
+    "date": "2025-07",
+    "route": "C",
+    "status": "open",
+    "dsl": "CUDA",
+    "hardware": [
+      "NVIDIA"
+    ],
+    "code": "https://github.com/deepreinforce-ai/CUDA-L1",
+    "paper": "https://arxiv.org/abs/2507.14111",
+    "desc": "Contrastive RL; KernelBench avg 3.12x, peak 120x; A100->H100/L40/3090 generalization.",
+    "evaluated_on": [
+      "KernelBench"
+    ],
+    "claim_baseline": "PyTorch eager (KernelBench)",
+    "ships_kernels": "yes",
+    "budget_disclosed": "unknown",
+    "note": "The 120x peak is exactly the inflated-claim regime robust-kbench later showed collapses under hardened evaluation."
+  },
+  {
+    "id": "gpu-kernel-scientist",
+    "name": "GPU Kernel Scientist",
+    "org": "Anonymous",
+    "date": "2025-06",
+    "route": "D",
+    "status": "closed",
+    "dsl": "CUDA",
+    "hardware": [
+      "NVIDIA"
+    ],
+    "paper": "https://arxiv.org/abs/2506.20807",
+    "desc": "Hypothesis-driven iterative kernel optimization.",
+    "evaluated_on": [],
+    "claim_baseline": "unknown",
+    "ships_kernels": "no",
+    "budget_disclosed": "unknown"
+  },
+  {
+    "id": "cuda-llm",
+    "name": "CUDA-LLM",
+    "org": "Shanghai Jiao Tong University",
+    "date": "2025-06",
+    "route": "D",
+    "status": "closed",
+    "dsl": "CUDA",
+    "hardware": [
+      "NVIDIA"
+    ],
+    "paper": "https://arxiv.org/abs/2506.09092",
+    "desc": "Hardware-aware prompts for efficient CUDA generation.",
+    "evaluated_on": [],
+    "claim_baseline": "unknown",
+    "ships_kernels": "no",
+    "budget_disclosed": "unknown"
+  },
+  {
+    "id": "ai-cuda-engineer",
+    "name": "AI CUDA Engineer",
+    "org": "Sakana AI",
+    "date": "2025-02",
+    "route": "E",
+    "status": "partial",
+    "dsl": "CUDA",
+    "hardware": [
+      "NVIDIA"
+    ],
+    "code": "https://huggingface.co/datasets/SakanaAI/AI-CUDA-Engineer-Archive",
+    "paper": "https://arxiv.org/abs/2509.14279",
+    "desc": "Four-stage pipeline (Convert / Translate / Optimize / Compose); 30K-kernel archive (17K verified).",
+    "note": "Cautionary tale: initial 10-100x claims included reward-hacking exploits, later hardened in robust-kbench (paper 2025-09).",
+    "evaluated_on": [
+      "KernelBench"
+    ],
+    "claim_baseline": "PyTorch eager (KernelBench)",
+    "ships_kernels": "yes",
+    "budget_disclosed": "unknown"
+  },
+  {
+    "id": "qimeng-kernel",
+    "name": "QiMeng-Kernel",
+    "org": "CAS ICT",
+    "date": "2025-11",
+    "route": "C",
+    "status": "partial",
+    "dsl": "CUDA",
+    "hardware": [
+      "NVIDIA"
+    ],
+    "code": "https://github.com/QiMeng-IPRC/QiMeng-Kernel",
+    "paper": "https://arxiv.org/abs/2511.20100",
+    "desc": "Macro-Thinking Micro-Coding (MTMC); ~100% on L1/L2, ~70% on L3. AAAI'26. QiMeng family (CAS ICT full-stack processor auto-design).",
+    "note": "Repo has no impl code yet.",
+    "evaluated_on": [
+      "KernelBench"
+    ],
+    "claim_baseline": "PyTorch eager (KernelBench)",
+    "ships_kernels": "no",
+    "budget_disclosed": "unknown"
+  },
+  {
+    "id": "qimeng-xpiler",
+    "name": "QiMeng-Xpiler",
+    "org": "CAS ICT x USTC x Cambricon",
+    "date": "2025-05",
+    "route": "D",
+    "status": "wip",
+    "dsl": "CUDA",
+    "dsl_also": [
+      "HIP"
+    ],
+    "hardware": [
+      "NVIDIA",
+      "AMD",
+      "Cambricon",
+      "CPU"
+    ],
+    "paper": "https://arxiv.org/abs/2505.02146",
+    "desc": "Neural-symbolic tensor-program transcompiler (LLM transform + SMT repair + hierarchical auto-tuning); ~95% translation accuracy across 4 backends, up to 2.0x over vendor libraries. OSDI'25. QiMeng family.",
+    "evaluated_on": [
+      "4-backend transpilation suite"
+    ],
+    "claim_baseline": "vendor libraries",
+    "ships_kernels": "unknown",
+    "budget_disclosed": "unknown"
+  },
+  {
+    "id": "qimeng-tensorop",
+    "name": "QiMeng-TensorOp",
+    "org": "CAS ICT",
+    "date": "2025-05",
+    "route": "D",
+    "status": "closed",
+    "dsl": "CUDA",
+    "hardware": [
+      "NVIDIA",
+      "RISC-V"
+    ],
+    "paper": "https://arxiv.org/abs/2505.06302",
+    "desc": "MCTS + hardware primitives; 251% OpenBLAS on RISC-V, 124% cuBLAS on NVIDIA. IJCAI'25. QiMeng family.",
+    "evaluated_on": [
+      "GEMM/tensor-op suite"
+    ],
+    "claim_baseline": "OpenBLAS / cuBLAS (vendor tier)",
+    "ships_kernels": "no",
+    "budget_disclosed": "unknown"
+  },
+  {
+    "id": "qimeng-attention",
+    "name": "QiMeng-Attention",
+    "org": "CAS ICT",
+    "date": "2025-07",
+    "route": "D",
+    "status": "closed",
+    "dsl": "CUDA",
+    "hardware": [
+      "NVIDIA"
+    ],
+    "paper": "https://aclanthology.org/2025.findings-acl.446/",
+    "desc": "Self-optimizing attention code; MLA 2.15x cuDNN on A100. ACL'25 Findings. QiMeng family.",
+    "evaluated_on": [
+      "attention workloads"
+    ],
+    "claim_baseline": "cuDNN (vendor tier)",
+    "ships_kernels": "no",
+    "budget_disclosed": "unknown"
+  },
+  {
+    "id": "qimeng-gemm",
+    "name": "QiMeng-GEMM",
+    "org": "CAS ICT",
+    "date": "2025-02",
+    "route": "D",
+    "status": "partial",
+    "dsl": "CUDA",
+    "hardware": [
+      "NVIDIA",
+      "RISC-V"
+    ],
+    "paper": "https://ojs.aaai.org/index.php/AAAI/article/view/34461",
+    "desc": "Meta-prompt + Tree-of-Thought for GEMM; 211% OpenBLAS, 115% cuBLAS. AAAI'25. QiMeng family.",
+    "evaluated_on": [
+      "GEMM suite"
+    ],
+    "claim_baseline": "OpenBLAS / cuBLAS (vendor tier)",
+    "ships_kernels": "unknown",
+    "budget_disclosed": "unknown"
+  },
+  {
+    "id": "cutegen",
+    "name": "CuTeGen",
+    "org": "U Toronto x Standard Kernel",
+    "date": "2026-04",
+    "route": "D",
+    "status": "open",
+    "dsl": "CUTLASS",
+    "hardware": [
+      "NVIDIA"
+    ],
+    "code": "https://github.com/taratt/cutegen",
+    "paper": "https://arxiv.org/abs/2604.01489",
+    "desc": "Generate-test-refine loop with a 'delayed profiling' schedule (withholds low-level NCU feedback until structure stabilizes); 1.71x avg over PyTorch on 209 KernelBench L1/L2 tasks vs CudaForge 0.89x, zero low-precision shortcuts.",
+    "evaluated_on": [
+      "KernelBench"
+    ],
+    "claim_baseline": "PyTorch eager (KernelBench)",
+    "ships_kernels": "unknown",
+    "budget_disclosed": "unknown"
+  },
+  {
+    "id": "fact",
+    "name": "FACT",
+    "org": "Heidari & Nikolopoulos",
+    "date": "2026-04",
+    "route": "B",
+    "status": "closed",
+    "dsl": "CUTLASS",
+    "hardware": [
+      "NVIDIA"
+    ],
+    "paper": "https://arxiv.org/abs/2604.26666",
+    "desc": "Three-stage agentic workflow (pattern discovery / realization / composition) transpiling PyTorch modules into auto-tuned CUTLASS; 2.03x on MiniGPT, 1.41x on Llama-3-8B over PyTorch eager.",
+    "evaluated_on": [
+      "MiniGPT / Llama-3-8B end-to-end"
+    ],
+    "claim_baseline": "PyTorch eager",
+    "ships_kernels": "no",
+    "budget_disclosed": "unknown"
+  },
+  {
+    "id": "mucutlass-sol",
+    "name": "muCUTLASS + Speed-of-Light Guidance",
+    "org": "NVIDIA x Stanford",
+    "date": "2026-03",
+    "route": "D",
+    "status": "wip",
+    "dsl": "CUTLASS",
+    "hardware": [
+      "NVIDIA"
+    ],
+    "paper": "https://arxiv.org/abs/2603.29010",
+    "desc": "Two design principles for kernel-opt agents: a compact in-context-learnable DSL (muCUTLASS over CUTLASS) + first-principles Speed-of-Light bounds to budget trials and flag benchmark gaming; GPT-5-mini 0.40x->1.27x, +SOL up to 2.07x, saving 19-43% tokens.",
+    "evaluated_on": [],
+    "claim_baseline": "PyTorch eager + SOL ceiling",
+    "ships_kernels": "unknown",
+    "budget_disclosed": "yes"
+  },
+  {
+    "id": "ascendoptimizer",
+    "name": "AscendOptimizer",
+    "org": "ECNU x Tongji",
+    "date": "2026-03",
+    "route": "E",
+    "status": "partial",
+    "dsl": "AscendC",
+    "hardware": [
+      "Ascend-NPU"
+    ],
+    "paper": "https://arxiv.org/abs/2603.23566",
+    "desc": "Episodic agent for Ascend NPU operator optimization; 1.21x geomean on 127 AscendC operators, 49.61% beat references.",
+    "evaluated_on": [
+      "cann-ops (127 AscendC operators)"
+    ],
+    "claim_baseline": "Ascend reference operators",
+    "ships_kernels": "unknown",
+    "budget_disclosed": "unknown"
+  },
+  {
+    "id": "evokernel",
+    "name": "EvoKernel",
+    "org": "SJTU",
+    "date": "2026-03",
+    "route": "E",
+    "status": "partial",
+    "dsl": "AscendC",
+    "hardware": [
+      "Ascend-NPU"
+    ],
+    "code": "https://evokernel.zhuo.li/",
+    "paper": "https://arxiv.org/abs/2603.10846",
+    "desc": "Cold-start drafting + continual refining with value-driven memory (stage-specific Q-values, cross-task sharing, no fine-tuning); correctness 11%->83%, median 3.60x.",
+    "note": "Paper frames the target as generic NPU/DSA; Ascend inferred.",
+    "evaluated_on": [],
+    "claim_baseline": "unknown",
+    "ships_kernels": "unknown",
+    "budget_disclosed": "unknown"
+  },
+  {
+    "id": "ascendkernelgen",
+    "name": "AscendKernelGen",
+    "org": "Pengcheng Lab",
+    "date": "2026-01",
+    "route": "C",
+    "status": "partial",
+    "dsl": "AscendC",
+    "hardware": [
+      "Ascend-NPU"
+    ],
+    "code": "https://huggingface.co/datasets/AscendKernelGen/Ascend-COT-v1",
+    "paper": "https://arxiv.org/abs/2601.07160",
+    "desc": "Ascend-CoT dataset + RLEF training; L2 compilation 0%->95.5%.",
+    "evaluated_on": [
+      "NPUKernelBench"
+    ],
+    "claim_baseline": "unknown",
+    "ships_kernels": "unknown",
+    "budget_disclosed": "unknown"
+  },
+  {
+    "id": "ascendcraft",
+    "name": "AscendCraft",
+    "org": "NJU x Huawei",
+    "date": "2026-01",
+    "route": "A",
+    "status": "closed",
+    "dsl": "AscendC",
+    "hardware": [
+      "Ascend-NPU"
+    ],
+    "paper": "https://arxiv.org/abs/2601.22760",
+    "desc": "DSL-guided, training-free transcompilation; 98.1% compilation, 90.4% correctness.",
+    "evaluated_on": [],
+    "claim_baseline": "correctness-only claims",
+    "ships_kernels": "no",
+    "budget_disclosed": "unknown"
+  },
+  {
+    "id": "argus",
+    "name": "ARGUS",
+    "org": "Mai, Kozyrakis, Yuan et al.",
+    "date": "2026-04",
+    "route": "D",
+    "status": "wip",
+    "dsl": "HIP",
+    "hardware": [
+      "AMD"
+    ],
+    "paper": "https://arxiv.org/abs/2604.18616",
+    "desc": "Agentic optimization guided by compile-time data-flow invariants (abstract interpretation + SMT with counterexamples) + in-context RL planner; on MI300X reaches 99-104% of hand-tuned assembly, 2-1543x faster than prior agentic systems, 100% KernelBench L1 / 90% L2.",
+    "evaluated_on": [
+      "KernelBench"
+    ],
+    "claim_baseline": "hand-tuned assembly (expert tier) + prior agents",
+    "ships_kernels": "unknown",
+    "budget_disclosed": "unknown"
+  },
+  {
+    "id": "geak-hip",
+    "name": "GEAK-HIP",
+    "org": "AMD-AGI",
+    "date": "2026-01",
+    "route": "D",
+    "status": "open",
+    "dsl": "HIP",
+    "hardware": [
+      "AMD"
+    ],
+    "code": "https://github.com/AMD-AGI/GEAK",
+    "blog": "https://rocm.blogs.amd.com/software-tools-optimization/geak-hip-optimizations/README.html",
+    "desc": "GEAK extension for HIP optimization.",
+    "evaluated_on": [],
+    "claim_baseline": "unknown",
+    "ships_kernels": "unknown",
+    "budget_disclosed": "unknown"
+  },
+  {
+    "id": "intelliperf",
+    "name": "IntelliPerf",
+    "org": "AMD Research",
+    "date": "2025-06",
+    "route": "D",
+    "status": "open",
+    "dsl": "HIP",
+    "dsl_also": [
+      "Triton"
+    ],
+    "hardware": [
+      "AMD"
+    ],
+    "code": "https://github.com/AMDResearch/intelliperf",
+    "desc": "Profiling-guided LLM framework for AMD GPUs.",
+    "evaluated_on": [],
+    "claim_baseline": "unknown",
+    "ships_kernels": "unknown",
+    "budget_disclosed": "unknown"
+  },
+  {
+    "id": "intellikit",
+    "name": "IntelliKit",
+    "org": "AMD Research",
+    "date": "2025-03",
+    "route": "tool",
+    "status": "open",
+    "dsl": "HIP",
+    "hardware": [
+      "AMD"
+    ],
+    "code": "https://github.com/AMDResearch/intellikit",
+    "desc": "LLM-ready profiling toolkit for AMD GPUs.",
+    "evaluated_on": [],
+    "claim_baseline": "n/a (tooling)",
+    "ships_kernels": "unknown",
+    "budget_disclosed": "unknown"
+  },
+  {
+    "id": "neuron-agentic-development",
+    "name": "Neuron Agentic Development",
+    "org": "AWS",
+    "date": "2026-04",
+    "route": "D",
+    "status": "proprietary",
+    "dsl": "NKI",
+    "hardware": [
+      "Trainium"
+    ],
+    "code": "https://aws.amazon.com/about-aws/whats-new/2026/04/announcing-neuron-agentic-development/",
+    "desc": "Official AWS announcement of agentic NKI kernel development.",
+    "evaluated_on": [],
+    "claim_baseline": "unknown",
+    "ships_kernels": "no",
+    "budget_disclosed": "unknown"
+  },
+  {
+    "id": "accelopt",
+    "name": "AccelOpt",
+    "org": "Stanford x AWS",
+    "date": "2025-11",
+    "route": "E",
+    "status": "wip",
+    "dsl": "NKI",
+    "hardware": [
+      "Trainium"
+    ],
+    "code": "https://github.com/zhang677/AccelOpt",
+    "paper": "https://arxiv.org/abs/2511.15915",
+    "desc": "Self-improving agentic system for accelerator kernels; 45%->71% peak throughput on Trainium 1/2. Ships the NKIBench suite. MLSys'26.",
+    "evaluated_on": [
+      "NKIBench"
+    ],
+    "claim_baseline": "fraction of peak throughput (ceiling-relative)",
+    "ships_kernels": "unknown",
+    "budget_disclosed": "unknown"
+  },
+  {
+    "id": "kernelfoundry",
+    "name": "KernelFoundry",
+    "org": "Intel",
+    "date": "2026-03",
+    "route": "E",
+    "status": "wip",
+    "dsl": "SYCL",
+    "dsl_also": [
+      "CUDA"
+    ],
+    "hardware": [
+      "Intel-GPU",
+      "NVIDIA"
+    ],
+    "paper": "https://arxiv.org/abs/2603.12440",
+    "desc": "Hardware-aware evolutionary optimization (MAP-Elites quality-diversity + meta-prompting) generating CUDA AND SYCL; demonstrated on Intel Arc B580 (Xe2).",
+    "evaluated_on": [],
+    "claim_baseline": "unknown",
+    "ships_kernels": "unknown",
+    "budget_disclosed": "unknown"
+  },
+  {
+    "id": "tileops",
+    "name": "TileOPs (TOPS)",
+    "org": "tile-ai",
+    "date": "2026-01",
+    "route": "tool",
+    "status": "open",
+    "dsl": "TileLang",
+    "hardware": [
+      "NVIDIA"
+    ],
+    "code": "https://github.com/tile-ai/TileOPs",
+    "desc": "Spec-driven operator library: AI agents read declarative manifests (signatures, workloads, roofline formulas), generate TileLang kernels, and self-validate against Speed-of-Light bounds.",
+    "evaluated_on": [],
+    "claim_baseline": "SOL bounds (self-validation)",
+    "ships_kernels": "yes",
+    "budget_disclosed": "unknown"
+  },
+  {
+    "id": "tilelang-ascend",
+    "name": "TileLang-Ascend",
+    "org": "tile-ai",
+    "date": "2025-10",
+    "route": "tool",
+    "status": "open",
+    "dsl": "TileLang",
+    "hardware": [
+      "Ascend-NPU"
+    ],
+    "code": "https://github.com/tile-ai/tilelang-ascend",
+    "desc": "Adapter layer connecting TileLang to the Ascend backend (not an agent).",
+    "evaluated_on": [],
+    "claim_baseline": "n/a (tooling)",
+    "ships_kernels": "unknown",
+    "budget_disclosed": "unknown"
+  },
+  {
+    "id": "musacoder",
+    "name": "MusaCoder",
+    "org": "Moore Threads",
+    "date": "2026-06",
+    "route": "C",
+    "status": "wip",
+    "dsl": "MUSA",
+    "dsl_also": [
+      "CUDA"
+    ],
+    "hardware": [
+      "MooreThreads"
+    ],
+    "paper": "https://arxiv.org/abs/2606.04847",
+    "desc": "Full-stack training (progressive data synthesis + diversity-preserving rejection FT + execution-feedback RL via MooreEval) for native kernels on the domestic Moore Threads MUSA backend; 9B matches frontier closed models, 27B sets SOTA on a MUSA-ported KernelBench.",
+    "evaluated_on": [
+      "KernelBench-MUSA (MooreEval)"
+    ],
+    "claim_baseline": "platform PyTorch (MUSA port)",
+    "ships_kernels": "unknown",
+    "budget_disclosed": "unknown"
+  },
+  {
+    "id": "auto-gpu-kernel",
+    "name": "auto-gpu-kernel",
+    "org": "Dogacel",
+    "date": "2026-05",
+    "route": "B",
+    "status": "open",
+    "dsl": "Triton-FlashInfer",
+    "hardware": [
+      "NVIDIA"
+    ],
+    "code": "https://github.com/Dogacel/auto-gpu-kernel",
+    "desc": "Claude-Code-driven autonomous optimizer that won #1 (agent-only) in the MLSys'26 FlashInfer contest, DeepSeek Sparse Attention track, avg 34.93x speedup; runs /optimize every 15 min indefinitely on Modal cloud.",
+    "evaluated_on": [
+      "MLSys'26 FlashInfer contest (bare-metal B200 evals)"
+    ],
+    "claim_baseline": "contest reference kernels",
+    "ships_kernels": "yes",
+    "budget_disclosed": "partial"
+  },
+  {
+    "id": "tilegym",
+    "name": "TileGym",
+    "org": "NVIDIA",
+    "date": "2026-04",
+    "route": "A",
+    "status": "open",
+    "dsl": "cuTile",
+    "hardware": [
+      "NVIDIA"
+    ],
+    "code": "https://github.com/NVIDIA/TileGym",
+    "blog": "https://developer.nvidia.com/blog/automating-gpu-kernel-translation-with-ai-agents-cutile-python-to-cutile-jl/",
+    "desc": "LLM agent 'skill' auto-translating cuTile Python kernels to cuTile.jl (Julia) in one validated pass (17 rules, static validator); GEMM port ~4 min / ~78K tokens, no manual intervention.",
+    "evaluated_on": [],
+    "claim_baseline": "correctness-only (translation)",
+    "ships_kernels": "yes",
+    "budget_disclosed": "yes"
+  },
+  {
+    "id": "tt-lang-claude-skills",
+    "name": "TT-Lang + Claude Skills",
+    "org": "Tenstorrent",
+    "date": "2026-01",
+    "route": "A",
+    "status": "open",
+    "dsl": "TT-Lang",
+    "hardware": [
+      "Tenstorrent"
+    ],
+    "code": "https://github.com/tenstorrent/tt-lang",
+    "desc": "Python-embedded DSL for Tenstorrent hardware with AI codegen in the loop; ships Claude Skills that convert CUDA/Triton/cuTile/TileLang kernels 'in seconds' + a functional simulator for hardware-free iteration.",
+    "evaluated_on": [],
+    "claim_baseline": "unknown",
+    "ships_kernels": "unknown",
+    "budget_disclosed": "unknown"
+  },
+  {
+    "id": "alphaevolve-fhe",
+    "name": "AlphaEvolve for FHE on TPUs",
+    "org": "Google",
+    "date": "2026-05",
+    "route": "E",
+    "status": "closed",
+    "dsl": "JAX-TPU",
+    "hardware": [
+      "TPU"
+    ],
+    "paper": "https://arxiv.org/abs/2605.14718",
+    "desc": "Applies AlphaEvolve evolutionary codegen to fully-homomorphic-encryption kernels on TPU v5e; within 24h: 2.5x TFHE bootstrap, 1.31x CKKS rotation vs human SOTA.",
+    "evaluated_on": [
+      "FHE kernel suite (TFHE/CKKS)"
+    ],
+    "claim_baseline": "human SOTA implementations (expert tier)",
+    "ships_kernels": "no",
+    "budget_disclosed": "yes"
+  },
+  {
+    "id": "standard-kernel",
+    "name": "Standard Kernel",
+    "org": "Standard Kernel (startup)",
+    "date": "2026-03",
+    "route": "D",
+    "status": "closed",
+    "dsl": "PTX",
+    "hardware": [
+      "NVIDIA"
+    ],
+    "code": "https://standardkernel.com/blog/announcing-our-seed-round-is-kernel-generation-solved/",
+    "desc": "Hybrid program-analysis + LLM reasoning at the PTX layer across Triton / TileLang / ThunderKittens / CUTLASS; reports 80%-4x end-to-end gains on H100. Raised $20M seed (Mar 2026; angels incl. Jeff Dean, Jonathan Frankle).",
+    "evaluated_on": [
+      "internal end-to-end workloads"
+    ],
+    "claim_baseline": "production incumbents (internal)",
+    "ships_kernels": "no",
+    "budget_disclosed": "no"
+  }
+]
