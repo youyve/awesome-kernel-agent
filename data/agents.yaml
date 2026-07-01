@@ -237,7 +237,7 @@ agents:
 
   - id: tritonrl
     name: TritonRL
-    org: Princeton / UW
+    org: CMU x Amazon
     date: "2025-10"
     route: C
     status: closed
@@ -546,7 +546,7 @@ agents:
 
   - id: cupilot
     name: cuPilot
-    org: Southeast U x Tsinghua
+    org: Southeast U x Tsinghua x Tsing Micro
     date: "2025-12"
     route: D
     status: partial
@@ -588,6 +588,7 @@ agents:
     code: https://github.com/OptimAI-Lab/CudaForge
     paper: https://arxiv.org/abs/2511.01884
     desc: "Training-free Coder + Judge dual-agent with NCU profiling; A100 97.6% correctness, 1.68x / 2.27x - beats Kevin-32B."
+    note: "The paper's own error analysis found 'fake kernel' evaluation-gaming in prior work: agents exploit try/except fallbacks to PyTorch eager to fake speedups. See also CUDA-L1's note."
     evaluated_on: [KernelBench]
     claim_baseline: "PyTorch eager (KernelBench)"
     ships_kernels: unknown
@@ -684,7 +685,7 @@ agents:
     claim_baseline: "PyTorch eager (KernelBench)"
     ships_kernels: yes
     budget_disclosed: unknown
-    note: "The 120x peak is exactly the inflated-claim regime robust-kbench later showed collapses under hardened evaluation."
+    note: "The 120x peak is exactly the inflated-claim regime robust-kbench later showed collapses under hardened evaluation; CudaForge independently identified the same class of 'fake kernel' try/except-fallback gaming in prior agentic work."
 
   - id: gpu-kernel-scientist
     name: GPU Kernel Scientist
@@ -810,6 +811,139 @@ agents:
     claim_baseline: "OpenBLAS / cuBLAS (vendor tier)"
     ships_kernels: unknown
     budget_disclosed: unknown
+
+  - id: cursor-nvidia-multi-agent-kernels
+    name: Cursor Multi-Agent Kernel Optimization
+    org: Cursor / NVIDIA
+    date: "2026-04"
+    route: D
+    status: open
+    dsl: CUDA
+    dsl_also: [CUTLASS]
+    hardware: [NVIDIA]
+    code: https://github.com/anysphere/kernel-optimization-results
+    blog: https://cursor.com/blog/multi-agent-kernels
+    desc: "Planner + autonomous parallel workers optimized 235 kernels from 124+ open-source models (CUDA C w/ inline PTX and CuTe DSL) on 27x Blackwell B200 over 3 weeks using NVIDIA's SOL-ExecBench test-debug-optimize loop; 38% geomean speedup, 63% (149/235) beat baseline, GEMM reached 86% of cuBLAS (beat it by up to 9% on small-M decode shapes)."
+    note: "Speedups measured against PyTorch already optimized by a single agent (SOL 0.5), not raw eager PyTorch (SOL 1.0 = hardware ceiling); GQA attention case additionally validated end-to-end (+3% TTFT in SGLang)."
+    evaluated_on: ["SOL-ExecBench (235 problems / 124+ open-source models)"]
+    claim_baseline: "PyTorch code already optimized by a single agent (SOL-ExecBench score 0.5 baseline, 1.0 = theoretical hardware ceiling); FlashInfer/cuBLAS used as direct comparison for attention/GEMM cases"
+    ships_kernels: yes
+    budget_disclosed: partial
+
+  - id: kernel-design-agents
+    name: Kernel Design Agents (KDA)
+    org: MIT HAN Lab
+    date: "2026-05"
+    route: B
+    status: wip
+    dsl: CUDA
+    hardware: [NVIDIA]
+    code: https://github.com/mit-han-lab/kernel-design-agents
+    desc: "Claude Code plugin encoding an 8-step agent workflow (plan -> implement in small iterations -> verify -> record benchmark evidence) for CUDA kernel research, paired with a separate KernelWiki knowledge-base repo; HAN Lab Mafia solution ranked #1-3 on tracks at the MLSys 2026 Kernel Contest."
+    note: "Self-described 'early research prototype... still under active development.' Single-agent iterative loop, not multi-agent (no planner/worker split described); ships no kernel code itself; KernelWiki contents (e.g. Blackwell/Hopper coverage) are undescribed/unverifiable in that repo's README (404'd on fetch)."
+    evaluated_on: ["MLSys 2026 Kernel Contest (mit-han-lab/mlsys2026-flashinfer-contest)"]
+    claim_baseline: unknown
+    ships_kernels: no
+    budget_disclosed: no
+
+  - id: automegakernel
+    name: AutoMegaKernel
+    org: RightNow AI (YC)
+    date: "2026-06"
+    route: B
+    status: open
+    dsl: CUDA
+    hardware: [NVIDIA]
+    code: https://github.com/RightNow-AI/AutoMegaKernel
+    paper: https://arxiv.org/abs/2606.09682
+    desc: "Sibling project to AutoKernel: compiles whole HF Llama-family models into one statically-verified, self-tuning CUDA megakernel; agent autoresearch loop self-improves 1.25-1.72x; search-found int8 (W8A16) beats CUDA-graphed cuBLAS bf16 at batch-1 decode on L4 (up to 1.33x)/L40S (1.25-1.27x)/RTX 5090 (1.19-1.23x)."
+    note: "Headline speedups are precision-asymmetric (int8 vs bf16 baseline); authors explicitly disclose AMK trails cuBLAS on like-for-like bf16 and on A100/H100."
+    evaluated_on: ["SmolLM2-135M (correctness)", "TinyLlama-1.1B (largest perf checkpoint)"]
+    claim_baseline: "CUDA-graphed cuBLAS bf16, batch-1 decode (precision-asymmetric: AMK uses int8 W8A16)"
+    ships_kernels: yes
+    budget_disclosed: partial
+
+  - id: cubridge
+    name: CuBridge
+    org: Shanghai Jiao Tong University
+    date: "2026-05"
+    route: B
+    status: closed
+    dsl: CUDA
+    hardware: [NVIDIA]
+    paper: https://arxiv.org/abs/2605.05023
+    desc: "IR-based (CuIR) lift-transfer-lower pipeline with ReAct-style closed-loop refinement for expert CUDA attention kernels; outperforms general frameworks, compilers, and prior LLM methods (no single headline % given)."
+    note: "Accepted to ACL 2026 (per arXiv comments). No GitHub/code link found."
+    evaluated_on: []
+    claim_baseline: "general frameworks, compiler-based approaches, and prior LLM-based methods"
+    ships_kernels: unknown
+    budget_disclosed: partial
+
+  - id: stitchcuda
+    name: StitchCUDA
+    org: University of Minnesota Twin Cities
+    date: "2026-03"
+    route: D
+    status: closed
+    dsl: CUDA
+    hardware: [NVIDIA]
+    paper: https://arxiv.org/abs/2603.02637
+    desc: "Planner/Coder/Verifier multi-agent system generating end-to-end CUDA programs (not single kernels), Coder trained via rubric-based agentic RL; ~100% success on KernelBench L3, 1.72x over CudaForge, 2.73x over Kevin-32B RL baseline."
+    note: "Training: LoRA r=alpha=128, ~20h on 4xH200. No GitHub/code link found."
+    evaluated_on: [KernelBench]
+    claim_baseline: "PyTorch eager (1.5x avg); also vs CudaForge multi-agent baseline (1.72x) and Kevin-32B RL baseline (2.73x)"
+    ships_kernels: unknown
+    budget_disclosed: yes
+
+  - id: cuco
+    name: CUCo
+    org: UT Austin
+    date: "2026-06"
+    route: E
+    status: wip
+    dsl: CUDA
+    hardware: [NVIDIA]
+    code: https://anonymous.4open.science/r/CUCo-06EC/
+    paper: https://arxiv.org/abs/2603.02376
+    desc: "Two-agent compute+communication co-design: correctness-first fast-path + evolution-driven slow-path mutating chunking/sync/interleaving; up to 1.57x across 4 multi-GPU workloads, discovers two-stream MoE dispatch/compute overlap on DeepSeek-V3 (12% over DeepEP), <$10 LLM cost/workload."
+    note: "Anonymized code link is cited in the paper but returned an unresolvable error on fetch - contents unverified, hence wip rather than open."
+    evaluated_on: ["Flash Attention (context-parallel/ring)", "DeepSeek-V3 MoE dispatch/combine", "KV-cache transfer (disagg. prefill-decode)", "GEMM+AllGather"]
+    claim_baseline: "host-driven baselines (CPU-launched NCCL collectives/streams); MoE result also vs DeepEP"
+    ships_kernels: partial
+    budget_disclosed: yes
+
+  - id: optiml
+    name: OptiML
+    org: Iowa State University
+    date: "2026-02"
+    route: D
+    status: closed
+    dsl: CUDA
+    hardware: [NVIDIA]
+    paper: https://arxiv.org/abs/2602.12305
+    desc: "Two-stage: OptiML-G (Mixture-of-Thoughts NL-to-CUDA generator) + OptiML-X (MCTS optimizer w/ Nsight Compute profiler feedback + LLM-as-judge); up to 1.64x speedup (matrix multiplication, best case)."
+    note: "Org affiliation cross-verified via NSF award records and web search, not directly read from an inaccessible PDF affiliation footnote. No GitHub/project link found."
+    evaluated_on: [ParEval, "CUDA-LLM task suite"]
+    claim_baseline: "LLM-only baselines without OptiML-X (GPT-5.1, Qwen2.5-Coder, HPC-Coder-V2, StarCoder2)"
+    ships_kernels: no
+    budget_disclosed: partial
+
+  - id: dice
+    name: DICE
+    org: Westlake University
+    date: "2026-06"
+    route: A
+    status: open
+    dsl: CUDA
+    hardware: [NVIDIA]
+    code: https://github.com/deadlykitten4/DICE
+    paper: https://arxiv.org/abs/2602.11715
+    desc: "Diffusion LLM (non-autoregressive) for CUDA kernel generation; KernelBench L1 @8B: 47.0% exec correctness, fast1=15.0%, fast2=6.0%, new SOTA vs AR and diffusion LLMs of comparable scale."
+    note: "Route A confirmed from the paper's own eval protocol (one-shot prompting); 'iterative' language in the abstract refers to internal diffusion denoising steps, not an external generate-test-fix loop."
+    evaluated_on: [KernelBench]
+    claim_baseline: "PyTorch reference implementations (fast_p = speedup over PyTorch)"
+    ships_kernels: yes
+    budget_disclosed: partial
 
   # ============================== CUTLASS ==============================
 
@@ -988,6 +1122,23 @@ agents:
     ships_kernels: unknown
     budget_disclosed: unknown
 
+  - id: amd-apex
+    name: Apex
+    org: AMD
+    date: "2026-02"
+    route: B
+    status: open
+    dsl: HIP
+    dsl_also: [Triton]
+    hardware: [AMD]
+    code: https://github.com/AMD-AGI/Apex
+    desc: "Agent harness (Claude Code/Codex/Cursor Agent backends) that iterates HIP/Triton kernels against a compile+correctness+speedup grader across 12 LLM-serving kernel types (flash attn, MoE, GEMM, RoPE, KV-cache, all-reduce, etc.) on MI300X/MI355X; reports all_reduce up to 36.35x, most other kernels near or above 1.0x."
+    note: "README frames itself as an 'RL environment,' but the loop shown (baseline -> LLM agent -> grader -> reinjection) is agentic iterative refinement, not weight-trained RL; no paper found."
+    evaluated_on: ["Apex 12-kernel-type / 21-model registry"]
+    claim_baseline: "prior baseline kernel in the same optimization run (per-kernel-type baseline, not a fixed reference like cuBLAS)"
+    ships_kernels: no
+    budget_disclosed: yes
+
   # ============================== NKI ==============================
 
   - id: neuron-agentic-development
@@ -1164,3 +1315,20 @@ agents:
     claim_baseline: "production incumbents (internal)"
     ships_kernels: no
     budget_disclosed: no
+
+  - id: qwen3.7-max-kernel-opt
+    name: Qwen3.7-Max Autonomous Kernel Optimization
+    org: Alibaba / Qwen Team
+    date: "2026-05"
+    route: D
+    status: proprietary
+    dsl: PPU
+    dsl_also: [Triton]
+    hardware: [T-Head-Zhenwu-M890-PPU]
+    code: https://qwen.ai/blog?id=qwen3.7
+    desc: "Qwen3.7-Max autonomously optimized SGLang's Extend Attention Kernel for a previously-unseen accelerator (T-Head Zhenwu M890 PPU, styled 'ZW-M890' in Qwen's own blog) with no hardware docs/reference kernels; ~35h autonomous run, 432 kernel evaluations, 1158 tool calls, 10.0x geomean speedup over the Triton reference (vs. GLM 5.1 7.3x, Kimi K2.6 5.0x, DeepSeek V4 Pro 3.3x, Qwen3.6-Plus 1.1x)."
+    note: "Self-reported by Alibaba/Qwen Team, not independently reproduced - every specific number traces to this one blog post (mirrored verbatim at alibabacloud.com/blog/qwen3-7-the-agent-frontier_603154); the corporate press release independently confirms the event and chip but none of the granular figures."
+    evaluated_on: ["SGLang Extend Attention Kernel"]
+    claim_baseline: "SGLang official Triton reference implementation"
+    ships_kernels: no
+    budget_disclosed: yes
