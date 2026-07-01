@@ -345,6 +345,55 @@ agents:
     ships_kernels: unknown
     budget_disclosed: unknown
 
+  - id: ako4x
+    name: AKO4X
+    org: TLAIC
+    date: "2026-05"
+    route: D
+    status: open
+    dsl: Triton
+    dsl_also: [CUDA, TileLang, CUTLASS]
+    hardware: [NVIDIA]
+    code: https://github.com/TongmingLAIC/AKO4X
+    desc: "More advanced/extensible sibling of AKO/AKO4ALL: closed-loop, campaign-based multi-agent system with per-run isolated template workspaces and cross-run per-operator memory archive; agent can propose harness changes gated by a master. Beats FlashInfer expert by up to 30.71x on MLSys 2026 contest DSA sparse attention kernels, ahead of the concurrent Kernel Design Agents (KDA) submission on all five tracks; GEMM result honestly reported as 1.00x (cuBLAS unbeaten)."
+    note: "AKO4ALL is a single drop-in Claude Code skill for one workspace with no cross-run memory; AKO4X spawns isolated per-run workspaces and accumulates memory across rounds. 6 target languages: Python/PyTorch, Triton, CUDA, C++, TileLang, CuTe DSL."
+    evaluated_on: ["MLSys 2026 contest kernels (flashinfer-bench)"]
+    claim_baseline: "FlashInfer expert kernels; also compared against concurrent Kernel Design Agents (KDA) submission"
+    ships_kernels: unknown
+    budget_disclosed: unknown
+
+  - id: moziflux
+    name: MoziFlux
+    org: BiSheng-Compiler-Agents
+    date: "2026-06"
+    route: B
+    status: open
+    dsl: Triton
+    hardware: [Ascend-NPU]
+    code: https://github.com/BiSheng-Compiler-Agents/MoziFlux
+    desc: "Agentic system optimizing Triton-Ascend kernels via Hermes Agent, a CANN/cannsim simulation harness, and an optimization-pattern knowledge base; no results reported."
+    note: "README documents setup/architecture only (episode-based loop implied by episodes.db) with no benchmark results, speedups, or evaluation methodology disclosed. Very low visibility (0 stars) but substantive, working CANN toolchain integration - fills this catalog's thin Ascend/NPU-agent coverage."
+    evaluated_on: []
+    claim_baseline: "none reported"
+    ships_kernels: unknown
+    budget_disclosed: no
+
+  - id: moe-kernel-agent
+    name: MoE-Kernel-Agent
+    org: Jerry2423
+    date: "2026-05"
+    route: D
+    status: open
+    dsl: Triton
+    hardware: [NVIDIA]
+    code: https://github.com/Jerry2423/MoE-Kernel-Agent
+    desc: "Claude-Code-driven Learn->Implement->Optimize harness for Triton MoE kernels; 2nd place Full-Agent/MoE Track, MLSys 2026 FlashInfer Contest, 25.7x median speedup vs PyTorch."
+    note: "Adapted from AKO4ALL's agentic kernel optimization loop; anti-cheat gate blocks delegation to PyTorch APIs, no-op kernels, timing patches, stream injection, uninitialized buffers; benchmarked remotely on NVIDIA B200 via Modal; no license file in repo."
+    evaluated_on: ["MLSys 2026 FlashInfer AI Kernel Generation Contest - MoE Track"]
+    claim_baseline: "PyTorch reference implementation"
+    ships_kernels: yes
+    budget_disclosed: partial
+
   # ============================== CUDA ==============================
 
   - id: adaexplore
@@ -945,6 +994,70 @@ agents:
     ships_kernels: yes
     budget_disclosed: partial
 
+  - id: egg-kernel
+    name: EGG
+    org: Han & Fan et al.
+    date: "2026-06"
+    route: D
+    status: closed
+    dsl: CUDA
+    hardware: [NVIDIA]
+    paper: https://arxiv.org/abs/2606.26758
+    desc: "Two-stage multi-agent framework: algorithmic-structure design then hardware-specific tuning (tiling/parallel-mapping/memory); 2.13x avg speedup over PyTorch on KernelBench + real-world workloads, beats agent- and RL-based baselines."
+    evaluated_on: [KernelBench, "real-world workloads"]
+    claim_baseline: "PyTorch (KernelBench + real-world workloads)"
+    ships_kernels: unknown
+    budget_disclosed: unknown
+
+  - id: kernelpro
+    name: KernelPro
+    org: Gai & Zhang et al.
+    date: "2026-06"
+    route: D
+    status: closed
+    dsl: CUDA
+    dsl_also: [CUTLASS]
+    hardware: [NVIDIA]
+    paper: https://arxiv.org/abs/2606.26453
+    desc: "Closed-loop multi-agent optimizer: micro-profiling tools (roofline/NCU/SASS/nsys) turned into NL guidance + domain-adapted MCTS with cross-iteration search memory; KernelBench geomean 2.42x/4.69x/5.30x on L1/L2/L3, plus 11.6% measured energy reduction at matched speed."
+    note: "Also reports 1.23x over hand-tuned Triton on VeOmni MoE kernels via a raw CUDA+CuTe Hopper WGMMA kernel."
+    evaluated_on: [KernelBench]
+    claim_baseline: unknown
+    ships_kernels: unknown
+    budget_disclosed: unknown
+
+  - id: davinci-kernel
+    name: daVinci-kernel
+    org: Fu & Liu et al.
+    date: "2026-06"
+    route: C
+    status: closed
+    dsl: CUDA
+    dsl_also: [Triton]
+    hardware: [NVIDIA]
+    paper: https://arxiv.org/abs/2606.16497
+    desc: "Three co-evolving agents (skill-selector/BM25+rerank, multi-turn CUDA/Triton policy, skill-summarizer) sharing one LLM backbone, SFT cold-start + joint multi-turn REINFORCE; 14B model beats Dr. Kernel-14B on KernelBench Fast_1 (L1 37.2%, L2 70.6%, L3 32.2%)."
+    evaluated_on: [KernelBench]
+    claim_baseline: "Dr. Kernel-14B (prior RL-trained SOTA)"
+    ships_kernels: unknown
+    budget_disclosed: unknown
+
+  - id: cuda-opt-agent
+    name: cuda-opt-agent
+    org: KernelFlow-ops
+    date: "2026-05"
+    route: D
+    status: open
+    dsl: CUDA
+    hardware: [NVIDIA]
+    code: https://github.com/KernelFlow-ops/cuda-opt-agent
+    desc: "LangGraph-orchestrated agent for CUDA kernel optimization with an nvcc compile+correctness gate, adaptive 3-phase NCU profiling, and multi-GPU hyperparameter search; no speedup numbers reported."
+    note: "Single LLM agent with distinct LangGraph workflow nodes (bootstrap, profile, analyze, decide, HP-search/apply, evaluate, reflect), not multiple coordinated LLM agents; generated kernels written at runtime and explicitly excluded from commits; no specific GPU models named."
+    evaluated_on: []
+    claim_baseline: "none reported"
+    ships_kernels: no
+    budget_disclosed: unknown
+
   # ============================== CUTLASS ==============================
 
   - id: cutegen
@@ -992,6 +1105,23 @@ agents:
     claim_baseline: "PyTorch eager + SOL ceiling"
     ships_kernels: unknown
     budget_disclosed: yes
+
+  - id: atrex-kernel-agent
+    name: Atrex Kernel Agent (AKA)
+    org: Alibaba
+    date: "2026-06"
+    route: D
+    status: open
+    dsl: CUTLASS
+    dsl_also: [FlyDSL]
+    hardware: [NVIDIA, AMD]
+    code: https://github.com/alibaba/atrex-kernel-agent
+    desc: "Claude Code/Codex Skill (not a trained model) orchestrating a 5-stage baseline->bottleneck-analysis->profile-optimizer->output-contract->partial-restart pipeline; each iteration changes exactly one optimization category, gated by ncu (NVIDIA H20/H100/H200) or rocprofv3+ATT+PMC (AMD MI308X/MI300X) profiler evidence - timer-only evidence explicitly disallowed. Stop condition = 90% of hardware peak (Roofline)."
+    note: "Ships a 983-file 'gpu-wiki' knowledge base requiring exact file/line citation for every hardware spec used. No performance results for its own generated kernels are reported anywhere in the repo; no paper. Likely companion to atrex-bench (cataloged in the sister awesome-kernel-benchmark repo) - same org, same DSL/hardware scope, created 5 days apart - but neither repo cross-references the other explicitly."
+    evaluated_on: []
+    claim_baseline: "none reported"
+    ships_kernels: no
+    budget_disclosed: unknown
 
   # ============================== Ascend C ==============================
 
