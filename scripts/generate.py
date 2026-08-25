@@ -21,6 +21,28 @@ try:
 except ImportError:
     sys.exit("PyYAML is required: pip install pyyaml")
 
+
+class UniqueKeyLoader(yaml.SafeLoader):
+    """Safe YAML loader that rejects silently overwritten mapping keys."""
+
+
+def construct_unique_mapping(loader, node, deep=False):
+    mapping = {}
+    for key_node, value_node in node.value:
+        key = loader.construct_object(key_node, deep=deep)
+        if key in mapping:
+            raise yaml.constructor.ConstructorError(
+                "while constructing a mapping", node.start_mark,
+                f"found duplicate key ({key!r})", key_node.start_mark,
+            )
+        mapping[key] = loader.construct_object(value_node, deep=deep)
+    return mapping
+
+
+UniqueKeyLoader.add_constructor(
+    yaml.resolver.BaseResolver.DEFAULT_MAPPING_TAG, construct_unique_mapping
+)
+
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DATA = os.path.join(ROOT, "data", "agents.yaml")
 JSON_OUT = os.path.join(ROOT, "data", "agents.json")
@@ -57,7 +79,7 @@ REQUIRED = ["id", "name", "org", "date", "route", "status", "dsl",
 # --------------------------------------------------------------------- loading
 def load():
     with open(DATA, encoding="utf-8") as fh:
-        entries = yaml.safe_load(fh)["agents"]
+        entries = yaml.load(fh, Loader=UniqueKeyLoader)["agents"]
     # YAML 1.1 parses bare yes/no as booleans; coerce back to strings.
     for e in entries:
         for f in ("ships_kernels", "budget_disclosed"):
@@ -77,8 +99,8 @@ def validate(entries):
         if e.get("id") in seen:
             errors.append(f"duplicate id: {e['id']}")
         seen.add(e.get("id"))
-        if not (e.get("code") or e.get("paper")):
-            errors.append(f"{tag}: needs at least one of code/paper")
+        if not (e.get("code") or e.get("paper") or e.get("blog")):
+            errors.append(f"{tag}: needs at least one of code/paper/blog")
         if e.get("route") not in ROUTES:
             errors.append(f"{tag}: bad route '{e.get('route')}'")
         if e.get("status") not in STATUS:
@@ -95,7 +117,7 @@ def validate(entries):
 
 # ------------------------------------------------------------------ rendering
 def best_link(e):
-    return e.get("code") or e.get("paper")
+    return e.get("code") or e.get("paper") or e.get("blog")
 
 
 def render_entry(e):
@@ -108,7 +130,7 @@ def render_entry(e):
     extras = []
     if e.get("paper") and e.get("paper") != best_link(e):
         extras.append(f"[Paper]({e['paper']})")
-    if e.get("blog"):
+    if e.get("blog") and e.get("blog") != best_link(e):
         extras.append(f"[Blog]({e['blog']})")
     if extras:
         body += " " + " · ".join(extras)
@@ -155,7 +177,7 @@ def render_stats(entries):
     ships = sum(1 for e in agents if e["ships_kernels"] == "yes")
     out = [
         f"**{len(agents)} agent systems** (+{tools} tooling entries) across **{len(dsls)} DSLs/backends** · "
-        f"last data update **{max(e['date'] for e in entries)}**.",
+        f"latest cataloged project month **{max(e['date'] for e in entries)}**.",
         "",
         "| Route | A single-shot | B iterative | C RL | D multi-agent+profiler | E evolutionary |",
         "|:---|:--:|:--:|:--:|:--:|:--:|",
@@ -230,6 +252,12 @@ def inject(text, key, content):
     return f"{pre}{begin}\n{note}\n\n{content}\n\n{end}{post}"
 
 
+def update_agent_badge(text, entries):
+    """Keep the README title badge consistent with the generated statistics."""
+    count = sum(e["route"] != "tool" for e in entries)
+    return re.sub(r"agent_systems-\d+-blue", f"agent_systems-{count}-blue", text)
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--check", action="store_true")
@@ -254,6 +282,7 @@ def main():
             continue
         with open(readme, encoding="utf-8") as fh:
             txt = fh.read()
+        txt = update_agent_badge(txt, entries)
         for key, fn in SECTIONS.items():
             txt = inject(txt, key, fn(entries))
         with open(readme, "w", encoding="utf-8") as fh:

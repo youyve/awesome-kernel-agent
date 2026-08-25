@@ -30,13 +30,13 @@ Eligible entries are LLM-driven systems that target **operator-level kernel code
 - id: kevin                    # kebab-case, unique, stable
   name: Kevin
   org: Cognition               # use ' x ' for multiple orgs
-  date: "2025-07"              # YYYY-MM, arXiv submission month
+  date: "2025-07"              # YYYY-MM, first public release; paper-only: arXiv v1 month
   route: C                     # A|B|C|D|E (see README Legend) | tool for non-agent tooling
   status: partial              # open|partial|wip|closed|proprietary
   dsl: CUDA                    # primary DSL — decides the README section
   dsl_also: []                 # other DSLs (rendered as `also:` + cross-listing)
   hardware: [NVIDIA]
-  code: https://github.com/...   # >=1 of code/paper required
+  code: https://github.com/...   # >=1 of code/paper/blog required
   paper: https://arxiv.org/abs/2507.11948
   blog: ...                    # optional
   desc: "One line with the key numeric result, reproduced verbatim from the source."
