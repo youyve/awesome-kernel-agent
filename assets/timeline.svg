@@ -1,0 +1,685 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="2740" viewBox="0 0 1200 2740" role="img" aria-labelledby="title desc">
+  <title id="title">Complete Kernel Agent Timeline</title>
+  <desc id="desc">All 112 Agent systems grouped by first-public-release month in chronological order; no selection is used.</desc>
+  <style>
+    text { font-family: system-ui, -apple-system, 'Segoe UI', sans-serif; }
+    .title { fill: #0f172a; font-size: 26px; font-weight: 700; }
+    .subtitle { fill: #475569; font-size: 15px; }
+    .group-title { fill: #0f172a; font-size: 18px; font-weight: 700; }
+    .label { fill: #0f172a; font-size: 15px; font-weight: 650; }
+    .body { fill: #475569; font-size: 14px; }
+    .small { fill: #475569; font-size: 12px; }
+  </style>
+  <rect width="1200" height="2740" rx="14" fill="#f8fafc"/>
+  <text x="36" y="46" class="title">Complete Kernel Agent Timeline</text>
+  <text x="36" y="74" class="subtitle">
+    <tspan x="36" dy="0">All 112 systems, grouped by first-public-release month; months are chronological and names are sorted by name then stable ID.</tspan>
+  </text>
+  <text x="36" y="96" class="small">
+    <tspan x="36" dy="0">Complete index: no milestone, importance, popularity, citation, or representative-system filtering.</tspan>
+  </text>
+  <line x1="118" y1="120" x2="118" y2="2716" stroke="#60a5fa" stroke-width="3"/>
+  <g id="timeline-month-2025-02" data-role="timeline-month">
+    <rect x="142" y="120" width="1022" height="90" rx="10" fill="#ffffff" stroke="#cbd5e1"/>
+    <circle cx="118" cy="142" r="7" fill="#2563eb"/>
+    <text x="104" y="147" text-anchor="end" class="label">2025-02</text>
+    <text x="160" y="147" class="small">2 systems</text>
+    <g id="timeline-ai-cuda-engineer" data-role="timeline-entry">
+      <text x="160" y="171" class="body">
+        <tspan x="160" dy="0">AI CUDA Engineer</tspan>
+      </text>
+    </g>
+    <g id="timeline-qimeng-gemm" data-role="timeline-entry">
+      <text x="494" y="171" class="body">
+        <tspan x="494" dy="0">QiMeng-GEMM</tspan>
+      </text>
+    </g>
+  </g>
+  <g id="timeline-month-2025-05" data-role="timeline-month">
+    <rect x="142" y="222" width="1022" height="90" rx="10" fill="#f1f5f9" stroke="#cbd5e1"/>
+    <circle cx="118" cy="244" r="7" fill="#2563eb"/>
+    <text x="104" y="249" text-anchor="end" class="label">2025-05</text>
+    <text x="160" y="249" class="small">3 systems</text>
+    <g id="timeline-kernelllm" data-role="timeline-entry">
+      <text x="160" y="273" class="body">
+        <tspan x="160" dy="0">KernelLLM</tspan>
+      </text>
+    </g>
+    <g id="timeline-qimeng-tensorop" data-role="timeline-entry">
+      <text x="494" y="273" class="body">
+        <tspan x="494" dy="0">QiMeng-TensorOp</tspan>
+      </text>
+    </g>
+    <g id="timeline-qimeng-xpiler" data-role="timeline-entry">
+      <text x="828" y="273" class="body">
+        <tspan x="828" dy="0">QiMeng-Xpiler</tspan>
+      </text>
+    </g>
+  </g>
+  <g id="timeline-month-2025-06" data-role="timeline-month">
+    <rect x="142" y="324" width="1022" height="90" rx="10" fill="#ffffff" stroke="#cbd5e1"/>
+    <circle cx="118" cy="346" r="7" fill="#2563eb"/>
+    <text x="104" y="351" text-anchor="end" class="label">2025-06</text>
+    <text x="160" y="351" class="small">3 systems</text>
+    <g id="timeline-cuda-llm" data-role="timeline-entry">
+      <text x="160" y="375" class="body">
+        <tspan x="160" dy="0">CUDA-LLM</tspan>
+      </text>
+    </g>
+    <g id="timeline-gpu-kernel-scientist" data-role="timeline-entry">
+      <text x="494" y="375" class="body">
+        <tspan x="494" dy="0">GPU Kernel Scientist</tspan>
+      </text>
+    </g>
+    <g id="timeline-intelliperf" data-role="timeline-entry">
+      <text x="828" y="375" class="body">
+        <tspan x="828" dy="0">IntelliPerf</tspan>
+      </text>
+    </g>
+  </g>
+  <g id="timeline-month-2025-07" data-role="timeline-month">
+    <rect x="142" y="426" width="1022" height="120" rx="10" fill="#f1f5f9" stroke="#cbd5e1"/>
+    <circle cx="118" cy="448" r="7" fill="#2563eb"/>
+    <text x="104" y="453" text-anchor="end" class="label">2025-07</text>
+    <text x="160" y="453" class="small">5 systems</text>
+    <g id="timeline-autotriton" data-role="timeline-entry">
+      <text x="160" y="477" class="body">
+        <tspan x="160" dy="0">AutoTriton</tspan>
+      </text>
+    </g>
+    <g id="timeline-cuda-l1" data-role="timeline-entry">
+      <text x="494" y="477" class="body">
+        <tspan x="494" dy="0">CUDA-L1</tspan>
+      </text>
+    </g>
+    <g id="timeline-geak" data-role="timeline-entry">
+      <text x="828" y="477" class="body">
+        <tspan x="828" dy="0">GEAK</tspan>
+      </text>
+    </g>
+    <g id="timeline-kevin" data-role="timeline-entry">
+      <text x="160" y="507" class="body">
+        <tspan x="160" dy="0">Kevin</tspan>
+      </text>
+    </g>
+    <g id="timeline-qimeng-attention" data-role="timeline-entry">
+      <text x="494" y="507" class="body">
+        <tspan x="494" dy="0">QiMeng-Attention</tspan>
+      </text>
+    </g>
+  </g>
+  <g id="timeline-month-2025-08" data-role="timeline-month">
+    <rect x="142" y="558" width="1022" height="90" rx="10" fill="#ffffff" stroke="#cbd5e1"/>
+    <circle cx="118" cy="580" r="7" fill="#2563eb"/>
+    <text x="104" y="585" text-anchor="end" class="label">2025-08</text>
+    <text x="160" y="585" class="small">1 system</text>
+    <g id="timeline-swizzleperf" data-role="timeline-entry">
+      <text x="160" y="609" class="body">
+        <tspan x="160" dy="0">SwizzlePerf</tspan>
+      </text>
+    </g>
+  </g>
+  <g id="timeline-month-2025-09" data-role="timeline-month">
+    <rect x="142" y="660" width="1022" height="90" rx="10" fill="#f1f5f9" stroke="#cbd5e1"/>
+    <circle cx="118" cy="682" r="7" fill="#2563eb"/>
+    <text x="104" y="687" text-anchor="end" class="label">2025-09</text>
+    <text x="160" y="687" class="small">1 system</text>
+    <g id="timeline-astra" data-role="timeline-entry">
+      <text x="160" y="711" class="body">
+        <tspan x="160" dy="0">Astra</tspan>
+      </text>
+    </g>
+  </g>
+  <g id="timeline-month-2025-10" data-role="timeline-month">
+    <rect x="142" y="762" width="1022" height="120" rx="10" fill="#ffffff" stroke="#cbd5e1"/>
+    <circle cx="118" cy="784" r="7" fill="#2563eb"/>
+    <text x="104" y="789" text-anchor="end" class="label">2025-10</text>
+    <text x="160" y="789" class="small">5 systems</text>
+    <g id="timeline-concur" data-role="timeline-entry">
+      <text x="160" y="813" class="body">
+        <tspan x="160" dy="0">ConCuR</tspan>
+      </text>
+    </g>
+    <g id="timeline-evoengineer" data-role="timeline-entry">
+      <text x="494" y="813" class="body">
+        <tspan x="494" dy="0">EvoEngineer</tspan>
+      </text>
+    </g>
+    <g id="timeline-kernelgen-flagos" data-role="timeline-entry">
+      <text x="828" y="813" class="body">
+        <tspan x="828" dy="0">KernelGen (Flagos)</tspan>
+      </text>
+    </g>
+    <g id="timeline-stark" data-role="timeline-entry">
+      <text x="160" y="843" class="body">
+        <tspan x="160" dy="0">STARK</tspan>
+      </text>
+    </g>
+    <g id="timeline-tritonrl" data-role="timeline-entry">
+      <text x="494" y="843" class="body">
+        <tspan x="494" dy="0">TritonRL</tspan>
+      </text>
+    </g>
+  </g>
+  <g id="timeline-month-2025-11" data-role="timeline-month">
+    <rect x="142" y="894" width="1022" height="150" rx="10" fill="#f1f5f9" stroke="#cbd5e1"/>
+    <circle cx="118" cy="916" r="7" fill="#2563eb"/>
+    <text x="104" y="921" text-anchor="end" class="label">2025-11</text>
+    <text x="160" y="921" class="small">7 systems</text>
+    <g id="timeline-accelopt" data-role="timeline-entry">
+      <text x="160" y="945" class="body">
+        <tspan x="160" dy="0">AccelOpt</tspan>
+      </text>
+    </g>
+    <g id="timeline-cudaforge" data-role="timeline-entry">
+      <text x="494" y="945" class="body">
+        <tspan x="494" dy="0">CudaForge</tspan>
+      </text>
+    </g>
+    <g id="timeline-kernelband" data-role="timeline-entry">
+      <text x="828" y="945" class="body">
+        <tspan x="828" dy="0">KernelBand</tspan>
+      </text>
+    </g>
+    <g id="timeline-kernelfalcon" data-role="timeline-entry">
+      <text x="160" y="975" class="body">
+        <tspan x="160" dy="0">KernelFalcon</tspan>
+      </text>
+    </g>
+    <g id="timeline-kforge" data-role="timeline-entry">
+      <text x="494" y="975" class="body">
+        <tspan x="494" dy="0">KForge</tspan>
+      </text>
+    </g>
+    <g id="timeline-pragma" data-role="timeline-entry">
+      <text x="828" y="975" class="body">
+        <tspan x="828" dy="0">PRAGMA</tspan>
+      </text>
+    </g>
+    <g id="timeline-qimeng-kernel" data-role="timeline-entry">
+      <text x="160" y="1005" class="body">
+        <tspan x="160" dy="0">QiMeng-Kernel</tspan>
+      </text>
+    </g>
+  </g>
+  <g id="timeline-month-2025-12" data-role="timeline-month">
+    <rect x="142" y="1056" width="1022" height="150" rx="10" fill="#ffffff" stroke="#cbd5e1"/>
+    <circle cx="118" cy="1078" r="7" fill="#2563eb"/>
+    <text x="104" y="1083" text-anchor="end" class="label">2025-12</text>
+    <text x="160" y="1083" class="small">7 systems</text>
+    <g id="timeline-akg-agent" data-role="timeline-entry">
+      <text x="160" y="1107" class="body">
+        <tspan x="160" dy="0">AKG-AGENT</tspan>
+      </text>
+    </g>
+    <g id="timeline-cuda-l2" data-role="timeline-entry">
+      <text x="494" y="1107" class="body">
+        <tspan x="494" dy="0">CUDA-L2</tspan>
+      </text>
+    </g>
+    <g id="timeline-cupilot" data-role="timeline-entry">
+      <text x="828" y="1107" class="body">
+        <tspan x="828" dy="0">cuPilot</tspan>
+      </text>
+    </g>
+    <g id="timeline-kernelevolve" data-role="timeline-entry">
+      <text x="160" y="1137" class="body">
+        <tspan x="160" dy="0">KernelEvolve</tspan>
+      </text>
+    </g>
+    <g id="timeline-peak" data-role="timeline-entry">
+      <text x="494" y="1137" class="body">
+        <tspan x="494" dy="0">PEAK</tspan>
+      </text>
+    </g>
+    <g id="timeline-tritonforge" data-role="timeline-entry">
+      <text x="828" y="1137" class="body">
+        <tspan x="828" dy="0">TritonForge</tspan>
+      </text>
+    </g>
+    <g id="timeline-tritorx" data-role="timeline-entry">
+      <text x="160" y="1167" class="body">
+        <tspan x="160" dy="0">TritorX</tspan>
+      </text>
+    </g>
+  </g>
+  <g id="timeline-month-2026-01" data-role="timeline-month">
+    <rect x="142" y="1218" width="1022" height="150" rx="10" fill="#f1f5f9" stroke="#cbd5e1"/>
+    <circle cx="118" cy="1240" r="7" fill="#2563eb"/>
+    <text x="104" y="1245" text-anchor="end" class="label">2026-01</text>
+    <text x="160" y="1245" class="small">7 systems</text>
+    <g id="timeline-ascendcraft" data-role="timeline-entry">
+      <text x="160" y="1269" class="body">
+        <tspan x="160" dy="0">AscendCraft</tspan>
+      </text>
+    </g>
+    <g id="timeline-ascendkernelgen" data-role="timeline-entry">
+      <text x="494" y="1269" class="body">
+        <tspan x="494" dy="0">AscendKernelGen</tspan>
+      </text>
+    </g>
+    <g id="timeline-cudanalyst" data-role="timeline-entry">
+      <text x="828" y="1269" class="body">
+        <tspan x="828" dy="0">CUDAnalyst</tspan>
+      </text>
+    </g>
+    <g id="timeline-geak-hip" data-role="timeline-entry">
+      <text x="160" y="1299" class="body">
+        <tspan x="160" dy="0">GEAK-HIP</tspan>
+      </text>
+    </g>
+    <g id="timeline-geak-triton-v2" data-role="timeline-entry">
+      <text x="494" y="1299" class="body">
+        <tspan x="494" dy="0">GEAK-Triton v2</tspan>
+      </text>
+    </g>
+    <g id="timeline-tt-lang-claude-skills" data-role="timeline-entry">
+      <text x="828" y="1299" class="body">
+        <tspan x="828" dy="0">TT-Lang + Claude Skills</tspan>
+      </text>
+    </g>
+    <g id="timeline-xe-forge" data-role="timeline-entry">
+      <text x="160" y="1329" class="body">
+        <tspan x="160" dy="0">Xe-Forge</tspan>
+      </text>
+    </g>
+  </g>
+  <g id="timeline-month-2026-02" data-role="timeline-month">
+    <rect x="142" y="1380" width="1022" height="150" rx="10" fill="#ffffff" stroke="#cbd5e1"/>
+    <circle cx="118" cy="1402" r="7" fill="#2563eb"/>
+    <text x="104" y="1407" text-anchor="end" class="label">2026-02</text>
+    <text x="160" y="1407" class="small">7 systems</text>
+    <g id="timeline-amd-apex" data-role="timeline-entry">
+      <text x="160" y="1431" class="body">
+        <tspan x="160" dy="0">Apex</tspan>
+      </text>
+    </g>
+    <g id="timeline-cuda-agent" data-role="timeline-entry">
+      <text x="494" y="1431" class="body">
+        <tspan x="494" dy="0">CUDA Agent</tspan>
+      </text>
+    </g>
+    <g id="timeline-dice" data-role="timeline-entry">
+      <text x="828" y="1431" class="body">
+        <tspan x="828" dy="0">DICE</tspan>
+      </text>
+    </g>
+    <g id="timeline-dr-kernel" data-role="timeline-entry">
+      <text x="160" y="1461" class="body">
+        <tspan x="160" dy="0">Dr. Kernel</tspan>
+      </text>
+    </g>
+    <g id="timeline-k-search" data-role="timeline-entry">
+      <text x="494" y="1461" class="body">
+        <tspan x="494" dy="0">K-Search</tspan>
+      </text>
+    </g>
+    <g id="timeline-kernelblaster" data-role="timeline-entry">
+      <text x="828" y="1461" class="body">
+        <tspan x="828" dy="0">KernelBlaster</tspan>
+      </text>
+    </g>
+    <g id="timeline-optiml" data-role="timeline-entry">
+      <text x="160" y="1491" class="body">
+        <tspan x="160" dy="0">OptiML</tspan>
+      </text>
+    </g>
+  </g>
+  <g id="timeline-month-2026-03" data-role="timeline-month">
+    <rect x="142" y="1542" width="1022" height="240" rx="10" fill="#f1f5f9" stroke="#cbd5e1"/>
+    <circle cx="118" cy="1564" r="7" fill="#2563eb"/>
+    <text x="104" y="1569" text-anchor="end" class="label">2026-03</text>
+    <text x="160" y="1569" class="small">17 systems</text>
+    <g id="timeline-ako" data-role="timeline-entry">
+      <text x="160" y="1593" class="body">
+        <tspan x="160" dy="0">AKO / AKO4ALL</tspan>
+      </text>
+    </g>
+    <g id="timeline-ascendoptimizer" data-role="timeline-entry">
+      <text x="494" y="1593" class="body">
+        <tspan x="494" dy="0">AscendOptimizer</tspan>
+      </text>
+    </g>
+    <g id="timeline-autokernel" data-role="timeline-entry">
+      <text x="828" y="1593" class="body">
+        <tspan x="828" dy="0">AutoKernel</tspan>
+      </text>
+    </g>
+    <g id="timeline-avo" data-role="timeline-entry">
+      <text x="160" y="1623" class="body">
+        <tspan x="160" dy="0">AVO</tspan>
+      </text>
+    </g>
+    <g id="timeline-cannbot-skills" data-role="timeline-entry">
+      <text x="494" y="1623" class="body">
+        <tspan x="494" dy="0">CANNBot Skills</tspan>
+      </text>
+    </g>
+    <g id="timeline-cuco" data-role="timeline-entry">
+      <text x="828" y="1623" class="body">
+        <tspan x="828" dy="0">CUCo</tspan>
+      </text>
+    </g>
+    <g id="timeline-cudamaster" data-role="timeline-entry">
+      <text x="160" y="1653" class="body">
+        <tspan x="160" dy="0">CUDAMaster</tspan>
+      </text>
+    </g>
+    <g id="timeline-drtriton" data-role="timeline-entry">
+      <text x="494" y="1653" class="body">
+        <tspan x="494" dy="0">DRTriton</tspan>
+      </text>
+    </g>
+    <g id="timeline-evokernel" data-role="timeline-entry">
+      <text x="828" y="1653" class="body">
+        <tspan x="828" dy="0">EvoKernel</tspan>
+      </text>
+    </g>
+    <g id="timeline-incoder-32b" data-role="timeline-entry">
+      <text x="160" y="1683" class="body">
+        <tspan x="160" dy="0">InCoder-32B</tspan>
+      </text>
+    </g>
+    <g id="timeline-kernel-smith" data-role="timeline-entry">
+      <text x="494" y="1683" class="body">
+        <tspan x="494" dy="0">Kernel-Smith</tspan>
+      </text>
+    </g>
+    <g id="timeline-kernelfoundry" data-role="timeline-entry">
+      <text x="828" y="1683" class="body">
+        <tspan x="828" dy="0">KernelFoundry</tspan>
+      </text>
+    </g>
+    <g id="timeline-kernelskill" data-role="timeline-entry">
+      <text x="160" y="1713" class="body">
+        <tspan x="160" dy="0">KernelSkill</tspan>
+      </text>
+    </g>
+    <g id="timeline-mucutlass-sol" data-role="timeline-entry">
+      <text x="494" y="1713" class="body">
+        <tspan x="494" dy="0">muCUTLASS + Speed-of-Light Guidance</tspan>
+      </text>
+    </g>
+    <g id="timeline-pytorch-kernelagent" data-role="timeline-entry">
+      <text x="828" y="1713" class="body">
+        <tspan x="828" dy="0">PyTorch KernelAgent</tspan>
+      </text>
+    </g>
+    <g id="timeline-standard-kernel" data-role="timeline-entry">
+      <text x="160" y="1743" class="body">
+        <tspan x="160" dy="0">Standard Kernel</tspan>
+      </text>
+    </g>
+    <g id="timeline-stitchcuda" data-role="timeline-entry">
+      <text x="494" y="1743" class="body">
+        <tspan x="494" dy="0">StitchCUDA</tspan>
+      </text>
+    </g>
+  </g>
+  <g id="timeline-month-2026-04" data-role="timeline-month">
+    <rect x="142" y="1794" width="1022" height="150" rx="10" fill="#ffffff" stroke="#cbd5e1"/>
+    <circle cx="118" cy="1816" r="7" fill="#2563eb"/>
+    <text x="104" y="1821" text-anchor="end" class="label">2026-04</text>
+    <text x="160" y="1821" class="small">7 systems</text>
+    <g id="timeline-adaexplore" data-role="timeline-entry">
+      <text x="160" y="1845" class="body">
+        <tspan x="160" dy="0">AdaExplore</tspan>
+      </text>
+    </g>
+    <g id="timeline-argus" data-role="timeline-entry">
+      <text x="494" y="1845" class="body">
+        <tspan x="494" dy="0">ARGUS</tspan>
+      </text>
+    </g>
+    <g id="timeline-cursor-nvidia-multi-agent-kernels" data-role="timeline-entry">
+      <text x="828" y="1845" class="body">
+        <tspan x="828" dy="0">Cursor Multi-Agent Kernel Optimization</tspan>
+      </text>
+    </g>
+    <g id="timeline-cutegen" data-role="timeline-entry">
+      <text x="160" y="1875" class="body">
+        <tspan x="160" dy="0">CuTeGen</tspan>
+      </text>
+    </g>
+    <g id="timeline-fact" data-role="timeline-entry">
+      <text x="494" y="1875" class="body">
+        <tspan x="494" dy="0">FACT</tspan>
+      </text>
+    </g>
+    <g id="timeline-neuron-agentic-development" data-role="timeline-entry">
+      <text x="828" y="1875" class="body">
+        <tspan x="828" dy="0">Neuron Agentic Development</tspan>
+      </text>
+    </g>
+    <g id="timeline-tilegym" data-role="timeline-entry">
+      <text x="160" y="1905" class="body">
+        <tspan x="160" dy="0">TileGym</tspan>
+      </text>
+    </g>
+  </g>
+  <g id="timeline-month-2026-05" data-role="timeline-month">
+    <rect x="142" y="1956" width="1022" height="198" rx="10" fill="#f1f5f9" stroke="#cbd5e1"/>
+    <circle cx="118" cy="1978" r="7" fill="#2563eb"/>
+    <text x="104" y="1983" text-anchor="end" class="label">2026-05</text>
+    <text x="160" y="1983" class="small">11 systems</text>
+    <g id="timeline-ako4x" data-role="timeline-entry">
+      <text x="160" y="2007" class="body">
+        <tspan x="160" dy="0">AKO4X</tspan>
+      </text>
+    </g>
+    <g id="timeline-alphaevolve-fhe" data-role="timeline-entry">
+      <text x="494" y="2007" class="body">
+        <tspan x="494" dy="0">AlphaEvolve for FHE on TPUs</tspan>
+      </text>
+    </g>
+    <g id="timeline-auto-gpu-kernel" data-role="timeline-entry">
+      <text x="828" y="2007" class="body">
+        <tspan x="828" dy="0">auto-gpu-kernel</tspan>
+      </text>
+    </g>
+    <g id="timeline-cubridge" data-role="timeline-entry">
+      <text x="160" y="2037" class="body">
+        <tspan x="160" dy="0">CuBridge</tspan>
+      </text>
+    </g>
+    <g id="timeline-cuda-opt-agent" data-role="timeline-entry">
+      <text x="494" y="2037" class="body">
+        <tspan x="494" dy="0">cuda-opt-agent</tspan>
+      </text>
+    </g>
+    <g id="timeline-houmao-agentic-kernel-optimization" data-role="timeline-entry">
+      <text x="828" y="2037" class="body">
+        <tspan x="828" dy="0">Houmao Agentic Kernel Optimization</tspan>
+      </text>
+    </g>
+    <g id="timeline-kernelpilot" data-role="timeline-entry">
+      <text x="160" y="2067" class="body">
+        <tspan x="160" dy="0">KDA-Pilot</tspan>
+      </text>
+    </g>
+    <g id="timeline-kernel-design-agents" data-role="timeline-entry">
+      <text x="494" y="2067" class="body">
+        <tspan x="494" dy="0">Kernel Design Agents (KDA)</tspan>
+      </text>
+    </g>
+    <g id="timeline-kernelbrain" data-role="timeline-entry">
+      <text x="828" y="2067" class="body">
+        <tspan x="828" dy="0">KernelBrain</tspan>
+      </text>
+    </g>
+    <g id="timeline-moe-kernel-agent" data-role="timeline-entry">
+      <text x="160" y="2097" class="body">
+        <tspan x="160" dy="0">MoE-Kernel-Agent</tspan>
+      </text>
+    </g>
+    <g id="timeline-qwen3.7-max-kernel-opt" data-role="timeline-entry">
+      <text x="494" y="2097" class="body">
+        <tspan x="494" dy="0">Qwen3.7-Max Autonomous Kernel</tspan>
+        <tspan x="494" dy="18">Optimization</tspan>
+      </text>
+    </g>
+  </g>
+  <g id="timeline-month-2026-06" data-role="timeline-month">
+    <rect x="142" y="2166" width="1022" height="180" rx="10" fill="#ffffff" stroke="#cbd5e1"/>
+    <circle cx="118" cy="2188" r="7" fill="#2563eb"/>
+    <text x="104" y="2193" text-anchor="end" class="label">2026-06</text>
+    <text x="160" y="2193" class="small">10 systems</text>
+    <g id="timeline-agentcompile" data-role="timeline-entry">
+      <text x="160" y="2217" class="body">
+        <tspan x="160" dy="0">AgentCompile</tspan>
+      </text>
+    </g>
+    <g id="timeline-atrex-kernel-agent" data-role="timeline-entry">
+      <text x="494" y="2217" class="body">
+        <tspan x="494" dy="0">Atrex Kernel Agent (AKA)</tspan>
+      </text>
+    </g>
+    <g id="timeline-automegakernel" data-role="timeline-entry">
+      <text x="828" y="2217" class="body">
+        <tspan x="828" dy="0">AutoMegaKernel</tspan>
+      </text>
+    </g>
+    <g id="timeline-davinci-kernel" data-role="timeline-entry">
+      <text x="160" y="2247" class="body">
+        <tspan x="160" dy="0">daVinci-kernel</tspan>
+      </text>
+    </g>
+    <g id="timeline-egg-kernel" data-role="timeline-entry">
+      <text x="494" y="2247" class="body">
+        <tspan x="494" dy="0">EGG</tspan>
+      </text>
+    </g>
+    <g id="timeline-kernel-forge" data-role="timeline-entry">
+      <text x="828" y="2247" class="body">
+        <tspan x="828" dy="0">Kernel Forge</tspan>
+      </text>
+    </g>
+    <g id="timeline-kernelpro" data-role="timeline-entry">
+      <text x="160" y="2277" class="body">
+        <tspan x="160" dy="0">KernelPro</tspan>
+      </text>
+    </g>
+    <g id="timeline-moziflux" data-role="timeline-entry">
+      <text x="494" y="2277" class="body">
+        <tspan x="494" dy="0">MoziFlux</tspan>
+      </text>
+    </g>
+    <g id="timeline-musacoder" data-role="timeline-entry">
+      <text x="828" y="2277" class="body">
+        <tspan x="828" dy="0">MusaCoder</tspan>
+      </text>
+    </g>
+    <g id="timeline-specgen" data-role="timeline-entry">
+      <text x="160" y="2307" class="body">
+        <tspan x="160" dy="0">SpecGen</tspan>
+      </text>
+    </g>
+  </g>
+  <g id="timeline-month-2026-07" data-role="timeline-month">
+    <rect x="142" y="2358" width="1022" height="150" rx="10" fill="#f1f5f9" stroke="#cbd5e1"/>
+    <circle cx="118" cy="2380" r="7" fill="#2563eb"/>
+    <text x="104" y="2385" text-anchor="end" class="label">2026-07</text>
+    <text x="160" y="2385" class="small">7 systems</text>
+    <g id="timeline-agenticcann" data-role="timeline-entry">
+      <text x="160" y="2409" class="body">
+        <tspan x="160" dy="0">AgenticCANN</tspan>
+      </text>
+    </g>
+    <g id="timeline-compiler-grounded-hierarchical-diagnosis" data-role="timeline-entry">
+      <text x="494" y="2409" class="body">
+        <tspan x="494" dy="0">Compiler-Grounded Hierarchical Diagnosis</tspan>
+      </text>
+    </g>
+    <g id="timeline-cudaperf" data-role="timeline-entry">
+      <text x="828" y="2409" class="body">
+        <tspan x="828" dy="0">CUDAPerf</tspan>
+      </text>
+    </g>
+    <g id="timeline-geak-v4" data-role="timeline-entry">
+      <text x="160" y="2439" class="body">
+        <tspan x="160" dy="0">GEAK v4</tspan>
+      </text>
+    </g>
+    <g id="timeline-hawk-npu" data-role="timeline-entry">
+      <text x="494" y="2439" class="body">
+        <tspan x="494" dy="0">Hawk</tspan>
+      </text>
+    </g>
+    <g id="timeline-llm-cuda-harness-engineering" data-role="timeline-entry">
+      <text x="828" y="2439" class="body">
+        <tspan x="828" dy="0">LLM-CUDA / Harness Engineering</tspan>
+      </text>
+    </g>
+    <g id="timeline-atx-custom-nki-agent" data-role="timeline-entry">
+      <text x="160" y="2469" class="body">
+        <tspan x="160" dy="0">NKI-Agent / ATX Custom NKI Agent</tspan>
+      </text>
+    </g>
+  </g>
+  <g id="timeline-month-2026-08" data-role="timeline-month">
+    <rect x="142" y="2520" width="1022" height="180" rx="10" fill="#ffffff" stroke="#cbd5e1"/>
+    <circle cx="118" cy="2542" r="7" fill="#2563eb"/>
+    <text x="104" y="2547" text-anchor="end" class="label">2026-08</text>
+    <text x="160" y="2547" class="small">12 systems</text>
+    <g id="timeline-ascend-debug-agent" data-role="timeline-entry">
+      <text x="160" y="2571" class="body">
+        <tspan x="160" dy="0">Ascend Debug Agent</tspan>
+      </text>
+    </g>
+    <g id="timeline-asmevo" data-role="timeline-entry">
+      <text x="494" y="2571" class="body">
+        <tspan x="494" dy="0">AsmEvo</tspan>
+      </text>
+    </g>
+    <g id="timeline-cake" data-role="timeline-entry">
+      <text x="828" y="2571" class="body">
+        <tspan x="828" dy="0">CAKE</tspan>
+      </text>
+    </g>
+    <g id="timeline-evomem" data-role="timeline-entry">
+      <text x="160" y="2601" class="body">
+        <tspan x="160" dy="0">EvoMem</tspan>
+      </text>
+    </g>
+    <g id="timeline-forgestencil" data-role="timeline-entry">
+      <text x="494" y="2601" class="body">
+        <tspan x="494" dy="0">ForgeStencil</tspan>
+      </text>
+    </g>
+    <g id="timeline-hiera" data-role="timeline-entry">
+      <text x="828" y="2601" class="body">
+        <tspan x="828" dy="0">HIERA</tspan>
+      </text>
+    </g>
+    <g id="timeline-kernelarc" data-role="timeline-entry">
+      <text x="160" y="2631" class="body">
+        <tspan x="160" dy="0">KernelArc</tspan>
+      </text>
+    </g>
+    <g id="timeline-leap-kernel-rl" data-role="timeline-entry">
+      <text x="494" y="2631" class="body">
+        <tspan x="494" dy="0">LEAP</tspan>
+      </text>
+    </g>
+    <g id="timeline-llm4llm" data-role="timeline-entry">
+      <text x="828" y="2631" class="body">
+        <tspan x="828" dy="0">LLM4LLM</tspan>
+      </text>
+    </g>
+    <g id="timeline-ptxbench-miniptxagent" data-role="timeline-entry">
+      <text x="160" y="2661" class="body">
+        <tspan x="160" dy="0">PTXBench / MiniPTXAgent</tspan>
+      </text>
+    </g>
+    <g id="timeline-sparse-ditto" data-role="timeline-entry">
+      <text x="494" y="2661" class="body">
+        <tspan x="494" dy="0">SparseDitto</tspan>
+      </text>
+    </g>
+    <g id="timeline-zomboss" data-role="timeline-entry">
+      <text x="828" y="2661" class="body">
+        <tspan x="828" dy="0">Zomboss</tspan>
+      </text>
+    </g>
+  </g>
+</svg>

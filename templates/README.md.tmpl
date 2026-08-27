@@ -1,0 +1,120 @@
+# Awesome Kernel Agent [![Awesome](https://awesome.re/badge.svg)](https://awesome.re) [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](CONTRIBUTING.md) [![Last Commit](https://img.shields.io/github/last-commit/youyve/awesome-kernel-agent)](https://github.com/youyve/awesome-kernel-agent/commits/main)
+
+> A high-density, evidence-driven research index of LLM systems that generate and optimize accelerator kernels.
+
+[中文](README.zh.md) · [Benchmarks](BENCHMARKS.md) · [Data](data/agents.json) · [Contributing](CONTRIBUTING.md)
+
+{{STATS}}
+
+## Research Landscape
+
+**Research Landscape question:** Which distinct questions define the catalog's Kernel Agent data model, and what semantic role does each question play?
+
+[![Functional ontology of the Kernel Agent catalog; no timeline, ranking, or representative-system selection](assets/landscape.svg)](assets/landscape.svg)
+_The Landscape is a containment-only ontology generated from [explicit facet definitions](reports/landscape.md); it encodes no chronology, causality, maturity, or system selection._
+
+## Latest
+
+{{LATEST}}
+
+## How to Read the Catalog
+
+- **Profile:** a deterministic, presentation-only summary of evidenced taxonomy. The second line lists concrete representations; full facets remain in the yearly catalog. `—` means unannotated, not absent.
+- **Baseline tiers:** T0 Reference/framework · T1 General compiler-generated · T2 Optimized generic/vendor library · T3 Specialized expert implementation · T4 Production incumbent · T5 Externally verified best-known implementation · T6 Hardware ceiling. Tiers classify provenance, specialization, and deployment status—not guaranteed runtime ordering. **10× @ T0 may be less meaningful than 1.1× @ T4.** `Unknown` is an unresolved implementation tier; `N/A` means this tier model does not apply.
+- **Evidence:** `K` is availability of the displayed claim's exact winning artifact; `B` is disclosure of its optimization/search budget. ✓ yes · ◐ partial · — no/not applicable · ? unknown.
+
+## Agent Catalog
+
+Each row is generated from the v2 taxonomy and one explicitly selected primary claim. Full taxonomy, all claims, denominators, artifacts, budgets, caveats, and sources remain in the linked yearly catalog.
+
+{{AGENT_CATALOG}}
+
+## Field Map
+
+**Question:** Along which major dimensions can Kernel Agent systems be understood and compared, and where does the catalog contain positive evidence?
+
+[![Nine-dimension presentation projection of Kernel Agent evidence coverage](assets/field-map.svg)](assets/field-map.svg)
+_This is a data-derived reading projection, not the detailed schema and not an exclusive Route. Its nine groups partition every facet family exactly once; generation mode/search strategy, signal/source, workload/integration scope, artifact level/focus, and representation remain distinct in the [complete reverse index and coverage audit](reports/field-map.md). Empty means unannotated—not absent._
+
+## Baseline Distribution
+
+Every numerical comparison keeps its own denominator. The chart separates T0–T6 implementation baselines, unresolved implementation tiers (`Unknown`), and comparisons where implementation tiers do not apply (`N/A`); see the [complete distribution table](reports/baseline-distribution.md).
+
+![Distribution of claim baseline tiers T0 through T6, Unknown, and N/A](assets/baseline-distribution.svg)
+_Baseline tier is claim-specific. A larger tier number does not assert a universally faster baseline._
+
+## Timeline
+
+[![Complete chronological Timeline containing every cataloged Kernel Agent system](assets/timeline.svg)](assets/timeline.svg)
+_The SVG and [complete linked Timeline](reports/timeline.md) both contain all Agent systems; no milestone or representative-system selection is used._
+
+## Benchmarks
+
+The full benchmark catalog lives in [awesome-kernel-benchmark](https://github.com/youyve/awesome-kernel-benchmark), with 151 benchmark records, two evidence layers, and a methodology scorecard. The local [benchmark pointer](BENCHMARKS.md) preserves the integration boundary between systems and evaluation substrates.
+
+### Evaluation integrity and reward hacking
+
+- [robust-kbench](https://github.com/SakanaAI/robust-kbench) — hardened KernelBench after AI CUDA Engineer exploits; [paper](https://arxiv.org/abs/2509.14279)
+- [METR Kernel Reward-Hacking Challenge](https://github.com/METR/RE-Bench/tree/main/ai_rd_triton_cumsum) — an evaluation task where reward hacking is explicitly audited
+- [TRACE](https://arxiv.org/abs/2601.20103) — 54 exploit categories and 517 verified trajectories
+- [RewardHackingAgents](https://arxiv.org/abs/2603.11337) — evaluator tampering as a first-class outcome
+- [Standard Kernel Rubric](https://standardkernel.com/blog/standard-kernel-rubric/) — complexity, representation, hardware, performance, and automation rubric
+- [Contract-Grade Verifier](https://arxiv.org/abs/2608.12700) — adversarial contract audit of 2,638 previously accepted generated kernels
+
+### Competitions and leaderboards
+
+- [MLSys'26 FlashInfer Kernel-Gen Contest](https://mlsys26.flashinfer.ai/) — B200 fused MoE, sparse attention, and gated delta-net tracks
+- [GPU MODE × AMD E2E Model Speedrun](https://www.amd.com/en/developer/resources/technical-articles/2026/new-gpumode-virtual-hackathon--e2e-model-speedrun.html) — MI355X end-to-end model optimization
+- [GPU MODE reference kernels](https://github.com/gpu-mode/reference-kernels) — NVIDIA and AMD kernel leaderboards, including distributed kernels
+- [AWS Trainium MoE Challenge](https://github.com/aws-neuron/nki-moe) — Qwen3 MoE on Trainium
+- [KernelArena](https://www.kernelarena.ai/) — open accelerator-kernel evaluation and leaderboard
+
+## Datasets
+
+| Dataset | Content | Availability |
+| --- | --- | --- |
+| [AI CUDA Archive](https://huggingface.co/datasets/SakanaAI/AI-CUDA-Engineer-Archive) | CUDA, profiles, and verification records | Public dataset |
+| [KernelBook](https://huggingface.co/datasets/GPUMODE/KernelBook) | PyTorch ↔ Triton pairs | Public dataset |
+| [AutoTriton 14K](https://github.com/AI9Stars/AutoTriton) | Verified PyTorch-to-Triton examples | Public repository |
+| [CUDA-Agent-Ops-6K](https://huggingface.co/datasets/BytedTsinghua-SIA/CUDA-Agent-Ops-6K) | Composite PyTorch operators | Public dataset |
+| [kernelbot-data](https://huggingface.co/datasets/GPUMODE/kernelbot-data) | Competition submissions by hardware target | Public dataset |
+| [Ascend-CoT](https://huggingface.co/datasets/AscendKernelGen/Ascend-COT-v1) | Ascend C reasoning chains | Public dataset |
+| [HPC-Instruct](https://huggingface.co/datasets/hpcgroup/hpc-instruct) | HPC and parallel-programming instructions | Public dataset |
+
+## Representations and infrastructure
+
+**Representations:** [CUDA C/C++](https://docs.nvidia.com/cuda/cuda-c-programming-guide/) · [Triton](https://github.com/triton-lang/triton) · [CUTLASS / CuTe DSL](https://github.com/NVIDIA/cutlass) · [HIP / ROCm](https://rocm.docs.amd.com/) · [TileLang](https://github.com/tile-ai/tilelang) · [Pallas](https://docs.jax.dev/en/latest/pallas/index.html) · [cuTile Python](https://docs.nvidia.com/cuda/cutile-python/) · [Ascend C](https://www.hiascend.com/document/) · [NKI](https://awsdocs-neuron.readthedocs-hosted.com/en/latest/general/nki/index.html) · [TT-Lang](https://github.com/tenstorrent/tt-lang).
+
+**Agent and execution infrastructure:** [KernelGYM](https://github.com/hkust-nlp/KernelGYM) · [GPU Forecasters](https://github.com/codezakh/gpu-forecasters) · [NVIDIA CompileIQ](https://developer.nvidia.com/cuda/compileiq) · [Nsight Compute](https://docs.nvidia.com/nsight-compute/) · [Proton](https://github.com/triton-lang/triton/tree/main/third_party/proton) · [rocprof](https://rocm.docs.amd.com/projects/rocprofiler/en/latest/) · [msprof](https://www.hiascend.com/document/).
+
+**Reference and production kernel libraries:** [FlashAttention](https://github.com/Dao-AILab/flash-attention) · [FlashInfer](https://github.com/flashinfer-ai/flashinfer) · [DeepGEMM](https://github.com/deepseek-ai/DeepGEMM) · [TileKernels](https://github.com/deepseek-ai/TileKernels) · [Liger-Kernel](https://github.com/linkedin/Liger-Kernel) · [FlagGems](https://github.com/FlagOpen/FlagGems) · [AITER](https://github.com/ROCm/aiter).
+
+## Research sources
+
+- [Towards Automated Kernel Generation in the Era of LLMs](https://arxiv.org/abs/2601.15727) — broad survey and research index
+- [awesome-LLM-driven-kernel-generation](https://github.com/flagos-ai/awesome-LLM-driven-kernel-generation) and [Awesome-LLM4Kernel](https://github.com/kcxain/Awesome-LLM4Kernel) — companion indexes
+- [2026-08-25 primary-source audit](sources/research_20260825_kernel_agents.md) — search protocol, inclusion decisions, corrections, and exclusions for the latest refresh
+- [v2 migration review](reports/migration-review.md) — facts intentionally left unresolved instead of inferred
+
+## Contributing
+
+Edit [`data/agents.yaml`](data/agents.yaml), validate it, and regenerate every derived artifact. Claims require one explicit denominator and primary source; `unknown` is always preferable to inference. See [CONTRIBUTING.md](CONTRIBUTING.md) for the v2 schema and review checklist.
+
+## Citation
+
+```bibtex
+@misc{you2026awesomekernelagent,
+  author       = {Lianzhong You},
+  title        = {Awesome Kernel Agent: An Evidence-Driven Research Index of
+                  LLM Systems for Accelerator Kernel Generation},
+  year         = {2026},
+  publisher    = {GitHub},
+  url          = {https://github.com/youyve/awesome-kernel-agent}
+}
+```
+
+## License
+
+Catalog content: [CC-BY-4.0](LICENSE) · generator code: [MIT](scripts/LICENSE).
+
+**Research cutoff:** {{RESEARCH_CUTOFF}} · Maintained by [Lianzhong You](mailto:youyve@foxmail.com), HKUST (GZ)

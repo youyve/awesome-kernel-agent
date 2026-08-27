@@ -1,0 +1,499 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/youyve/awesome-kernel-agent/schema/agents.schema.json",
+  "title": "Awesome Kernel Agent catalog v2",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "research_cutoff",
+    "agents"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": 2
+    },
+    "research_cutoff": {
+      "$ref": "#/$defs/fullDate"
+    },
+    "agents": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/$defs/entry"
+      }
+    }
+  },
+  "$defs": {
+    "fullDate": {
+      "type": "string",
+      "pattern": "^[0-9]{4}-(0[1-9]|1[0-2])-([0-2][0-9]|3[01])$"
+    },
+    "month": {
+      "type": "string",
+      "pattern": "^[0-9]{4}-(0[1-9]|1[0-2])$"
+    },
+    "httpsUrl": {
+      "type": "string",
+      "pattern": "^https://\\S+$"
+    },
+    "nonEmptyString": {
+      "type": "string",
+      "minLength": 1
+    },
+    "stringArray": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/nonEmptyString"
+      },
+      "uniqueItems": true
+    },
+    "entry": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "name",
+        "organization",
+        "date",
+        "entry_type",
+        "status",
+        "summary",
+        "caveats",
+        "taxonomy",
+        "representations",
+        "hardware",
+        "links",
+        "artifacts",
+        "claims",
+        "primary_claim"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^[a-z0-9]+(?:[.-][a-z0-9]+)*$"
+        },
+        "name": {
+          "$ref": "#/$defs/nonEmptyString"
+        },
+        "organization": {
+          "$ref": "#/$defs/nonEmptyString"
+        },
+        "date": {
+          "$ref": "#/$defs/month",
+          "description": "First-public-release month. For paper-only systems, use the first public preprint version month."
+        },
+        "entry_type": {
+          "type": "string"
+        },
+        "status": {
+          "type": "string"
+        },
+        "summary": {
+          "$ref": "#/$defs/nonEmptyString"
+        },
+        "caveats": {
+          "$ref": "#/$defs/stringArray"
+        },
+        "taxonomy": {
+          "$ref": "#/$defs/taxonomy"
+        },
+        "representations": {
+          "$ref": "#/$defs/stringArray"
+        },
+        "hardware": {
+          "$ref": "#/$defs/stringArray"
+        },
+        "links": {
+          "$ref": "#/$defs/links"
+        },
+        "artifacts": {
+          "$ref": "#/$defs/artifacts"
+        },
+        "claims": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/claim"
+          }
+        },
+        "primary_claim": {
+          "oneOf": [
+            {
+              "type": "string",
+              "minLength": 1
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "migration_review": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/migrationReview"
+          }
+        }
+      }
+    },
+    "taxonomy": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "policy_adaptation",
+        "generation_mode",
+        "search_strategy",
+        "participants",
+        "coordination",
+        "feedback_signal",
+        "feedback_source",
+        "memory",
+        "workload_scope",
+        "integration_scope",
+        "optimization_level",
+        "optimization_focus"
+      ],
+      "properties": {
+        "policy_adaptation": {
+          "$ref": "#/$defs/stringArray"
+        },
+        "generation_mode": {
+          "$ref": "#/$defs/stringArray"
+        },
+        "search_strategy": {
+          "$ref": "#/$defs/stringArray"
+        },
+        "participants": {
+          "$ref": "#/$defs/stringArray"
+        },
+        "coordination": {
+          "$ref": "#/$defs/stringArray"
+        },
+        "feedback_signal": {
+          "$ref": "#/$defs/stringArray"
+        },
+        "feedback_source": {
+          "$ref": "#/$defs/stringArray"
+        },
+        "memory": {
+          "$ref": "#/$defs/stringArray"
+        },
+        "workload_scope": {
+          "$ref": "#/$defs/stringArray"
+        },
+        "integration_scope": {
+          "$ref": "#/$defs/stringArray"
+        },
+        "optimization_level": {
+          "$ref": "#/$defs/stringArray"
+        },
+        "optimization_focus": {
+          "$ref": "#/$defs/stringArray"
+        }
+      }
+    },
+    "link": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["label", "url", "provenance"],
+      "properties": {
+        "label": {
+          "$ref": "#/$defs/nonEmptyString"
+        },
+        "url": {
+          "$ref": "#/$defs/httpsUrl"
+        },
+        "provenance": {
+          "type": "string"
+        }
+      }
+    },
+    "linkArray": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/link"
+      }
+    },
+    "links": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "paper",
+        "code",
+        "article",
+        "project",
+        "artifact",
+        "model",
+        "dataset"
+      ],
+      "properties": {
+        "paper": {
+          "$ref": "#/$defs/linkArray"
+        },
+        "code": {
+          "$ref": "#/$defs/linkArray"
+        },
+        "article": {
+          "$ref": "#/$defs/linkArray"
+        },
+        "project": {
+          "$ref": "#/$defs/linkArray"
+        },
+        "artifact": {
+          "$ref": "#/$defs/linkArray"
+        },
+        "model": {
+          "$ref": "#/$defs/linkArray"
+        },
+        "dataset": {
+          "$ref": "#/$defs/linkArray"
+        }
+      }
+    },
+    "artifactState": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["status", "urls"],
+      "properties": {
+        "status": {
+          "type": "string"
+        },
+        "urls": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/httpsUrl"
+          },
+          "uniqueItems": true
+        }
+      }
+    },
+    "artifacts": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "implementation",
+        "generated_kernels",
+        "harness",
+        "model_weights",
+        "trajectories"
+      ],
+      "properties": {
+        "implementation": {
+          "$ref": "#/$defs/artifactState"
+        },
+        "generated_kernels": {
+          "$ref": "#/$defs/artifactState"
+        },
+        "harness": {
+          "$ref": "#/$defs/artifactState"
+        },
+        "model_weights": {
+          "$ref": "#/$defs/artifactState"
+        },
+        "trajectories": {
+          "$ref": "#/$defs/artifactState"
+        }
+      }
+    },
+    "rangeValue": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["min", "max"],
+      "properties": {
+        "min": {
+          "type": "number"
+        },
+        "max": {
+          "type": "number"
+        }
+      }
+    },
+    "workload": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["benchmark", "subset"],
+      "properties": {
+        "benchmark": {
+          "$ref": "#/$defs/nonEmptyString"
+        },
+        "subset": {
+          "type": "string"
+        }
+      }
+    },
+    "datedEvidence": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["url", "as_of"],
+      "properties": {
+        "url": {
+          "$ref": "#/$defs/httpsUrl"
+        },
+        "as_of": {
+          "$ref": "#/$defs/fullDate"
+        }
+      }
+    },
+    "baseline": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["tier", "kind", "name", "evidence"],
+      "properties": {
+        "tier": {
+          "type": "string",
+          "description": "Implementation-baseline tier/state controlled by schema/vocab.yaml. T0-T6 are resolved implementation tiers, unknown is unresolved implementation provenance/status, and not-applicable means the tier model does not apply."
+        },
+        "kind": {
+          "type": "string",
+          "description": "Baseline relationship kind controlled by schema/vocab.yaml and semantically constrained against tier and claim metric. A prior-agent or self-baseline relationship may be Unknown for a real implementation denominator or N/A for a non-implementation comparison."
+        },
+        "name": {
+          "$ref": "#/$defs/nonEmptyString"
+        },
+        "evidence": {
+          "oneOf": [
+            {
+              "type": "null"
+            },
+            {
+              "$ref": "#/$defs/datedEvidence"
+            }
+          ]
+        }
+      }
+    },
+    "budget": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["status", "details"],
+      "properties": {
+        "status": {
+          "type": "string"
+        },
+        "details": {
+          "type": "string"
+        }
+      }
+    },
+    "reproducibility": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["claim_linked_artifact", "artifact_url"],
+      "properties": {
+        "claim_linked_artifact": {
+          "type": "string"
+        },
+        "artifact_url": {
+          "oneOf": [
+            {
+              "type": "null"
+            },
+            {
+              "$ref": "#/$defs/httpsUrl"
+            }
+          ]
+        }
+      }
+    },
+    "primarySource": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["url", "locator"],
+      "properties": {
+        "url": {
+          "$ref": "#/$defs/httpsUrl"
+        },
+        "locator": {
+          "type": "string"
+        }
+      }
+    },
+    "claim": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "metric",
+        "value",
+        "unit",
+        "aggregation",
+        "qualifier",
+        "workload",
+        "hardware",
+        "scope",
+        "baseline",
+        "budget",
+        "reproducibility",
+        "primary_source",
+        "caveats"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^[a-z0-9]+(?:[.-][a-z0-9]+)*$"
+        },
+        "metric": {
+          "type": "string"
+        },
+        "value": {
+          "oneOf": [
+            {
+              "type": "number"
+            },
+            {
+              "const": "unknown"
+            },
+            {
+              "$ref": "#/$defs/rangeValue"
+            }
+          ]
+        },
+        "unit": {
+          "type": "string"
+        },
+        "aggregation": {
+          "type": "string"
+        },
+        "qualifier": {
+          "type": "string"
+        },
+        "workload": {
+          "$ref": "#/$defs/workload"
+        },
+        "hardware": {
+          "$ref": "#/$defs/nonEmptyString"
+        },
+        "scope": {
+          "type": "string"
+        },
+        "baseline": {
+          "$ref": "#/$defs/baseline"
+        },
+        "budget": {
+          "$ref": "#/$defs/budget"
+        },
+        "reproducibility": {
+          "$ref": "#/$defs/reproducibility"
+        },
+        "primary_source": {
+          "$ref": "#/$defs/primarySource"
+        },
+        "caveats": {
+          "$ref": "#/$defs/stringArray"
+        }
+      }
+    },
+    "migrationReview": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["field", "issue"],
+      "properties": {
+        "field": {
+          "$ref": "#/$defs/nonEmptyString"
+        },
+        "issue": {
+          "$ref": "#/$defs/nonEmptyString"
+        }
+      }
+    }
+  }
+}

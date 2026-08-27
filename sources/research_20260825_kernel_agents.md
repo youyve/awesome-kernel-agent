@@ -69,6 +69,10 @@ July/August revision. Their catalog date still follows first public release.
 
 ## Existing-entry corrections checked against primary sources
 
+- AccelOpt's current arXiv v2 reports average peak-throughput efficiency rising
+  from 49% to 61% on Trainium 1 and from 45% to 59% on Trainium 2; the older
+  catalog shorthand "45% to 71%" was removed during the v2 migration:
+  <https://arxiv.org/abs/2511.15915>.
 - KDA-Pilot canonical repository and B200 artifacts:
   <https://github.com/BBuf/KDA-Pilot>.
 - Kernel Design Agents and public KernelWiki:
@@ -79,6 +83,15 @@ July/August revision. Their catalog date still follows first public release.
 - DICE code/checkpoints and paper:
   <https://github.com/deadlykitten4/DICE> and
   <https://arxiv.org/abs/2602.11715>.
+- CUDA Agent's canonical paper, official environment repository, released
+  training dataset, and denominator-specific overall/Level-3 results:
+  <https://arxiv.org/abs/2602.24286>,
+  <https://github.com/BytedTsinghua-SIA/CUDA-Agent>, and
+  <https://huggingface.co/datasets/BytedTsinghua-SIA/CUDA-Agent-Ops-6K>.
+- CuTeGen's primary CuTe representation and 1.71x average over PyTorch on
+  209 KernelBench Level-1/2 tasks:
+  <https://arxiv.org/abs/2604.01489> and
+  <https://github.com/taratt/cutegen>.
 - EGG, KernelPro and daVinci-kernel affiliations, budgets and artifact status:
   <https://arxiv.org/abs/2606.26758>,
   <https://arxiv.org/abs/2606.26453>, and

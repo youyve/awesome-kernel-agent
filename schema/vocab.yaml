@@ -1,0 +1,419 @@
+schema_version: 2
+
+# Controlled vocabulary for the v2 catalog. Keys are stable machine values;
+# labels are presentation-only and may evolve without changing catalog data.
+entry_types:
+  agent: Agent system
+  tool: Infrastructure / tooling
+
+statuses:
+  open: Open source
+  partial: Partially available
+  wip: Work in progress
+  closed: Closed source
+  proprietary: Proprietary
+
+evidence_statuses:
+  "yes": Available
+  partial: Partially available
+  "no": Not available
+  unknown: Unknown
+
+link_types:
+  paper: Paper
+  code: Code
+  article: Article / blog
+  project: Project page
+  artifact: Artifact
+  model: Model
+  dataset: Dataset
+
+link_provenance:
+  official: Official project or publisher
+  author: Author-maintained
+  community: Community-maintained
+  third-party: Independent third party
+
+taxonomy:
+  policy_adaptation:
+    prompting: Prompting
+    in-context-learning: In-context learning
+    supervised-fine-tuning: Supervised fine-tuning
+    reinforcement-learning: Reinforcement learning
+    agentic-reinforcement-learning: Agentic reinforcement learning
+    preference-optimization: Preference optimization
+    self-training: Self-training
+    distillation: Distillation
+    continual-learning: Continual learning
+  generation_mode:
+    direct: Direct generation
+    iterative-refinement: Iterative refinement
+  search_strategy:
+    best-of-n: Best-of-N
+    beam-search: Beam search
+    mcts: Monte Carlo tree search
+    evolutionary-search: Evolutionary search
+    map-elites: MAP-Elites
+    quality-diversity: Quality-diversity search
+    local-search: Local search
+    autotuning: Autotuning
+    portfolio-search: Portfolio search
+  participants:
+    single-agent: Single agent
+    multi-agent: Multi-agent
+    human-in-the-loop: Human in the loop
+    compiler-in-the-loop: Compiler in the loop
+  coordination:
+    hierarchical: Hierarchical
+    planner-worker: Planner / worker
+    role-specialized: Role-specialized agents
+    parallel: Parallel agents
+  feedback_signal:
+    correctness: Correctness feedback
+    runtime: Runtime feedback
+    model-level: Model-level feedback
+  feedback_source:
+    compiler: Compiler feedback
+    profiler: Profiler feedback
+    hardware-counters: Hardware counters
+    roofline: Roofline / SOL feedback
+    ir: Intermediate-representation feedback
+    simulator: Simulator feedback
+    formal-verification: Formal verification
+    differential-testing: Differential testing
+  memory:
+    trajectory: Trajectory memory
+    reflection: Reflection memory
+    retrieval: Retrieval-augmented memory
+    skill-library: Skill library
+    archive: Search archive
+    episodic: Episodic memory
+    cross-run: Cross-run memory
+    population: Population memory
+  workload_scope:
+    operator: Operator
+    fusion: Fusion
+    graph: Computation graph
+    model: Model
+    system: End-to-end system
+  integration_scope:
+    library: Kernel library
+    compiler: Compiler
+    runtime: Runtime
+    serving: Serving
+    communication: Communication
+    distributed: Distributed system
+  optimization_level:
+    source: Source code
+    dsl: Domain-specific language
+    custom-ir: Custom IR
+    compiler-ir: Compiler IR
+    ptx: PTX / virtual ISA
+    assembly: Assembly / machine ISA
+    binary: Binary
+  optimization_focus:
+    schedule: Schedule / mapping
+    algorithm: Algorithm
+
+# Each facet answers one stable question. Lists are positive, multi-label
+# annotations: an empty list means "not evidenced in the catalog", never a
+# verified negative. The groups below drive both the ontology Landscape and
+# the complete Field Map; no system or facet is selected by the renderer.
+facet_dimensions:
+  policy_adaptation:
+    label: Policy adaptation
+    question: How is the proposal policy conditioned or adapted?
+    boundary: Prompting and model adaptation only; candidate enumeration belongs to generation/search.
+    group: agent-mechanism
+  generation_mode:
+    label: Generation mode
+    question: Is candidate production direct or revised across iterations?
+    boundary: Loop shape only; named search algorithms belong to search strategy.
+    group: agent-mechanism
+  search_strategy:
+    label: Search strategy
+    question: How are multiple candidate programs explored or selected?
+    boundary: Search/selection algorithms only; direct versus iterative execution is recorded separately.
+    group: agent-mechanism
+  participants:
+    label: Actor composition
+    question: Which agent and non-agent actors are explicitly inside the optimization loop?
+    boundary: Actor composition only; compiler-in-the-loop requires co-decision or transformation, not ordinary compiler feedback, and coordination topology is recorded separately.
+    group: agent-mechanism
+  coordination:
+    label: Coordination
+    question: How are participating actors organized or scheduled?
+    boundary: Control topology and role organization, not candidate-search algorithms.
+    group: agent-mechanism
+  feedback_signal:
+    label: Feedback signal
+    question: What outcome is observed and returned to the optimizer?
+    boundary: Measured outcome only; the instrument or evidence channel is recorded separately.
+    group: agent-mechanism
+  feedback_source:
+    label: Feedback source
+    question: Through which instrument or analysis channel is evidence obtained?
+    boundary: Compiler, execution-analysis, verification, or analytical channels; not the measured outcome itself.
+    group: agent-mechanism
+  memory:
+    label: State retention
+    question: Which state-retention or reuse mechanisms are explicitly used?
+    boundary: Runtime decision state, access, or persistence only; published datasets, logs, and output archives are project artifacts unless reused by the agent.
+    group: agent-mechanism
+  workload_scope:
+    label: Workload scope
+    question: At what workload granularity is optimization or evaluation demonstrated?
+    boundary: Kernel-to-system workload extent; software integration contexts are recorded separately.
+    group: optimization-target
+  integration_scope:
+    label: Integration scope
+    question: Which surrounding software or system context is explicitly in scope?
+    boundary: Library, compiler, runtime, serving, communication, or distributed integration; not a mere baseline mention.
+    group: optimization-target
+  optimization_level:
+    label: Artifact level
+    question: At which program or machine abstraction does the system directly edit or select artifacts?
+    boundary: Artifact abstraction only; algorithm and schedule decisions are recorded as optimization focus.
+    group: optimization-target
+  optimization_focus:
+    label: Optimization focus
+    question: Does the system explicitly optimize algorithmic structure or schedule/mapping decisions?
+    boundary: Decision type only; source language and IR are recorded as artifact level and representation.
+    group: optimization-target
+  representations:
+    label: Representation
+    question: Which concrete language, DSL, IR, or ISA represents generated or optimized artifacts?
+    boundary: Concrete notation only; hardware target and abstraction level remain separate.
+    group: optimization-target
+  hardware:
+    label: Hardware
+    question: On which accelerator or processor family is the system evaluated or targeted?
+    boundary: Execution substrate only; software representation is recorded separately.
+    group: execution-substrate
+
+facet_groups:
+  agent-mechanism:
+    label: Agent mechanism
+    definition: Fields describing how proposals are produced, coordinated, evaluated, and retained.
+    relation: describes the optimization process
+  optimization-target:
+    label: Optimization target and context
+    definition: Fields describing what is changed and the workload or software context in scope.
+    relation: acts on or evaluates
+  execution-substrate:
+    label: Execution substrate
+    definition: Fields describing the hardware on which evidence is obtained.
+    relation: is evaluated on
+
+# Compact README projection. This partitions every detailed facet exactly once
+# without replacing the evidence schema: each item is a presentation union of
+# the listed facet families, and the complete value-level reverse index remains
+# in reports/field-map.md.
+presentation_taxonomy:
+  adaptation:
+    label: Adaptation
+    question: How is the proposal policy adapted?
+    facets: [policy_adaptation]
+  search:
+    label: Search
+    question: How are candidates produced, revised, explored, or selected?
+    facets: [generation_mode, search_strategy]
+  orchestration:
+    label: Orchestration
+    question: Which actors participate and how are they coordinated?
+    facets: [participants, coordination]
+  feedback:
+    label: Feedback
+    question: What outcome is observed, and through which evidence channel?
+    facets: [feedback_signal, feedback_source]
+  memory:
+    label: Memory
+    question: Which optimization state is retained or reused?
+    facets: [memory]
+  scope:
+    label: Scope
+    question: What workload extent and integration context are in scope?
+    facets: [workload_scope, integration_scope]
+  optimization-target:
+    label: Optimization target
+    question: At what artifact level, and over which decision type, does optimization act?
+    facets: [optimization_level, optimization_focus]
+  representation:
+    label: Representation
+    question: Which concrete language, DSL, IR, or ISA carries the artifact?
+    facets: [representations]
+  hardware:
+    label: Hardware
+    question: On which execution substrate is evidence obtained?
+    facets: [hardware]
+
+# Presentation-only Profile compression. Each slot scans configured dimensions
+# and controlled-vocabulary values after implied parent values are removed;
+# generic fallback values are deferred until no other evidenced candidate is
+# available. Suppressions prevent a second label from merely restating the
+# first. No inferred tag or editorial importance score participates.
+profile_derivation:
+  approach_dimensions:
+  - policy_adaptation
+  - search_strategy
+  - generation_mode
+  - coordination
+  - participants
+  grounding_dimensions:
+  - feedback_source
+  - feedback_signal
+  - memory
+  fallback_values:
+  - prompting
+  - direct
+  - single-agent
+  suppressions:
+    compiler-in-the-loop:
+    - compiler
+
+facet_constraints:
+  mutually_exclusive:
+    generation_mode:
+    - direct
+    - iterative-refinement
+    participants:
+    - single-agent
+    - multi-agent
+  implies:
+    policy_adaptation:
+      agentic-reinforcement-learning:
+      - reinforcement-learning
+    search_strategy:
+      map-elites:
+      - quality-diversity
+      - evolutionary-search
+
+representations:
+  CUDA: CUDA
+  Triton: Triton
+  CuTe: CuTe DSL
+  CUTLASS: CUTLASS
+  TileLang: TileLang
+  PTX: PTX
+  HIP: HIP
+  Ascend C: Ascend C
+  NKI: Neuron Kernel Interface
+  SYCL: SYCL
+  FlyDSL: FlyDSL
+  Gluon: Gluon
+  CAKE IR: CAKE IR
+  AMDGPU ISA: AMDGPU ISA
+  Metal: Metal
+  Catlass: Catlass
+  PyPTO: PyPTO
+  Composable Kernel: Composable Kernel
+  ACT: ACT
+  TAIDL: TAIDL
+  MUSA C: MUSA C
+  cuTile: cuTile
+  TT-Lang: TT-Lang
+  JAX: JAX
+
+hardware:
+  NVIDIA: NVIDIA GPU
+  AMD: AMD GPU
+  Ascend-NPU: Huawei Ascend NPU
+  Intel-GPU: Intel GPU
+  Trainium: AWS Trainium
+  Inferentia: AWS Inferentia
+  CPU: CPU
+  MTIA: Meta Training and Inference Accelerator
+  RISC-V: RISC-V
+  Apple: Apple GPU
+  Cambricon: Cambricon accelerator
+  Gemmini: Gemmini accelerator
+  PLENA: PLENA accelerator
+  MooreThreads: Moore Threads GPU
+  Tenstorrent: Tenstorrent accelerator
+  TPU: Google TPU
+  T-Head-Zhenwu-M890-PPU: T-Head Zhenwu M890 PPU
+
+claim_metrics:
+  speedup: Speedup
+  latency: Latency
+  throughput: Throughput
+  correctness: Correctness
+  accuracy: Accuracy
+  pass-rate: Pass rate
+  compilation-rate: Compilation rate
+  coverage: Coverage
+  win-rate: Win rate
+  efficiency: Efficiency
+  fraction-of-ceiling: Fraction of hardware ceiling
+  energy-reduction: Energy reduction
+  time-reduction: Time reduction
+  cost: Cost
+  token-reduction: Token reduction
+  count: Count
+  other: Other
+
+claim_units:
+  x: Multiplicative ratio
+  percent: Percent
+  ratio: Ratio
+  milliseconds: Milliseconds
+  microseconds: Microseconds
+  seconds: Seconds
+  tokens: Tokens
+  usd: US dollars
+  count: Count
+  unknown: Unknown
+
+claim_aggregations:
+  single: Single result
+  arithmetic-mean: Arithmetic mean
+  geometric-mean: Geometric mean
+  median: Median
+  maximum: Maximum / up to
+  minimum: Minimum
+  range: Range
+  pass-at-k: Pass@k
+  best-of-n: Best of N
+  total: Total
+  unknown: Unknown
+
+baseline_tiers:
+  T0: Reference / framework
+  T1: General compiler-generated
+  T2: Optimized generic / vendor library
+  T3: Specialized expert implementation
+  T4: Production incumbent
+  T5: Externally verified best-known implementation
+  T6: Hardware ceiling
+  unknown: Unresolved implementation baseline
+  not-applicable: Implementation baseline tier not applicable
+
+baseline_kinds:
+  framework-reference: Framework / language reference
+  compiler-generated: General compiler-generated implementation
+  vendor-library: Optimized generic or vendor library
+  expert-implementation: Specialized expert implementation
+  production-incumbent: Production incumbent
+  best-known: Externally verified best-known implementation
+  hardware-ceiling: Roofline, SOL, or analytical bound
+  prior-agent: Prior agent-generated implementation or method result
+  self-baseline: Earlier implementation or result from the same system/run
+  compiler-default: Compiler-default mapping
+  ablation: Ablation condition
+  none: No comparative baseline
+  evaluation-reference: Correctness or validity reference
+  unresolved-implementation: Implementation baseline with unresolved tier
+
+claim_scopes:
+  operator: Operator
+  fusion: Fusion
+  graph: Computation graph
+  model: Model
+  serving: Serving
+  runtime: Runtime
+  library: Kernel library
+  compiler: Compiler
+  communication: Communication
+  distributed: Distributed system
+  system: End-to-end system
+  unknown: Unknown

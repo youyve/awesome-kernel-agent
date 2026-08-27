@@ -1,0 +1,252 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="1273" viewBox="0 0 1200 1273" role="img" aria-labelledby="title desc">
+  <title id="title">Kernel Agent Functional Landscape</title>
+  <desc id="desc">Ontology grouping every catalog facet family by its declared semantic role. It encodes only containment and includes no selected systems or empirical edges.</desc>
+  <style>
+    text { font-family: system-ui, -apple-system, 'Segoe UI', sans-serif; }
+    .title { fill: #0f172a; font-size: 26px; font-weight: 700; }
+    .subtitle { fill: #475569; font-size: 15px; }
+    .group-title { fill: #0f172a; font-size: 18px; font-weight: 700; }
+    .label { fill: #0f172a; font-size: 15px; font-weight: 650; }
+    .body { fill: #475569; font-size: 14px; }
+    .small { fill: #475569; font-size: 12px; }
+  </style>
+  <rect width="1200" height="1273" rx="14" fill="#f8fafc"/>
+  <text x="36" y="46" class="title">Kernel Agent Functional Landscape</text>
+  <text x="36" y="74" class="subtitle">
+    <tspan x="36" dy="0">Question: which distinct questions define the catalog data model, and what semantic role does each question play?</tspan>
+  </text>
+  <text x="36" y="96" class="small">
+    <tspan x="36" dy="0">Ontology view only: containment is semantic grouping; there is no time, rank, causality, maturity, or representative-system selection.</tspan>
+  </text>
+  <g id="landscape-agent-mechanism" data-role="landscape-group">
+    <rect x="36" y="120" width="1128" height="479" rx="14" fill="#e6f2f8" stroke="#0072b2" stroke-width="2"/>
+    <text x="54" y="149" class="group-title" fill="#0072b2">Agent mechanism</text>
+    <text x="54" y="172" class="body">
+      <tspan x="54" dy="0">Fields describing how proposals are produced, coordinated, evaluated, and retained.</tspan>
+    </text>
+    <text x="54" y="191" class="small">
+      <tspan x="54" dy="0">Group predicate: describes the optimization process.</tspan>
+    </text>
+    <g id="landscape-facet-policy_adaptation" data-role="facet-card">
+      <rect x="36" y="195" width="366" height="118" rx="10" fill="#ffffff" stroke="#0072b2"/>
+      <rect x="36" y="195" width="6" height="118" rx="3" fill="#0072b2"/>
+      <text x="54" y="220" class="label">
+        <tspan x="54" dy="0">Policy adaptation</tspan>
+      </text>
+      <text x="54" y="241" class="small">
+        <tspan x="54" dy="0">policy · adaptation</tspan>
+      </text>
+      <text x="54" y="263" class="body">
+        <tspan x="54" dy="0">How is the proposal policy conditioned or</tspan>
+        <tspan x="54" dy="18">adapted?</tspan>
+      </text>
+    </g>
+    <g id="landscape-facet-generation_mode" data-role="facet-card">
+      <rect x="416" y="195" width="366" height="118" rx="10" fill="#ffffff" stroke="#0072b2"/>
+      <rect x="416" y="195" width="6" height="118" rx="3" fill="#0072b2"/>
+      <text x="434" y="220" class="label">
+        <tspan x="434" dy="0">Generation mode</tspan>
+      </text>
+      <text x="434" y="241" class="small">
+        <tspan x="434" dy="0">generation · mode</tspan>
+      </text>
+      <text x="434" y="263" class="body">
+        <tspan x="434" dy="0">Is candidate production direct or revised</tspan>
+        <tspan x="434" dy="18">across iterations?</tspan>
+      </text>
+    </g>
+    <g id="landscape-facet-search_strategy" data-role="facet-card">
+      <rect x="796" y="195" width="366" height="118" rx="10" fill="#ffffff" stroke="#0072b2"/>
+      <rect x="796" y="195" width="6" height="118" rx="3" fill="#0072b2"/>
+      <text x="814" y="220" class="label">
+        <tspan x="814" dy="0">Search strategy</tspan>
+      </text>
+      <text x="814" y="241" class="small">
+        <tspan x="814" dy="0">search · strategy</tspan>
+      </text>
+      <text x="814" y="263" class="body">
+        <tspan x="814" dy="0">How are multiple candidate programs explored</tspan>
+        <tspan x="814" dy="18">or selected?</tspan>
+      </text>
+    </g>
+    <g id="landscape-facet-participants" data-role="facet-card">
+      <rect x="36" y="327" width="366" height="118" rx="10" fill="#ffffff" stroke="#0072b2"/>
+      <rect x="36" y="327" width="6" height="118" rx="3" fill="#0072b2"/>
+      <text x="54" y="352" class="label">
+        <tspan x="54" dy="0">Actor composition</tspan>
+      </text>
+      <text x="54" y="373" class="small">
+        <tspan x="54" dy="0">participants</tspan>
+      </text>
+      <text x="54" y="395" class="body">
+        <tspan x="54" dy="0">Which agent and non-agent actors are</tspan>
+        <tspan x="54" dy="18">explicitly inside the optimization loop?</tspan>
+      </text>
+    </g>
+    <g id="landscape-facet-coordination" data-role="facet-card">
+      <rect x="416" y="327" width="366" height="118" rx="10" fill="#ffffff" stroke="#0072b2"/>
+      <rect x="416" y="327" width="6" height="118" rx="3" fill="#0072b2"/>
+      <text x="434" y="352" class="label">
+        <tspan x="434" dy="0">Coordination</tspan>
+      </text>
+      <text x="434" y="373" class="small">
+        <tspan x="434" dy="0">coordination</tspan>
+      </text>
+      <text x="434" y="395" class="body">
+        <tspan x="434" dy="0">How are participating actors organized or</tspan>
+        <tspan x="434" dy="18">scheduled?</tspan>
+      </text>
+    </g>
+    <g id="landscape-facet-feedback_signal" data-role="facet-card">
+      <rect x="796" y="327" width="366" height="118" rx="10" fill="#ffffff" stroke="#0072b2"/>
+      <rect x="796" y="327" width="6" height="118" rx="3" fill="#0072b2"/>
+      <text x="814" y="352" class="label">
+        <tspan x="814" dy="0">Feedback signal</tspan>
+      </text>
+      <text x="814" y="373" class="small">
+        <tspan x="814" dy="0">feedback · signal</tspan>
+      </text>
+      <text x="814" y="395" class="body">
+        <tspan x="814" dy="0">What outcome is observed and returned to</tspan>
+        <tspan x="814" dy="18">the optimizer?</tspan>
+      </text>
+    </g>
+    <g id="landscape-facet-feedback_source" data-role="facet-card">
+      <rect x="36" y="459" width="366" height="118" rx="10" fill="#ffffff" stroke="#0072b2"/>
+      <rect x="36" y="459" width="6" height="118" rx="3" fill="#0072b2"/>
+      <text x="54" y="484" class="label">
+        <tspan x="54" dy="0">Feedback source</tspan>
+      </text>
+      <text x="54" y="505" class="small">
+        <tspan x="54" dy="0">feedback · source</tspan>
+      </text>
+      <text x="54" y="527" class="body">
+        <tspan x="54" dy="0">Through which instrument or analysis channel</tspan>
+        <tspan x="54" dy="18">is evidence obtained?</tspan>
+      </text>
+    </g>
+    <g id="landscape-facet-memory" data-role="facet-card">
+      <rect x="416" y="459" width="366" height="118" rx="10" fill="#ffffff" stroke="#0072b2"/>
+      <rect x="416" y="459" width="6" height="118" rx="3" fill="#0072b2"/>
+      <text x="434" y="484" class="label">
+        <tspan x="434" dy="0">State retention</tspan>
+      </text>
+      <text x="434" y="505" class="small">
+        <tspan x="434" dy="0">memory</tspan>
+      </text>
+      <text x="434" y="527" class="body">
+        <tspan x="434" dy="0">Which state-retention or reuse mechanisms</tspan>
+        <tspan x="434" dy="18">are explicitly used?</tspan>
+      </text>
+    </g>
+  </g>
+  <g id="landscape-optimization-target" data-role="landscape-group">
+    <rect x="36" y="617" width="1128" height="365" rx="14" fill="#fff2dd" stroke="#a85600" stroke-width="2"/>
+    <text x="54" y="646" class="group-title" fill="#a85600">Optimization target and context</text>
+    <text x="54" y="669" class="body">
+      <tspan x="54" dy="0">Fields describing what is changed and the workload or software context in scope.</tspan>
+    </text>
+    <text x="54" y="688" class="small">
+      <tspan x="54" dy="0">Group predicate: acts on or evaluates.</tspan>
+    </text>
+    <g id="landscape-facet-workload_scope" data-role="facet-card">
+      <rect x="36" y="692" width="366" height="118" rx="10" fill="#ffffff" stroke="#a85600"/>
+      <rect x="36" y="692" width="6" height="118" rx="3" fill="#a85600"/>
+      <text x="54" y="717" class="label">
+        <tspan x="54" dy="0">Workload scope</tspan>
+      </text>
+      <text x="54" y="738" class="small">
+        <tspan x="54" dy="0">workload · scope</tspan>
+      </text>
+      <text x="54" y="760" class="body">
+        <tspan x="54" dy="0">At what workload granularity is optimization</tspan>
+        <tspan x="54" dy="18">or evaluation demonstrated?</tspan>
+      </text>
+    </g>
+    <g id="landscape-facet-integration_scope" data-role="facet-card">
+      <rect x="416" y="692" width="366" height="118" rx="10" fill="#ffffff" stroke="#a85600"/>
+      <rect x="416" y="692" width="6" height="118" rx="3" fill="#a85600"/>
+      <text x="434" y="717" class="label">
+        <tspan x="434" dy="0">Integration scope</tspan>
+      </text>
+      <text x="434" y="738" class="small">
+        <tspan x="434" dy="0">integration · scope</tspan>
+      </text>
+      <text x="434" y="760" class="body">
+        <tspan x="434" dy="0">Which surrounding software or system</tspan>
+        <tspan x="434" dy="18">context is explicitly in scope?</tspan>
+      </text>
+    </g>
+    <g id="landscape-facet-optimization_level" data-role="facet-card">
+      <rect x="796" y="692" width="366" height="118" rx="10" fill="#ffffff" stroke="#a85600"/>
+      <rect x="796" y="692" width="6" height="118" rx="3" fill="#a85600"/>
+      <text x="814" y="717" class="label">
+        <tspan x="814" dy="0">Artifact level</tspan>
+      </text>
+      <text x="814" y="738" class="small">
+        <tspan x="814" dy="0">optimization · level</tspan>
+      </text>
+      <text x="814" y="760" class="body">
+        <tspan x="814" dy="0">At which program or machine abstraction does</tspan>
+        <tspan x="814" dy="18">the system directly edit or select artifacts?</tspan>
+      </text>
+    </g>
+    <g id="landscape-facet-optimization_focus" data-role="facet-card">
+      <rect x="36" y="824" width="366" height="136" rx="10" fill="#ffffff" stroke="#a85600"/>
+      <rect x="36" y="824" width="6" height="136" rx="3" fill="#a85600"/>
+      <text x="54" y="849" class="label">
+        <tspan x="54" dy="0">Optimization focus</tspan>
+      </text>
+      <text x="54" y="870" class="small">
+        <tspan x="54" dy="0">optimization · focus</tspan>
+      </text>
+      <text x="54" y="892" class="body">
+        <tspan x="54" dy="0">Does the system explicitly optimize</tspan>
+        <tspan x="54" dy="18">algorithmic structure or schedule/mapping</tspan>
+        <tspan x="54" dy="18">decisions?</tspan>
+      </text>
+    </g>
+    <g id="landscape-facet-representations" data-role="facet-card">
+      <rect x="416" y="824" width="366" height="136" rx="10" fill="#ffffff" stroke="#a85600"/>
+      <rect x="416" y="824" width="6" height="136" rx="3" fill="#a85600"/>
+      <text x="434" y="849" class="label">
+        <tspan x="434" dy="0">Representation</tspan>
+      </text>
+      <text x="434" y="870" class="small">
+        <tspan x="434" dy="0">representations</tspan>
+      </text>
+      <text x="434" y="892" class="body">
+        <tspan x="434" dy="0">Which concrete language, DSL, IR, or ISA</tspan>
+        <tspan x="434" dy="18">represents generated or optimized</tspan>
+        <tspan x="434" dy="18">artifacts?</tspan>
+      </text>
+    </g>
+  </g>
+  <g id="landscape-execution-substrate" data-role="landscape-group">
+    <rect x="36" y="1000" width="1128" height="215" rx="14" fill="#e5f5ef" stroke="#007d5a" stroke-width="2"/>
+    <text x="54" y="1029" class="group-title" fill="#007d5a">Execution substrate</text>
+    <text x="54" y="1052" class="body">
+      <tspan x="54" dy="0">Fields describing the hardware on which evidence is obtained.</tspan>
+    </text>
+    <text x="54" y="1071" class="small">
+      <tspan x="54" dy="0">Group predicate: is evaluated on.</tspan>
+    </text>
+    <g id="landscape-facet-hardware" data-role="facet-card">
+      <rect x="36" y="1075" width="366" height="118" rx="10" fill="#ffffff" stroke="#007d5a"/>
+      <rect x="36" y="1075" width="6" height="118" rx="3" fill="#007d5a"/>
+      <text x="54" y="1100" class="label">
+        <tspan x="54" dy="0">Hardware</tspan>
+      </text>
+      <text x="54" y="1121" class="small">
+        <tspan x="54" dy="0">hardware</tspan>
+      </text>
+      <text x="54" y="1143" class="body">
+        <tspan x="54" dy="0">On which accelerator or processor family is</tspan>
+        <tspan x="54" dy="18">the system evaluated or targeted?</tspan>
+      </text>
+    </g>
+  </g>
+  <text x="36" y="1234" class="small">
+    <tspan x="36" dy="0">All facet families come from schema/vocab.yaml. Multi-label evidence and coverage belong to the Field Map; chronology belongs to the complete Timeline.</tspan>
+  </text>
+</svg>

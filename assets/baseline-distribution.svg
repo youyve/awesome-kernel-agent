@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="546" viewBox="0 0 1200 546" role="img" aria-labelledby="title desc">
+  <title id="title">Claim Baseline Distribution</title>
+  <desc id="desc">Counts of structured numerical claims by implementation baseline tier T0 through T6, unresolved tier, and tier-not-applicable state.</desc>
+  <style>
+    text { font-family: system-ui, -apple-system, 'Segoe UI', sans-serif; }
+    .title { fill: #0f172a; font-size: 26px; font-weight: 700; }
+    .subtitle { fill: #475569; font-size: 15px; }
+    .group-title { fill: #0f172a; font-size: 18px; font-weight: 700; }
+    .label { fill: #0f172a; font-size: 15px; font-weight: 650; }
+    .body { fill: #475569; font-size: 14px; }
+    .small { fill: #475569; font-size: 12px; }
+  </style>
+  <rect width="1200" height="546" rx="14" fill="#f8fafc"/>
+  <text x="36" y="46" class="title">Baseline Distribution</text>
+  <text x="36" y="74" class="subtitle">
+    <tspan x="36" dy="0">145 structured claims; T0–T6 classify implementation baseline provenance/specialization, not a strict performance ordering.</tspan>
+  </text>
+  <text x="36" y="96" class="small">
+    <tspan x="36" dy="0">Unknown = implementation tier unresolved. N/A = implementation-tier model does not apply. The generator never infers a tier from a product or library name.</tspan>
+  </text>
+  <g id="baseline-T0" data-role="baseline-state">
+    <text x="168" y="138" text-anchor="end" class="label">T0</text>
+    <rect x="190" y="120" width="840" height="24" rx="6" fill="#dbeafe"/>
+    <rect x="190" y="120" width="840" height="24" rx="6" fill="#2563eb"/>
+    <text x="1060" y="138" class="body">43</text>
+  </g>
+  <g id="baseline-T1" data-role="baseline-state">
+    <text x="168" y="182" text-anchor="end" class="label">T1</text>
+    <rect x="190" y="164" width="840" height="24" rx="6" fill="#dbeafe"/>
+    <rect x="190" y="164" width="137" height="24" rx="6" fill="#2563eb"/>
+    <text x="1060" y="182" class="body">7</text>
+  </g>
+  <g id="baseline-T2" data-role="baseline-state">
+    <text x="168" y="226" text-anchor="end" class="label">T2</text>
+    <rect x="190" y="208" width="840" height="24" rx="6" fill="#dbeafe"/>
+    <rect x="190" y="208" width="293" height="24" rx="6" fill="#2563eb"/>
+    <text x="1060" y="226" class="body">15</text>
+  </g>
+  <g id="baseline-T3" data-role="baseline-state">
+    <text x="168" y="270" text-anchor="end" class="label">T3</text>
+    <rect x="190" y="252" width="840" height="24" rx="6" fill="#dbeafe"/>
+    <rect x="190" y="252" width="410" height="24" rx="6" fill="#2563eb"/>
+    <text x="1060" y="270" class="body">21</text>
+  </g>
+  <g id="baseline-T4" data-role="baseline-state">
+    <text x="168" y="314" text-anchor="end" class="label">T4</text>
+    <rect x="190" y="296" width="840" height="24" rx="6" fill="#dbeafe"/>
+    <rect x="190" y="296" width="273" height="24" rx="6" fill="#2563eb"/>
+    <text x="1060" y="314" class="body">14</text>
+  </g>
+  <g id="baseline-T5" data-role="baseline-state">
+    <text x="168" y="358" text-anchor="end" class="label">T5</text>
+    <rect x="190" y="340" width="840" height="24" rx="6" fill="#dbeafe"/>
+    <rect x="190" y="340" width="0" height="24" rx="6" fill="#2563eb"/>
+    <text x="1060" y="358" class="body">0</text>
+  </g>
+  <g id="baseline-T6" data-role="baseline-state">
+    <text x="168" y="402" text-anchor="end" class="label">T6</text>
+    <rect x="190" y="384" width="840" height="24" rx="6" fill="#dbeafe"/>
+    <rect x="190" y="384" width="59" height="24" rx="6" fill="#2563eb"/>
+    <text x="1060" y="402" class="body">3</text>
+  </g>
+  <g id="baseline-unknown" data-role="baseline-state">
+    <text x="168" y="446" text-anchor="end" class="label">Unknown</text>
+    <rect x="190" y="428" width="840" height="24" rx="6" fill="#dbeafe"/>
+    <rect x="190" y="428" width="293" height="24" rx="6" fill="#b45309"/>
+    <text x="1060" y="446" class="body">15</text>
+  </g>
+  <g id="baseline-not-applicable" data-role="baseline-state">
+    <text x="168" y="490" text-anchor="end" class="label">N/A</text>
+    <rect x="190" y="472" width="840" height="24" rx="6" fill="#dbeafe"/>
+    <rect x="190" y="472" width="527" height="24" rx="6" fill="#64748b"/>
+    <text x="1060" y="490" class="body">27</text>
+  </g>
+</svg>

@@ -1,0 +1,66 @@
+name: weekly link audit
+
+on:
+  schedule:
+    - cron: "17 3 * * 1"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: weekly-link-audit
+  cancel-in-progress: true
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+          cache-dependency-path: requirements-dev.txt
+      - name: Install catalog dependency
+        run: python3 -m pip install -r requirements-dev.txt
+      - name: Audit external evidence links
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: python3 scripts/audit_links.py --workers 4 --output /tmp/kernel-agent-link-audit.json
+      - name: Write audit summary
+        if: always()
+        env:
+          AUDIT_REPORT: /tmp/kernel-agent-link-audit.json
+        run: |
+          python3 - <<'PY'
+          import json
+          import os
+          from pathlib import Path
+
+          report_path = Path(os.environ["AUDIT_REPORT"])
+          summary_path = Path(os.environ["GITHUB_STEP_SUMMARY"])
+          if not report_path.exists():
+              summary_path.write_text("## Weekly link audit\n\nThe audit did not produce a report.\n", encoding="utf-8")
+          else:
+              report = json.loads(report_path.read_text(encoding="utf-8"))
+              lines = [
+                  "## Weekly link audit",
+                  "",
+                  f"Checked **{report['total_unique_urls']}** unique URLs.",
+                  "",
+                  "| Status | Count |",
+                  "| --- | ---: |",
+              ]
+              lines.extend(f"| {status} | {count} |" for status, count in report["counts"].items())
+              lines.extend(["", "Network/transient results are informational and do not block pull requests."])
+              summary_path.write_text("\n".join(lines) + "\n", encoding="utf-8")
+          PY
+      - name: Upload machine-readable audit
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: kernel-agent-link-audit
+          path: /tmp/kernel-agent-link-audit.json
+          if-no-files-found: warn
+          retention-days: 30

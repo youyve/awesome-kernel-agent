@@ -1,20 +1,41 @@
 name: validate
+
 on:
   push:
     branches: [main]
   pull_request:
 
+permissions:
+  contents: read
+
+concurrency:
+  group: validate-${{ github.ref }}
+  cancel-in-progress: true
+
 jobs:
-  check:
+  deterministic-catalog:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with:
           python-version: "3.11"
-      - run: pip install pyyaml
-      - run: python3 scripts/generate.py --check
-      - name: Ensure README is regenerated
+          cache: pip
+          cache-dependency-path: requirements-dev.txt
+      - name: Install validation dependencies
+        run: python3 -m pip install -r requirements-dev.txt
+      - name: Validate schema and semantics
+        run: python3 scripts/validate.py
+      - name: Run tests
+        run: python3 -m unittest discover -s tests -p 'test_*.py' -v
+      - name: Regenerate every derived artifact
+        run: python3 scripts/generate.py
+      - name: Verify committed outputs
         run: |
-          python3 scripts/generate.py
-          git diff --exit-code README.md README.zh.md data/agents.json
+          git diff --exit-code
+          if test -n "$(git ls-files --others --exclude-standard)"; then
+            git ls-files --others --exclude-standard
+            exit 1
+          fi
+      - name: Verify idempotence
+        run: python3 scripts/generate.py --check

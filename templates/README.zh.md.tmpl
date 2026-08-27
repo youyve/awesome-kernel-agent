@@ -1,0 +1,120 @@
+# Awesome Kernel Agent（中文版） [![Awesome](https://awesome.re/badge.svg)](https://awesome.re) [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](CONTRIBUTING.md)
+
+> 面向 LLM 加速器 Kernel 生成与优化研究的高密度、证据驱动索引。
+
+[English](README.md) · [Benchmarks](BENCHMARKS.md) · [数据](data/agents.json) · [贡献指南](CONTRIBUTING.md)
+
+{{STATS}}
+
+## Research Landscape
+
+**Research Landscape 回答的问题：** 这份 catalog 用哪些彼此有明确边界的问题描述 Kernel Agent，每个问题扮演什么语义角色？
+
+[![Kernel Agent catalog 的功能 ontology；不表达时间、排名或代表性系统选择](assets/landscape.svg)](assets/landscape.svg)
+_Landscape 是由[明确 facet 定义](reports/landscape.md)生成的纯包含关系 ontology，不表达时间、因果、成熟度或系统选择。_
+
+## 最新工作
+
+{{LATEST}}
+
+## 如何阅读 Catalog
+
+- **画像：** 它是对已有 taxonomy 证据的确定性、仅用于展示的摘要。第二行列出具体 Representation；完整 facets 保留在年度 catalog 中。`—` 表示未标注，不表示不存在。
+- **Baseline Tier：** T0 参考实现/框架 · T1 通用编译器生成 · T2 优化通用/厂商库 · T3 专用专家实现 · T4 生产 incumbent · T5 外部核验的 best-known 实现 · T6 硬件上限。Tier 表示来源、专业化与部署状态，不保证运行时强弱顺序。**10× @ T0 可能不如 1.1× @ T4 有意义。** `Unknown` 表示实现 baseline 的层级尚未解决；`N/A` 表示该层级模型不适用。
+- **证据：** `K` 表示当前展示 claim 的精确 winning artifact 是否可访问；`B` 表示其优化/搜索预算是否披露。✓ 是 · ◐ 部分 · — 否/不适用 · ? 未知。
+
+## Agent Catalog
+
+每行由 v2 taxonomy 和一个显式指定的 primary claim 自动生成。完整 taxonomy、全部 claims、denominator、artifact、预算、caveat 和来源保留在所链接的年度 catalog 中。
+
+{{AGENT_CATALOG}}
+
+## Field Map
+
+**回答的问题：** Kernel Agent 可以沿哪些主要维度理解和比较，catalog 在哪些位置已有正证据？
+
+[![Kernel Agent 九维展示投影及证据覆盖](assets/field-map.svg)](assets/field-map.svg)
+_这是由数据派生的阅读投影，不是详细 schema，也不是互斥 Route。九个展示组将每个 facet family 恰好映射一次；generation mode/search strategy、signal/source、workload/integration scope、artifact level/focus 与 representation 在[完整反向索引及覆盖审计](reports/field-map.md)中仍保持独立。空值表示未标注而非不存在。_
+
+## Baseline 分布
+
+每个数值比较都保留独立 denominator。图表区分 T0–T6 实现 baseline、层级尚未解决的实现 baseline（`Unknown`），以及实现层级不适用的比较（`N/A`）。详见[完整分布表](reports/baseline-distribution.md)。
+
+![T0 到 T6、Unknown 与 N/A baseline 分布](assets/baseline-distribution.svg)
+_Baseline Tier 属于 claim；更大的 tier 数字不代表其在所有场景下一定更快。_
+
+## Timeline
+
+[![包含全部 Kernel Agent 系统的完整时间线](assets/timeline.svg)](assets/timeline.svg)
+_SVG 与[完整链接时间线](reports/timeline.md)都包含全部 Agent，不使用 milestone 或代表性系统筛选。_
+
+## Benchmarks
+
+完整 benchmark 目录位于 [awesome-kernel-benchmark](https://github.com/youyve/awesome-kernel-benchmark)，包含 151 条 benchmark 记录、双层证据体系和方法学记分卡。本仓库保留一份简洁的[集成说明](BENCHMARKS.md)，明确系统目录与评测 substrate 的边界。
+
+### 评测诚信与 reward hacking
+
+- [robust-kbench](https://github.com/SakanaAI/robust-kbench) — 针对 AI CUDA Engineer exploit 加固的 KernelBench；[论文](https://arxiv.org/abs/2509.14279)
+- [METR Kernel Reward-Hacking Challenge](https://github.com/METR/RE-Bench/tree/main/ai_rd_triton_cumsum) — 显式审计 reward hacking 的评测任务
+- [TRACE](https://arxiv.org/abs/2601.20103) — 54 类 exploit 与 517 条验证轨迹
+- [RewardHackingAgents](https://arxiv.org/abs/2603.11337) — 将 evaluator tampering 作为一等评测结果
+- [Standard Kernel Rubric](https://standardkernel.com/blog/standard-kernel-rubric/) — 复杂度、Representation、硬件、性能与自动化五维 rubric
+- [Contract-Grade Verifier](https://arxiv.org/abs/2608.12700) — 对 2,638 个此前被接受的生成 kernel 进行对抗性契约审计
+
+### 竞赛与排行榜
+
+- [MLSys'26 FlashInfer Kernel-Gen Contest](https://mlsys26.flashinfer.ai/) — B200 fused MoE、稀疏注意力与 gated delta-net 赛道
+- [GPU MODE × AMD E2E Model Speedrun](https://www.amd.com/en/developer/resources/technical-articles/2026/new-gpumode-virtual-hackathon--e2e-model-speedrun.html) — MI355X 端到端模型优化
+- [GPU MODE reference kernels](https://github.com/gpu-mode/reference-kernels) — NVIDIA、AMD 与分布式 kernel 排行榜
+- [AWS Trainium MoE Challenge](https://github.com/aws-neuron/nki-moe) — Trainium 上的 Qwen3 MoE
+- [KernelArena](https://www.kernelarena.ai/) — 开放的加速器 kernel 评测与排行榜
+
+## 数据集
+
+| 数据集 | 内容 | 可用性 |
+| --- | --- | --- |
+| [AI CUDA Archive](https://huggingface.co/datasets/SakanaAI/AI-CUDA-Engineer-Archive) | CUDA、profile 与验证记录 | 公开数据集 |
+| [KernelBook](https://huggingface.co/datasets/GPUMODE/KernelBook) | PyTorch ↔ Triton 配对 | 公开数据集 |
+| [AutoTriton 14K](https://github.com/AI9Stars/AutoTriton) | 经验证的 PyTorch-to-Triton 样本 | 公开仓库 |
+| [CUDA-Agent-Ops-6K](https://huggingface.co/datasets/BytedTsinghua-SIA/CUDA-Agent-Ops-6K) | 复合 PyTorch 算子 | 公开数据集 |
+| [kernelbot-data](https://huggingface.co/datasets/GPUMODE/kernelbot-data) | 按硬件目标整理的竞赛提交 | 公开数据集 |
+| [Ascend-CoT](https://huggingface.co/datasets/AscendKernelGen/Ascend-COT-v1) | Ascend C 推理链 | 公开数据集 |
+| [HPC-Instruct](https://huggingface.co/datasets/hpcgroup/hpc-instruct) | HPC 与并行编程指令 | 公开数据集 |
+
+## Representation 与基础设施
+
+**Representations：** [CUDA C/C++](https://docs.nvidia.com/cuda/cuda-c-programming-guide/) · [Triton](https://github.com/triton-lang/triton) · [CUTLASS / CuTe DSL](https://github.com/NVIDIA/cutlass) · [HIP / ROCm](https://rocm.docs.amd.com/) · [TileLang](https://github.com/tile-ai/tilelang) · [Pallas](https://docs.jax.dev/en/latest/pallas/index.html) · [cuTile Python](https://docs.nvidia.com/cuda/cutile-python/) · [Ascend C](https://www.hiascend.com/document/) · [NKI](https://awsdocs-neuron.readthedocs-hosted.com/en/latest/general/nki/index.html) · [TT-Lang](https://github.com/tenstorrent/tt-lang)。
+
+**Agent 与执行基础设施：** [KernelGYM](https://github.com/hkust-nlp/KernelGYM) · [GPU Forecasters](https://github.com/codezakh/gpu-forecasters) · [NVIDIA CompileIQ](https://developer.nvidia.com/cuda/compileiq) · [Nsight Compute](https://docs.nvidia.com/nsight-compute/) · [Proton](https://github.com/triton-lang/triton/tree/main/third_party/proton) · [rocprof](https://rocm.docs.amd.com/projects/rocprofiler/en/latest/) · [msprof](https://www.hiascend.com/document/)。
+
+**参考与生产 kernel 库：** [FlashAttention](https://github.com/Dao-AILab/flash-attention) · [FlashInfer](https://github.com/flashinfer-ai/flashinfer) · [DeepGEMM](https://github.com/deepseek-ai/DeepGEMM) · [TileKernels](https://github.com/deepseek-ai/TileKernels) · [Liger-Kernel](https://github.com/linkedin/Liger-Kernel) · [FlagGems](https://github.com/FlagOpen/FlagGems) · [AITER](https://github.com/ROCm/aiter)。
+
+## 调研来源
+
+- [Towards Automated Kernel Generation in the Era of LLMs](https://arxiv.org/abs/2601.15727) — 领域综述与研究索引
+- [awesome-LLM-driven-kernel-generation](https://github.com/flagos-ai/awesome-LLM-driven-kernel-generation) 与 [Awesome-LLM4Kernel](https://github.com/kcxain/Awesome-LLM4Kernel) — 同类索引
+- [2026-08-25 一手来源审计](sources/research_20260825_kernel_agents.md) — 最近一次更新的检索方法、纳入判断、修正和排除项
+- [v2 migration review](reports/migration-review.md) — 无法从一手证据安全确定、因此没有推测补全的事实
+
+## 贡献
+
+编辑 [`data/agents.yaml`](data/agents.yaml)，完成校验并重新生成全部派生产物。每条 claim 必须有一个明确 denominator 和一手来源；无法确认时应使用 `unknown`。v2 schema 与检查清单详见 [CONTRIBUTING.md](CONTRIBUTING.md)。
+
+## 引用
+
+```bibtex
+@misc{you2026awesomekernelagent,
+  author       = {Lianzhong You},
+  title        = {Awesome Kernel Agent: An Evidence-Driven Research Index of
+                  LLM Systems for Accelerator Kernel Generation},
+  year         = {2026},
+  publisher    = {GitHub},
+  url          = {https://github.com/youyve/awesome-kernel-agent}
+}
+```
+
+## 许可
+
+目录内容：[CC-BY-4.0](LICENSE) · 生成器代码：[MIT](scripts/LICENSE)。
+
+**检索截止：** {{RESEARCH_CUTOFF}} · 维护者：[Lianzhong You](mailto:youyve@foxmail.com)，HKUST (GZ)
