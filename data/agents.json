@@ -1,7 +1,2959 @@
 {
   "schema_version": 2,
-  "research_cutoff": "2026-08-25",
+  "research_cutoff": "2026-10-19",
   "agents": [
+    {
+      "id": "stateless-language-agents",
+      "name": "Stateless Language Agents (SLA)",
+      "organization": "Stanford University x Carnegie Mellon University x University of Washington x SambaNova Systems x UC Berkeley",
+      "date": "2026-10",
+      "entry_type": "agent",
+      "status": "wip",
+      "summary": "A stateless Advisor assigns experiments to isolated Workers while the harness retains candidate and outcome history; three SOL-ExecBench GPU tasks test this search architecture.",
+      "caveats": [
+        "The author GitHub repository held only an assets directory at audit time; it is linked as a project placeholder, not released implementation code.",
+        "The GPU experiments use one run per method on three selected SOL-ExecBench tasks. The prominently advertised 93.1% token saving is from a separate simulated VLIW SIMD task, not a GPU workload.",
+        "The inspected paper does not identify the GPU model used for its SOL-ExecBench runs. The SOL score is a nonlinear baseline-and-floor-normalized score, not a direct fraction of hardware peak."
+      ],
+      "taxonomy": {
+        "policy_adaptation": [
+          "prompting"
+        ],
+        "generation_mode": [
+          "iterative-refinement"
+        ],
+        "search_strategy": [],
+        "participants": [
+          "multi-agent"
+        ],
+        "coordination": [
+          "planner-worker",
+          "parallel"
+        ],
+        "feedback_signal": [
+          "correctness",
+          "runtime"
+        ],
+        "feedback_source": [
+          "roofline"
+        ],
+        "memory": [
+          "trajectory",
+          "archive"
+        ],
+        "workload_scope": [
+          "operator",
+          "fusion"
+        ],
+        "integration_scope": [],
+        "optimization_level": [
+          "dsl"
+        ],
+        "optimization_focus": []
+      },
+      "representations": [
+        "Triton"
+      ],
+      "hardware": [],
+      "links": {
+        "paper": [
+          {
+            "label": "Paper",
+            "url": "https://arxiv.org/abs/2610.07625",
+            "provenance": "author"
+          }
+        ],
+        "code": [],
+        "article": [],
+        "project": [
+          {
+            "label": "Project (placeholder)",
+            "url": "https://github.com/Alex-q-z/stateless-language-agents",
+            "provenance": "author"
+          }
+        ],
+        "artifact": [],
+        "model": [],
+        "dataset": []
+      },
+      "artifacts": {
+        "implementation": {
+          "status": "unknown",
+          "urls": []
+        },
+        "generated_kernels": {
+          "status": "unknown",
+          "urls": []
+        },
+        "harness": {
+          "status": "unknown",
+          "urls": []
+        },
+        "model_weights": {
+          "status": "unknown",
+          "urls": []
+        },
+        "trajectories": {
+          "status": "unknown",
+          "urls": []
+        }
+      },
+      "claims": [
+        {
+          "id": "sla-sol58-token-reduction",
+          "metric": "token-reduction",
+          "value": 95.9,
+          "unit": "percent",
+          "aggregation": "single",
+          "qualifier": "To match EvoX's final SOL score; one run per method",
+          "workload": {
+            "benchmark": "SOL-ExecBench",
+            "subset": "#58 mixture-of-experts token sorting with prefix sums; target SOL score 0.804"
+          },
+          "hardware": "unknown",
+          "scope": "operator",
+          "baseline": {
+            "tier": "not-applicable",
+            "kind": "prior-agent",
+            "name": "EvoX token usage to reach its final SOL-ExecBench #58 score (354.1M tokens)",
+            "evidence": null
+          },
+          "budget": {
+            "status": "yes",
+            "details": "500M cumulative input/output tokens per method; Codex v0.152.1 with GPT-5.5, high reasoning; three Workers and three local trials per Advisor epoch. SLA reaches the target at 14.5M tokens (Table 3, Sections 4.1 and B.1)."
+          },
+          "reproducibility": {
+            "claim_linked_artifact": "unknown",
+            "artifact_url": null
+          },
+          "primary_source": {
+            "url": "https://arxiv.org/abs/2610.07625",
+            "locator": "Section 4.2 Table 3, SOL-ExecBench #58 To match Tokens and relative reduction"
+          },
+          "caveats": [
+            "This measures search token savings at a common performance target, not kernel runtime speedup.",
+            "Only one run per method; GPU model is not specified in the inspected primary source."
+          ]
+        }
+      ],
+      "primary_claim": "sla-sol58-token-reduction"
+    },
+    {
+      "id": "hyperloom",
+      "name": "ROCm Hyperloom",
+      "organization": "AMD",
+      "date": "2026-03",
+      "entry_type": "agent",
+      "status": "open",
+      "summary": "Multi-agent inference optimization across serving settings, framework source, and generated GPU kernels, with independent end-to-end measurement and a reusable recipe knowledge base. AMD reports a 1.73x median gain across 16 workloads.",
+      "caveats": [
+        "Hyperloom and Apex are distinct public repositories, not a rename. March implementation history predates the September article.",
+        "Reported gains include serving configuration, precision, attention backend and speculative-decoding changes as well as kernel changes; they are not isolated kernel speedups. The fleet evaluation does not disclose every workload's exact hardware and search budget."
+      ],
+      "taxonomy": {
+        "policy_adaptation": [
+          "prompting"
+        ],
+        "generation_mode": [
+          "iterative-refinement"
+        ],
+        "search_strategy": [],
+        "participants": [
+          "multi-agent"
+        ],
+        "coordination": [
+          "hierarchical",
+          "role-specialized"
+        ],
+        "feedback_signal": [
+          "correctness",
+          "runtime",
+          "model-level"
+        ],
+        "feedback_source": [
+          "profiler",
+          "roofline"
+        ],
+        "memory": [
+          "retrieval",
+          "cross-run"
+        ],
+        "workload_scope": [
+          "operator",
+          "fusion",
+          "model",
+          "system"
+        ],
+        "integration_scope": [
+          "serving"
+        ],
+        "optimization_level": [
+          "source",
+          "dsl"
+        ],
+        "optimization_focus": [
+          "schedule"
+        ]
+      },
+      "representations": [
+        "HIP",
+        "Triton",
+        "FlyDSL"
+      ],
+      "hardware": [
+        "AMD"
+      ],
+      "links": {
+        "paper": [],
+        "code": [
+          {
+            "label": "Code",
+            "url": "https://github.com/AMD-AGI/Hyperloom",
+            "provenance": "official"
+          }
+        ],
+        "article": [
+          {
+            "label": "Article",
+            "url": "https://rocm.blogs.amd.com/software-tools-optimization/hyperloom-optimization/README.html",
+            "provenance": "official"
+          }
+        ],
+        "project": [
+          {
+            "label": "Documentation",
+            "url": "https://rocm.docs.amd.com/projects/hyperloom/en/latest/index.html",
+            "provenance": "official"
+          }
+        ],
+        "artifact": [
+          {
+            "label": "Archived Qwen kernel examples",
+            "url": "https://github.com/AMD-AGI/Hyperloom/tree/79856335c65047ac11264132167def97047f83e5/.cursor/skills/inference-optimization/results/qwen3-14b-mi355x",
+            "provenance": "official"
+          }
+        ],
+        "model": [],
+        "dataset": []
+      },
+      "artifacts": {
+        "implementation": {
+          "status": "yes",
+          "urls": [
+            "https://github.com/AMD-AGI/Hyperloom"
+          ]
+        },
+        "generated_kernels": {
+          "status": "partial",
+          "urls": [
+            "https://github.com/AMD-AGI/Hyperloom/tree/79856335c65047ac11264132167def97047f83e5/.cursor/skills/inference-optimization/results/qwen3-14b-mi355x"
+          ]
+        },
+        "harness": {
+          "status": "yes",
+          "urls": [
+            "https://github.com/AMD-AGI/Hyperloom"
+          ]
+        },
+        "model_weights": {
+          "status": "unknown",
+          "urls": []
+        },
+        "trajectories": {
+          "status": "unknown",
+          "urls": []
+        }
+      },
+      "claims": [
+        {
+          "id": "hyperloom-fleet-median",
+          "metric": "throughput",
+          "value": 1.73,
+          "unit": "x",
+          "aggregation": "median",
+          "qualifier": "end-to-end throughput; unattended runs",
+          "workload": {
+            "benchmark": "AMD Hyperloom fleet evaluation",
+            "subset": "16 text/image-generation workloads across vLLM, SGLang and xDiT"
+          },
+          "hardware": "AMD Instinct GPUs; per-workload SKU not fully disclosed",
+          "scope": "serving",
+          "baseline": {
+            "tier": "unknown",
+            "kind": "unresolved-implementation",
+            "name": "Measured stock serving configuration for each workload",
+            "evidence": null
+          },
+          "budget": {
+            "status": "unknown",
+            "details": "The single-session case has a 24-hour cap, but that cap is not explicitly established for every fleet workload."
+          },
+          "reproducibility": {
+            "claim_linked_artifact": "unknown",
+            "artifact_url": null
+          },
+          "primary_source": {
+            "url": "https://rocm.blogs.amd.com/software-tools-optimization/hyperloom-optimization/README.html",
+            "locator": "Prelude; Widening to the Fleet; Table 4"
+          },
+          "caveats": [
+            "The denominator is a stock serving implementation, not an agent comparison. Its implementation tier is unresolved; it is not automatically a deployed T4 incumbent.",
+            "Full-stack improvements include changes to numerical precision and decoding/configuration; do not attribute the median to generated kernels alone."
+          ]
+        },
+        {
+          "id": "hyperloom-llama-mi355x",
+          "metric": "throughput",
+          "value": 3.48,
+          "unit": "x",
+          "aggregation": "single",
+          "qualifier": "end-to-end throughput",
+          "workload": {
+            "benchmark": "Llama-3.1-8B-Instruct inference",
+            "subset": "vLLM; initial bf16; 1024 input and 1024 output tokens; concurrency 64; one GPU"
+          },
+          "hardware": "AMD Instinct MI355X",
+          "scope": "serving",
+          "baseline": {
+            "tier": "unknown",
+            "kind": "unresolved-implementation",
+            "name": "Initial stock vLLM serving configuration (7677 tokens/s)",
+            "evidence": null
+          },
+          "budget": {
+            "status": "yes",
+            "details": "24-hour optimization budget; stopped after approximately 19 hours due to convergence."
+          },
+          "reproducibility": {
+            "claim_linked_artifact": "unknown",
+            "artifact_url": null
+          },
+          "primary_source": {
+            "url": "https://rocm.blogs.amd.com/software-tools-optimization/hyperloom-optimization/README.html",
+            "locator": "Following a Single Session; Table 2"
+          },
+          "caveats": [
+            "Final throughput is 26682 tokens/s. Most improvement comes from framework changes including FP8 weights/KV cache, AITER attention and speculative decoding; a cache-kernel rewrite and later fusion add gains."
+          ]
+        }
+      ],
+      "primary_claim": "hyperloom-fleet-median",
+      "migration_review": [
+        {
+          "field": "claims.hyperloom-fleet-median.baseline.tier",
+          "issue": "Stock full-stack serving configurations are real implementation denominators, but the article does not establish one T0-T6 provenance/status classification for this heterogeneous set."
+        },
+        {
+          "field": "claims.hyperloom-llama-mi355x.baseline.tier",
+          "issue": "The initial stock vLLM implementation is specified, but no evidence establishes its specialization/deployment status within T0-T6; retain Unknown."
+        }
+      ]
+    },
+    {
+      "id": "maxcode",
+      "name": "MaxCode",
+      "organization": "Johns Hopkins University × Amazon Web Services",
+      "date": "2026-01",
+      "entry_type": "agent",
+      "status": "closed",
+      "summary": "Frozen-policy CUDA optimization with execution critiques, full-trajectory context and max-reward inference-time search; CUDA-LLM + MaxCode reports 3.17× median best-found speedup on KernelBench Level 1.",
+      "caveats": [
+        "The max-reward RL formulation does not train the code-proposing policy: §2 explicitly freezes its parameters. A separate optional value model is supervised with cross-entropy; it is not policy reinforcement learning.",
+        "The headline is the median across tasks of each task's maximum observed speedup, not an average over all generated candidates. Level 1 and Level 2 have separate denominators/populations.",
+        "The paper evaluates CUDA on KernelBench and C++ on PIE; only the kernel results are indexed here. GPU model/vendor and author implementation availability were not established by the inspected sources."
+      ],
+      "taxonomy": {
+        "policy_adaptation": [
+          "prompting"
+        ],
+        "generation_mode": [
+          "iterative-refinement"
+        ],
+        "search_strategy": [
+          "beam-search"
+        ],
+        "participants": [
+          "multi-agent"
+        ],
+        "coordination": [
+          "role-specialized"
+        ],
+        "feedback_signal": [
+          "correctness",
+          "runtime"
+        ],
+        "feedback_source": [
+          "compiler"
+        ],
+        "memory": [
+          "trajectory",
+          "reflection"
+        ],
+        "workload_scope": [
+          "operator",
+          "fusion"
+        ],
+        "integration_scope": [],
+        "optimization_level": [
+          "source"
+        ],
+        "optimization_focus": []
+      },
+      "representations": [
+        "CUDA"
+      ],
+      "hardware": [],
+      "links": {
+        "paper": [
+          {
+            "label": "Paper",
+            "url": "https://arxiv.org/abs/2601.05475",
+            "provenance": "author"
+          },
+          {
+            "label": "Full text",
+            "url": "https://arxiv.org/html/2601.05475v1",
+            "provenance": "author"
+          }
+        ],
+        "code": [],
+        "article": [],
+        "project": [],
+        "artifact": [],
+        "model": [],
+        "dataset": []
+      },
+      "artifacts": {
+        "implementation": {
+          "status": "unknown",
+          "urls": []
+        },
+        "generated_kernels": {
+          "status": "unknown",
+          "urls": []
+        },
+        "harness": {
+          "status": "unknown",
+          "urls": []
+        },
+        "model_weights": {
+          "status": "unknown",
+          "urls": []
+        },
+        "trajectories": {
+          "status": "unknown",
+          "urls": []
+        }
+      },
+      "claims": [
+        {
+          "id": "maxcode-l1",
+          "metric": "speedup",
+          "value": 3.17,
+          "unit": "x",
+          "aggregation": "median",
+          "qualifier": "median of per-task maximum observed speedup; CUDA-LLM + MaxCode",
+          "workload": {
+            "benchmark": "KernelBench",
+            "subset": "Level 1: all 100 tasks"
+          },
+          "hardware": "unknown",
+          "scope": "operator",
+          "baseline": {
+            "tier": "T0",
+            "kind": "framework-reference",
+            "name": "default PyTorch implementation",
+            "evidence": null
+          },
+          "budget": {
+            "status": "yes",
+            "details": "CUDA-LLM search depth=8 and K=8; Claude-3.7-Sonnet generator and extended-thinking critic, temperature 0.6 (§3.1)."
+          },
+          "reproducibility": {
+            "claim_linked_artifact": "unknown",
+            "artifact_url": null
+          },
+          "primary_source": {
+            "url": "https://arxiv.org/html/2601.05475v1",
+            "locator": "§3.1 Datasets, Table 1, Experimental Setup and Evaluation Metrics"
+          },
+          "caveats": []
+        },
+        {
+          "id": "maxcode-l2",
+          "metric": "speedup",
+          "value": 1.61,
+          "unit": "x",
+          "aggregation": "median",
+          "qualifier": "median of per-task maximum observed speedup; CUDA-LLM + MaxCode",
+          "workload": {
+            "benchmark": "KernelBench",
+            "subset": "Level 2: all 100 tasks"
+          },
+          "hardware": "unknown",
+          "scope": "fusion",
+          "baseline": {
+            "tier": "T0",
+            "kind": "framework-reference",
+            "name": "default PyTorch implementation",
+            "evidence": null
+          },
+          "budget": {
+            "status": "yes",
+            "details": "CUDA-LLM search depth=8 and K=8; Claude-3.7-Sonnet generator and extended-thinking critic, temperature 0.6 (§3.1)."
+          },
+          "reproducibility": {
+            "claim_linked_artifact": "unknown",
+            "artifact_url": null
+          },
+          "primary_source": {
+            "url": "https://arxiv.org/html/2601.05475v1",
+            "locator": "§3.1 Datasets, Table 1, Experimental Setup and Evaluation Metrics"
+          },
+          "caveats": []
+        }
+      ],
+      "primary_claim": "maxcode-l1",
+      "migration_review": [
+        {
+          "field": "hardware",
+          "issue": "The inspected paper does not specify a GPU model or vendor for the KernelBench results; no hardware was inferred from CUDA."
+        },
+        {
+          "field": "artifacts.implementation",
+          "issue": "No author code repository was verified at the 2026-10-19 cutoff; generic Google accelerator-agents MaxCode refers to another system."
+        }
+      ]
+    },
+    {
+      "id": "kernelopt",
+      "name": "KernelOPT",
+      "organization": "Red Hat",
+      "date": "2026-09",
+      "entry_type": "agent",
+      "status": "partial",
+      "summary": "Dispatch-aware multi-agent optimization of Inductor-generated kernels, retaining vendor-library calls and validating the reassembled module.",
+      "caveats": [
+        "Uses the October 6 v2 results, including compiler fallbacks; optimized-only aggregates are different populations. Only 70 of 250 tasks exceed the 1.03x improvement threshold.",
+        "Final performance acceptance allows a 3% noise margin. Accepted-side FP64 error-ratio distribution is not instrumented.",
+        "The author-linked repository was not retrievable on 2026-10-19; implementation and complete winning artifacts remain unknown. Paper Appendix G provides examples, not the full result bundle."
+      ],
+      "taxonomy": {
+        "policy_adaptation": [
+          "prompting"
+        ],
+        "generation_mode": [
+          "iterative-refinement"
+        ],
+        "search_strategy": [
+          "beam-search"
+        ],
+        "participants": [
+          "multi-agent"
+        ],
+        "coordination": [
+          "role-specialized"
+        ],
+        "feedback_signal": [
+          "correctness",
+          "runtime",
+          "model-level"
+        ],
+        "feedback_source": [
+          "compiler",
+          "profiler",
+          "hardware-counters",
+          "roofline"
+        ],
+        "memory": [
+          "trajectory",
+          "cross-run"
+        ],
+        "workload_scope": [
+          "operator",
+          "fusion",
+          "model",
+          "system"
+        ],
+        "integration_scope": [
+          "compiler"
+        ],
+        "optimization_level": [
+          "dsl"
+        ],
+        "optimization_focus": [
+          "schedule",
+          "algorithm"
+        ]
+      },
+      "representations": [
+        "Triton",
+        "Helion"
+      ],
+      "hardware": [
+        "NVIDIA"
+      ],
+      "links": {
+        "paper": [
+          {
+            "label": "Paper",
+            "url": "https://arxiv.org/abs/2609.30059",
+            "provenance": "author"
+          },
+          {
+            "label": "v2 full text",
+            "url": "https://arxiv.org/html/2609.30059v2",
+            "provenance": "author"
+          }
+        ],
+        "code": [
+          {
+            "label": "Author-linked repository",
+            "url": "https://github.com/TorchedHat/KernelOPT",
+            "provenance": "author"
+          }
+        ],
+        "article": [],
+        "project": [],
+        "artifact": [],
+        "model": [],
+        "dataset": []
+      },
+      "artifacts": {
+        "implementation": {
+          "status": "unknown",
+          "urls": []
+        },
+        "generated_kernels": {
+          "status": "partial",
+          "urls": [
+            "https://arxiv.org/html/2609.30059v2"
+          ]
+        },
+        "harness": {
+          "status": "unknown",
+          "urls": []
+        },
+        "model_weights": {
+          "status": "unknown",
+          "urls": []
+        },
+        "trajectories": {
+          "status": "unknown",
+          "urls": []
+        }
+      },
+      "claims": [
+        {
+          "id": "kernelopt-all",
+          "metric": "speedup",
+          "value": 1.23,
+          "unit": "x",
+          "aggregation": "geometric-mean",
+          "qualifier": "all-problems geometric mean including compiler fallbacks",
+          "workload": {
+            "benchmark": "KernelBench",
+            "subset": "All 250 tasks, including matched and fallback cases"
+          },
+          "hardware": "NVIDIA H200",
+          "scope": "system",
+          "baseline": {
+            "evidence": null,
+            "tier": "T1",
+            "kind": "compiler-generated",
+            "name": "torch.compile (Inductor max_autotune)"
+          },
+          "budget": {
+            "status": "yes",
+            "details": "5 iterations × 4 plans, up to 4 synthesis attempts per plan; beam width 4. Approximately 1,100 H200 GPU-hours across the benchmark (§5)."
+          },
+          "reproducibility": {
+            "claim_linked_artifact": "unknown",
+            "artifact_url": null
+          },
+          "primary_source": {
+            "url": "https://arxiv.org/html/2609.30059v2",
+            "locator": "Table 1 Panel A; §5; §6.1"
+          },
+          "caveats": []
+        },
+        {
+          "id": "kernelopt-l1",
+          "metric": "speedup",
+          "value": 1.4,
+          "unit": "x",
+          "aggregation": "geometric-mean",
+          "qualifier": "all-problems geometric mean including compiler fallbacks",
+          "workload": {
+            "benchmark": "KernelBench",
+            "subset": "Level 1: all 100 tasks"
+          },
+          "hardware": "NVIDIA H200",
+          "scope": "operator",
+          "baseline": {
+            "evidence": null,
+            "tier": "T1",
+            "kind": "compiler-generated",
+            "name": "torch.compile (Inductor max_autotune)"
+          },
+          "budget": {
+            "status": "yes",
+            "details": "5 iterations × 4 plans, up to 4 synthesis attempts per plan; beam width 4. Approximately 1,100 H200 GPU-hours across the benchmark (§5)."
+          },
+          "reproducibility": {
+            "claim_linked_artifact": "unknown",
+            "artifact_url": null
+          },
+          "primary_source": {
+            "url": "https://arxiv.org/html/2609.30059v2",
+            "locator": "Table 1 Panel A; §5; §6.1"
+          },
+          "caveats": []
+        },
+        {
+          "id": "kernelopt-l2",
+          "metric": "speedup",
+          "value": 1.15,
+          "unit": "x",
+          "aggregation": "geometric-mean",
+          "qualifier": "all-problems geometric mean including compiler fallbacks",
+          "workload": {
+            "benchmark": "KernelBench",
+            "subset": "Level 2: all 100 tasks"
+          },
+          "hardware": "NVIDIA H200",
+          "scope": "fusion",
+          "baseline": {
+            "evidence": null,
+            "tier": "T1",
+            "kind": "compiler-generated",
+            "name": "torch.compile (Inductor max_autotune)"
+          },
+          "budget": {
+            "status": "yes",
+            "details": "5 iterations × 4 plans, up to 4 synthesis attempts per plan; beam width 4. Approximately 1,100 H200 GPU-hours across the benchmark (§5)."
+          },
+          "reproducibility": {
+            "claim_linked_artifact": "unknown",
+            "artifact_url": null
+          },
+          "primary_source": {
+            "url": "https://arxiv.org/html/2609.30059v2",
+            "locator": "Table 1 Panel A; §5; §6.1"
+          },
+          "caveats": []
+        },
+        {
+          "id": "kernelopt-l3",
+          "metric": "speedup",
+          "value": 1.07,
+          "unit": "x",
+          "aggregation": "geometric-mean",
+          "qualifier": "all-problems geometric mean including compiler fallbacks",
+          "workload": {
+            "benchmark": "KernelBench",
+            "subset": "Level 3: all 50 tasks"
+          },
+          "hardware": "NVIDIA H200",
+          "scope": "model",
+          "baseline": {
+            "evidence": null,
+            "tier": "T1",
+            "kind": "compiler-generated",
+            "name": "torch.compile (Inductor max_autotune)"
+          },
+          "budget": {
+            "status": "yes",
+            "details": "5 iterations × 4 plans, up to 4 synthesis attempts per plan; beam width 4. Approximately 1,100 H200 GPU-hours across the benchmark (§5)."
+          },
+          "reproducibility": {
+            "claim_linked_artifact": "unknown",
+            "artifact_url": null
+          },
+          "primary_source": {
+            "url": "https://arxiv.org/html/2609.30059v2",
+            "locator": "Table 1 Panel A; §5; §6.1"
+          },
+          "caveats": []
+        }
+      ],
+      "primary_claim": "kernelopt-all",
+      "migration_review": [
+        {
+          "field": "artifacts.implementation",
+          "issue": "Author-linked KernelOPT repository was not retrievable at the audit cutoff; public availability and exact winning artifacts require rechecking."
+        }
+      ]
+    },
+    {
+      "id": "servingstudio",
+      "name": "ServingStudio",
+      "organization": "University of Washington · SyFI Lab",
+      "date": "2026-09",
+      "entry_type": "agent",
+      "status": "open",
+      "summary": "Agent workbench that uses serving simulation, kernel profiling and hardware validation to implement kernel and serving-stack improvements.",
+      "caveats": [
+        "Reported gains are serving throughput, not isolated-kernel speedups. Hardware, workload and implementation denominator differ by case.",
+        "Concrete generated-kernel representation and complete winning artifacts are not established by the introduction. CUDA graphs do not by themselves establish CUDA source generation."
+      ],
+      "taxonomy": {
+        "policy_adaptation": [
+          "prompting"
+        ],
+        "generation_mode": [
+          "iterative-refinement"
+        ],
+        "search_strategy": [],
+        "participants": [
+          "human-in-the-loop"
+        ],
+        "coordination": [],
+        "feedback_signal": [
+          "correctness",
+          "runtime",
+          "model-level"
+        ],
+        "feedback_source": [
+          "profiler",
+          "simulator",
+          "roofline"
+        ],
+        "memory": [
+          "skill-library"
+        ],
+        "workload_scope": [
+          "fusion",
+          "model",
+          "system"
+        ],
+        "integration_scope": [
+          "serving",
+          "distributed"
+        ],
+        "optimization_level": [
+          "source"
+        ],
+        "optimization_focus": []
+      },
+      "representations": [],
+      "hardware": [
+        "NVIDIA"
+      ],
+      "links": {
+        "paper": [],
+        "code": [
+          {
+            "label": "Code",
+            "url": "https://github.com/SyFI-ServingStudio/ServingStudio",
+            "provenance": "official"
+          }
+        ],
+        "article": [
+          {
+            "label": "Article",
+            "url": "https://syfi.cs.washington.edu/blog/2026-09-24-introducing-servingstudio/",
+            "provenance": "official"
+          }
+        ],
+        "project": [
+          {
+            "label": "Project",
+            "url": "https://syfi-servingstudio.github.io/",
+            "provenance": "official"
+          }
+        ],
+        "artifact": [
+          {
+            "label": "SGLang tuning change",
+            "url": "https://github.com/sgl-project/sglang/pull/38560",
+            "provenance": "official"
+          }
+        ],
+        "model": [],
+        "dataset": []
+      },
+      "artifacts": {
+        "implementation": {
+          "status": "yes",
+          "urls": [
+            "https://github.com/SyFI-ServingStudio/ServingStudio"
+          ]
+        },
+        "generated_kernels": {
+          "status": "unknown",
+          "urls": []
+        },
+        "harness": {
+          "status": "unknown",
+          "urls": []
+        },
+        "model_weights": {
+          "status": "unknown",
+          "urls": []
+        },
+        "trajectories": {
+          "status": "unknown",
+          "urls": []
+        }
+      },
+      "claims": [
+        {
+          "id": "servingstudio-sglang-prefill",
+          "metric": "throughput",
+          "value": 5.6,
+          "unit": "percent",
+          "aggregation": "single",
+          "qualifier": "throughput improvement over the stated implementation baseline",
+          "workload": {
+            "benchmark": "ServingStudio serving case studies",
+            "subset": "Input throughput; GLM-5.2 NVFP4; TP4; 240 requests, 4096 input / 8 output tokens; concurrency 24"
+          },
+          "hardware": "4× NVIDIA B200",
+          "scope": "serving",
+          "baseline": {
+            "evidence": null,
+            "tier": "unknown",
+            "kind": "unresolved-implementation",
+            "name": "unmodified SGLang prefill path"
+          },
+          "budget": {
+            "status": "unknown",
+            "details": ""
+          },
+          "reproducibility": {
+            "claim_linked_artifact": "partial",
+            "artifact_url": "https://github.com/sgl-project/sglang/pull/38560"
+          },
+          "primary_source": {
+            "url": "https://syfi.cs.washington.edu/blog/2026-09-24-introducing-servingstudio/",
+            "locator": "Performance Gains in Practice, Case 1"
+          },
+          "caveats": [
+            "The introduction links the implementation PR; a complete pinned benchmark/result bundle was not verified."
+          ]
+        },
+        {
+          "id": "servingstudio-vllm-replay",
+          "metric": "throughput",
+          "value": 10.8,
+          "unit": "percent",
+          "aggregation": "single",
+          "qualifier": "throughput improvement over the stated implementation baseline",
+          "workload": {
+            "benchmark": "ServingStudio serving case studies",
+            "subset": "Output throughput; GLM-5.2 NVFP4; TP4/EP4; separate 100-request run; 2052-token graph/scheduler configuration"
+          },
+          "hardware": "4× NVIDIA B200",
+          "scope": "serving",
+          "baseline": {
+            "evidence": null,
+            "tier": "unknown",
+            "kind": "self-baseline",
+            "name": "original vLLM 2048-token configuration"
+          },
+          "budget": {
+            "status": "unknown",
+            "details": ""
+          },
+          "reproducibility": {
+            "claim_linked_artifact": "unknown",
+            "artifact_url": null
+          },
+          "primary_source": {
+            "url": "https://syfi.cs.washington.edu/blog/2026-09-24-introducing-servingstudio/",
+            "locator": "Performance Gains in Practice, Case 2"
+          },
+          "caveats": []
+        },
+        {
+          "id": "servingstudio-mini-sglang",
+          "metric": "throughput",
+          "value": 25.6,
+          "unit": "percent",
+          "aggregation": "single",
+          "qualifier": "throughput improvement over the stated implementation baseline",
+          "workload": {
+            "benchmark": "ServingStudio serving case studies",
+            "subset": "Output throughput; Qwen3-235B FP8; TP4/EP4; 256 requests; concurrency 32"
+          },
+          "hardware": "4× NVIDIA H200",
+          "scope": "serving",
+          "baseline": {
+            "evidence": null,
+            "tier": "unknown",
+            "kind": "unresolved-implementation",
+            "name": "vLLM on the same prefill-heavy workload"
+          },
+          "budget": {
+            "status": "unknown",
+            "details": ""
+          },
+          "reproducibility": {
+            "claim_linked_artifact": "unknown",
+            "artifact_url": null
+          },
+          "primary_source": {
+            "url": "https://syfi.cs.washington.edu/blog/2026-09-24-introducing-servingstudio/",
+            "locator": "Performance Gains in Practice, Case 3"
+          },
+          "caveats": []
+        }
+      ],
+      "primary_claim": "servingstudio-sglang-prefill",
+      "migration_review": [
+        {
+          "field": "representations",
+          "issue": "Introduction and linked tuning change establish source-level optimization but do not identify a generated-kernel representation; left unannotated."
+        }
+      ]
+    },
+    {
+      "id": "dream-rsi",
+      "name": "Dream-RSI",
+      "organization": "Google × Google DeepMind × University of Maryland × University of Virginia",
+      "date": "2026-09",
+      "entry_type": "agent",
+      "status": "wip",
+      "summary": "Rewrites an executable exploration policy using replay over recorded discovery trees; demonstrated on four GPU kernel tasks without changing the coding model's weights.",
+      "caveats": [
+        "The project repository says full implementation and reproduction scripts are being prepared; it is a project/release-plan link, not released agent code. Appendix E.2 publishes a ConvDiv kernel.",
+        "Four selected tasks only. Generation-count savings are search-efficiency results, not kernel runtime speedups. Replay simulates discovery decisions, not GPU hardware."
+      ],
+      "taxonomy": {
+        "policy_adaptation": [
+          "prompting",
+          "in-context-learning"
+        ],
+        "generation_mode": [
+          "iterative-refinement"
+        ],
+        "search_strategy": [],
+        "participants": [
+          "multi-agent"
+        ],
+        "coordination": [
+          "parallel",
+          "role-specialized"
+        ],
+        "feedback_signal": [
+          "correctness",
+          "runtime"
+        ],
+        "feedback_source": [],
+        "memory": [
+          "trajectory",
+          "reflection",
+          "cross-run"
+        ],
+        "workload_scope": [
+          "operator",
+          "fusion",
+          "model"
+        ],
+        "integration_scope": [],
+        "optimization_level": [
+          "dsl"
+        ],
+        "optimization_focus": [
+          "algorithm"
+        ]
+      },
+      "representations": [
+        "Triton"
+      ],
+      "hardware": [
+        "NVIDIA"
+      ],
+      "links": {
+        "paper": [
+          {
+            "label": "Paper",
+            "url": "https://arxiv.org/abs/2609.14858",
+            "provenance": "author"
+          },
+          {
+            "label": "v2 full text",
+            "url": "https://arxiv.org/html/2609.14858v2",
+            "provenance": "author"
+          }
+        ],
+        "code": [],
+        "article": [],
+        "project": [
+          {
+            "label": "Release plan",
+            "url": "https://github.com/zhengkid/Dream-RSI",
+            "provenance": "author"
+          },
+          {
+            "label": "Project",
+            "url": "https://dream-rsi.com/",
+            "provenance": "official"
+          }
+        ],
+        "artifact": [],
+        "model": [],
+        "dataset": []
+      },
+      "artifacts": {
+        "implementation": {
+          "status": "no",
+          "urls": []
+        },
+        "generated_kernels": {
+          "status": "partial",
+          "urls": [
+            "https://arxiv.org/html/2609.14858v2"
+          ]
+        },
+        "harness": {
+          "status": "no",
+          "urls": []
+        },
+        "model_weights": {
+          "status": "unknown",
+          "urls": []
+        },
+        "trajectories": {
+          "status": "unknown",
+          "urls": []
+        }
+      },
+      "claims": [
+        {
+          "id": "dream-rsi-convdiv",
+          "metric": "speedup",
+          "value": 2.09,
+          "unit": "x",
+          "aggregation": "single",
+          "qualifier": "selected task, comparable discovery budget",
+          "workload": {
+            "benchmark": "KernelBench",
+            "subset": "ConvDiv"
+          },
+          "hardware": "NVIDIA L40S",
+          "scope": "fusion",
+          "baseline": {
+            "evidence": null,
+            "tier": "unknown",
+            "kind": "prior-agent",
+            "name": "kernel found by Recursive Fixed Exploration"
+          },
+          "budget": {
+            "status": "yes",
+            "details": "9 online rounds; up to 10 workers and 110 discovery calls per round; 4 policy versions per offline phase (Table 3)."
+          },
+          "reproducibility": {
+            "claim_linked_artifact": "partial",
+            "artifact_url": "https://arxiv.org/html/2609.14858v2"
+          },
+          "primary_source": {
+            "url": "https://arxiv.org/html/2609.14858v2",
+            "locator": "§4.1 Figure 3; Appendix B.1–B.2"
+          },
+          "caveats": [
+            "Appendix E.2 provides the discovered ConvDiv program, but the full harness and exact paired baseline bundle are not released."
+          ]
+        },
+        {
+          "id": "dream-rsi-convmax",
+          "metric": "speedup",
+          "value": 1.44,
+          "unit": "x",
+          "aggregation": "single",
+          "qualifier": "selected task, comparable discovery budget",
+          "workload": {
+            "benchmark": "KernelBench",
+            "subset": "ConvMax"
+          },
+          "hardware": "NVIDIA L40S",
+          "scope": "fusion",
+          "baseline": {
+            "evidence": null,
+            "tier": "unknown",
+            "kind": "prior-agent",
+            "name": "kernel found by Recursive Fixed Exploration"
+          },
+          "budget": {
+            "status": "yes",
+            "details": "9 online rounds; up to 10 workers and 110 discovery calls per round; 4 policy versions per offline phase (Table 3)."
+          },
+          "reproducibility": {
+            "claim_linked_artifact": "unknown",
+            "artifact_url": null
+          },
+          "primary_source": {
+            "url": "https://arxiv.org/html/2609.14858v2",
+            "locator": "§4.1 Figure 3; Appendix B.1–B.2"
+          },
+          "caveats": []
+        }
+      ],
+      "primary_claim": "dream-rsi-convdiv"
+    },
+    {
+      "id": "areal-rsi",
+      "name": "AReaL-RSI",
+      "organization": "Ant Group × Zhejiang University × HKUST",
+      "date": "2026-10",
+      "entry_type": "agent",
+      "status": "closed",
+      "summary": "Coordinates persistent researcher agents with conditional experience sharing and reusable harness revisions; evaluated on seven KernelBench tasks.",
+      "caveats": [
+        "§5 reports arithmetic mean speedup on seven tasks, scoring failed tasks zero; it does not identify the reference implementation, GPU model or generated-kernel language precisely enough for a verified numerical headline.",
+        "One effective hour per researcher is not an equal whole-system compute budget versus a single Codex-Goal agent. Model weights are unchanged; the system name does not establish reinforcement-learning training."
+      ],
+      "taxonomy": {
+        "policy_adaptation": [
+          "prompting",
+          "in-context-learning"
+        ],
+        "generation_mode": [
+          "iterative-refinement"
+        ],
+        "search_strategy": [],
+        "participants": [
+          "multi-agent"
+        ],
+        "coordination": [
+          "hierarchical",
+          "role-specialized",
+          "parallel"
+        ],
+        "feedback_signal": [
+          "correctness",
+          "runtime"
+        ],
+        "feedback_source": [],
+        "memory": [
+          "trajectory",
+          "retrieval",
+          "skill-library",
+          "cross-run"
+        ],
+        "workload_scope": [
+          "operator",
+          "fusion",
+          "model"
+        ],
+        "integration_scope": [],
+        "optimization_level": [],
+        "optimization_focus": []
+      },
+      "representations": [],
+      "hardware": [],
+      "links": {
+        "paper": [
+          {
+            "label": "Paper",
+            "url": "https://arxiv.org/abs/2610.18083",
+            "provenance": "author"
+          },
+          {
+            "label": "Full text",
+            "url": "https://arxiv.org/html/2610.18083v1",
+            "provenance": "author"
+          }
+        ],
+        "code": [],
+        "article": [],
+        "project": [],
+        "artifact": [],
+        "model": [],
+        "dataset": []
+      },
+      "artifacts": {
+        "implementation": {
+          "status": "unknown",
+          "urls": []
+        },
+        "generated_kernels": {
+          "status": "unknown",
+          "urls": []
+        },
+        "harness": {
+          "status": "unknown",
+          "urls": []
+        },
+        "model_weights": {
+          "status": "unknown",
+          "urls": []
+        },
+        "trajectories": {
+          "status": "unknown",
+          "urls": []
+        }
+      },
+      "claims": [],
+      "primary_claim": null,
+      "migration_review": [
+        {
+          "field": "claims",
+          "issue": "Table 1 reports 2.30x/8.59x mean speedup and relative gains over Codex-Goal, but the implementation reference is unspecified. Do not reinterpret these as speedup directly against Codex-Goal kernels."
+        },
+        {
+          "field": "taxonomy.optimization_level",
+          "issue": "The paper establishes GPU kernel optimization but does not identify a concrete editable artifact level or representation. Hardware is also unannotated."
+        }
+      ]
+    },
+    {
+      "id": "krex",
+      "name": "KREX",
+      "organization": "HKUST × Alibaba",
+      "date": "2026-09",
+      "entry_type": "tool",
+      "status": "partial",
+      "summary": "Runtime for interference-controlled kernel benchmarking on shared GPUs; supports optimization agents but does not itself generate kernels.",
+      "caveats": [
+        "Benchmarking throughput and measurement fidelity are infrastructure metrics, not speedups of generated kernels. No author implementation link was located in the paper."
+      ],
+      "taxonomy": {
+        "policy_adaptation": [],
+        "generation_mode": [],
+        "search_strategy": [],
+        "participants": [],
+        "coordination": [],
+        "feedback_signal": [
+          "runtime"
+        ],
+        "feedback_source": [],
+        "memory": [],
+        "workload_scope": [],
+        "integration_scope": [
+          "runtime"
+        ],
+        "optimization_level": [],
+        "optimization_focus": []
+      },
+      "representations": [],
+      "hardware": [
+        "NVIDIA",
+        "AMD"
+      ],
+      "links": {
+        "paper": [
+          {
+            "label": "Paper",
+            "url": "https://arxiv.org/abs/2609.30057",
+            "provenance": "author"
+          }
+        ],
+        "code": [],
+        "article": [],
+        "project": [],
+        "artifact": [],
+        "model": [],
+        "dataset": []
+      },
+      "artifacts": {
+        "implementation": {
+          "status": "unknown",
+          "urls": []
+        },
+        "generated_kernels": {
+          "status": "unknown",
+          "urls": []
+        },
+        "harness": {
+          "status": "unknown",
+          "urls": []
+        },
+        "model_weights": {
+          "status": "unknown",
+          "urls": []
+        },
+        "trajectories": {
+          "status": "unknown",
+          "urls": []
+        }
+      },
+      "claims": [],
+      "primary_claim": null
+    },
+    {
+      "id": "xtrace",
+      "name": "Xtrace",
+      "organization": "National University of Singapore × Meta",
+      "date": "2026-09",
+      "entry_type": "tool",
+      "status": "partial",
+      "summary": "Binary-instrumentation tracing infrastructure with GPU kernel-agent case studies; instrumentation level is not evidence that the agent itself edits binaries.",
+      "caveats": [
+        "Publicly usable tracing infrastructure is described in the paper; an open agent implementation or complete winning-kernel bundle was not verified. Agent-efficiency ratios are not kernel speedups."
+      ],
+      "taxonomy": {
+        "policy_adaptation": [],
+        "generation_mode": [],
+        "search_strategy": [],
+        "participants": [],
+        "coordination": [],
+        "feedback_signal": [],
+        "feedback_source": [
+          "profiler"
+        ],
+        "memory": [],
+        "workload_scope": [],
+        "integration_scope": [
+          "runtime"
+        ],
+        "optimization_level": [
+          "binary"
+        ],
+        "optimization_focus": []
+      },
+      "representations": [],
+      "hardware": [
+        "NVIDIA",
+        "AMD"
+      ],
+      "links": {
+        "paper": [
+          {
+            "label": "Paper",
+            "url": "https://arxiv.org/abs/2609.28769",
+            "provenance": "author"
+          }
+        ],
+        "code": [],
+        "article": [],
+        "project": [
+          {
+            "label": "Project",
+            "url": "https://g-watch.github.io/",
+            "provenance": "official"
+          }
+        ],
+        "artifact": [
+          {
+            "label": "Open traces",
+            "url": "https://g-watch.github.io/en/open-traces/",
+            "provenance": "author"
+          }
+        ],
+        "model": [],
+        "dataset": []
+      },
+      "artifacts": {
+        "implementation": {
+          "status": "unknown",
+          "urls": []
+        },
+        "generated_kernels": {
+          "status": "unknown",
+          "urls": []
+        },
+        "harness": {
+          "status": "unknown",
+          "urls": []
+        },
+        "model_weights": {
+          "status": "unknown",
+          "urls": []
+        },
+        "trajectories": {
+          "status": "unknown",
+          "urls": []
+        }
+      },
+      "claims": [],
+      "primary_claim": null
+    },
+    {
+      "id": "tilecas",
+      "name": "TileCas",
+      "organization": "Fudan University x University of Texas at Dallas x Peking University x Beijing Tongming Lake Information Technology Application Innovation Center",
+      "date": "2026-10",
+      "entry_type": "agent",
+      "status": "open",
+      "summary": "A pluggable agent interface moves between TileLang and editable Ascend C/HIP implementations, retaining cross-level candidate histories; AKO+TileCas reports a 4.836x arithmetic-mean speedup over KernelBench references.",
+      "caveats": [
+        "Overall speedup equally weights four accelerator/model configurations and assigns zero to failed runs; it is not a geometric mean or a speedup against expert kernels.",
+        "The implemented editable lower levels are native source, not compiler IR. Supporting CUDA utilities in the repository do not establish NVIDIA evaluation.",
+        "The repository provides framework and evaluators; exact winning kernels for the aggregate claim were not confirmed."
+      ],
+      "taxonomy": {
+        "policy_adaptation": [
+          "prompting"
+        ],
+        "generation_mode": [
+          "iterative-refinement"
+        ],
+        "search_strategy": [],
+        "participants": [
+          "single-agent"
+        ],
+        "coordination": [],
+        "feedback_signal": [
+          "correctness",
+          "runtime"
+        ],
+        "feedback_source": [
+          "compiler",
+          "profiler"
+        ],
+        "memory": [
+          "trajectory",
+          "archive"
+        ],
+        "workload_scope": [
+          "model"
+        ],
+        "integration_scope": [],
+        "optimization_level": [
+          "source",
+          "dsl"
+        ],
+        "optimization_focus": [
+          "schedule",
+          "algorithm"
+        ]
+      },
+      "representations": [
+        "TileLang",
+        "Ascend C",
+        "HIP"
+      ],
+      "hardware": [
+        "Ascend-NPU",
+        "AMD"
+      ],
+      "links": {
+        "paper": [
+          {
+            "label": "Paper",
+            "url": "https://arxiv.org/abs/2610.14740",
+            "provenance": "author"
+          }
+        ],
+        "code": [
+          {
+            "label": "Code",
+            "url": "https://github.com/Alex4210987/tilecas",
+            "provenance": "author"
+          }
+        ],
+        "article": [],
+        "project": [
+          {
+            "label": "Project",
+            "url": "https://alex4210987.github.io/tilecas/",
+            "provenance": "author"
+          }
+        ],
+        "artifact": [],
+        "model": [],
+        "dataset": []
+      },
+      "artifacts": {
+        "implementation": {
+          "status": "yes",
+          "urls": [
+            "https://github.com/Alex4210987/tilecas"
+          ]
+        },
+        "generated_kernels": {
+          "status": "unknown",
+          "urls": []
+        },
+        "harness": {
+          "status": "yes",
+          "urls": [
+            "https://github.com/Alex4210987/tilecas"
+          ]
+        },
+        "model_weights": {
+          "status": "unknown",
+          "urls": []
+        },
+        "trajectories": {
+          "status": "unknown",
+          "urls": []
+        }
+      },
+      "claims": [
+        {
+          "id": "tilecas-ako",
+          "metric": "speedup",
+          "value": 4.836,
+          "unit": "x",
+          "aggregation": "arithmetic-mean",
+          "qualifier": "AKO+TileCas; failed runs scored zero",
+          "workload": {
+            "benchmark": "KernelBench Level 3",
+            "subset": "50 workloads x Ascend/AMD x GPT-6 Astra/DeepSeek-V4.1-Flash; configurations equally weighted"
+          },
+          "hardware": "Ascend 910B3 and AMD Radeon AI PRO R9700",
+          "scope": "model",
+          "baseline": {
+            "tier": "T0",
+            "kind": "framework-reference",
+            "name": "Workload-specific KernelBench reference implementation",
+            "evidence": null
+          },
+          "budget": {
+            "status": "yes",
+            "details": "120 minutes per workload/configuration/agent seed, including failed attempts, diagnosis, representation conversion and evaluation; five independent seeds, 50 workloads, four hardware/model configurations (Section 4.1)."
+          },
+          "reproducibility": {
+            "claim_linked_artifact": "unknown",
+            "artifact_url": null
+          },
+          "primary_source": {
+            "url": "https://arxiv.org/abs/2610.14740",
+            "locator": "Section 4.1 metrics; Section 4.2 Table 1, AKO+TileCas overall mean"
+          },
+          "caveats": [
+            "Scores averaged across five seeds, workloads, then equally across four configurations."
+          ]
+        },
+        {
+          "id": "tilecas-kda",
+          "metric": "speedup",
+          "value": 4.425,
+          "unit": "x",
+          "aggregation": "arithmetic-mean",
+          "qualifier": "KDA+TileCas; failed runs scored zero",
+          "workload": {
+            "benchmark": "KernelBench Level 3",
+            "subset": "Same 50 workloads and four configurations"
+          },
+          "hardware": "Ascend 910B3 and AMD Radeon AI PRO R9700",
+          "scope": "model",
+          "baseline": {
+            "tier": "T0",
+            "kind": "framework-reference",
+            "name": "Workload-specific KernelBench reference implementation",
+            "evidence": null
+          },
+          "budget": {
+            "status": "yes",
+            "details": "120 minutes per workload/configuration/agent seed, including failed attempts, diagnosis, representation conversion and evaluation; five independent seeds, 50 workloads, four hardware/model configurations (Section 4.1)."
+          },
+          "reproducibility": {
+            "claim_linked_artifact": "unknown",
+            "artifact_url": null
+          },
+          "primary_source": {
+            "url": "https://arxiv.org/abs/2610.14740",
+            "locator": "Section 4.1 metrics; Section 4.2 Table 1, KDA+TileCas overall mean"
+          },
+          "caveats": []
+        }
+      ],
+      "primary_claim": "tilecas-ako"
+    },
+    {
+      "id": "triton-ai-compiler",
+      "name": "Triton AI Compiler (TAIC)",
+      "organization": "Stanford University x EPFL",
+      "date": "2026-09",
+      "entry_type": "agent",
+      "status": "partial",
+      "summary": "An agent lowers fixed Triton contracts to PTX and branches over profiler-guided patches; numerical checks and optional Volta proofs guard optimization, with a reported 3.34x BitDelta result on B200.",
+      "caveats": [
+        "The largest headline speedups are numerically validated; original Volta constrained search is slower, and the extended verifier still excludes some kernels and instruction patterns.",
+        "The current public client defaults to Triton-generated PTX as its starting point, whereas the paper describes initial PTX synthesis directly from Triton. Do not assume the default client reproduces the paper protocol.",
+        "The BitDelta 3.34x figure is a selected kernel result, not a suite-wide average; published exact claim-linked PTX was not confirmed."
+      ],
+      "taxonomy": {
+        "policy_adaptation": [
+          "prompting"
+        ],
+        "generation_mode": [
+          "iterative-refinement"
+        ],
+        "search_strategy": [],
+        "participants": [
+          "multi-agent"
+        ],
+        "coordination": [
+          "planner-worker"
+        ],
+        "feedback_signal": [
+          "correctness",
+          "runtime"
+        ],
+        "feedback_source": [
+          "compiler",
+          "profiler",
+          "formal-verification",
+          "differential-testing"
+        ],
+        "memory": [
+          "skill-library"
+        ],
+        "workload_scope": [
+          "operator"
+        ],
+        "integration_scope": [
+          "compiler"
+        ],
+        "optimization_level": [
+          "ptx"
+        ],
+        "optimization_focus": [
+          "schedule",
+          "algorithm"
+        ]
+      },
+      "representations": [
+        "PTX"
+      ],
+      "hardware": [
+        "NVIDIA"
+      ],
+      "links": {
+        "paper": [
+          {
+            "label": "Paper",
+            "url": "https://arxiv.org/abs/2609.36800",
+            "provenance": "author"
+          }
+        ],
+        "code": [
+          {
+            "label": "Agent code",
+            "url": "https://github.com/francois141/triton_ai_compiler",
+            "provenance": "author"
+          },
+          {
+            "label": "PTX Gym harness",
+            "url": "https://github.com/francois141/ptx_gym",
+            "provenance": "author"
+          }
+        ],
+        "article": [],
+        "project": [],
+        "artifact": [],
+        "model": [],
+        "dataset": []
+      },
+      "artifacts": {
+        "implementation": {
+          "status": "yes",
+          "urls": [
+            "https://github.com/francois141/triton_ai_compiler"
+          ]
+        },
+        "generated_kernels": {
+          "status": "unknown",
+          "urls": []
+        },
+        "harness": {
+          "status": "yes",
+          "urls": [
+            "https://github.com/francois141/ptx_gym"
+          ]
+        },
+        "model_weights": {
+          "status": "unknown",
+          "urls": []
+        },
+        "trajectories": {
+          "status": "unknown",
+          "urls": []
+        }
+      },
+      "claims": [
+        {
+          "id": "triton-ai-compiler-bitdelta",
+          "metric": "speedup",
+          "value": 3.34,
+          "unit": "x",
+          "aggregation": "best-of-n",
+          "qualifier": "best numerically validated candidate",
+          "workload": {
+            "benchmark": "Recent-paper Triton kernel suite",
+            "subset": "BitDelta matrix multiplication variant"
+          },
+          "hardware": "NVIDIA B200",
+          "scope": "operator",
+          "baseline": {
+            "tier": "T3",
+            "kind": "expert-implementation",
+            "name": "Authors' official BitDelta Triton implementation, autotuned on B200",
+            "evidence": null
+          },
+          "budget": {
+            "status": "yes",
+            "details": "USD15 API-cost budget per run for recently published kernels; the budget gate is checked before requests, so an in-flight request may finish above the cap (Sections 4.3-4.4)."
+          },
+          "reproducibility": {
+            "claim_linked_artifact": "unknown",
+            "artifact_url": null
+          },
+          "primary_source": {
+            "url": "https://arxiv.org/abs/2609.36800",
+            "locator": "Section 4.4; Figure 5; Appendix A.2"
+          },
+          "caveats": [
+            "Only unnecessary masks were removed from the baseline; BitDelta's bit-level manipulation is outside the verifier's supported real-arithmetic abstraction."
+          ]
+        },
+        {
+          "id": "triton-ai-compiler-flashattention",
+          "metric": "speedup",
+          "value": 1.37,
+          "unit": "x",
+          "aggregation": "best-of-n",
+          "qualifier": "best numerically validated candidate",
+          "workload": {
+            "benchmark": "Recent-paper Triton kernel suite",
+            "subset": "FlashAttention forward"
+          },
+          "hardware": "NVIDIA B200",
+          "scope": "operator",
+          "baseline": {
+            "tier": "T3",
+            "kind": "expert-implementation",
+            "name": "Authors' official FlashAttention Triton implementation, autotuned on B200",
+            "evidence": null
+          },
+          "budget": {
+            "status": "yes",
+            "details": "USD15 API-cost budget per run for recently published kernels; the budget gate is checked before requests, so an in-flight request may finish above the cap (Sections 4.3-4.4)."
+          },
+          "reproducibility": {
+            "claim_linked_artifact": "unknown",
+            "artifact_url": null
+          },
+          "primary_source": {
+            "url": "https://arxiv.org/abs/2609.36800",
+            "locator": "Section 4.4; Figure 5; Appendix A.2"
+          },
+          "caveats": [
+            "Separate five-run repeatability experiment reports mean 1.236x and best 1.366x; this rounded headline is not the five-run mean."
+          ]
+        }
+      ],
+      "primary_claim": "triton-ai-compiler-bitdelta"
+    },
+    {
+      "id": "flashvector",
+      "name": "FlashVector",
+      "organization": "Stanford University x Unity Vector AI Team",
+      "date": "2026-09",
+      "entry_type": "agent",
+      "status": "proprietary",
+      "summary": "Layer-specific agents profile, modify and verify Unity's production serving stack, then refine a reusable knowledge base; demonstrated optimizations include attention fusion, embedding restructuring, CPU preprocessing and serving configuration.",
+      "caveats": [
+        "Production case studies have different workloads and timing scopes; the attention-module result must not be presented as end-to-end serving speedup.",
+        "The paper describes Triton kernels produced through compiler-visible graph rewrites; NVIDIA Triton Inference Server is a separate server product, not the kernel representation.",
+        "No full agent implementation or exact headline kernel artifact was located. Hardware for the aggregate production-model table is not explicitly tied to each row."
+      ],
+      "taxonomy": {
+        "policy_adaptation": [
+          "prompting"
+        ],
+        "generation_mode": [
+          "iterative-refinement"
+        ],
+        "search_strategy": [],
+        "participants": [
+          "multi-agent"
+        ],
+        "coordination": [
+          "role-specialized"
+        ],
+        "feedback_signal": [
+          "correctness",
+          "runtime",
+          "model-level"
+        ],
+        "feedback_source": [
+          "profiler",
+          "roofline"
+        ],
+        "memory": [
+          "retrieval",
+          "skill-library",
+          "cross-run"
+        ],
+        "workload_scope": [
+          "operator",
+          "fusion",
+          "graph",
+          "model",
+          "system"
+        ],
+        "integration_scope": [
+          "serving",
+          "runtime"
+        ],
+        "optimization_level": [
+          "source"
+        ],
+        "optimization_focus": [
+          "algorithm"
+        ]
+      },
+      "representations": [
+        "Triton"
+      ],
+      "hardware": [
+        "NVIDIA",
+        "CPU"
+      ],
+      "links": {
+        "paper": [
+          {
+            "label": "Paper",
+            "url": "https://arxiv.org/abs/2609.17391",
+            "provenance": "author"
+          }
+        ],
+        "code": [],
+        "article": [],
+        "project": [],
+        "artifact": [],
+        "model": [],
+        "dataset": []
+      },
+      "artifacts": {
+        "implementation": {
+          "status": "unknown",
+          "urls": []
+        },
+        "generated_kernels": {
+          "status": "unknown",
+          "urls": []
+        },
+        "harness": {
+          "status": "unknown",
+          "urls": []
+        },
+        "model_weights": {
+          "status": "unknown",
+          "urls": []
+        },
+        "trajectories": {
+          "status": "unknown",
+          "urls": []
+        }
+      },
+      "claims": [
+        {
+          "id": "flashvector-attention",
+          "metric": "speedup",
+          "value": 3.56,
+          "unit": "x",
+          "aggregation": "single",
+          "qualifier": "",
+          "workload": {
+            "benchmark": "Unity Vector multi-task recommendation model",
+            "subset": "Fused MLP-attention module, FP16, request batch size 2000"
+          },
+          "hardware": "NVIDIA RTX PRO 6000 Blackwell",
+          "scope": "fusion",
+          "baseline": {
+            "tier": "T4",
+            "kind": "production-incumbent",
+            "name": "Production model's AOTInductor-compiled FP16 attention implementation",
+            "evidence": null
+          },
+          "budget": {
+            "status": "unknown",
+            "details": "No claim-specific numerical search budget was located."
+          },
+          "reproducibility": {
+            "claim_linked_artifact": "unknown",
+            "artifact_url": null
+          },
+          "primary_source": {
+            "url": "https://arxiv.org/abs/2609.17391",
+            "locator": "Section 5.2.1-5.2.2; Figure 5"
+          },
+          "caveats": [
+            "Latency falls from 996.5 to 279.8 microseconds; output is reported bit-identical; this is module latency, not whole-model latency."
+          ]
+        },
+        {
+          "id": "flashvector-ranking-latency",
+          "metric": "speedup",
+          "value": 1.98,
+          "unit": "x",
+          "aggregation": "single",
+          "qualifier": "",
+          "workload": {
+            "benchmark": "Unity Vector production model serving",
+            "subset": "Ranking model 2, Table 1"
+          },
+          "hardware": "unknown",
+          "scope": "serving",
+          "baseline": {
+            "tier": "T4",
+            "kind": "production-incumbent",
+            "name": "Previous production serving stack for ranking model 2",
+            "evidence": null
+          },
+          "budget": {
+            "status": "unknown",
+            "details": "No claim-specific numerical search budget was located."
+          },
+          "reproducibility": {
+            "claim_linked_artifact": "unknown",
+            "artifact_url": null
+          },
+          "primary_source": {
+            "url": "https://arxiv.org/abs/2609.17391",
+            "locator": "Section 5, Table 1, ranking model 2 latency speedup"
+          },
+          "caveats": [
+            "The paper does not connect this row to a specific hardware model or publish the complete evaluation workload."
+          ]
+        },
+        {
+          "id": "flashvector-ranking-throughput",
+          "metric": "throughput",
+          "value": 2,
+          "unit": "x",
+          "aggregation": "single",
+          "qualifier": "relative throughput",
+          "workload": {
+            "benchmark": "Unity Vector production model serving",
+            "subset": "Ranking model 2, Table 1"
+          },
+          "hardware": "unknown",
+          "scope": "serving",
+          "baseline": {
+            "tier": "T4",
+            "kind": "production-incumbent",
+            "name": "Previous production serving stack for ranking model 2",
+            "evidence": null
+          },
+          "budget": {
+            "status": "unknown",
+            "details": "No claim-specific numerical search budget was located."
+          },
+          "reproducibility": {
+            "claim_linked_artifact": "unknown",
+            "artifact_url": null
+          },
+          "primary_source": {
+            "url": "https://arxiv.org/abs/2609.17391",
+            "locator": "Section 5, Table 1, ranking model 2 throughput increase"
+          },
+          "caveats": []
+        }
+      ],
+      "primary_claim": "flashvector-attention"
+    },
+    {
+      "id": "forgemegakernel",
+      "name": "ForgeMegakernel",
+      "organization": "Tsinghua University x University of Chinese Academy of Sciences x ModelBest",
+      "date": "2026-09",
+      "entry_type": "agent",
+      "status": "closed",
+      "summary": "Coding and review agents build decode megakernels through ten structural milestones and an independent numerical oracle; reports 1.21x geometric-mean speedup over tuned SGLang on 13 aggregated H100 cells out of 14 evaluated.",
+      "caveats": [
+        "Evaluation uses one GPU architecture and fourteen selected model/batch/context cells; it is not a general all-model serving benchmark.",
+        "Section 5.2.1 excludes Llama-3.2-1B b1 x 96 from the aggregates because it was forged against a hand-written reference.",
+        "No official implementation or generated-kernel archive was located. The paper reports independent oracle tests, not a formal proof of correctness."
+      ],
+      "taxonomy": {
+        "policy_adaptation": [
+          "prompting"
+        ],
+        "generation_mode": [
+          "iterative-refinement"
+        ],
+        "search_strategy": [],
+        "participants": [
+          "multi-agent"
+        ],
+        "coordination": [
+          "role-specialized"
+        ],
+        "feedback_signal": [
+          "correctness",
+          "runtime"
+        ],
+        "feedback_source": [
+          "compiler",
+          "profiler",
+          "hardware-counters",
+          "roofline",
+          "differential-testing"
+        ],
+        "memory": [
+          "trajectory"
+        ],
+        "workload_scope": [
+          "fusion",
+          "model"
+        ],
+        "integration_scope": [
+          "serving"
+        ],
+        "optimization_level": [
+          "source"
+        ],
+        "optimization_focus": [
+          "schedule",
+          "algorithm"
+        ]
+      },
+      "representations": [
+        "CUDA"
+      ],
+      "hardware": [
+        "NVIDIA"
+      ],
+      "links": {
+        "paper": [
+          {
+            "label": "Paper",
+            "url": "https://arxiv.org/abs/2609.12379",
+            "provenance": "author"
+          }
+        ],
+        "code": [],
+        "article": [],
+        "project": [],
+        "artifact": [],
+        "model": [],
+        "dataset": []
+      },
+      "artifacts": {
+        "implementation": {
+          "status": "unknown",
+          "urls": []
+        },
+        "generated_kernels": {
+          "status": "unknown",
+          "urls": []
+        },
+        "harness": {
+          "status": "unknown",
+          "urls": []
+        },
+        "model_weights": {
+          "status": "unknown",
+          "urls": []
+        },
+        "trajectories": {
+          "status": "unknown",
+          "urls": []
+        }
+      },
+      "claims": [
+        {
+          "id": "forgemegakernel-sglang",
+          "metric": "speedup",
+          "value": 1.21,
+          "unit": "x",
+          "aggregation": "geometric-mean",
+          "qualifier": "",
+          "workload": {
+            "benchmark": "ForgeMegakernel decode evaluation",
+            "subset": "13 aggregated cells out of 14 evaluated; excludes Llama-3.2-1B b1 x 96; bf16 weights/KV"
+          },
+          "hardware": "NVIDIA H100 80GB HBM3",
+          "scope": "model",
+          "baseline": {
+            "tier": "T3",
+            "kind": "expert-implementation",
+            "name": "SGLang 0.5.18 with CUDA graphs and torch.compile enabled",
+            "evidence": null
+          },
+          "budget": {
+            "status": "yes",
+            "details": "Section 6 Table 3 reports per-cell costs; median 47 rounds, 14.7 agent-hours, approximately 178M tokens, and USD177."
+          },
+          "reproducibility": {
+            "claim_linked_artifact": "unknown",
+            "artifact_url": null
+          },
+          "primary_source": {
+            "url": "https://arxiv.org/abs/2609.12379",
+            "locator": "Abstract; Sections 5.1-5.2; Figure 3"
+          },
+          "caveats": [
+            "Measurements use matched byte counts and a two-point decode latency slope; distinct from the separate SGLang-integrated serving experiment."
+          ]
+        },
+        {
+          "id": "forgemegakernel-mpk",
+          "metric": "speedup",
+          "value": 1.54,
+          "unit": "x",
+          "aggregation": "geometric-mean",
+          "qualifier": "",
+          "workload": {
+            "benchmark": "ForgeMegakernel decode evaluation",
+            "subset": "13 aggregated cells out of 14 evaluated; excludes Llama-3.2-1B b1 x 96"
+          },
+          "hardware": "NVIDIA H100 80GB HBM3",
+          "scope": "model",
+          "baseline": {
+            "tier": "T1",
+            "kind": "compiler-generated",
+            "name": "Mirage Persistent Kernel (MPK) compiler demo path",
+            "evidence": null
+          },
+          "budget": {
+            "status": "yes",
+            "details": "Section 6 Table 3 reports per-cell costs; median 47 rounds, 14.7 agent-hours, approximately 178M tokens, and USD177."
+          },
+          "reproducibility": {
+            "claim_linked_artifact": "unknown",
+            "artifact_url": null
+          },
+          "primary_source": {
+            "url": "https://arxiv.org/abs/2609.12379",
+            "locator": "Abstract; Sections 5.1-5.2; Figure 3"
+          },
+          "caveats": []
+        },
+        {
+          "id": "forgemegakernel-mbu",
+          "metric": "fraction-of-ceiling",
+          "value": {
+            "min": 50.5,
+            "max": 85.9
+          },
+          "unit": "percent",
+          "aggregation": "range",
+          "qualifier": "Model bandwidth utilization",
+          "workload": {
+            "benchmark": "Fourteen decode model/configuration cells",
+            "subset": "bf16 weights/KV; model-derived bytes per decode step"
+          },
+          "hardware": "NVIDIA H100 80GB HBM3",
+          "scope": "model",
+          "baseline": {
+            "tier": "T6",
+            "kind": "hardware-ceiling",
+            "name": "3350 GB/s peak HBM bandwidth",
+            "evidence": null
+          },
+          "budget": {
+            "status": "yes",
+            "details": "Section 6 Table 3 reports per-cell costs; median 47 rounds, 14.7 agent-hours, approximately 178M tokens, and USD177."
+          },
+          "reproducibility": {
+            "claim_linked_artifact": "unknown",
+            "artifact_url": null
+          },
+          "primary_source": {
+            "url": "https://arxiv.org/abs/2609.12379",
+            "locator": "Section 2.2 Equation 3; Section 5.1; Figure 3"
+          },
+          "caveats": [
+            "Bandwidth utilization, not arithmetic throughput or speedup; byte accounting excludes the unaccessed embedding table."
+          ]
+        }
+      ],
+      "primary_claim": "forgemegakernel-sglang"
+    },
+    {
+      "id": "cuda-harness",
+      "name": "CUDA-Harness",
+      "organization": "Shanghai Jiao Tong University",
+      "date": "2026-08",
+      "entry_type": "agent",
+      "status": "closed",
+      "summary": "Natural-language-to-CUDA generation separates test synthesis from kernel development, then uses correctness-first refinement and accumulated optimization insights; reports 80.5% functional correctness on CUDABench with Seed2.0 Lite.",
+      "caveats": [
+        "The paper calls its feedback process RLVR but explicitly states that no parameters are updated; this entry therefore does not tag weight-training RL.",
+        "The reported RScore of 110.7 is mean inverse latency in milliseconds with incorrect kernels scored zero, not a percentage or speedup. Synthesis-based validation has 8.7% false positives against benchmark validation.",
+        "No official implementation or exact winning-kernel artifact was located."
+      ],
+      "taxonomy": {
+        "policy_adaptation": [
+          "prompting",
+          "in-context-learning"
+        ],
+        "generation_mode": [
+          "iterative-refinement"
+        ],
+        "search_strategy": [
+          "best-of-n"
+        ],
+        "participants": [],
+        "coordination": [],
+        "feedback_signal": [
+          "correctness",
+          "runtime"
+        ],
+        "feedback_source": [
+          "compiler",
+          "profiler"
+        ],
+        "memory": [
+          "reflection"
+        ],
+        "workload_scope": [
+          "operator"
+        ],
+        "integration_scope": [],
+        "optimization_level": [
+          "source"
+        ],
+        "optimization_focus": []
+      },
+      "representations": [
+        "CUDA"
+      ],
+      "hardware": [
+        "NVIDIA"
+      ],
+      "links": {
+        "paper": [
+          {
+            "label": "Paper",
+            "url": "https://arxiv.org/abs/2609.00058",
+            "provenance": "author"
+          }
+        ],
+        "code": [],
+        "article": [],
+        "project": [],
+        "artifact": [],
+        "model": [],
+        "dataset": []
+      },
+      "artifacts": {
+        "implementation": {
+          "status": "unknown",
+          "urls": []
+        },
+        "generated_kernels": {
+          "status": "unknown",
+          "urls": []
+        },
+        "harness": {
+          "status": "unknown",
+          "urls": []
+        },
+        "model_weights": {
+          "status": "unknown",
+          "urls": []
+        },
+        "trajectories": {
+          "status": "unknown",
+          "urls": []
+        }
+      },
+      "claims": [
+        {
+          "id": "cuda-harness-correctness",
+          "metric": "correctness",
+          "value": 80.5,
+          "unit": "percent",
+          "aggregation": "total",
+          "qualifier": "",
+          "workload": {
+            "benchmark": "CUDABench",
+            "subset": "All three natural-language prompt difficulty levels"
+          },
+          "hardware": "NVIDIA A40",
+          "scope": "operator",
+          "baseline": {
+            "tier": "not-applicable",
+            "kind": "evaluation-reference",
+            "name": "CUDABench functional validation",
+            "evidence": null
+          },
+          "budget": {
+            "status": "yes",
+            "details": "Seed2.0 Lite with thinking disabled; one initial generation per kernel, three optimization rounds with three candidates per round (Section 5.1.1)."
+          },
+          "reproducibility": {
+            "claim_linked_artifact": "unknown",
+            "artifact_url": null
+          },
+          "primary_source": {
+            "url": "https://arxiv.org/abs/2609.00058",
+            "locator": "Table 1, CUDA-Harness overall Func.; Sections 5.1-5.1.2"
+          },
+          "caveats": [
+            "This is a functional correctness rate, not a runtime comparison."
+          ]
+        },
+        {
+          "id": "cuda-harness-compilation",
+          "metric": "compilation-rate",
+          "value": 99.7,
+          "unit": "percent",
+          "aggregation": "total",
+          "qualifier": "",
+          "workload": {
+            "benchmark": "CUDABench",
+            "subset": "All three natural-language prompt difficulty levels"
+          },
+          "hardware": "NVIDIA A40",
+          "scope": "operator",
+          "baseline": {
+            "tier": "not-applicable",
+            "kind": "evaluation-reference",
+            "name": "CUDABench compilation validation",
+            "evidence": null
+          },
+          "budget": {
+            "status": "yes",
+            "details": "Seed2.0 Lite with thinking disabled; one initial generation per kernel, three optimization rounds with three candidates per round (Section 5.1.1)."
+          },
+          "reproducibility": {
+            "claim_linked_artifact": "unknown",
+            "artifact_url": null
+          },
+          "primary_source": {
+            "url": "https://arxiv.org/abs/2609.00058",
+            "locator": "Table 1, CUDA-Harness overall Comp.; Sections 5.1-5.1.2"
+          },
+          "caveats": []
+        }
+      ],
+      "primary_claim": "cuda-harness-correctness"
+    },
+    {
+      "id": "maxkernel",
+      "name": "MaxKernel",
+      "organization": "Google x Google DeepMind",
+      "date": "2026-03",
+      "entry_type": "agent",
+      "status": "open",
+      "summary": "TPU kernel agents combine human-guided development, autonomous refinement, and graph-based parallel/beam search. The September paper reports 1.58x geometric-mean speedup over XLA on 50 JAXBench tasks with performance regressions floored at 1x.",
+      "caveats": [
+        "First-public month follows the March repository implementation, not the September paper. The original MaxKernel path has moved to maxkernel/adk.",
+        "The 1.58x aggregate floors regressions at 1x; 34 of 50 tasks are faster than XLA. Test tolerances vary by task, up to 0.1. Released reference kernels and the harness do not establish availability of the exact winning kernels."
+      ],
+      "taxonomy": {
+        "policy_adaptation": [
+          "prompting"
+        ],
+        "generation_mode": [
+          "iterative-refinement"
+        ],
+        "search_strategy": [
+          "best-of-n",
+          "beam-search",
+          "local-search",
+          "autotuning"
+        ],
+        "participants": [
+          "multi-agent",
+          "human-in-the-loop"
+        ],
+        "coordination": [
+          "hierarchical",
+          "planner-worker",
+          "role-specialized",
+          "parallel"
+        ],
+        "feedback_signal": [
+          "correctness",
+          "runtime"
+        ],
+        "feedback_source": [
+          "compiler",
+          "profiler"
+        ],
+        "memory": [
+          "retrieval",
+          "archive"
+        ],
+        "workload_scope": [
+          "operator",
+          "fusion"
+        ],
+        "integration_scope": [],
+        "optimization_level": [
+          "dsl"
+        ],
+        "optimization_focus": [
+          "schedule",
+          "algorithm"
+        ]
+      },
+      "representations": [
+        "Pallas",
+        "JAX"
+      ],
+      "hardware": [
+        "TPU"
+      ],
+      "links": {
+        "paper": [
+          {
+            "label": "Paper",
+            "url": "https://arxiv.org/abs/2609.04523",
+            "provenance": "author"
+          }
+        ],
+        "code": [
+          {
+            "label": "Code",
+            "url": "https://github.com/AI-Hypercomputer/accelerator-agents/tree/main/maxkernel/adk",
+            "provenance": "official"
+          }
+        ],
+        "article": [
+          {
+            "label": "Article",
+            "url": "https://discuss.google.dev/t/maxkernel-automating-pallas-kernel-generation-and-optimization-via-agentic-systems/366686",
+            "provenance": "official"
+          }
+        ],
+        "project": [],
+        "artifact": [
+          {
+            "label": "Evaluation harness",
+            "url": "https://github.com/AI-Hypercomputer/accelerator-agents/tree/main/maxkernel/adk/evaluation",
+            "provenance": "official"
+          }
+        ],
+        "model": [],
+        "dataset": [
+          {
+            "label": "JAXBench",
+            "url": "https://github.com/AI-Hypercomputer/accelerator-agents/tree/main/JAXBench",
+            "provenance": "official"
+          }
+        ]
+      },
+      "artifacts": {
+        "implementation": {
+          "status": "yes",
+          "urls": [
+            "https://github.com/AI-Hypercomputer/accelerator-agents/tree/main/maxkernel/adk"
+          ]
+        },
+        "generated_kernels": {
+          "status": "unknown",
+          "urls": []
+        },
+        "harness": {
+          "status": "yes",
+          "urls": [
+            "https://github.com/AI-Hypercomputer/accelerator-agents/tree/main/maxkernel/adk/evaluation"
+          ]
+        },
+        "model_weights": {
+          "status": "unknown",
+          "urls": []
+        },
+        "trajectories": {
+          "status": "unknown",
+          "urls": []
+        }
+      },
+      "claims": [
+        {
+          "id": "maxkernel-xla-geomean",
+          "metric": "speedup",
+          "value": 1.58,
+          "unit": "x",
+          "aggregation": "geometric-mean",
+          "qualifier": "regressions floored at 1x",
+          "workload": {
+            "benchmark": "JAXBench",
+            "subset": "All 50 tasks; MaxKernel Parallel"
+          },
+          "hardware": "Google TPU v6e",
+          "scope": "operator",
+          "baseline": {
+            "tier": "T1",
+            "kind": "compiler-generated",
+            "name": "XLA-compiled JAX reference",
+            "evidence": null
+          },
+          "budget": {
+            "status": "yes",
+            "details": "Gemini 3.1 Pro; five concurrent Auto trajectories with five iterations each per workload; fastest correct output selected."
+          },
+          "reproducibility": {
+            "claim_linked_artifact": "unknown",
+            "artifact_url": null
+          },
+          "primary_source": {
+            "url": "https://arxiv.org/abs/2609.04523",
+            "locator": "Sections 3.1-3.2; Table 1, MK Parallel column"
+          },
+          "caveats": [
+            "This is a floored aggregate; only 34/50 tasks have speedup greater than 1. Correctness tolerances are task-dependent, up to atol=rtol=0.1."
+          ]
+        },
+        {
+          "id": "maxkernel-correctness",
+          "metric": "correctness",
+          "value": 100,
+          "unit": "percent",
+          "aggregation": "total",
+          "qualifier": "50/50 tasks; MaxKernel Parallel",
+          "workload": {
+            "benchmark": "JAXBench",
+            "subset": "All 50 tasks"
+          },
+          "hardware": "Google TPU v6e",
+          "scope": "operator",
+          "baseline": {
+            "tier": "not-applicable",
+            "kind": "evaluation-reference",
+            "name": "JAX reference with task-specific numerical tolerances",
+            "evidence": null
+          },
+          "budget": {
+            "status": "yes",
+            "details": "Gemini 3.1 Pro; five concurrent Auto trajectories with five iterations each per workload; fastest correct output selected."
+          },
+          "reproducibility": {
+            "claim_linked_artifact": "unknown",
+            "artifact_url": null
+          },
+          "primary_source": {
+            "url": "https://arxiv.org/abs/2609.04523",
+            "locator": "Sections 3.1-3.2; Table 1, correctness rate"
+          },
+          "caveats": [
+            "Tests are synthesized before the search and frozen; default atol=rtol=0.01, relaxed up to 0.1 for selected tasks."
+          ]
+        }
+      ],
+      "primary_claim": "maxkernel-xla-geomean",
+      "migration_review": []
+    },
+    {
+      "id": "amdkernelvault",
+      "name": "AMDKernelVault",
+      "organization": "AMD",
+      "date": "2026-05",
+      "entry_type": "agent",
+      "status": "open",
+      "summary": "HIPKernelGen and TritonKernelGen build execution-checked AMD kernel corpora; Qwen3-8B is trained with SFT and execution-aware RL, including multi-turn Triton reflection. The September paper reports 33.2% Corr@3 on TritonBench-G using MI355X.",
+      "caveats": [
+        "Code history contains SFT scripts and HIP generation tooling in May, before the September paper. The paper's hip_kernel_llm_lab repository now resolves to AMDKernelVault.",
+        "Correctness leads the compared checkpoints on the reported benchmarks, but compilation and speed do not improve uniformly. Semantic near-duplicate exclusion was not exhaustive; published data are not the exact evaluated winning kernels.",
+        "The current versioned dataset has expanded since the paper; do not equate its current row counts with the paper's corpus counts."
+      ],
+      "taxonomy": {
+        "policy_adaptation": [
+          "supervised-fine-tuning",
+          "reinforcement-learning",
+          "agentic-reinforcement-learning"
+        ],
+        "generation_mode": [
+          "iterative-refinement"
+        ],
+        "search_strategy": [],
+        "participants": [],
+        "coordination": [
+          "role-specialized"
+        ],
+        "feedback_signal": [
+          "correctness",
+          "runtime"
+        ],
+        "feedback_source": [
+          "compiler"
+        ],
+        "memory": [
+          "reflection"
+        ],
+        "workload_scope": [
+          "operator",
+          "fusion"
+        ],
+        "integration_scope": [],
+        "optimization_level": [
+          "source",
+          "dsl"
+        ],
+        "optimization_focus": [
+          "schedule"
+        ]
+      },
+      "representations": [
+        "HIP",
+        "Triton"
+      ],
+      "hardware": [
+        "AMD"
+      ],
+      "links": {
+        "paper": [
+          {
+            "label": "Paper",
+            "url": "https://arxiv.org/abs/2609.12471",
+            "provenance": "author"
+          }
+        ],
+        "code": [
+          {
+            "label": "Code",
+            "url": "https://github.com/AMD-AGI/AMDKernelVault",
+            "provenance": "official"
+          }
+        ],
+        "article": [],
+        "project": [],
+        "artifact": [],
+        "model": [],
+        "dataset": [
+          {
+            "label": "AMD AIG datasets",
+            "url": "https://huggingface.co/datasets/amd/AIG-Datasets",
+            "provenance": "official"
+          }
+        ]
+      },
+      "artifacts": {
+        "implementation": {
+          "status": "yes",
+          "urls": [
+            "https://github.com/AMD-AGI/AMDKernelVault"
+          ]
+        },
+        "generated_kernels": {
+          "status": "yes",
+          "urls": [
+            "https://huggingface.co/datasets/amd/AIG-Datasets"
+          ]
+        },
+        "harness": {
+          "status": "yes",
+          "urls": [
+            "https://github.com/AMD-AGI/AMDKernelVault"
+          ]
+        },
+        "model_weights": {
+          "status": "unknown",
+          "urls": []
+        },
+        "trajectories": {
+          "status": "unknown",
+          "urls": []
+        }
+      },
+      "claims": [
+        {
+          "id": "amdkernelvault-tritonbench-corr3",
+          "metric": "correctness",
+          "value": 33.2,
+          "unit": "percent",
+          "aggregation": "total",
+          "qualifier": "Corr@3; SFT plus agentic RL",
+          "workload": {
+            "benchmark": "TritonBench-G",
+            "subset": "184 kernels"
+          },
+          "hardware": "AMD Instinct MI355X",
+          "scope": "operator",
+          "baseline": {
+            "tier": "not-applicable",
+            "kind": "evaluation-reference",
+            "name": "Numerical correctness against benchmark reference",
+            "evidence": null
+          },
+          "budget": {
+            "status": "yes",
+            "details": "GEAK OptimAgent-v2; num_offsprings=1, max_iteration=3; same Qwen3-8B checkpoint serves generator, reflector and optimizer; no profiler feedback."
+          },
+          "reproducibility": {
+            "claim_linked_artifact": "unknown",
+            "artifact_url": null
+          },
+          "primary_source": {
+            "url": "https://arxiv.org/abs/2609.12471",
+            "locator": "Section 5 evaluation protocol; Table 4"
+          },
+          "caveats": [
+            "Corr@3 measures success after three feedback iterations, not Pass@3 from independent samples."
+          ]
+        },
+        {
+          "id": "amdkernelvault-rocmbench-corr3",
+          "metric": "correctness",
+          "value": 41.94,
+          "unit": "percent",
+          "aggregation": "total",
+          "qualifier": "Corr@3; SFT plus agentic RL",
+          "workload": {
+            "benchmark": "ROCmBench",
+            "subset": "31 AMD-specific kernels"
+          },
+          "hardware": "AMD Instinct MI355X",
+          "scope": "operator",
+          "baseline": {
+            "tier": "not-applicable",
+            "kind": "evaluation-reference",
+            "name": "Numerical correctness against benchmark reference",
+            "evidence": null
+          },
+          "budget": {
+            "status": "yes",
+            "details": "GEAK OptimAgent-v2; num_offsprings=1, max_iteration=3; no profiler feedback."
+          },
+          "reproducibility": {
+            "claim_linked_artifact": "unknown",
+            "artifact_url": null
+          },
+          "primary_source": {
+            "url": "https://arxiv.org/abs/2609.12471",
+            "locator": "Section 5; Table 5"
+          },
+          "caveats": [
+            "Claude Sonnet 4 has higher compilation rate and speed in this experiment; this claim concerns correctness only."
+          ]
+        },
+        {
+          "id": "amdkernelvault-hip-pass1",
+          "metric": "pass-rate",
+          "value": 34,
+          "unit": "percent",
+          "aggregation": "pass-at-k",
+          "qualifier": "Pass@1; PyTorch-to-HIP; SFT plus RL",
+          "workload": {
+            "benchmark": "KernelBench",
+            "subset": "Pass@1; 200 held-out Level 1/2 translation tasks"
+          },
+          "hardware": "AMD GPU; exact HIP evaluation SKU not specified",
+          "scope": "operator",
+          "baseline": {
+            "tier": "not-applicable",
+            "kind": "evaluation-reference",
+            "name": "PyTorch numerical reference",
+            "evidence": null
+          },
+          "budget": {
+            "status": "yes",
+            "details": "One sampled candidate per task for the reported Pass@1 evaluation."
+          },
+          "reproducibility": {
+            "claim_linked_artifact": "unknown",
+            "artifact_url": null
+          },
+          "primary_source": {
+            "url": "https://arxiv.org/abs/2609.12471",
+            "locator": "Section 5.1; Table 2"
+          },
+          "caveats": [
+            "MI355X is explicitly specified for Triton inference, not for this HIP evaluation; its hardware is left less specific."
+          ]
+        }
+      ],
+      "primary_claim": "amdkernelvault-tritonbench-corr3",
+      "migration_review": []
+    },
+    {
+      "id": "ascendopgenagent",
+      "name": "AscendOpGenAgent",
+      "organization": "Just-it contributors (affiliation not stated)",
+      "date": "2026-03",
+      "entry_type": "agent",
+      "status": "open",
+      "summary": "Claude Code agent and skill workflows generate and validate Triton-Ascend and Ascend C operators, with batch evaluation and an AutoResearch plan/edit/evaluate/keep-or-discard loop.",
+      "caveats": [
+        "Newly indexed earlier work; March repository commits contain the initial agent and skills. No paper or organizational affiliation was established.",
+        "The published April benchmark report contains speedup/latency inconsistencies and does not specify the search budget for its results. No numerical headline is promoted pending clarification."
+      ],
+      "taxonomy": {
+        "policy_adaptation": [
+          "prompting"
+        ],
+        "generation_mode": [
+          "iterative-refinement"
+        ],
+        "search_strategy": [],
+        "participants": [
+          "multi-agent"
+        ],
+        "coordination": [
+          "hierarchical",
+          "role-specialized"
+        ],
+        "feedback_signal": [
+          "correctness",
+          "runtime"
+        ],
+        "feedback_source": [],
+        "memory": [
+          "skill-library"
+        ],
+        "workload_scope": [
+          "operator"
+        ],
+        "integration_scope": [],
+        "optimization_level": [
+          "source",
+          "dsl"
+        ],
+        "optimization_focus": []
+      },
+      "representations": [
+        "Triton",
+        "Ascend C"
+      ],
+      "hardware": [
+        "Ascend-NPU"
+      ],
+      "links": {
+        "paper": [],
+        "code": [
+          {
+            "label": "Code",
+            "url": "https://github.com/Just-it/AscendOpGenAgent",
+            "provenance": "author"
+          }
+        ],
+        "article": [],
+        "project": [],
+        "artifact": [
+          {
+            "label": "Archived operator artifacts",
+            "url": "https://github.com/Just-it/AscendOpGenAgent/tree/main/archive_tasks",
+            "provenance": "author"
+          },
+          {
+            "label": "Reported benchmark results",
+            "url": "https://github.com/Just-it/AscendOpGenAgent/blob/main/benchmarks/BASELINE_latest.md",
+            "provenance": "author"
+          }
+        ],
+        "model": [],
+        "dataset": []
+      },
+      "artifacts": {
+        "implementation": {
+          "status": "yes",
+          "urls": [
+            "https://github.com/Just-it/AscendOpGenAgent"
+          ]
+        },
+        "generated_kernels": {
+          "status": "partial",
+          "urls": [
+            "https://github.com/Just-it/AscendOpGenAgent/tree/main/archive_tasks"
+          ]
+        },
+        "harness": {
+          "status": "yes",
+          "urls": [
+            "https://github.com/Just-it/AscendOpGenAgent"
+          ]
+        },
+        "model_weights": {
+          "status": "unknown",
+          "urls": []
+        },
+        "trajectories": {
+          "status": "unknown",
+          "urls": []
+        }
+      },
+      "claims": [],
+      "primary_claim": null,
+      "migration_review": [
+        {
+          "field": "claims",
+          "issue": "April 30 benchmark report has inconsistent latency/speedup rows (e.g. Ascend C GELU 0.086/0.186 ms versus reported 0.13x); search budget and exact result-to-artifact correspondence require clarification."
+        }
+      ]
+    },
     {
       "id": "evomem",
       "name": "EvoMem",
@@ -3133,7 +6085,8 @@
       "status": "open",
       "summary": "Two-agent stencil workflow in which a Kernel Agent profiles and optimizes operators and an App Agent integrates and validates them in real programs; the release reports 1.41x median and 2.05x geomean end-to-end over 100 A100-validated applications.",
       "caveats": [
-        "The Apache-2.0 repo ships agents, kernels, provenance/fetch/patch packages, harnesses and a result registry. Large gains can include launch, fusion and host-side restructuring rather than universally faster isolated kernels; H100/B200 coverage is operator-level, and token/iteration/intervention accounting remains a roadmap item."
+        "The Apache-2.0 repo ships agents, kernels, provenance/fetch/patch packages, harnesses and a result registry. Large gains can include launch, fusion and host-side restructuring rather than universally faster isolated kernels; H100/B200 coverage is operator-level, and token/iteration/intervention accounting remains a roadmap item.",
+        "The September paper reports 100 integrated applications from 116 candidates; application gains include bespoke stencil kernels, non-stencil kernels and host/structural rewrites. Operator microbenchmarks do not validate application-level claims."
       ],
       "taxonomy": {
         "policy_adaptation": [],
@@ -3167,7 +6120,13 @@
         "NVIDIA"
       ],
       "links": {
-        "paper": [],
+        "paper": [
+          {
+            "label": "Paper",
+            "url": "https://arxiv.org/abs/2609.06694",
+            "provenance": "author"
+          }
+        ],
         "code": [
           {
             "label": "Code",
@@ -3238,8 +6197,8 @@
             "artifact_url": "https://github.com/OpenBMB/ForgeStencil"
           },
           "primary_source": {
-            "url": "https://github.com/OpenBMB/ForgeStencil",
-            "locator": "README"
+            "url": "https://arxiv.org/abs/2609.06694",
+            "locator": "v2, Section 7.3.1; Appendix D, Table 8 (E1)"
           },
           "caveats": [
             "May include launch, fusion, and host-side restructuring."
@@ -3273,8 +6232,8 @@
             "artifact_url": "https://github.com/OpenBMB/ForgeStencil"
           },
           "primary_source": {
-            "url": "https://github.com/OpenBMB/ForgeStencil",
-            "locator": "README"
+            "url": "https://arxiv.org/abs/2609.06694",
+            "locator": "v2, Section 7.3.1; Appendix D, Table 8 (E1)"
           },
           "caveats": [
             "May include launch, fusion, and host-side restructuring."
@@ -3292,10 +6251,13 @@
       "status": "open",
       "summary": "Auditable benchmark and adaptation pipeline for architecture-specific inline PTX in CUDA and Triton; PTXBench checks correctness, target-instruction execution, sanitizers, SASS and speed against frontier GEMM/attention libraries on H100 and B200.",
       "caveats": [
-        "No evaluated model consistently matches frontier libraries across the full suite. The repo publishes the benchmark, FIBServe evaluator and AccRL traces; some supervised data/adapters require access approval, and the reported transfer benefit is uneven across tasks."
+        "The September v3 paper studies repair-conditioned SFT and reports uneven transfer; no model consistently matches frontier libraries across the suite. The current repository supplies profiling, agent-loop and training/evaluation code plus runnable examples, but explicitly excludes paper outputs, plots and the full prepared experiment matrix.",
+        "AccRL workload traces are benchmark inputs, not agent trajectories. The SFT dataset exposes generated-code previews and file metadata, while its card still describes access as private; complete download access and historical agent trajectories were not verified in the October audit."
       ],
       "taxonomy": {
-        "policy_adaptation": [],
+        "policy_adaptation": [
+          "supervised-fine-tuning"
+        ],
         "generation_mode": [],
         "search_strategy": [],
         "participants": [],
@@ -3340,11 +6302,34 @@
             "provenance": "official"
           }
         ],
-        "article": [],
+        "article": [
+          {
+            "label": "Author article",
+            "url": "https://zhang677.github.io/blog_md/ptxbench.html",
+            "provenance": "author"
+          }
+        ],
         "project": [],
         "artifact": [],
-        "model": [],
-        "dataset": []
+        "model": [
+          {
+            "label": "SFT adapters (access unverified)",
+            "url": "https://huggingface.co/collections/Genghan/ptxbench-qwen36-27b-sft-series",
+            "provenance": "author"
+          }
+        ],
+        "dataset": [
+          {
+            "label": "AccRL workload dataset",
+            "url": "https://huggingface.co/datasets/AccRL/accrl-training",
+            "provenance": "author"
+          },
+          {
+            "label": "SFT dataset (access unverified)",
+            "url": "https://huggingface.co/datasets/Genghan/PTXBench-Qwen3.6-27B-SFT",
+            "provenance": "author"
+          }
+        ]
       },
       "artifacts": {
         "implementation": {
@@ -3356,22 +6341,22 @@
         "generated_kernels": {
           "status": "partial",
           "urls": [
-            "https://github.com/zhang677/PTXBench"
+            "https://huggingface.co/datasets/Genghan/PTXBench-Qwen3.6-27B-SFT"
           ]
         },
         "harness": {
-          "status": "unknown",
-          "urls": []
+          "status": "yes",
+          "urls": [
+            "https://github.com/zhang677/PTXBench"
+          ]
         },
         "model_weights": {
           "status": "unknown",
           "urls": []
         },
         "trajectories": {
-          "status": "partial",
-          "urls": [
-            "https://github.com/zhang677/PTXBench"
-          ]
+          "status": "unknown",
+          "urls": []
         }
       },
       "claims": [],
@@ -3380,6 +6365,10 @@
         {
           "field": "claims",
           "issue": "No numerical headline claim could be safely structured from the v1 row; verify the primary evidence before adding one."
+        },
+        {
+          "field": "artifacts.model_weights",
+          "issue": "The official SFT dataset and model cards expose previews/file metadata but describe the repositories as private; full download access and complete historical trajectories remain unverified as of 2026-10-19."
         }
       ]
     },
@@ -11027,9 +14016,9 @@
       "date": "2026-06",
       "entry_type": "agent",
       "status": "open",
-      "summary": "Routed, profile-driven optimizer grounded in GPU Wiki and official ncu/rocprof evidence, with structured memory and partial restarts; in a controlled three-operator FlyDSL study, optimizer-augmented Qwen3.7-Max and Claude Opus 4.7 each beat deployed production kernels, with up to 1.31x over production.",
+      "summary": "Profile-driven optimizer grounded in GPU Wiki and structured measurement history; v0.3.0 adds resumable isolated episodes, supervisor-owned correctness/performance promotion and native Atrex-Bench production campaigns. The paper's controlled three-operator FlyDSL study reports up to 1.31x over deployed kernels.",
       "caveats": [
-        "Atrex-Bench covers 30 operators/440 shapes, but AKA evidence is only a controlled three-operator, two-model case study on anonymized XPU-A hardware; broader accelerator validation remains future work. The repo ships the harness and references, not those claim-linked generated kernels."
+        "Atrex-Bench covers 30 operators/440 shapes, but the paper's 1.31x claim remains a controlled three-operator, two-model study on anonymized XPU-A hardware. The September v0.3.0 software release supports broader targets and workflows, but that does not extend the paper's measured result or release its exact winning kernels."
       ],
       "taxonomy": {
         "policy_adaptation": [],
@@ -11058,11 +14047,14 @@
         "Triton",
         "CUDA",
         "Gluon",
-        "CUTLASS"
+        "CUTLASS",
+        "CuTe",
+        "TileLang"
       ],
       "hardware": [
         "NVIDIA",
-        "AMD"
+        "AMD",
+        "T-Head-Zhenwu-M890-PPU"
       ],
       "links": {
         "paper": [
@@ -11079,7 +14071,13 @@
             "provenance": "official"
           }
         ],
-        "article": [],
+        "article": [
+          {
+            "label": "v0.3.0 release",
+            "url": "https://github.com/alibaba/atrex-kernel-agent/releases/tag/v0.3.0",
+            "provenance": "official"
+          }
+        ],
         "project": [],
         "artifact": [],
         "model": [],
@@ -11705,7 +14703,7 @@
       "status": "open",
       "summary": "Public plugin/agent/skill suite for staged NPU-operator development: architect, developer, reviewer and tester workflows cover direct and registered Ascend C kernels plus Catlass, PyPTO, TileLang and Triton.",
       "caveats": [
-        "Licensed under CANN Open Software License v2.0, not Apache/MIT. The changelog records substantial July-August updates, including per-skill JSON evaluation gates, profiling visualization and Ascend 950 migration, but the repo reports no aggregate kernel-generation speedup."
+        "Licensed under CANN Open Software License v2.0. September-October updates add NPU profiling, runtime memory/synchronization checking, simulator and disassembly diagnosis, and theoretical-performance estimation; parts of plugin orchestration and optimization knowledge moved to companion repositories. These capabilities are not aggregate kernel-generation performance results."
       ],
       "taxonomy": {
         "policy_adaptation": [],
@@ -11750,7 +14748,13 @@
             "provenance": "official"
           }
         ],
-        "article": [],
+        "article": [
+          {
+            "label": "Changelog",
+            "url": "https://gitcode.com/cann/cannbot-skills/blob/master/CHANGELOG.md",
+            "provenance": "official"
+          }
+        ],
         "project": [],
         "artifact": [],
         "model": [],
@@ -12199,7 +15203,8 @@
       "status": "open",
       "summary": "AMD's multi-agent kernel optimizer spans HIP, Triton, FlyDSL, TileLang and Composable Kernel; the versioned v4 report gives 2.21x/2.72x kernel geomeans for Triton/HIP over original baselines and end-to-end throughput gains of 60% on Qwen3.5-27B, 96% on Qwen3-14B and 42.2% on MiniMax M3.",
       "caveats": [
-        "These are AMD's July v4 results. The moving main branch now covers additional tasks and should not be used to silently revise the versioned measurements; only a subset of optimized artifacts is committed."
+        "These are AMD's July v4 results. The moving main branch now covers additional tasks and should not be used to silently revise the versioned measurements; only a subset of optimized artifacts is committed.",
+        "The October repository documents deterministic single-kernel and whole-model serving workflows plus a Codex CLI backend. These software capabilities do not extend the earlier numerical claims; machine-produced warm-start patches are described as gitignored."
       ],
       "taxonomy": {
         "policy_adaptation": [],
@@ -12253,7 +15258,13 @@
             "provenance": "official"
           }
         ],
-        "project": [],
+        "project": [
+          {
+            "label": "Documentation",
+            "url": "https://rocm.docs.amd.com/projects/geak/en/latest/",
+            "provenance": "official"
+          }
+        ],
         "artifact": [],
         "model": [],
         "dataset": []
@@ -13558,7 +16569,8 @@
       "status": "partial",
       "summary": "Compiler-agent co-design around a typed, hardware-explicit schedule IR; in matched implementation-hidden B200 Flash-KMeans clean starts at an 80M-token budget, CAKE reaches 1.144x the tuned FlashML baseline while direct CUDA/PTX reaches 0.928x.",
       "caveats": [
-        "The core CAKE compiler and agent are not released. Production kernel changes are traceable as public upstream PRs, so artifacts are partial; model/API timing and GPU-span timing are distinct and should not be mixed when quoting the Kimi Delta Attention study."
+        "The core CAKE compiler and agent are not released. Production kernel changes are traceable as public upstream PRs, so artifacts are partial; model/API timing and GPU-span timing are distinct and should not be mixed when quoting the Kimi Delta Attention study.",
+        "The upstream tracker expanded through October 2026, but these upstream kernels do not by themselves identify the exact Flash-KMeans clean-start winning candidate."
       ],
       "taxonomy": {
         "policy_adaptation": [],

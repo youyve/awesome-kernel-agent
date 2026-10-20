@@ -60,6 +60,8 @@ The full benchmark catalog lives in [awesome-kernel-benchmark](https://github.co
 - [RewardHackingAgents](https://arxiv.org/abs/2603.11337) — evaluator tampering as a first-class outcome
 - [Standard Kernel Rubric](https://standardkernel.com/blog/standard-kernel-rubric/) — complexity, representation, hardware, performance, and automation rubric
 - [Contract-Grade Verifier](https://arxiv.org/abs/2608.12700) — adversarial contract audit of 2,638 previously accepted generated kernels
+- [KernelQuest](https://www.turing.com/blog/kernelquest-benchmark-ai-agents-triton-kernels) — 100 engineer-authored Triton tasks with compiled baselines and adversarial verification
+- [D2K-Bench](https://arxiv.org/abs/2610.03226) — paired design-guided and unguided runs on 26 tasks / 85 workloads, separating design discovery from implementation
 
 ### Competitions and leaderboards
 
@@ -87,13 +89,16 @@ The full benchmark catalog lives in [awesome-kernel-benchmark](https://github.co
 
 **Agent and execution infrastructure:** [KernelGYM](https://github.com/hkust-nlp/KernelGYM) · [GPU Forecasters](https://github.com/codezakh/gpu-forecasters) · [NVIDIA CompileIQ](https://developer.nvidia.com/cuda/compileiq) · [Nsight Compute](https://docs.nvidia.com/nsight-compute/) · [Proton](https://github.com/triton-lang/triton/tree/main/third_party/proton) · [rocprof](https://rocm.docs.amd.com/projects/rocprofiler/en/latest/) · [msprof](https://www.hiascend.com/document/).
 
+[KREX](catalog/2026.md#krex) adds shared-GPU benchmarking isolation; [Xtrace](catalog/2026.md#xtrace) provides intra-kernel tracing. Both are indexed as tools, not generation agents.
+
 **Reference and production kernel libraries:** [FlashAttention](https://github.com/Dao-AILab/flash-attention) · [FlashInfer](https://github.com/flashinfer-ai/flashinfer) · [DeepGEMM](https://github.com/deepseek-ai/DeepGEMM) · [TileKernels](https://github.com/deepseek-ai/TileKernels) · [Liger-Kernel](https://github.com/linkedin/Liger-Kernel) · [FlagGems](https://github.com/FlagOpen/FlagGems) · [AITER](https://github.com/ROCm/aiter).
 
 ## Research sources
 
 - [Towards Automated Kernel Generation in the Era of LLMs](https://arxiv.org/abs/2601.15727) — broad survey and research index
 - [awesome-LLM-driven-kernel-generation](https://github.com/flagos-ai/awesome-LLM-driven-kernel-generation) and [Awesome-LLM4Kernel](https://github.com/kcxain/Awesome-LLM4Kernel) — companion indexes
-- [2026-08-25 primary-source audit](sources/research_20260825_kernel_agents.md) — search protocol, inclusion decisions, corrections, and exclusions for the latest refresh
+- [2026-10-19 primary-source audit](sources/research_20261019_kernel_agents.md) — latest additions, release updates, date checks, and unresolved evidence
+- [2026-08-25 primary-source audit](sources/research_20260825_kernel_agents.md) — previous search protocol, inclusion decisions, corrections, and exclusions
 - [v2 migration review](reports/migration-review.md) — facts intentionally left unresolved instead of inferred
 
 ## Contributing

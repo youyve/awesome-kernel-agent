@@ -2,11 +2,16 @@
 
 _Facts that could not be safely inferred during the v1 → v2 migration. `unknown` is intentional until primary evidence resolves an item._
 
-**70 review items** across **64 entries**.
+**80 review items** across **70 entries**.
 
 | System | Field | Review item |
 | --- | --- | --- |
+| [AReaL-RSI](../catalog/2026.md#areal-rsi) | `taxonomy.optimization_level` | The paper establishes GPU kernel optimization but does not identify a concrete editable artifact level or representation. Hardware is also unannotated. |
+| [AReaL-RSI](../catalog/2026.md#areal-rsi) | `claims` | Table 1 reports 2.30x/8.59x mean speedup and relative gains over Codex-Goal, but the implementation reference is unspecified. Do not reinterpret these as speedup directly against Codex-Goal kernels. |
+| [ServingStudio](../catalog/2026.md#servingstudio) | `representations` | Introduction and linked tuning change establish source-level optimization but do not identify a generated-kernel representation; left unannotated. |
+| [KernelOPT](../catalog/2026.md#kernelopt) | `artifacts.implementation` | Author-linked KernelOPT repository was not retrievable at the audit cutoff; public availability and exact winning artifacts require rechecking. |
 | [PTXBench / MiniPTXAgent](../catalog/2026.md#ptxbench-miniptxagent) | `claims` | No numerical headline claim could be safely structured from the v1 row; verify the primary evidence before adding one. |
+| [PTXBench / MiniPTXAgent](../catalog/2026.md#ptxbench-miniptxagent) | `artifacts.model_weights` | The official SFT dataset and model cards expose previews/file metadata but describe the repositories as private; full download access and complete historical trajectories remain unverified as of 2026-10-19. |
 | [KernelArc](../catalog/2026.md#kernelarc) | `claims` | The five-task leaderboard snapshot, 1.06x–143.78x task range, and separate cuBLAS case require claim-by-claim table extraction and dated T5 review. |
 | [EvoMem](../catalog/2026.md#evomem) | `claims` | The 2.4941x→2.7049x combined-speedup wording does not expose a safe per-result denominator or aggregation. |
 | [AsmEvo](../catalog/2026.md#asmevo) | `claims.asmevo-claim-3.baseline.tier` | The original recovered AMDGPU code object is a real implementation denominator, but it does not map safely to T0-T6; tier remains Unknown. |
@@ -41,9 +46,12 @@ _Facts that could not be safely inferred during the v1 → v2 migration. `unknow
 | [KernelFoundry](../catalog/2026.md#kernelfoundry) | `claims` | No numerical headline claim could be safely structured from the v1 row; verify the primary evidence before adding one. |
 | [Kernel-Smith](../catalog/2026.md#kernel-smith) | `claims` | No numerical headline claim could be safely structured from the v1 row; verify the primary evidence before adding one. |
 | [InCoder-32B](../catalog/2026.md#incoder-32b) | `claims` | The 38.0% KernelBench value is present but its exact metric/threshold is not identified in v1. |
+| [ROCm Hyperloom](../catalog/2026.md#hyperloom) | `claims.hyperloom-llama-mi355x.baseline.tier` | The initial stock vLLM implementation is specified, but no evidence establishes its specialization/deployment status within T0-T6; retain Unknown. |
+| [ROCm Hyperloom](../catalog/2026.md#hyperloom) | `claims.hyperloom-fleet-median.baseline.tier` | Stock full-stack serving configurations are real implementation denominators, but the article does not establish one T0-T6 provenance/status classification for this heterogeneous set. |
 | [EvoKernel](../catalog/2026.md#evokernel) | `claims` | The 11%→83% correctness and 3.60x median lack a verified benchmark, denominator, and exact hardware in v1. |
 | [CUDAMaster](../catalog/2026.md#cudamaster) | `claims` | The approximate 35% result lacks an explicit aggregation and the cuBLAS comparison is qualitative. |
 | [CANNBot Skills](../catalog/2026.md#cannbot-skills) | `claims` | No numerical headline claim could be safely structured from the v1 row; verify the primary evidence before adding one. |
+| [AscendOpGenAgent](../catalog/2026.md#ascendopgenagent) | `claims` | April 30 benchmark report has inconsistent latency/speedup rows (e.g. Ascend C GELU 0.086/0.186 ms versus reported 0.13x); search budget and exact result-to-artifact correspondence require clarification. |
 | [OptiML](../catalog/2026.md#optiml) | `claims` | The up-to 1.64x value does not identify which listed LLM-only baseline is the denominator. |
 | [KernelBlaster](../catalog/2026.md#kernelblaster) | `claims` | No numerical headline claim could be safely structured from the v1 row; verify the primary evidence before adding one. |
 | [K-Search](../catalog/2026.md#k-search) | `claims` | No numerical headline claim could be safely structured from the v1 row; verify the primary evidence before adding one. |
@@ -51,6 +59,8 @@ _Facts that could not be safely inferred during the v1 → v2 migration. `unknow
 | [Apex](../catalog/2026.md#amd-apex) | `claims.amd-apex-claim-1.baseline.tier` | The prior kernel from the same optimization run is a real implementation denominator, but it does not map safely to T0-T6; tier remains Unknown. |
 | [Xe-Forge](../catalog/2026.md#xe-forge) | `claims` | No numerical headline claim could be safely structured from the v1 row; verify the primary evidence before adding one. |
 | [TT-Lang + Claude Skills](../catalog/2026.md#tt-lang-claude-skills) | `claims` | No numerical headline claim could be safely structured from the v1 row; verify the primary evidence before adding one. |
+| [MaxCode](../catalog/2026.md#maxcode) | `hardware` | The inspected paper does not specify a GPU model or vendor for the KernelBench results; no hardware was inferred from CUDA. |
+| [MaxCode](../catalog/2026.md#maxcode) | `artifacts.implementation` | No author code repository was verified at the 2026-10-19 cutoff; generic Google accelerator-agents MaxCode refers to another system. |
 | [GEAK-Triton v2](../catalog/2026.md#geak-triton-v2) | `claims` | No numerical headline claim could be safely structured from the v1 row; verify the primary evidence before adding one. |
 | [GEAK-HIP](../catalog/2026.md#geak-hip) | `claims` | No numerical headline claim could be safely structured from the v1 row; verify the primary evidence before adding one. |
 | [CUDAnalyst](../catalog/2026.md#cudanalyst) | `claims` | No numerical headline claim could be safely structured from the v1 row; verify the primary evidence before adding one. |

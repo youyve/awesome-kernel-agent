@@ -94,6 +94,7 @@ _Every Agent system, grouped by first-public-release month in chronological orde
 | **[CUDAnalyst](../catalog/2026.md#cudanalyst)** | Evolution · Profiler / CUDA | [Paper](https://openreview.net/forum?id=s70zO5Lvvj) · [Code](https://github.com/yuxuan-z19/cudanalyst) |
 | **[GEAK-HIP](../catalog/2026.md#geak-hip)** | Iterative refinement / HIP | [Code](https://github.com/AMD-AGI/GEAK) · [Article](https://rocm.blogs.amd.com/software-tools-optimization/geak-hip-optimizations/README.html) |
 | **[GEAK-Triton v2](../catalog/2026.md#geak-triton-v2)** | — / Triton | [Code](https://github.com/AMD-AGI/GEAK) · [Article](https://rocm.blogs.amd.com/artificial-intelligence/geak-agents-family/README.html) |
+| **[MaxCode](../catalog/2026.md#maxcode)** | Beam search · Compiler feedback / CUDA | [Paper](https://arxiv.org/abs/2601.05475) · [Paper: Full text](https://arxiv.org/html/2601.05475v1) |
 | **[TT-Lang + Claude Skills](../catalog/2026.md#tt-lang-claude-skills)** | Direct generation · Simulator / TT-Lang | [Code](https://github.com/tenstorrent/tt-lang) |
 | **[Xe-Forge](../catalog/2026.md#xe-forge)** | — / Triton | [Code](https://github.com/IntelLabs/Xe-Forge) |
 
@@ -114,10 +115,11 @@ _Every Agent system, grouped by first-public-release month in chronological orde
 | System | Profile | Direct links |
 | --- | --- | --- |
 | **[AKO / AKO4ALL](../catalog/2026.md#ako)** | — / Triton · CUDA · TileLang | [Code](https://github.com/TongmingLAIC/AKO4ALL) · [Project](https://tongminglaic.github.io/AKO/) |
+| **[AscendOpGenAgent](../catalog/2026.md#ascendopgenagent)** | Iterative refinement · Correctness feedback / Triton · Ascend C | [Code](https://github.com/Just-it/AscendOpGenAgent) · [Artifact: Archived operator artifacts](https://github.com/Just-it/AscendOpGenAgent/tree/main/archive_tasks) · [Artifact: Reported benchmark results](https://github.com/Just-it/AscendOpGenAgent/blob/main/benchmarks/BASELINE_latest.md) |
 | **[AscendOptimizer](../catalog/2026.md#ascendoptimizer)** | Episodic memory / Ascend C | [Paper](https://arxiv.org/abs/2603.23566) |
 | **[AutoKernel](../catalog/2026.md#autokernel)** | Iterative refinement · Compiler feedback / CUDA · Triton | [Paper](https://arxiv.org/abs/2603.21331) · [Code](https://github.com/RightNow-AI/autokernel) |
 | **[AVO](../catalog/2026.md#avo)** | Evolution · Correctness feedback / CUDA · PTX | [Paper](https://arxiv.org/abs/2603.24517) · [Project: Community reimplementation (community)](https://github.com/austin1997/AVO) |
-| **[CANNBot Skills](../catalog/2026.md#cannbot-skills)** | Profiler / Ascend C · Catlass · PyPTO · +2 | [Code](https://gitcode.com/cann/cannbot-skills) |
+| **[CANNBot Skills](../catalog/2026.md#cannbot-skills)** | Profiler / Ascend C · Catlass · PyPTO · +2 | [Code](https://gitcode.com/cann/cannbot-skills) · [Article: Changelog](https://gitcode.com/cann/cannbot-skills/blob/master/CHANGELOG.md) |
 | **[CUCo](../catalog/2026.md#cuco)** | Evolution · Correctness feedback / CUDA | [Paper](https://arxiv.org/abs/2603.02376) · [Code](https://github.com/UT-InfraAI/cuco) |
 | **[CUDAMaster](../catalog/2026.md#cudamaster)** | Multi-agent · Profiler / CUDA | [Paper](https://arxiv.org/abs/2603.07169) · [Project](https://hanyx2021.github.io/MSKernelBenchDemo/) |
 | **[DRTriton](../catalog/2026.md#drtriton)** | Reinforcement learning · Correctness feedback / Triton | [Paper](https://arxiv.org/abs/2603.21465) |
@@ -126,8 +128,10 @@ _Every Agent system, grouped by first-public-release month in chronological orde
 | **[Kernel-Smith](../catalog/2026.md#kernel-smith)** | Evolution / Triton | [Paper](https://arxiv.org/abs/2603.28342) |
 | **[KernelFoundry](../catalog/2026.md#kernelfoundry)** | MAP-Elites / SYCL · CUDA | [Paper](https://arxiv.org/abs/2603.12440) |
 | **[KernelSkill](../catalog/2026.md#kernelskill)** | Skill library / CUDA | [Paper](https://arxiv.org/abs/2603.10085) · [Code](https://github.com/0satan0/KernelMem) |
+| **[MaxKernel](../catalog/2026.md#maxkernel)** | Best-of-N · Compiler feedback / Pallas · JAX | [Paper](https://arxiv.org/abs/2609.04523) · [Code](https://github.com/AI-Hypercomputer/accelerator-agents/tree/main/maxkernel/adk) · [Article](https://discuss.google.dev/t/maxkernel-automating-pallas-kernel-generation-and-optimization-via-agentic-systems/366686) · [Artifact: Evaluation harness](https://github.com/AI-Hypercomputer/accelerator-agents/tree/main/maxkernel/adk/evaluation) · [Dataset: JAXBench](https://github.com/AI-Hypercomputer/accelerator-agents/tree/main/JAXBench) |
 | **[muCUTLASS + Speed-of-Light Guidance](../catalog/2026.md#mucutlass-sol)** | In-context learning · Roofline / CUTLASS | [Paper](https://arxiv.org/abs/2603.29010) |
 | **[PyTorch KernelAgent](../catalog/2026.md#pytorch-kernelagent)** | Role Specialized · Compiler feedback / Triton | [Code](https://github.com/meta-pytorch/KernelAgent) · [Article](https://pytorch.org/blog/kernelagent-hardware-guided-gpu-kernel-optimization-via-multi-agent-orchestration/) |
+| **[ROCm Hyperloom](../catalog/2026.md#hyperloom)** | Iterative refinement · Profiler / HIP · Triton · FlyDSL | [Code](https://github.com/AMD-AGI/Hyperloom) · [Article](https://rocm.blogs.amd.com/software-tools-optimization/hyperloom-optimization/README.html) · [Project: Documentation](https://rocm.docs.amd.com/projects/hyperloom/en/latest/index.html) · [Artifact: Archived Qwen kernel examples](https://github.com/AMD-AGI/Hyperloom/tree/79856335c65047ac11264132167def97047f83e5/.cursor/skills/inference-optimization/results/qwen3-14b-mi355x) |
 | **[Standard Kernel](../catalog/2026.md#standard-kernel)** | — / PTX | [Article](https://standardkernel.com/blog/announcing-our-seed-round-is-kernel-generation-solved/) |
 | **[StitchCUDA](../catalog/2026.md#stitchcuda)** | Agentic RL · Correctness feedback / CUDA | [Paper](https://arxiv.org/abs/2603.02637) |
 
@@ -149,6 +153,7 @@ _Every Agent system, grouped by first-public-release month in chronological orde
 | --- | --- | --- |
 | **[AKO4X](../catalog/2026.md#ako4x)** | Iterative refinement · Correctness feedback / Triton · CUDA · TileLang · +2 | [Code](https://github.com/TongmingLAIC/AKO4X) |
 | **[AlphaEvolve for FHE on TPUs](../catalog/2026.md#alphaevolve-fhe)** | Evolution / JAX | [Paper](https://arxiv.org/abs/2605.14718) |
+| **[AMDKernelVault](../catalog/2026.md#amdkernelvault)** | SFT · Compiler feedback / HIP · Triton | [Paper](https://arxiv.org/abs/2609.12471) · [Code](https://github.com/AMD-AGI/AMDKernelVault) · [Dataset: AMD AIG datasets](https://huggingface.co/datasets/amd/AIG-Datasets) |
 | **[auto-gpu-kernel](../catalog/2026.md#auto-gpu-kernel)** | Iterative refinement · Correctness feedback / Triton | [Code](https://github.com/Dogacel/auto-gpu-kernel) |
 | **[CuBridge](../catalog/2026.md#cubridge)** | Iterative refinement · Compiler feedback / CUDA | [Paper](https://arxiv.org/abs/2605.05023) |
 | **[cuda-opt-agent](../catalog/2026.md#cuda-opt-agent)** | Iterative refinement · Compiler feedback / CUDA | [Code](https://github.com/KernelFlow-ops/cuda-opt-agent) |
@@ -164,7 +169,7 @@ _Every Agent system, grouped by first-public-release month in chronological orde
 | System | Profile | Direct links |
 | --- | --- | --- |
 | **[AgentCompile](../catalog/2026.md#agentcompile)** | Iterative refinement · Compiler feedback / CUDA | [Paper](https://arxiv.org/abs/2606.07665) · [Code](https://github.com/veneno1213822/AgentCompile) |
-| **[Atrex Kernel Agent (AKA)](../catalog/2026.md#atrex-kernel-agent)** | Profiler / FlyDSL · Triton · CUDA · +2 | [Paper](https://arxiv.org/abs/2607.14541) · [Code](https://github.com/alibaba/atrex-kernel-agent) |
+| **[Atrex Kernel Agent (AKA)](../catalog/2026.md#atrex-kernel-agent)** | Profiler / FlyDSL · Triton · CUDA · +4 | [Paper](https://arxiv.org/abs/2607.14541) · [Code](https://github.com/alibaba/atrex-kernel-agent) · [Article: v0.3.0 release](https://github.com/alibaba/atrex-kernel-agent/releases/tag/v0.3.0) |
 | **[AutoMegaKernel](../catalog/2026.md#automegakernel)** | Iterative refinement · Compiler feedback / CUDA | [Paper](https://arxiv.org/abs/2606.09682) · [Code](https://github.com/RightNow-AI/AutoMegaKernel) |
 | **[daVinci-kernel](../catalog/2026.md#davinci-kernel)** | SFT · Skill library / CUDA · Triton | [Paper](https://arxiv.org/abs/2606.16497) · [Code](https://github.com/GAIR-NLP/daVinci-kernel) |
 | **[EGG](../catalog/2026.md#egg-kernel)** | Multi-agent · Profiler / Triton | [Paper](https://arxiv.org/abs/2606.26758) |
@@ -181,7 +186,7 @@ _Every Agent system, grouped by first-public-release month in chronological orde
 | **[AgenticCANN](../catalog/2026.md#agenticcann)** | Evolution · Runtime feedback / Ascend C | [Paper](https://arxiv.org/abs/2607.26661) |
 | **[Compiler-Grounded Hierarchical Diagnosis](../catalog/2026.md#compiler-grounded-hierarchical-diagnosis)** | Iterative refinement · Compiler feedback / Triton | [Paper](https://arxiv.org/abs/2607.23089) · [Code](https://gitcode.com/cann/cannbot-skills) |
 | **[CUDAPerf](../catalog/2026.md#cudaperf)** | Reinforcement learning · Correctness feedback / CUDA | [Paper](https://arxiv.org/abs/2607.20908) |
-| **[GEAK v4](../catalog/2026.md#geak-v4)** | Multi-agent · Runtime feedback / HIP · Triton · FlyDSL · +2 | [Code](https://github.com/AMD-AGI/GEAK) · [Article](https://www.amd.com/en/developer/resources/technical-articles/2026/geak-v4.html) |
+| **[GEAK v4](../catalog/2026.md#geak-v4)** | Multi-agent · Runtime feedback / HIP · Triton · FlyDSL · +2 | [Code](https://github.com/AMD-AGI/GEAK) · [Article](https://www.amd.com/en/developer/resources/technical-articles/2026/geak-v4.html) · [Project: Documentation](https://rocm.docs.amd.com/projects/geak/en/latest/) |
 | **[Hawk](../catalog/2026.md#hawk-npu)** | Distillation · Correctness feedback / Ascend C | [Paper](https://arxiv.org/abs/2607.01590) |
 | **[LLM-CUDA / Harness Engineering](../catalog/2026.md#llm-cuda-harness-engineering)** | Iterative refinement · Correctness feedback / CUDA · Triton · CUTLASS | [Paper](https://arxiv.org/abs/2607.17979) · [Code](https://github.com/syhya/mlsys26-flashinfer-contest) |
 | **[NKI-Agent / ATX Custom NKI Agent](../catalog/2026.md#atx-custom-nki-agent)** | SFT · Compiler feedback / NKI | [Paper](https://arxiv.org/abs/2607.04395) · [Code](https://github.com/aws-samples/sample-ATX-custom-NKI-Agent) |
@@ -193,12 +198,32 @@ _Every Agent system, grouped by first-public-release month in chronological orde
 | **[Ascend Debug Agent](../catalog/2026.md#ascend-debug-agent)** | Iterative refinement · Compiler feedback / Ascend C | [Paper](https://arxiv.org/abs/2608.02712) |
 | **[AsmEvo](../catalog/2026.md#asmevo)** | Iterative refinement · Profiler / AMDGPU ISA | [Paper](https://arxiv.org/abs/2608.20711) |
 | **[CAKE](../catalog/2026.md#cake)** | Compiler in loop · IR feedback / CAKE IR · CUDA · PTX | [Paper](https://arxiv.org/abs/2608.12629) · [Artifact: Upstream artifact tracker](https://github.com/flashinfer-ai/flashinfer/issues/4254) |
+| **[CUDA-Harness](../catalog/2026.md#cuda-harness)** | In-context learning · Compiler feedback / CUDA | [Paper](https://arxiv.org/abs/2609.00058) |
 | **[EvoMem](../catalog/2026.md#evomem)** | Evolution · Runtime feedback / Triton | [Paper](https://arxiv.org/abs/2608.10795) |
-| **[ForgeStencil](../catalog/2026.md#forgestencil)** | Multi-agent · Profiler / CUDA | [Code](https://github.com/OpenBMB/ForgeStencil) |
+| **[ForgeStencil](../catalog/2026.md#forgestencil)** | Multi-agent · Profiler / CUDA | [Paper](https://arxiv.org/abs/2609.06694) · [Code](https://github.com/OpenBMB/ForgeStencil) |
 | **[HIERA](../catalog/2026.md#hiera)** | Iterative refinement · Profiler / CUDA | [Paper](https://arxiv.org/abs/2608.21157) |
 | **[KernelArc](../catalog/2026.md#kernelarc)** | Portfolio search · Runtime feedback / CUDA · PTX · Triton · +1 | [Paper](https://arxiv.org/abs/2608.17071) |
 | **[LEAP](../catalog/2026.md#leap-kernel-rl)** | Reinforcement learning · Compiler feedback / CUDA | [Paper](https://arxiv.org/abs/2608.01804) |
 | **[LLM4LLM](../catalog/2026.md#llm4llm)** | Iterative refinement · Profiler / Triton · CUDA · TileLang | [Paper](https://arxiv.org/abs/2608.21836) · [Code](https://github.com/hzeng2000/LLM4LLM) |
-| **[PTXBench / MiniPTXAgent](../catalog/2026.md#ptxbench-miniptxagent)** | IR feedback / CUDA · PTX · Triton | [Paper](https://arxiv.org/abs/2608.17379) · [Code](https://github.com/zhang677/PTXBench) |
+| **[PTXBench / MiniPTXAgent](../catalog/2026.md#ptxbench-miniptxagent)** | SFT · IR feedback / CUDA · PTX · Triton | [Paper](https://arxiv.org/abs/2608.17379) · [Code](https://github.com/zhang677/PTXBench) · [Article: Author article](https://zhang677.github.io/blog_md/ptxbench.html) · [Model: SFT adapters (access unverified)](https://huggingface.co/collections/Genghan/ptxbench-qwen36-27b-sft-series) · [Dataset: AccRL workload dataset](https://huggingface.co/datasets/AccRL/accrl-training) · [Dataset: SFT dataset (access unverified)](https://huggingface.co/datasets/Genghan/PTXBench-Qwen3.6-27B-SFT) |
 | **[SparseDitto](../catalog/2026.md#sparse-ditto)** | Correctness feedback / CUDA | [Paper](https://arxiv.org/abs/2608.05033) |
 | **[Zomboss](../catalog/2026.md#zomboss)** | Best-of-N · Compiler feedback / ACT · TAIDL | [Paper](https://arxiv.org/abs/2608.00894) |
+
+## 2026-09
+
+| System | Profile | Direct links |
+| --- | --- | --- |
+| **[Dream-RSI](../catalog/2026.md#dream-rsi)** | In-context learning · Correctness feedback / Triton | [Paper](https://arxiv.org/abs/2609.14858) · [Paper: v2 full text](https://arxiv.org/html/2609.14858v2) · [Project: Release plan](https://github.com/zhengkid/Dream-RSI) · [Project](https://dream-rsi.com/) |
+| **[FlashVector](../catalog/2026.md#flashvector)** | Iterative refinement · Profiler / Triton | [Paper](https://arxiv.org/abs/2609.17391) |
+| **[ForgeMegakernel](../catalog/2026.md#forgemegakernel)** | Iterative refinement · Compiler feedback / CUDA | [Paper](https://arxiv.org/abs/2609.12379) |
+| **[KernelOPT](../catalog/2026.md#kernelopt)** | Beam search · Compiler feedback / Triton · Helion | [Paper](https://arxiv.org/abs/2609.30059) · [Paper: v2 full text](https://arxiv.org/html/2609.30059v2) · [Code: Author-linked repository](https://github.com/TorchedHat/KernelOPT) |
+| **[ServingStudio](../catalog/2026.md#servingstudio)** | Iterative refinement · Profiler / — | [Code](https://github.com/SyFI-ServingStudio/ServingStudio) · [Article](https://syfi.cs.washington.edu/blog/2026-09-24-introducing-servingstudio/) · [Project](https://syfi-servingstudio.github.io/) · [Artifact: SGLang tuning change](https://github.com/sgl-project/sglang/pull/38560) |
+| **[Triton AI Compiler (TAIC)](../catalog/2026.md#triton-ai-compiler)** | Iterative refinement · Compiler feedback / PTX | [Paper](https://arxiv.org/abs/2609.36800) · [Code: Agent code](https://github.com/francois141/triton_ai_compiler) · [Code: PTX Gym harness](https://github.com/francois141/ptx_gym) |
+
+## 2026-10
+
+| System | Profile | Direct links |
+| --- | --- | --- |
+| **[AReaL-RSI](../catalog/2026.md#areal-rsi)** | In-context learning · Correctness feedback / — | [Paper](https://arxiv.org/abs/2610.18083) · [Paper: Full text](https://arxiv.org/html/2610.18083v1) |
+| **[Stateless Language Agents (SLA)](../catalog/2026.md#stateless-language-agents)** | Iterative refinement · Roofline / Triton | [Paper](https://arxiv.org/abs/2610.07625) · [Project: Project (placeholder)](https://github.com/Alex-q-z/stateless-language-agents) |
+| **[TileCas](../catalog/2026.md#tilecas)** | Iterative refinement · Compiler feedback / TileLang · Ascend C · HIP | [Paper](https://arxiv.org/abs/2610.14740) · [Code](https://github.com/Alex4210987/tilecas) · [Project](https://alex4210987.github.io/tilecas/) |

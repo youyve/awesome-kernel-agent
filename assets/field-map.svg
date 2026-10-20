@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1200" height="774" viewBox="0 0 1200 774" role="img" aria-labelledby="title desc">
   <title id="title">Kernel Agent Evidence Field Map</title>
-  <desc id="desc">A complete nine-dimension presentation projection over all 112 Agent systems. It selects no facets or representative systems.</desc>
+  <desc id="desc">A complete nine-dimension presentation projection over all 127 Agent systems. It selects no facets or representative systems.</desc>
   <style>
     text { font-family: system-ui, -apple-system, 'Segoe UI', sans-serif; }
     .title { fill: #0f172a; font-size: 26px; font-weight: 700; }
@@ -17,7 +17,7 @@
     <tspan x="36" dy="19">evidence?</tspan>
   </text>
   <text x="36" y="115" class="small">
-    <tspan x="36" dy="0">All 112 Agent entries are the denominator. Each card is a union of explicitly mapped detailed facets; multi-label counts are inclusive and empty means unannotated, not absent.</tspan>
+    <tspan x="36" dy="0">All 127 Agent entries are the denominator. Each card is a union of explicitly mapped detailed facets; multi-label counts are inclusive and empty means unannotated, not absent.</tspan>
   </text>
   <g id="field-map-adaptation" data-role="presentation-dimension">
     <rect x="36" y="139" width="366" height="185" rx="12" fill="#ffffff" stroke="#60a5fa"/>
@@ -29,11 +29,11 @@
       <tspan x="54" dy="0">How is the proposal policy adapted?</tspan>
     </text>
     <text x="54" y="215" class="small">
-      <tspan x="54" dy="0">Policy adaptation: 28/112 tagged</tspan>
+      <tspan x="54" dy="0">Policy adaptation: 44/127 tagged</tspan>
     </text>
     <rect x="54" y="238" width="330" height="12" rx="4" fill="#dbeafe"/>
-    <rect x="54" y="238" width="82" height="12" rx="4" fill="#2563eb"/>
-    <text x="54" y="270" class="small">Union evidence 28/112 · used values 6/9</text>
+    <rect x="54" y="238" width="114" height="12" rx="4" fill="#2563eb"/>
+    <text x="54" y="270" class="small">Union evidence 44/127 · used values 6/9</text>
   </g>
   <g id="field-map-search" data-role="presentation-dimension">
     <rect x="416" y="139" width="366" height="185" rx="12" fill="#ffffff" stroke="#60a5fa"/>
@@ -46,14 +46,14 @@
       <tspan x="434" dy="18">explored, or selected?</tspan>
     </text>
     <text x="434" y="233" class="small">
-      <tspan x="434" dy="0">Generation mode: 39/112 tagged</tspan>
+      <tspan x="434" dy="0">Generation mode: 54/127 tagged</tspan>
     </text>
     <text x="434" y="252" class="small">
-      <tspan x="434" dy="0">Search strategy: 19/112 tagged</tspan>
+      <tspan x="434" dy="0">Search strategy: 23/127 tagged</tspan>
     </text>
     <rect x="434" y="275" width="330" height="12" rx="4" fill="#dbeafe"/>
-    <rect x="434" y="275" width="162" height="12" rx="4" fill="#2563eb"/>
-    <text x="434" y="307" class="small">Union evidence 55/112 · used values 9/11</text>
+    <rect x="434" y="275" width="182" height="12" rx="4" fill="#2563eb"/>
+    <text x="434" y="307" class="small">Union evidence 70/127 · used values 11/11</text>
   </g>
   <g id="field-map-orchestration" data-role="presentation-dimension">
     <rect x="796" y="139" width="366" height="185" rx="12" fill="#ffffff" stroke="#60a5fa"/>
@@ -66,14 +66,14 @@
       <tspan x="814" dy="18">coordinated?</tspan>
     </text>
     <text x="814" y="233" class="small">
-      <tspan x="814" dy="0">Actor composition: 22/112 tagged</tspan>
+      <tspan x="814" dy="0">Actor composition: 35/127 tagged</tspan>
     </text>
     <text x="814" y="252" class="small">
-      <tspan x="814" dy="0">Coordination: 13/112 tagged</tspan>
+      <tspan x="814" dy="0">Coordination: 25/127 tagged</tspan>
     </text>
     <rect x="814" y="275" width="330" height="12" rx="4" fill="#dbeafe"/>
-    <rect x="814" y="275" width="82" height="12" rx="4" fill="#2563eb"/>
-    <text x="814" y="307" class="small">Union evidence 28/112 · used values 8/8</text>
+    <rect x="814" y="275" width="109" height="12" rx="4" fill="#2563eb"/>
+    <text x="814" y="307" class="small">Union evidence 42/127 · used values 8/8</text>
   </g>
   <g id="field-map-feedback" data-role="presentation-dimension">
     <rect x="36" y="338" width="366" height="185" rx="12" fill="#ffffff" stroke="#60a5fa"/>
@@ -86,14 +86,14 @@
       <tspan x="54" dy="18">evidence channel?</tspan>
     </text>
     <text x="54" y="432" class="small">
-      <tspan x="54" dy="0">Feedback signal: 58/112 tagged</tspan>
+      <tspan x="54" dy="0">Feedback signal: 73/127 tagged</tspan>
     </text>
     <text x="54" y="451" class="small">
-      <tspan x="54" dy="0">Feedback source: 40/112 tagged</tspan>
+      <tspan x="54" dy="0">Feedback source: 52/127 tagged</tspan>
     </text>
     <rect x="54" y="474" width="330" height="12" rx="4" fill="#dbeafe"/>
-    <rect x="54" y="474" width="212" height="12" rx="4" fill="#2563eb"/>
-    <text x="54" y="506" class="small">Union evidence 72/112 · used values 11/11</text>
+    <rect x="54" y="474" width="226" height="12" rx="4" fill="#2563eb"/>
+    <text x="54" y="506" class="small">Union evidence 87/127 · used values 11/11</text>
   </g>
   <g id="field-map-memory" data-role="presentation-dimension">
     <rect x="416" y="338" width="366" height="185" rx="12" fill="#ffffff" stroke="#60a5fa"/>
@@ -106,11 +106,11 @@
       <tspan x="434" dy="18">reused?</tspan>
     </text>
     <text x="434" y="432" class="small">
-      <tspan x="434" dy="0">State retention: 21/112 tagged</tspan>
+      <tspan x="434" dy="0">State retention: 36/127 tagged</tspan>
     </text>
     <rect x="434" y="455" width="330" height="12" rx="4" fill="#dbeafe"/>
-    <rect x="434" y="455" width="62" height="12" rx="4" fill="#2563eb"/>
-    <text x="434" y="487" class="small">Union evidence 21/112 · used values 6/8</text>
+    <rect x="434" y="455" width="94" height="12" rx="4" fill="#2563eb"/>
+    <text x="434" y="487" class="small">Union evidence 36/127 · used values 7/8</text>
   </g>
   <g id="field-map-scope" data-role="presentation-dimension">
     <rect x="796" y="338" width="366" height="185" rx="12" fill="#ffffff" stroke="#60a5fa"/>
@@ -123,14 +123,14 @@
       <tspan x="814" dy="18">context are in scope?</tspan>
     </text>
     <text x="814" y="432" class="small">
-      <tspan x="814" dy="0">Workload scope: 57/112 tagged</tspan>
+      <tspan x="814" dy="0">Workload scope: 72/127 tagged</tspan>
     </text>
     <text x="814" y="451" class="small">
-      <tspan x="814" dy="0">Integration scope: 19/112 tagged</tspan>
+      <tspan x="814" dy="0">Integration scope: 25/127 tagged</tspan>
     </text>
     <rect x="814" y="474" width="330" height="12" rx="4" fill="#dbeafe"/>
-    <rect x="814" y="474" width="192" height="12" rx="4" fill="#2563eb"/>
-    <text x="814" y="506" class="small">Union evidence 65/112 · used values 10/11</text>
+    <rect x="814" y="474" width="208" height="12" rx="4" fill="#2563eb"/>
+    <text x="814" y="506" class="small">Union evidence 80/127 · used values 11/11</text>
   </g>
   <g id="field-map-optimization-target" data-role="presentation-dimension">
     <rect x="36" y="537" width="366" height="185" rx="12" fill="#ffffff" stroke="#60a5fa"/>
@@ -143,14 +143,14 @@
       <tspan x="54" dy="18">decision type, does optimization act?</tspan>
     </text>
     <text x="54" y="631" class="small">
-      <tspan x="54" dy="0">Artifact level: 112/112 tagged</tspan>
+      <tspan x="54" dy="0">Artifact level: 126/127 tagged</tspan>
     </text>
     <text x="54" y="650" class="small">
-      <tspan x="54" dy="0">Optimization focus: 3/112 tagged</tspan>
+      <tspan x="54" dy="0">Optimization focus: 12/127 tagged</tspan>
     </text>
     <rect x="54" y="673" width="330" height="12" rx="4" fill="#dbeafe"/>
-    <rect x="54" y="673" width="330" height="12" rx="4" fill="#2563eb"/>
-    <text x="54" y="705" class="small">Union evidence 112/112 · used values 8/9</text>
+    <rect x="54" y="673" width="327" height="12" rx="4" fill="#2563eb"/>
+    <text x="54" y="705" class="small">Union evidence 126/127 · used values 8/9</text>
   </g>
   <g id="field-map-representation" data-role="presentation-dimension">
     <rect x="416" y="537" width="366" height="185" rx="12" fill="#ffffff" stroke="#60a5fa"/>
@@ -163,11 +163,11 @@
       <tspan x="434" dy="18">carries the artifact?</tspan>
     </text>
     <text x="434" y="631" class="small">
-      <tspan x="434" dy="0">Representation: 112/112 tagged</tspan>
+      <tspan x="434" dy="0">Representation: 125/127 tagged</tspan>
     </text>
     <rect x="434" y="654" width="330" height="12" rx="4" fill="#dbeafe"/>
-    <rect x="434" y="654" width="330" height="12" rx="4" fill="#2563eb"/>
-    <text x="434" y="686" class="small">Union evidence 112/112 · used values 24/24</text>
+    <rect x="434" y="654" width="325" height="12" rx="4" fill="#2563eb"/>
+    <text x="434" y="686" class="small">Union evidence 125/127 · used values 26/26</text>
   </g>
   <g id="field-map-hardware" data-role="presentation-dimension">
     <rect x="796" y="537" width="366" height="185" rx="12" fill="#ffffff" stroke="#60a5fa"/>
@@ -180,11 +180,11 @@
       <tspan x="814" dy="18">obtained?</tspan>
     </text>
     <text x="814" y="631" class="small">
-      <tspan x="814" dy="0">Hardware: 112/112 tagged</tspan>
+      <tspan x="814" dy="0">Hardware: 124/127 tagged</tspan>
     </text>
     <rect x="814" y="654" width="330" height="12" rx="4" fill="#dbeafe"/>
-    <rect x="814" y="654" width="330" height="12" rx="4" fill="#2563eb"/>
-    <text x="814" y="686" class="small">Union evidence 112/112 · used values 17/17</text>
+    <rect x="814" y="654" width="322" height="12" rx="4" fill="#2563eb"/>
+    <text x="814" y="686" class="small">Union evidence 124/127 · used values 17/17</text>
   </g>
   <text x="36" y="740" class="small">
     <tspan x="36" dy="0">This projection partitions every detailed facet family exactly once. Complete controlled values, boundaries, system reverse links, and primary sources: reports/field-map.md.</tspan>

@@ -60,6 +60,8 @@ _SVG 与[完整链接时间线](reports/timeline.md)都包含全部 Agent，不�
 - [RewardHackingAgents](https://arxiv.org/abs/2603.11337) — 将 evaluator tampering 作为一等评测结果
 - [Standard Kernel Rubric](https://standardkernel.com/blog/standard-kernel-rubric/) — 复杂度、Representation、硬件、性能与自动化五维 rubric
 - [Contract-Grade Verifier](https://arxiv.org/abs/2608.12700) — 对 2,638 个此前被接受的生成 kernel 进行对抗性契约审计
+- [KernelQuest](https://www.turing.com/blog/kernelquest-benchmark-ai-agents-triton-kernels) — 100 个工程师设计的 Triton 任务，使用编译基线与对抗验证
+- [D2K-Bench](https://arxiv.org/abs/2610.03226) — 26 个任务 / 85 个 workload，配对比较有无专家设计指导，区分设计发现与实现能力
 
 ### 竞赛与排行榜
 
@@ -87,13 +89,16 @@ _SVG 与[完整链接时间线](reports/timeline.md)都包含全部 Agent，不�
 
 **Agent 与执行基础设施：** [KernelGYM](https://github.com/hkust-nlp/KernelGYM) · [GPU Forecasters](https://github.com/codezakh/gpu-forecasters) · [NVIDIA CompileIQ](https://developer.nvidia.com/cuda/compileiq) · [Nsight Compute](https://docs.nvidia.com/nsight-compute/) · [Proton](https://github.com/triton-lang/triton/tree/main/third_party/proton) · [rocprof](https://rocm.docs.amd.com/projects/rocprofiler/en/latest/) · [msprof](https://www.hiascend.com/document/)。
 
+[KREX](catalog/2026.md#krex) 提供共享 GPU 上的隔离计时；[Xtrace](catalog/2026.md#xtrace) 提供 kernel 内部 tracing。两者按工具收录，不计入生成 Agent 数量。
+
 **参考与生产 kernel 库：** [FlashAttention](https://github.com/Dao-AILab/flash-attention) · [FlashInfer](https://github.com/flashinfer-ai/flashinfer) · [DeepGEMM](https://github.com/deepseek-ai/DeepGEMM) · [TileKernels](https://github.com/deepseek-ai/TileKernels) · [Liger-Kernel](https://github.com/linkedin/Liger-Kernel) · [FlagGems](https://github.com/FlagOpen/FlagGems) · [AITER](https://github.com/ROCm/aiter)。
 
 ## 调研来源
 
 - [Towards Automated Kernel Generation in the Era of LLMs](https://arxiv.org/abs/2601.15727) — 领域综述与研究索引
 - [awesome-LLM-driven-kernel-generation](https://github.com/flagos-ai/awesome-LLM-driven-kernel-generation) 与 [Awesome-LLM4Kernel](https://github.com/kcxain/Awesome-LLM4Kernel) — 同类索引
-- [2026-08-25 一手来源审计](sources/research_20260825_kernel_agents.md) — 最近一次更新的检索方法、纳入判断、修正和排除项
+- [2026-10-19 一手来源审计](sources/research_20261019_kernel_agents.md) — 本轮新增系统、版本更新、日期核查与未决证据
+- [2026-08-25 一手来源审计](sources/research_20260825_kernel_agents.md) — 上一轮检索方法、纳入判断、修正和排除项
 - [v2 migration review](reports/migration-review.md) — 无法从一手证据安全确定、因此没有推测补全的事实
 
 ## 贡献

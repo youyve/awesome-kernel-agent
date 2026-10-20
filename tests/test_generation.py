@@ -11,9 +11,10 @@ from scripts.lib.field_analysis import (
     build_facet_model,
     build_presentation_model,
     facet_keys,
+    facet_values,
 )
 from scripts.lib.loader import load_catalog, load_vocab
-from scripts.lib.markdown import agent_entries, headline, sorted_entries
+from scripts.lib.markdown import agent_entries, claim_result, headline, sorted_entries
 
 
 STATIC_OUTPUTS = {
@@ -137,23 +138,26 @@ class GenerationTests(unittest.TestCase):
 
     def test_targeted_coverage_audit_is_reflected(self) -> None:
         facets = {facet["key"]: facet for facet in build_facet_model(self.catalog)}
-        expected = {
-            "workload_scope": (57, 55),
-            "optimization_level": (112, 0),
-            "representations": (112, 0),
-            "hardware": (112, 0),
-        }
-        for key, (tagged, unannotated) in expected.items():
+        agents = agent_entries(self.catalog)
+        for key in ("workload_scope", "optimization_level", "representations", "hardware"):
             with self.subTest(facet=key):
+                tagged = sum(bool(facet_values(entry, key)) for entry in agents)
                 self.assertEqual(tagged, facets[key]["tagged"])
-                self.assertEqual(unannotated, facets[key]["unannotated"])
+                self.assertEqual(len(agents) - tagged, facets[key]["unannotated"])
+                self.assertEqual(
+                    sum(len(facet_values(entry, key)) for entry in agents),
+                    facets[key]["assignments"],
+                )
 
-        artifact_level = facets["optimization_level"]
-        self.assertEqual(142, artifact_level["assignments"])
-        compiler_ir = next(
-            value for value in artifact_level["values"] if value["key"] == "compiler-ir"
+        # Preserve the audited distinction without freezing the growing catalog's totals.
+        diagnosis = next(
+            entry for entry in agents
+            if entry["id"] == "compiler-grounded-hierarchical-diagnosis"
         )
-        self.assertEqual(0, compiler_ir["count"])
+        self.assertIn("ir", diagnosis["taxonomy"]["feedback_source"])
+        self.assertNotIn("compiler-ir", diagnosis["taxonomy"]["optimization_level"])
+        evomem = next(entry for entry in agents if entry["id"] == "evomem")
+        self.assertEqual([], evomem["taxonomy"]["workload_scope"])
 
         self.assertIn("unconditional `operator` migration default was removed", self.outputs["reports/field-map.md"])
         self.assertIn("schema permits empty lists", self.outputs["reports/field-map.md"])
@@ -192,6 +196,15 @@ class GenerationTests(unittest.TestCase):
 
     def test_primary_pass_at_k_semantics_are_visible(self) -> None:
         self.assertIn("66.7% pass@1 · Ascend NPU", self.outputs["README.md"])
+
+    def test_iterative_correctness_is_not_independent_pass_at_k(self) -> None:
+        self.assertIn("33.2% Corr@3 · AMD Instinct MI355X", self.outputs["README.md"])
+        claim = {
+            "value": 34, "unit": "percent", "metric": "pass-rate",
+            "aggregation": "pass-at-k", "qualifier": "Pass@1; one sampled candidate",
+            "workload": {"subset": "held-out tasks"},
+        }
+        self.assertEqual("34% pass@1", claim_result(claim))
 
     def test_primary_claims_are_metric_aware(self) -> None:
         readme = self.outputs["README.md"]

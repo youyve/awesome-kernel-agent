@@ -302,8 +302,11 @@ def claim_result(claim: Mapping[str, object], locale: str = "en") -> str:
     subset = _text(workload.get("subset"), "") if isinstance(workload, Mapping) else ""
 
     if aggregation == "pass-at-k":
-        match = re.search(r"pass\s*@\s*(\d+)", subset, re.IGNORECASE)
+        match = re.search(r"pass\s*@\s*(\d+)", f"{subset} {qualifier}", re.IGNORECASE)
         rendered += f" pass@{match.group(1)}" if match else " pass@k"
+    elif metric == "correctness" and (corr_match := re.search(r"\bcorr\s*@\s*(\d+)", qualifier, re.IGNORECASE)):
+        # Iterative Corr@k is not Pass@k over independent samples.
+        rendered += f" Corr@{corr_match.group(1)}"
     elif metric == "speedup" and unit in {"%", "percent"}:
         rendered += " speedup" if locale == "en" else " 加速"
         if aggregation != "maximum" and not rendered.startswith("+"):

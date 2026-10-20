@@ -4,7 +4,7 @@
 
 [中文](README.zh.md) · [Benchmarks](BENCHMARKS.md) · [Data](data/agents.json) · [Contributing](CONTRIBUTING.md)
 
-**112 agent systems** · **145 structured claims** · **45 claims with linked artifacts** · **17 hardware targets** · **3 tooling entries** · research cutoff **2026-08-25**
+**127 agent systems** · **176 structured claims** · **47 claims with linked artifacts** · **17 hardware targets** · **5 tooling entries** · research cutoff **2026-10-19**
 
 ## Research Landscape
 
@@ -15,7 +15,7 @@ _The Landscape is a containment-only ontology generated from [explicit facet def
 
 ## Latest
 
-[Ascend Debug Agent](catalog/2026.md#ascend-debug-agent) · [AsmEvo](catalog/2026.md#asmevo) · [CAKE](catalog/2026.md#cake) · [EvoMem](catalog/2026.md#evomem) · [ForgeStencil](catalog/2026.md#forgestencil)
+[AReaL-RSI](catalog/2026.md#areal-rsi) · [Stateless Language Agents (SLA)](catalog/2026.md#stateless-language-agents) · [TileCas](catalog/2026.md#tilecas) · [Dream-RSI](catalog/2026.md#dream-rsi) · [FlashVector](catalog/2026.md#flashvector)
 
 ## How to Read the Catalog
 
@@ -27,6 +27,25 @@ _The Landscape is a containment-only ontology generated from [explicit facet def
 
 Each row is generated from the v2 taxonomy and one explicitly selected primary claim. Full taxonomy, all claims, denominators, artifacts, budgets, caveats, and sources remain in the linked yearly catalog.
 
+### 2026-10
+
+| System | Profile | Headline claim | Evidence |
+| --- | --- | --- | :---: |
+| **[AReaL-RSI](catalog/2026.md#areal-rsi)**<br><sub>Ant Group × Zhejiang University × HKUST · closed · [Paper](https://arxiv.org/abs/2610.18083) · [Paper: Full text](https://arxiv.org/html/2610.18083v1)</sub> | In-context learning · Correctness feedback<br><sub>—</sub> | — | — |
+| **[Stateless Language Agents (SLA)](catalog/2026.md#stateless-language-agents)**<br><sub>Stanford University x Carnegie Mellon University x University of Washington x SambaNova Systems x UC Berkeley · wip · [Paper](https://arxiv.org/abs/2610.07625) · [Project: Project (placeholder)](https://github.com/Alex-q-z/stateless-language-agents)</sub> | Iterative refinement · Roofline<br><sub>Triton</sub> | 95.9% token reduction · hardware unknown<br><sub>N/A · EvoX token usage to reach its final SOL-ExecBench #58 score (354.1M tokens)</sub> | K ? · B ✓ |
+| **[TileCas](catalog/2026.md#tilecas)**<br><sub>Fudan University x University of Texas at Dallas x Peking University x Beijing Tongming Lake Information Technology Application Innovation Center · open · [Paper](https://arxiv.org/abs/2610.14740) · [Code](https://github.com/Alex4210987/tilecas) · [Project](https://alex4210987.github.io/tilecas/)</sub> | Iterative refinement · Compiler feedback<br><sub>TileLang · Ascend C · HIP</sub> | 4.836× · Ascend 910B3 and AMD Radeon AI PRO R9700<br><sub>T0 · Workload-specific KernelBench reference implementation</sub> | K ? · B ✓ |
+
+### 2026-09
+
+| System | Profile | Headline claim | Evidence |
+| --- | --- | --- | :---: |
+| **[Dream-RSI](catalog/2026.md#dream-rsi)**<br><sub>Google × Google DeepMind × University of Maryland × University of Virginia · wip · [Paper](https://arxiv.org/abs/2609.14858) · [Paper: v2 full text](https://arxiv.org/html/2609.14858v2) · [Project: Release plan](https://github.com/zhengkid/Dream-RSI) · [Project](https://dream-rsi.com/)</sub> | In-context learning · Correctness feedback<br><sub>Triton</sub> | 2.09× · NVIDIA L40S<br><sub>Unknown · kernel found by Recursive Fixed Exploration</sub> | K ◐ · B ✓ |
+| **[FlashVector](catalog/2026.md#flashvector)**<br><sub>Stanford University x Unity Vector AI Team · proprietary · [Paper](https://arxiv.org/abs/2609.17391)</sub> | Iterative refinement · Profiler<br><sub>Triton</sub> | 3.56× · NVIDIA RTX PRO 6000 Blackwell<br><sub>T4 · Production model's AOTInductor-compiled FP16 attention implementation</sub> | K ? · B ? |
+| **[ForgeMegakernel](catalog/2026.md#forgemegakernel)**<br><sub>Tsinghua University x University of Chinese Academy of Sciences x ModelBest · closed · [Paper](https://arxiv.org/abs/2609.12379)</sub> | Iterative refinement · Compiler feedback<br><sub>CUDA</sub> | 1.21× · NVIDIA H100 80GB HBM3<br><sub>T3 · SGLang 0.5.18 with CUDA graphs and torch.compile enabled</sub> | K ? · B ✓ |
+| **[KernelOPT](catalog/2026.md#kernelopt)**<br><sub>Red Hat · partial · [Paper](https://arxiv.org/abs/2609.30059) · [Paper: v2 full text](https://arxiv.org/html/2609.30059v2) · [Code: Author-linked repository](https://github.com/TorchedHat/KernelOPT)</sub> | Beam search · Compiler feedback<br><sub>Triton · Helion</sub> | 1.23× · NVIDIA H200<br><sub>T1 · torch.compile (Inductor max_autotune)</sub> | K ? · B ✓ |
+| **[ServingStudio](catalog/2026.md#servingstudio)**<br><sub>University of Washington · SyFI Lab · open · [Code](https://github.com/SyFI-ServingStudio/ServingStudio) · [Article](https://syfi.cs.washington.edu/blog/2026-09-24-introducing-servingstudio/) · [Project](https://syfi-servingstudio.github.io/) · [Artifact: SGLang tuning change](https://github.com/sgl-project/sglang/pull/38560)</sub> | Iterative refinement · Profiler<br><sub>—</sub> | +5.6% throughput · 4× NVIDIA B200<br><sub>Unknown · unmodified SGLang prefill path</sub> | K ◐ · B ? |
+| **[Triton AI Compiler (TAIC)](catalog/2026.md#triton-ai-compiler)**<br><sub>Stanford University x EPFL · partial · [Paper](https://arxiv.org/abs/2609.36800) · [Code: Agent code](https://github.com/francois141/triton_ai_compiler) · [Code: PTX Gym harness](https://github.com/francois141/ptx_gym)</sub> | Iterative refinement · Compiler feedback<br><sub>PTX</sub> | 3.34× · NVIDIA B200<br><sub>T3 · Authors' official BitDelta Triton implementation, autotuned on B200</sub> | K ? · B ✓ |
+
 ### 2026-08
 
 | System | Profile | Headline claim | Evidence |
@@ -34,13 +53,14 @@ Each row is generated from the v2 taxonomy and one explicitly selected primary c
 | **[Ascend Debug Agent](catalog/2026.md#ascend-debug-agent)**<br><sub>City University of Hong Kong x Huawei · closed · [Paper](https://arxiv.org/abs/2608.02712)</sub> | Iterative refinement · Compiler feedback<br><sub>Ascend C</sub> | 66.7% pass@1 · Ascend NPU<br><sub>N/A · fresh CANNBot-style regeneration</sub> | K — · B ✓ |
 | **[AsmEvo](catalog/2026.md#asmevo)**<br><sub>AMD x Southern University of Science and Technology · closed · [Paper](https://arxiv.org/abs/2608.20711)</sub> | Iterative refinement · Profiler<br><sub>AMDGPU ISA</sub> | 1.35× · AMD MI308X<br><sub>Unknown · original recovered AMDGPU code object</sub> | K — · B ✓ |
 | **[CAKE](catalog/2026.md#cake)**<br><sub>NVIDIA x Carnegie Mellon University · partial · [Paper](https://arxiv.org/abs/2608.12629) · [Artifact: Upstream artifact tracker](https://github.com/flashinfer-ai/flashinfer/issues/4254)</sub> | Compiler in loop · IR feedback<br><sub>CAKE IR · CUDA · PTX</sub> | 1.144× · NVIDIA B200<br><sub>T3 · tuned FlashML</sub> | K ◐ · B ◐ |
+| **[CUDA-Harness](catalog/2026.md#cuda-harness)**<br><sub>Shanghai Jiao Tong University · closed · [Paper](https://arxiv.org/abs/2609.00058)</sub> | In-context learning · Compiler feedback<br><sub>CUDA</sub> | 80.5% correctness · NVIDIA A40<br><sub>N/A · CUDABench functional validation</sub> | K ? · B ✓ |
 | **[EvoMem](catalog/2026.md#evomem)**<br><sub>Anonymous organization (Moscow) x Applied AI Institute x Lomonosov Moscow State University · closed · [Paper](https://arxiv.org/abs/2608.10795)</sub> | Evolution · Runtime feedback<br><sub>Triton</sub> | — | — |
-| **[ForgeStencil](catalog/2026.md#forgestencil)**<br><sub>OpenBMB · open · [Code](https://github.com/OpenBMB/ForgeStencil)</sub> | Multi-agent · Profiler<br><sub>CUDA</sub> | 1.41× · NVIDIA A100<br><sub>T4 · each application's production GPU path</sub> | K ✓ · B — |
+| **[ForgeStencil](catalog/2026.md#forgestencil)**<br><sub>OpenBMB · open · [Paper](https://arxiv.org/abs/2609.06694) · [Code](https://github.com/OpenBMB/ForgeStencil)</sub> | Multi-agent · Profiler<br><sub>CUDA</sub> | 1.41× · NVIDIA A100<br><sub>T4 · each application's production GPU path</sub> | K ✓ · B — |
 | **[HIERA](catalog/2026.md#hiera)**<br><sub>Shanghai Jiao Tong University · closed · [Paper](https://arxiv.org/abs/2608.21157)</sub> | Iterative refinement · Profiler<br><sub>CUDA</sub> | 92.4% pass rate · NVIDIA A100<br><sub>N/A · PyTorch reference</sub> | K — · B ✓ |
 | **[KernelArc](catalog/2026.md#kernelarc)**<br><sub>AI Labs x imec · closed · [Paper](https://arxiv.org/abs/2608.17071)</sub> | Portfolio search · Runtime feedback<br><sub>CUDA · PTX · Triton · +1</sub> | — | — |
 | **[LEAP](catalog/2026.md#leap-kernel-rl)**<br><sub>Moore Threads AI · closed · [Paper](https://arxiv.org/abs/2608.01804)</sub> | Reinforcement learning · Compiler feedback<br><sub>CUDA</sub> | 80.8% pass rate · NVIDIA GPU<br><sub>N/A · first-turn pass rate of 70.0%</sub> | K — · B ✓ |
 | **[LLM4LLM](catalog/2026.md#llm4llm)**<br><sub>Xidian University x Zhongguancun Academy · partial · [Paper](https://arxiv.org/abs/2608.21836) · [Code](https://github.com/hzeng2000/LLM4LLM)</sub> | Iterative refinement · Profiler<br><sub>Triton · CUDA · TileLang</sub> | 3.91× · NVIDIA A100<br><sub>T0 · PyTorch eager</sub> | K — · B ✓ |
-| **[PTXBench / MiniPTXAgent](catalog/2026.md#ptxbench-miniptxagent)**<br><sub>Stanford x Carnegie Mellon University x RadixArk · open · [Paper](https://arxiv.org/abs/2608.17379) · [Code](https://github.com/zhang677/PTXBench)</sub> | IR feedback<br><sub>CUDA · PTX · Triton</sub> | — | — |
+| **[PTXBench / MiniPTXAgent](catalog/2026.md#ptxbench-miniptxagent)**<br><sub>Stanford x Carnegie Mellon University x RadixArk · open · [Paper](https://arxiv.org/abs/2608.17379) · [Code](https://github.com/zhang677/PTXBench) · [Article: Author article](https://zhang677.github.io/blog_md/ptxbench.html) · [Model: SFT adapters (access unverified)](https://huggingface.co/collections/Genghan/ptxbench-qwen36-27b-sft-series) · [Dataset: AccRL workload dataset](https://huggingface.co/datasets/AccRL/accrl-training) · [Dataset: SFT dataset (access unverified)](https://huggingface.co/datasets/Genghan/PTXBench-Qwen3.6-27B-SFT)</sub> | SFT · IR feedback<br><sub>CUDA · PTX · Triton</sub> | — | — |
 | **[SparseDitto](catalog/2026.md#sparse-ditto)**<br><sub>University of Minnesota x Northeastern University · closed · [Paper](https://arxiv.org/abs/2608.05033)</sub> | Correctness feedback<br><sub>CUDA</sub> | 2.68× · NVIDIA RTX PRO 6000<br><sub>T2 · fastest applicable cuSPARSE path</sub> | K — · B ✓ |
 | **[Zomboss](catalog/2026.md#zomboss)**<br><sub>University of Michigan x University of Texas at Austin · closed · [Paper](https://arxiv.org/abs/2608.00894)</sub> | Best-of-N · Compiler feedback<br><sub>ACT · TAIDL</sub> | 3.34× · Gemmini FPGA<br><sub>T1 · compiler-default mapping</sub> | K — · B ✓ |
 
@@ -51,7 +71,7 @@ Each row is generated from the v2 taxonomy and one explicitly selected primary c
 | **[AgenticCANN](catalog/2026.md#agenticcann)**<br><sub>City University of Hong Kong x Hong Kong Yuwin Technology · closed · [Paper](https://arxiv.org/abs/2607.26661)</sub> | Evolution · Runtime feedback<br><sub>Ascend C</sub> | 6.65× · Ascend NPU<br><sub>T0 · PyTorch reference</sub> | K — · B ✓ |
 | **[Compiler-Grounded Hierarchical Diagnosis](catalog/2026.md#compiler-grounded-hierarchical-diagnosis)**<br><sub>Huawei Technologies · open · [Paper](https://arxiv.org/abs/2607.23089) · [Code](https://gitcode.com/cann/cannbot-skills)</sub> | Iterative refinement · Compiler feedback<br><sub>Triton</sub> | 4.35× · Ascend 950<br><sub>Unknown · validated initial Triton kernel</sub> | K — · B ✓ |
 | **[CUDAPerf](catalog/2026.md#cudaperf)**<br><sub>Iowa State University x Cisco AI Research · closed · [Paper](https://arxiv.org/abs/2607.20908)</sub> | Reinforcement learning · Correctness feedback<br><sub>CUDA</sub> | 6.41× · NVIDIA GPU<br><sub>T0 · PyTorch reference</sub> | K — · B ✓ |
-| **[GEAK v4](catalog/2026.md#geak-v4)**<br><sub>AMD-AGI · open · [Code](https://github.com/AMD-AGI/GEAK) · [Article](https://www.amd.com/en/developer/resources/technical-articles/2026/geak-v4.html)</sub> | Multi-agent · Runtime feedback<br><sub>HIP · Triton · FlyDSL · +2</sub> | 2.21× · AMD GPU<br><sub>Unknown · original per-task kernel</sub> | K ◐ · B ✓ |
+| **[GEAK v4](catalog/2026.md#geak-v4)**<br><sub>AMD-AGI · open · [Code](https://github.com/AMD-AGI/GEAK) · [Article](https://www.amd.com/en/developer/resources/technical-articles/2026/geak-v4.html) · [Project: Documentation](https://rocm.docs.amd.com/projects/geak/en/latest/)</sub> | Multi-agent · Runtime feedback<br><sub>HIP · Triton · FlyDSL · +2</sub> | 2.21× · AMD GPU<br><sub>Unknown · original per-task kernel</sub> | K ◐ · B ✓ |
 | **[Hawk](catalog/2026.md#hawk-npu)**<br><sub>Sun Yat-sen University x GBA National Technology Innovation Center x Peng Cheng Laboratory · closed · [Paper](https://arxiv.org/abs/2607.01590)</sub> | Distillation · Correctness feedback<br><sub>Ascend C</sub> | 1.34× · Ascend NPU<br><sub>T0 · PyTorch reference</sub> | K — · B ✓ |
 | **[LLM-CUDA / Harness Engineering](catalog/2026.md#llm-cuda-harness-engineering)**<br><sub>Baidu · open · [Paper](https://arxiv.org/abs/2607.17979) · [Code](https://github.com/syhya/mlsys26-flashinfer-contest)</sub> | Iterative refinement · Correctness feedback<br><sub>CUDA · Triton · CUTLASS</sub> | 1.62× · NVIDIA B200<br><sub>T3 · supplied FlashInfer contest baseline</sub> | K ◐ · B ✓ |
 | **[NKI-Agent / ATX Custom NKI Agent](catalog/2026.md#atx-custom-nki-agent)**<br><sub>Amazon Web Services · open · [Paper](https://arxiv.org/abs/2607.04395) · [Code](https://github.com/aws-samples/sample-ATX-custom-NKI-Agent)</sub> | SFT · Compiler feedback<br><sub>NKI</sub> | 77.3% pass rate · AWS Trainium<br><sub>N/A · single-shot Claude without agent tools (6% pass rate)</sub> | K ◐ · B ✓ |
@@ -61,7 +81,7 @@ Each row is generated from the v2 taxonomy and one explicitly selected primary c
 | System | Profile | Headline claim | Evidence |
 | --- | --- | --- | :---: |
 | **[AgentCompile](catalog/2026.md#agentcompile)**<br><sub>City University of Hong Kong (Dongguan) x City University of Hong Kong · partial · [Paper](https://arxiv.org/abs/2606.07665) · [Code](https://github.com/veneno1213822/AgentCompile)</sub> | Iterative refinement · Compiler feedback<br><sub>CUDA</sub> | 2.23–6.98× · NVIDIA GPU<br><sub>T0 · PyTorch eager</sub> | K — · B ◐ |
-| **[Atrex Kernel Agent (AKA)](catalog/2026.md#atrex-kernel-agent)**<br><sub>ATREX Team, Alibaba Group · open · [Paper](https://arxiv.org/abs/2607.14541) · [Code](https://github.com/alibaba/atrex-kernel-agent)</sub> | Profiler<br><sub>FlyDSL · Triton · CUDA · +2</sub> | up to 1.31× · anonymized XPU-A<br><sub>T4 · deployed production kernel (AITER where applicable)</sub> | K — · B ◐ |
+| **[Atrex Kernel Agent (AKA)](catalog/2026.md#atrex-kernel-agent)**<br><sub>ATREX Team, Alibaba Group · open · [Paper](https://arxiv.org/abs/2607.14541) · [Code](https://github.com/alibaba/atrex-kernel-agent) · [Article: v0.3.0 release](https://github.com/alibaba/atrex-kernel-agent/releases/tag/v0.3.0)</sub> | Profiler<br><sub>FlyDSL · Triton · CUDA · +4</sub> | up to 1.31× · anonymized XPU-A<br><sub>T4 · deployed production kernel (AITER where applicable)</sub> | K — · B ◐ |
 | **[AutoMegaKernel](catalog/2026.md#automegakernel)**<br><sub>RightNow AI (YC) · open · [Paper](https://arxiv.org/abs/2606.09682) · [Code](https://github.com/RightNow-AI/AutoMegaKernel)</sub> | Iterative refinement · Compiler feedback<br><sub>CUDA</sub> | 1.25–1.72× · NVIDIA GPU<br><sub>Unknown · pre-autoresearch AutoMegaKernel</sub> | K ◐ · B ◐ |
 | **[daVinci-kernel](catalog/2026.md#davinci-kernel)**<br><sub>Shanghai Innovation Institute x Shanghai Jiao Tong University x GAIR · open · [Paper](https://arxiv.org/abs/2606.16497) · [Code](https://github.com/GAIR-NLP/daVinci-kernel)</sub> | SFT · Skill library<br><sub>CUDA · Triton</sub> | 37.2% pass rate · NVIDIA GPU<br><sub>T0 · PyTorch reference Fast_1 threshold</sub> | K — · B ✓ |
 | **[EGG](catalog/2026.md#egg-kernel)**<br><sub>Beihang University x Shanghai Jiao Tong University x Tsinghua University x Approaching.AI · closed · [Paper](https://arxiv.org/abs/2606.26758)</sub> | Multi-agent · Profiler<br><sub>Triton</sub> | 2.13× · NVIDIA RTX 4090<br><sub>T0 · PyTorch eager</sub> | K — · B ✓ |
@@ -77,6 +97,7 @@ Each row is generated from the v2 taxonomy and one explicitly selected primary c
 | --- | --- | --- | :---: |
 | **[AKO4X](catalog/2026.md#ako4x)**<br><sub>TLAIC · open · [Code](https://github.com/TongmingLAIC/AKO4X)</sub> | Iterative refinement · Correctness feedback<br><sub>Triton · CUDA · TileLang · +2</sub> | up to 30.71× · NVIDIA B200<br><sub>T3 · FlashInfer expert kernel</sub> | K ✓ · B ? |
 | **[AlphaEvolve for FHE on TPUs](catalog/2026.md#alphaevolve-fhe)**<br><sub>Google · closed · [Paper](https://arxiv.org/abs/2605.14718)</sub> | Evolution<br><sub>JAX</sub> | 2.5× · TPU v5e<br><sub>T3 · human state-of-the-art implementation</sub> | K — · B ✓ |
+| **[AMDKernelVault](catalog/2026.md#amdkernelvault)**<br><sub>AMD · open · [Paper](https://arxiv.org/abs/2609.12471) · [Code](https://github.com/AMD-AGI/AMDKernelVault) · [Dataset: AMD AIG datasets](https://huggingface.co/datasets/amd/AIG-Datasets)</sub> | SFT · Compiler feedback<br><sub>HIP · Triton</sub> | 33.2% Corr@3 · AMD Instinct MI355X<br><sub>N/A · Numerical correctness against benchmark reference</sub> | K ? · B ✓ |
 | **[auto-gpu-kernel](catalog/2026.md#auto-gpu-kernel)**<br><sub>Dogacel · open · [Code](https://github.com/Dogacel/auto-gpu-kernel)</sub> | Iterative refinement · Correctness feedback<br><sub>Triton</sub> | 34.93× · NVIDIA B200<br><sub>T3 · contest reference kernel</sub> | K ✓ · B ◐ |
 | **[CuBridge](catalog/2026.md#cubridge)**<br><sub>Shanghai Jiao Tong University · closed · [Paper](https://arxiv.org/abs/2605.05023)</sub> | Iterative refinement · Compiler feedback<br><sub>CUDA</sub> | — | — |
 | **[cuda-opt-agent](catalog/2026.md#cuda-opt-agent)**<br><sub>KernelFlow-ops · open · [Code](https://github.com/KernelFlow-ops/cuda-opt-agent)</sub> | Iterative refinement · Compiler feedback<br><sub>CUDA</sub> | — | — |
@@ -104,10 +125,11 @@ Each row is generated from the v2 taxonomy and one explicitly selected primary c
 | System | Profile | Headline claim | Evidence |
 | --- | --- | --- | :---: |
 | **[AKO / AKO4ALL](catalog/2026.md#ako)**<br><sub>TLAIC · open · [Code](https://github.com/TongmingLAIC/AKO4ALL) · [Project](https://tongminglaic.github.io/AKO/)</sub> | —<br><sub>Triton · CUDA · TileLang</sub> | 10 wins · NVIDIA GPU<br><sub>N/A · SOL-ExecBench agent-optimized NVIDIA baseline</sub> | K ? · B ? |
+| **[AscendOpGenAgent](catalog/2026.md#ascendopgenagent)**<br><sub>Just-it contributors (affiliation not stated) · open · [Code](https://github.com/Just-it/AscendOpGenAgent) · [Artifact: Archived operator artifacts](https://github.com/Just-it/AscendOpGenAgent/tree/main/archive_tasks) · [Artifact: Reported benchmark results](https://github.com/Just-it/AscendOpGenAgent/blob/main/benchmarks/BASELINE_latest.md)</sub> | Iterative refinement · Correctness feedback<br><sub>Triton · Ascend C</sub> | — | — |
 | **[AscendOptimizer](catalog/2026.md#ascendoptimizer)**<br><sub>ECNU x Tongji · partial · [Paper](https://arxiv.org/abs/2603.23566)</sub> | Episodic memory<br><sub>Ascend C</sub> | 1.21× · Ascend NPU<br><sub>T3 · Ascend reference operator</sub> | K ? · B ? |
 | **[AutoKernel](catalog/2026.md#autokernel)**<br><sub>RightNow AI (YC) · open · [Paper](https://arxiv.org/abs/2603.21331) · [Code](https://github.com/RightNow-AI/autokernel)</sub> | Iterative refinement · Compiler feedback<br><sub>CUDA · Triton</sub> | 5.29× · NVIDIA H100<br><sub>T0 · PyTorch eager</sub> | K ? · B ✓ |
 | **[AVO](catalog/2026.md#avo)**<br><sub>NVIDIA x OctoML (23 authors) · partial · [Paper](https://arxiv.org/abs/2603.24517) · [Project: Community reimplementation (community)](https://github.com/austin1997/AVO)</sub> | Evolution · Correctness feedback<br><sub>CUDA · PTX</sub> | +10.5% speedup · NVIDIA B200<br><sub>T3 · FlashAttention-4</sub> | K — · B ✓ |
-| **[CANNBot Skills](catalog/2026.md#cannbot-skills)**<br><sub>Huawei CANN · open · [Code](https://gitcode.com/cann/cannbot-skills)</sub> | Profiler<br><sub>Ascend C · Catlass · PyPTO · +2</sub> | — | — |
+| **[CANNBot Skills](catalog/2026.md#cannbot-skills)**<br><sub>Huawei CANN · open · [Code](https://gitcode.com/cann/cannbot-skills) · [Article: Changelog](https://gitcode.com/cann/cannbot-skills/blob/master/CHANGELOG.md)</sub> | Profiler<br><sub>Ascend C · Catlass · PyPTO · +2</sub> | — | — |
 | **[CUCo](catalog/2026.md#cuco)**<br><sub>UT Austin · open · [Paper](https://arxiv.org/abs/2603.02376) · [Code](https://github.com/UT-InfraAI/cuco)</sub> | Evolution · Correctness feedback<br><sub>CUDA</sub> | up to 1.57× · NVIDIA GPU<br><sub>T0 · host-driven CPU-launched collectives/streams</sub> | K ◐ · B ✓ |
 | **[CUDAMaster](catalog/2026.md#cudamaster)**<br><sub>Tsinghua · partial · [Paper](https://arxiv.org/abs/2603.07169) · [Project](https://hanyx2021.github.io/MSKernelBenchDemo/)</sub> | Multi-agent · Profiler<br><sub>CUDA</sub> | — | — |
 | **[DRTriton](catalog/2026.md#drtriton)**<br><sub>Texas A&amp;M · wip · [Paper](https://arxiv.org/abs/2603.21465)</sub> | Reinforcement learning · Correctness feedback<br><sub>Triton</sub> | 92% win rate · NVIDIA GPU (model not specified in v1)<br><sub>T0 · PyTorch eager</sub> | K ? · B ◐ |
@@ -116,8 +138,10 @@ Each row is generated from the v2 taxonomy and one explicitly selected primary c
 | **[Kernel-Smith](catalog/2026.md#kernel-smith)**<br><sub>Shanghai AI Lab · closed · [Paper](https://arxiv.org/abs/2603.28342)</sub> | Evolution<br><sub>Triton</sub> | — | — |
 | **[KernelFoundry](catalog/2026.md#kernelfoundry)**<br><sub>Intel · wip · [Paper](https://arxiv.org/abs/2603.12440)</sub> | MAP-Elites<br><sub>SYCL · CUDA</sub> | — | — |
 | **[KernelSkill](catalog/2026.md#kernelskill)**<br><sub>Beihang University · open · [Paper](https://arxiv.org/abs/2603.10085) · [Code](https://github.com/0satan0/KernelMem)</sub> | Skill library<br><sub>CUDA</sub> | 5.44× · NVIDIA GPU<br><sub>T0 · PyTorch eager</sub> | K ? · B ? |
+| **[MaxKernel](catalog/2026.md#maxkernel)**<br><sub>Google x Google DeepMind · open · [Paper](https://arxiv.org/abs/2609.04523) · [Code](https://github.com/AI-Hypercomputer/accelerator-agents/tree/main/maxkernel/adk) · [Article](https://discuss.google.dev/t/maxkernel-automating-pallas-kernel-generation-and-optimization-via-agentic-systems/366686) · [Artifact: Evaluation harness](https://github.com/AI-Hypercomputer/accelerator-agents/tree/main/maxkernel/adk/evaluation) · [Dataset: JAXBench](https://github.com/AI-Hypercomputer/accelerator-agents/tree/main/JAXBench)</sub> | Best-of-N · Compiler feedback<br><sub>Pallas · JAX</sub> | 1.58× · Google TPU v6e<br><sub>T1 · XLA-compiled JAX reference</sub> | K ? · B ✓ |
 | **[muCUTLASS + Speed-of-Light Guidance](catalog/2026.md#mucutlass-sol)**<br><sub>NVIDIA x Stanford · wip · [Paper](https://arxiv.org/abs/2603.29010)</sub> | In-context learning · Roofline<br><sub>CUTLASS</sub> | — | — |
 | **[PyTorch KernelAgent](catalog/2026.md#pytorch-kernelagent)**<br><sub>Meta / PyTorch · open · [Code](https://github.com/meta-pytorch/KernelAgent) · [Article](https://pytorch.org/blog/kernelagent-hardware-guided-gpu-kernel-optimization-via-multi-agent-orchestration/)</sub> | Role Specialized · Compiler feedback<br><sub>Triton</sub> | 89% of hardware ceiling · NVIDIA H100<br><sub>T6 · roofline</sub> | K ◐ · B ✓ |
+| **[ROCm Hyperloom](catalog/2026.md#hyperloom)**<br><sub>AMD · open · [Code](https://github.com/AMD-AGI/Hyperloom) · [Article](https://rocm.blogs.amd.com/software-tools-optimization/hyperloom-optimization/README.html) · [Project: Documentation](https://rocm.docs.amd.com/projects/hyperloom/en/latest/index.html) · [Artifact: Archived Qwen kernel examples](https://github.com/AMD-AGI/Hyperloom/tree/79856335c65047ac11264132167def97047f83e5/.cursor/skills/inference-optimization/results/qwen3-14b-mi355x)</sub> | Iterative refinement · Profiler<br><sub>HIP · Triton · FlyDSL</sub> | 1.73× throughput · AMD Instinct GPUs; per-workload SKU not fully disclosed<br><sub>Unknown · Measured stock serving configuration for each workload</sub> | K ? · B ? |
 | **[Standard Kernel](catalog/2026.md#standard-kernel)**<br><sub>Standard Kernel (startup) · closed · [Article](https://standardkernel.com/blog/announcing-our-seed-round-is-kernel-generation-solved/)</sub> | —<br><sub>PTX</sub> | — | — |
 | **[StitchCUDA](catalog/2026.md#stitchcuda)**<br><sub>University of Minnesota Twin Cities · closed · [Paper](https://arxiv.org/abs/2603.02637)</sub> | Agentic RL · Correctness feedback<br><sub>CUDA</sub> | 1.72× · NVIDIA GPU<br><sub>Unknown · CudaForge</sub> | K ? · B ✓ |
 
@@ -142,6 +166,7 @@ Each row is generated from the v2 taxonomy and one explicitly selected primary c
 | **[CUDAnalyst](catalog/2026.md#cudanalyst)**<br><sub>Yee Hin Chong et al. · open · [Paper](https://openreview.net/forum?id=s70zO5Lvvj) · [Code](https://github.com/yuxuan-z19/cudanalyst)</sub> | Evolution · Profiler<br><sub>CUDA</sub> | — | — |
 | **[GEAK-HIP](catalog/2026.md#geak-hip)**<br><sub>AMD-AGI · open · [Code](https://github.com/AMD-AGI/GEAK) · [Article](https://rocm.blogs.amd.com/software-tools-optimization/geak-hip-optimizations/README.html)</sub> | Iterative refinement<br><sub>HIP</sub> | — | — |
 | **[GEAK-Triton v2](catalog/2026.md#geak-triton-v2)**<br><sub>AMD-AGI · open · [Code](https://github.com/AMD-AGI/GEAK) · [Article](https://rocm.blogs.amd.com/artificial-intelligence/geak-agents-family/README.html)</sub> | —<br><sub>Triton</sub> | — | — |
+| **[MaxCode](catalog/2026.md#maxcode)**<br><sub>Johns Hopkins University × Amazon Web Services · closed · [Paper](https://arxiv.org/abs/2601.05475) · [Paper: Full text](https://arxiv.org/html/2601.05475v1)</sub> | Beam search · Compiler feedback<br><sub>CUDA</sub> | 3.17× · hardware unknown<br><sub>T0 · default PyTorch implementation</sub> | K ? · B ✓ |
 | **[TT-Lang + Claude Skills](catalog/2026.md#tt-lang-claude-skills)**<br><sub>Tenstorrent · open · [Code](https://github.com/tenstorrent/tt-lang)</sub> | Direct generation · Simulator<br><sub>TT-Lang</sub> | — | — |
 | **[Xe-Forge](catalog/2026.md#xe-forge)**<br><sub>Intel Labs · open · [Code](https://github.com/IntelLabs/Xe-Forge)</sub> | —<br><sub>Triton</sub> | — | — |
 
@@ -255,6 +280,8 @@ The full benchmark catalog lives in [awesome-kernel-benchmark](https://github.co
 - [RewardHackingAgents](https://arxiv.org/abs/2603.11337) — evaluator tampering as a first-class outcome
 - [Standard Kernel Rubric](https://standardkernel.com/blog/standard-kernel-rubric/) — complexity, representation, hardware, performance, and automation rubric
 - [Contract-Grade Verifier](https://arxiv.org/abs/2608.12700) — adversarial contract audit of 2,638 previously accepted generated kernels
+- [KernelQuest](https://www.turing.com/blog/kernelquest-benchmark-ai-agents-triton-kernels) — 100 engineer-authored Triton tasks with compiled baselines and adversarial verification
+- [D2K-Bench](https://arxiv.org/abs/2610.03226) — paired design-guided and unguided runs on 26 tasks / 85 workloads, separating design discovery from implementation
 
 ### Competitions and leaderboards
 
@@ -282,13 +309,16 @@ The full benchmark catalog lives in [awesome-kernel-benchmark](https://github.co
 
 **Agent and execution infrastructure:** [KernelGYM](https://github.com/hkust-nlp/KernelGYM) · [GPU Forecasters](https://github.com/codezakh/gpu-forecasters) · [NVIDIA CompileIQ](https://developer.nvidia.com/cuda/compileiq) · [Nsight Compute](https://docs.nvidia.com/nsight-compute/) · [Proton](https://github.com/triton-lang/triton/tree/main/third_party/proton) · [rocprof](https://rocm.docs.amd.com/projects/rocprofiler/en/latest/) · [msprof](https://www.hiascend.com/document/).
 
+[KREX](catalog/2026.md#krex) adds shared-GPU benchmarking isolation; [Xtrace](catalog/2026.md#xtrace) provides intra-kernel tracing. Both are indexed as tools, not generation agents.
+
 **Reference and production kernel libraries:** [FlashAttention](https://github.com/Dao-AILab/flash-attention) · [FlashInfer](https://github.com/flashinfer-ai/flashinfer) · [DeepGEMM](https://github.com/deepseek-ai/DeepGEMM) · [TileKernels](https://github.com/deepseek-ai/TileKernels) · [Liger-Kernel](https://github.com/linkedin/Liger-Kernel) · [FlagGems](https://github.com/FlagOpen/FlagGems) · [AITER](https://github.com/ROCm/aiter).
 
 ## Research sources
 
 - [Towards Automated Kernel Generation in the Era of LLMs](https://arxiv.org/abs/2601.15727) — broad survey and research index
 - [awesome-LLM-driven-kernel-generation](https://github.com/flagos-ai/awesome-LLM-driven-kernel-generation) and [Awesome-LLM4Kernel](https://github.com/kcxain/Awesome-LLM4Kernel) — companion indexes
-- [2026-08-25 primary-source audit](sources/research_20260825_kernel_agents.md) — search protocol, inclusion decisions, corrections, and exclusions for the latest refresh
+- [2026-10-19 primary-source audit](sources/research_20261019_kernel_agents.md) — latest additions, release updates, date checks, and unresolved evidence
+- [2026-08-25 primary-source audit](sources/research_20260825_kernel_agents.md) — previous search protocol, inclusion decisions, corrections, and exclusions
 - [v2 migration review](reports/migration-review.md) — facts intentionally left unresolved instead of inferred
 
 ## Contributing
@@ -312,4 +342,4 @@ Edit [`data/agents.yaml`](data/agents.yaml), validate it, and regenerate every d
 
 Catalog content: [CC-BY-4.0](LICENSE) · generator code: [MIT](scripts/LICENSE).
 
-**Research cutoff:** 2026-08-25 · Maintained by [Lianzhong You](mailto:youyve@foxmail.com), HKUST (GZ)
+**Research cutoff:** 2026-10-19 · Maintained by [Lianzhong You](mailto:youyve@foxmail.com), HKUST (GZ)

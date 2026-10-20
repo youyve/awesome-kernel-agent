@@ -313,6 +313,8 @@ representations:
   cuTile: cuTile
   TT-Lang: TT-Lang
   JAX: JAX
+  Pallas: Pallas
+  Helion: Helion
 
 hardware:
   NVIDIA: NVIDIA GPU

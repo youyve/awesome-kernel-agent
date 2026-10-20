@@ -1,0 +1,17 @@
+{
+  "queries": [
+    {
+      "q": "site:arxiv.org/abs/ \"kernel\" \"Submitted on\" \"Oct 2026\""
+    },
+    {
+      "q": "site:arxiv.org/abs/ \"kernel\" \"Submitted on\" \"Sep 2026\" \"LLM\""
+    },
+    {
+      "q": "site:arxiv.org \"CUDA\" \"2610\""
+    },
+    {
+      "q": "site:arxiv.org \"Triton\" \"2609\""
+    }
+  ],
+  "result": "Empty search results\nNo results were found for the provided queries"
+}

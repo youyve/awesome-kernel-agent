@@ -426,6 +426,15 @@ class RepositoryIntegrationTests(unittest.TestCase):
 
     def test_repository_baseline_state_migration_is_exact(self) -> None:
         catalog = load_catalog()
+        # This regression concerns the migrated v1 entries, not later additions.
+        legacy_ids = {
+            line.strip()
+            for line in DEFAULT_ID_MANIFEST.read_text(encoding="utf-8").splitlines()
+            if line.strip() and not line.lstrip().startswith("#")
+        }
+        catalog = {**catalog, "agents": [
+            entry for entry in catalog["agents"] if entry["id"] in legacy_ids
+        ]}
         counts = baseline_counts(catalog)
         expected = {
             "T0": 43,
