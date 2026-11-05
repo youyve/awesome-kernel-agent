@@ -1,0 +1,243 @@
+# Benchmark: KernelBench
+
+[← README](../README.md) · 81 entries, newest first
+
+## 2026
+
+- **AReaL-RSI: Adaptive Scaling and Coordination of Recursive Self-Improvement** [![arXiv](https://img.shields.io/badge/arXiv-26.10-red)](https://arxiv.org/abs/2610.18083)
+  - **Institution:** Ant Group, Zhejiang University, Hong Kong University of Science and Technology
+  - **Type:** General-purpose system · **Hardware:** NVIDIA · **Benchmark:** KernelBench
+- **What Language Should LLMs Write GPU Kernels In? Disentangling Abstraction Level from Resource Level** [![NeurIPS Workshop 2026](https://img.shields.io/badge/NeurIPS_Workshop-26-green)](https://openreview.net/forum?id=9Ppcp9PK8i)
+  - **Institution:** Pusan National University, Electronics and Telecommunications Research Institute
+  - **Type:** Empirical study · **Kernel:** `CUDA` `PTX` `Triton` `TileLang` · **Hardware:** NVIDIA · **Benchmark:** KernelBench
+- **TileCas: Cascading Kernel Development Across Programming Abstractions** [![arXiv](https://img.shields.io/badge/arXiv-26.10-red)](https://arxiv.org/abs/2610.14740) [![Stars](https://img.shields.io/github/stars/TongmingLAIC/tilecas)](https://github.com/TongmingLAIC/tilecas)
+  - **Institution:** Fudan University, University of Texas at Dallas, Peking University, Beijing Tongming Lake Information Technology Application Innovation Center
+  - **Type:** Agentic workflow · **Kernel:** `TileLang` `Ascend C` `HIP` · **Hardware:** AMD, Ascend · **Benchmark:** KernelBench
+- **ATRL: Compaction-Aware Reinforcement Learning For Ascend Triton Kernel Generation** [![arXiv](https://img.shields.io/badge/arXiv-26.10-red)](https://arxiv.org/abs/2610.23950)
+  - **Institution:** Huawei
+  - **Type:** Trained model · **Kernel:** `Triton` · **Hardware:** Ascend · **Benchmark:** KernelBench, NPUKernelBench
+- **KernelZero: Co-Evolving Proposer and Coder for Continuously Improved GPU Kernel Generation** [![arXiv](https://img.shields.io/badge/arXiv-26.09-red)](https://arxiv.org/abs/2609.33074) [![Stars](https://img.shields.io/github/stars/kcxain/KernelZero)](https://github.com/kcxain/KernelZero) [![Model](https://img.shields.io/badge/Model-HuggingFace-yellow)](https://huggingface.co/collections/kcxain/kernelzero)
+  - **Institution:** Institute of Computing Technology (CAS), University of Chinese Academy of Sciences, Institute of Software (CAS), Institute of AI for Industries (CAS)
+  - **Type:** Trained model · **Kernel:** `CUDA` `Triton` · **Hardware:** NVIDIA · **Benchmark:** KernelBench
+- **KernelOPT: Dispatch-Aware Agentic Search for GPU Kernel Optimization** [![arXiv](https://img.shields.io/badge/arXiv-26.09-red)](https://arxiv.org/abs/2609.30059) [![Code unavailable](https://img.shields.io/badge/Code-unavailable-lightgrey)](https://github.com/TorchedHat/KernelOPT)
+  - **Institution:** Red Hat
+  - **Type:** Search & evolution · **Kernel:** `Triton` `Helion` · **Hardware:** NVIDIA · **Benchmark:** KernelBench
+- **ProcessKernel: Calibrated Process Supervision for GPU Kernel Generation** [![OpenReview](https://img.shields.io/badge/OpenReview-26.09-lightgrey)](https://openreview.net/forum?id=gO1SLMPGbi) [![Code](https://img.shields.io/badge/Code-Anonymous-lightgrey)](https://anonymous.4open.science/r/ProcessKernel-733C)
+  - **Type:** Search & evolution · **Hardware:** NVIDIA · **Benchmark:** KernelBench
+- **KernelMosaic: An Open Dataset and Agentic Framework for CUDA Kernel Generation** [![OpenReview](https://img.shields.io/badge/OpenReview-26.09-lightgrey)](https://openreview.net/forum?id=AMenxeeqRp)
+  - **Type:** Trained model · **Kernel:** `CUDA` · **Hardware:** NVIDIA · **Benchmark:** KernelBench
+- **EvokeAgent: A Hardware-Aware, Knowledge-Base-Co-Driven Self-Evolving Agent System for GPU Kernel Optimization** [![OpenReview](https://img.shields.io/badge/OpenReview-26.09-lightgrey)](https://openreview.net/forum?id=wu2vgmepgJ)
+  - **Type:** Agentic workflow · **Kernel:** `CUDA` `Triton` · **Hardware:** NVIDIA · **Benchmark:** KernelBench
+- **Evok: Evidence-Centric Multi-Agent Framework for GPU Kernel Generation** [![OpenReview](https://img.shields.io/badge/OpenReview-26.09-lightgrey)](https://openreview.net/forum?id=1iwOWSLQDb)
+  - **Type:** Agentic workflow · **Hardware:** NVIDIA · **Benchmark:** KernelBench
+- **AutoProfiler: Less Is More: Learning What to Profile for GPU Kernel Optimization** [![OpenReview](https://img.shields.io/badge/OpenReview-26.09-lightgrey)](https://openreview.net/forum?id=tE3EQdUVsO)
+  - **Type:** Agentic workflow · **Hardware:** NVIDIA · **Benchmark:** KernelBench
+- **AscendAgent: Evolving Context to Fit the Harness in CANN Kernel Optimization** [![OpenReview](https://img.shields.io/badge/OpenReview-26.09-lightgrey)](https://openreview.net/forum?id=gtuspdBfQo)
+  - **Type:** Search & evolution · **Hardware:** NVIDIA, Ascend · **Benchmark:** CANN-Bench, KernelBench, MultiKernelBench, TritonBench
+- **DLRM-Bench: How Much of a Real Workload Can LLM-Generated GPU Kernels Actually Reach?** [![arXiv](https://img.shields.io/badge/arXiv-26.09-red)](https://arxiv.org/abs/2609.21058) [![Stars](https://img.shields.io/github/stars/gauravapiscean/kernel-headroom)](https://github.com/gauravapiscean/kernel-headroom)
+  - **Type:** Empirical study · **Hardware:** NVIDIA · **Benchmark:** KernelBench
+- **CUDACoach: Guiding CUDA Kernel Optimization with Diverse Strategies Learned from Verified Code** [![OpenReview](https://img.shields.io/badge/OpenReview-26.09-lightgrey)](https://openreview.net/forum?id=QiCosML9uw)
+  - **Type:** Trained model · **Kernel:** `CUDA` · **Hardware:** NVIDIA · **Benchmark:** KernelBench
+- **AutoTuneBench: Trustworthy Measurement for Agent Auto-Tuning of LLM Serving Engines** [![arXiv](https://img.shields.io/badge/arXiv-26.09-red)](https://arxiv.org/abs/2609.18123) [![Stars](https://img.shields.io/github/stars/li-ch/autotunebench)](https://github.com/li-ch/autotunebench)
+  - **Institution:** harnets.ai
+  - **Type:** Benchmark · **Hardware:** NVIDIA, Apple
+- **Distill Before You Measure: Dual Pruning for Evaluation-Efficient GPU Kernel Optimization** [![OpenReview](https://img.shields.io/badge/OpenReview-26.09-lightgrey)](https://openreview.net/forum?id=PJTW1QziqP)
+  - **Type:** Search & evolution · **Hardware:** NVIDIA · **Benchmark:** KernelBench
+- **Dream-RSI: Recursive Self-Improvement through Evolving Worlds** [![arXiv](https://img.shields.io/badge/arXiv-26.09-red)](https://arxiv.org/abs/2609.14858) [![Project](https://img.shields.io/badge/Project-Page-blue)](https://github.com/zhengkid/Dream-RSI)
+  - **Institution:** Google, Google DeepMind, University of Maryland, University of Virginia
+  - **Type:** General-purpose system · **Kernel:** `Triton` · **Hardware:** NVIDIA · **Benchmark:** KernelBench
+- **KernelCompass: Traversing the Feasible Resource Space of the Target GPU Toward a Task-Contracted Objective** [![OpenReview](https://img.shields.io/badge/OpenReview-26.09-lightgrey)](https://openreview.net/forum?id=RkwGoFufl8)
+  - **Type:** Agentic workflow · **Hardware:** NVIDIA · **Benchmark:** KernelBench
+- **LLM4LLM: Bridging Kernel Benchmarks and Real Deployment via Closed-Loop Agentic Optimization** [![arXiv](https://img.shields.io/badge/arXiv-26.08-red)](https://arxiv.org/abs/2608.21836) [![Stars](https://img.shields.io/github/stars/hzeng2000/LLM4LLM)](https://github.com/hzeng2000/LLM4LLM)
+  - **Institution:** Xidian University, Zhongguancun Academy
+  - **Type:** Agentic workflow · **Kernel:** `Triton` `CUDA` `TileLang` · **Hardware:** NVIDIA · **Benchmark:** KernelBench
+- **HIERA: Workload-Aware Planning Across Implementation Spaces for GPU Kernel Optimization** [![arXiv](https://img.shields.io/badge/arXiv-26.08-red)](https://arxiv.org/abs/2608.21157)
+  - **Institution:** Shanghai Jiao Tong University
+  - **Type:** Agentic workflow · **Kernel:** `CUDA` · **Hardware:** NVIDIA · **Benchmark:** KernelBench
+- **AsmEvo: Agentic Assembly-Level Optimization of AMD GPU Kernels with Functional Equivalence Verification** [![arXiv](https://img.shields.io/badge/arXiv-26.08-red)](https://arxiv.org/abs/2608.20711)
+  - **Institution:** AMD, Southern University of Science and Technology
+  - **Type:** Agentic workflow · **Kernel:** `AMDGPU ISA` · **Hardware:** AMD · **Benchmark:** KernelBench
+- **LEAP** [![arXiv](https://img.shields.io/badge/arXiv-26.08-red)](https://arxiv.org/abs/2608.01804)
+  - *Multi-turn code RL prunes environment feedback adaptively instead of returning every compiler/test detail.*
+  - **Institution:** Moore Threads AI
+  - **Type:** Trained model · **Kernel:** `CUDA` · **Hardware:** NVIDIA · **Benchmark:** KernelBench
+- **CUDAPerf: Multi-turn RL with Structural and Performance Aware Rewards for CUDA Kernel Generation** [![arXiv](https://img.shields.io/badge/arXiv-26.07-red)](https://arxiv.org/abs/2607.20908)
+  - **Institution:** Iowa State University, Cisco AI Research
+  - **Type:** Trained model · **Kernel:** `CUDA` · **Hardware:** NVIDIA · **Benchmark:** KernelBench
+- **EGG: An Expert-Guided Agent Framework for Kernel Generation** [![ICML 2026](https://img.shields.io/badge/ICML-26-green)](https://arxiv.org/abs/2606.26758)
+  - **Institution:** Beihang University, Shanghai Jiao Tong University, Tsinghua University, Approaching.AI
+  - **Type:** Agentic workflow · **Kernel:** `Triton` · **Hardware:** NVIDIA · **Benchmark:** KernelBench, TritonBench
+- **KernelPro: Optimizing CUDA like a Human: Micro-Profiling Tools as Expert Surrogates for LLM-Based GPU Kernel Optimization** [![arXiv](https://img.shields.io/badge/arXiv-26.06-red)](https://arxiv.org/abs/2606.26453) [![Artifacts](https://img.shields.io/badge/Artifacts-arXiv-lightgrey)](https://arxiv.org/abs/2606.26453)
+  - **Institution:** AWS, Siemens, University of Minnesota
+  - **Type:** Search & evolution · **Kernel:** `CUDA` `CUTLASS` `CuTe` · **Hardware:** NVIDIA · **Benchmark:** KernelBench
+- **SpecGen: Accelerating Agentic Kernel Optimization with Speculative Generation** [![arXiv](https://img.shields.io/badge/arXiv-26.06-red)](https://arxiv.org/abs/2606.17518)
+  - **Institution:** Fudan University, Shanghai Jiao Tong University, Shanghai AI Laboratory, Hong Kong University of Science and Technology, CUHK, SenseTime Research
+  - **Type:** Agentic workflow · **Kernel:** `CUDA` `Triton` · **Hardware:** NVIDIA · **Benchmark:** KernelBench
+- **daVinci-kernel: Co-Evolving Skill Selection, Summarization, and Utilization via RL for GPU Kernel Optimization** [![arXiv](https://img.shields.io/badge/arXiv-26.06-red)](https://arxiv.org/abs/2606.16497) [![Stars](https://img.shields.io/github/stars/GAIR-NLP/daVinci-kernel)](https://github.com/GAIR-NLP/daVinci-kernel)
+  - **Institution:** Shanghai Innovation Institute, Shanghai Jiao Tong University, GAIR
+  - **Type:** Trained model · **Kernel:** `CUDA` `Triton` · **Hardware:** NVIDIA · **Benchmark:** KernelBench
+- **MusaCoder: Native GPU Kernel Generation with Full-Stack Training on Moore Threads GPU** [![arXiv](https://img.shields.io/badge/arXiv-26.06-red)](https://arxiv.org/abs/2606.04847) [![Model](https://img.shields.io/badge/Model-HuggingFace-yellow)](https://huggingface.co/MooreThreads/MusaCoder-27B)
+  - **Institution:** Moore Threads
+  - **Type:** Trained model · **Kernel:** `MUSA C` `CUDA` · **Hardware:** NVIDIA, Moore Threads · **Benchmark:** KernelBench
+- **MKEvolve: A Modular Multi-Agent Framework for Kernel Code Generation** [![ICML Workshop 2026](https://img.shields.io/badge/ICML_Workshop-26-green)](https://arxiv.org/abs/2607.20501) [![Code unavailable](https://img.shields.io/badge/Code-unavailable-lightgrey)](https://github.com/amazon-science/ModularKernelEvolution)
+  - **Institution:** University of British Columbia, AWS
+  - **Type:** Search & evolution · **Kernel:** `Triton` · **Hardware:** NVIDIA · **Benchmark:** FlashInfer-Bench, KernelBench
+- **KernelBench-Verified: Do LLM-Generated Kernels Actually Beat PyTorch?** [![arXiv](https://img.shields.io/badge/arXiv-26.07-red)](https://arxiv.org/abs/2607.16241) [![Stars](https://img.shields.io/github/stars/facebookresearch/kernel_bench_verified)](https://github.com/facebookresearch/kernel_bench_verified) [![Project](https://img.shields.io/badge/Project-Page-blue)](https://scalingintelligence.stanford.edu/kernelbenchverifiedleaderboard)
+  - **Institution:** Meta, Stanford University
+  - **Type:** Benchmark · **Kernel:** `CUDA` · **Hardware:** NVIDIA
+- **HTAM: Hierarchical Transition-Attended Memory for Operator Optimization** [![arXiv](https://img.shields.io/badge/arXiv-26.05-red)](https://arxiv.org/abs/2605.29734)
+  - **Institution:** University of Chinese Academy of Sciences, Institute of Automation (CAS), Zhongguancun Academy, Renmin University of China, XinZhuAI
+  - **Type:** Search & evolution · **Kernel:** `CUDA` · **Hardware:** NVIDIA · **Benchmark:** KernelBench
+- **KLineage: Recovering the Missing When of Kernel Optimization by Deoptimizing Experts** [![arXiv](https://img.shields.io/badge/arXiv-26.05-red)](https://arxiv.org/abs/2605.28213) [![Stars](https://img.shields.io/github/stars/ict-agent/klineage)](https://github.com/ict-agent/klineage)
+  - **Institution:** Institute of Computing Technology (CAS), University of Chinese Academy of Sciences, Xi'an Jiaotong University
+  - **Type:** Agentic workflow · **Hardware:** NVIDIA, Ascend · **Benchmark:** KernelBench, MultiKernelBench
+- **Kernel Foundry: A Diagnosis-driven Evolutionary Kernel Optimizer with Multi-Experts** [![arXiv](https://img.shields.io/badge/arXiv-26.05-red)](https://arxiv.org/abs/2605.30359)
+  - **Institution:** Chinese University of Hong Kong, Huawei
+  - **Type:** Search & evolution · **Hardware:** NVIDIA · **Benchmark:** KernelBench
+- **KernelBenchX: A Comprehensive Benchmark for Evaluating LLM-Generated GPU Kernels** [![arXiv](https://img.shields.io/badge/arXiv-26.05-red)](https://arxiv.org/abs/2605.04956) [![Stars](https://img.shields.io/github/stars/BonnieW05/KernelBenchX)](https://github.com/BonnieW05/KernelBenchX) [![Dataset](https://img.shields.io/badge/Dataset-HuggingFace-yellow)](https://huggingface.co/datasets/BonnieWang/KernelBenchX)
+  - **Type:** Benchmark · **Kernel:** `Triton` · **Hardware:** NVIDIA
+- **AMDKernelVault: Large-Scale Datasets and Agentic Training for AMD GPU Kernel Optimization** [![arXiv](https://img.shields.io/badge/arXiv-26.09-red)](https://arxiv.org/abs/2609.12471) [![Stars](https://img.shields.io/github/stars/AMD-AGI/AMDKernelVault)](https://github.com/AMD-AGI/AMDKernelVault) [![Dataset](https://img.shields.io/badge/Dataset-HuggingFace-yellow)](https://huggingface.co/datasets/amd/AIG-Datasets)
+  - **Institution:** AMD
+  - **Type:** Trained model · **Kernel:** `HIP` `Triton` · **Hardware:** AMD · **Benchmark:** KernelBench, TritonBench
+- **FACT: Compositional Kernel Synthesis with a Three-Stage Agentic Workflow** [![arXiv](https://img.shields.io/badge/arXiv-26.04-red)](https://arxiv.org/abs/2604.26666)
+  - **Institution:** Virginia Tech
+  - **Type:** Agentic workflow · **Kernel:** `CUTLASS` · **Hardware:** NVIDIA · **Benchmark:** KernelBench
+- **AdaExplore: Failure-Driven Adaptation and Diversity-Preserving Search for Efficient Kernel Generation** [![COLM Workshop 2026](https://img.shields.io/badge/COLM_Workshop-26-green)](https://arxiv.org/abs/2604.16625) [![Stars](https://img.shields.io/github/stars/StigLidu/AdaExplore)](https://github.com/StigLidu/AdaExplore)
+  - **Institution:** Carnegie Mellon University
+  - **Type:** Agentic workflow · **Kernel:** `CUDA` · **Hardware:** NVIDIA · **Benchmark:** FlashInfer-Bench, KernelBench, TritonBench
+- **Ave: Guiding Agentic GPU Optimization Using Data-Flow Invariants** [![SOSP 2026](https://img.shields.io/badge/SOSP-26-green)](https://arxiv.org/abs/2604.18616)
+  - **Institution:** CausalFlow, Hong Kong University of Science and Technology, University of Chinese Academy of Sciences, UC Riverside, Tsinghua University, Stanford University
+  - **Type:** Agentic workflow · **Kernel:** `HIP` · **Hardware:** AMD · **Benchmark:** KernelBench
+- **CuTeGen: An LLM-Based Agentic Framework for Generation and Optimization of High-Performance GPU Kernels using CuTe** [![arXiv](https://img.shields.io/badge/arXiv-26.04-red)](https://arxiv.org/abs/2604.01489) [![Stars](https://img.shields.io/github/stars/taratt/cutegen)](https://github.com/taratt/cutegen)
+  - **Institution:** University of Toronto, Standard Kernel
+  - **Type:** Agentic workflow · **Kernel:** `CuTe` · **Hardware:** NVIDIA · **Benchmark:** KernelBench
+- **muCUTLASS + Speed-of-Light Guidance: Improving Efficiency of GPU Kernel Optimization Agents using a Domain-Specific Language and Speed-of-Light Guidance** [![arXiv](https://img.shields.io/badge/arXiv-26.03-red)](https://arxiv.org/abs/2603.29010)
+  - **Institution:** NVIDIA, Stanford University
+  - **Type:** Agentic workflow · **Kernel:** `CUTLASS` · **Hardware:** NVIDIA · **Benchmark:** KernelBench
+- **Kernel-Smith: A Unified Recipe for Evolutionary Kernel Optimization** [![ICML Workshop 2026](https://img.shields.io/badge/ICML_Workshop-26-green)](https://arxiv.org/abs/2603.28342)
+  - **Institution:** Shanghai AI Laboratory
+  - **Type:** Trained model · **Kernel:** `Triton` · **Hardware:** NVIDIA · **Benchmark:** KernelBench
+- **DRTriton: Large-Scale Synthetic Data Driven Reinforcement Learning for Triton Kernel Generation** [![arXiv](https://img.shields.io/badge/arXiv-26.03-red)](https://arxiv.org/abs/2603.21465)
+  - **Institution:** Texas A&M University
+  - **Type:** Trained model · **Kernel:** `Triton` · **Hardware:** NVIDIA · **Benchmark:** KernelBench
+- **KernelFoundry: Hardware-Aware Evolutionary GPU Kernel Optimization** [![ICML 2026](https://img.shields.io/badge/ICML-26-green)](https://arxiv.org/abs/2603.12440)
+  - **Institution:** Intel
+  - **Type:** Search & evolution · **Kernel:** `SYCL` `CUDA` · **Hardware:** NVIDIA, Intel · **Benchmark:** KernelBench
+- **EvoKernel: Towards Cold-Start Drafting and Continual Refining: A Value-Driven Memory Approach with Application to NPU Kernel Synthesis** [![ICML 2026](https://img.shields.io/badge/ICML-26-green)](https://arxiv.org/abs/2603.10846) [![Project](https://img.shields.io/badge/Project-Page-blue)](https://evokernel.zhuo.li)
+  - **Institution:** Shanghai Jiao Tong University
+  - **Type:** Trained model · **Kernel:** `Ascend C` · **Hardware:** Ascend · **Benchmark:** KernelBench
+- **KernelSkill: KernelClaw: A Multi-Agent Framework for GPU Kernel Optimization with Dual-Memory Mechanisms** [![arXiv](https://img.shields.io/badge/arXiv-26.03-red)](https://arxiv.org/abs/2603.10085) [![Stars](https://img.shields.io/github/stars/0satan0/KernelMem)](https://github.com/0satan0/KernelMem)
+  - **Institution:** Beihang University
+  - **Type:** Agentic workflow · **Kernel:** `CUDA` · **Hardware:** NVIDIA · **Benchmark:** KernelBench, TritonBench
+- **StitchCUDA: An Automated Multi-Agents End-to-End GPU Programing Framework with Rubric-based Agentic Reinforcement Learning** [![ICML 2026](https://img.shields.io/badge/ICML-26-green)](https://arxiv.org/abs/2603.02637)
+  - **Institution:** University of Minnesota
+  - **Type:** Trained model · **Kernel:** `CUDA` · **Hardware:** NVIDIA · **Benchmark:** KernelBench
+- **DSL-Monkeys: Self-Generated In-Context Examples for Low-Resource GPU DSL Kernels** [![ICLR Workshop 2026](https://img.shields.io/badge/ICLR_Workshop-26-green)](https://openreview.net/forum?id=2yS4j1C3zi)
+  - **Type:** Trained model · **Kernel:** `TileLang` `ThunderKittens` · **Hardware:** NVIDIA · **Benchmark:** KernelBench
+- **PyTorch KernelAgent** [![Stars](https://img.shields.io/github/stars/meta-pytorch/KernelAgent)](https://github.com/meta-pytorch/KernelAgent) [![Blog](https://img.shields.io/badge/Blog-PyTorch-blue)](https://pytorch.org/blog/kernelagent-hardware-guided-gpu-kernel-optimization-via-multi-agent-orchestration)
+  - *5-agent system (Profiler / Judge / Analyze / Orchestrator / Benchmark) + NCU + roofline.*
+  - **Institution:** Meta
+  - **Type:** Open-source / industry system · **Kernel:** `Triton` · **Hardware:** NVIDIA · **Benchmark:** KernelBench
+- **POLCA: Stochastic Generative Optimization with LLM** [![ICML 2026](https://img.shields.io/badge/ICML-26-green)](https://proceedings.mlr.press/v306/ren26l.html) [![Stars](https://img.shields.io/github/stars/rlx-lab/POLCA)](https://github.com/rlx-lab/POLCA)
+  - **Institution:** University of Wisconsin-Madison, Google DeepMind, Google
+  - **Type:** General-purpose system · **Kernel:** `CUDA` · **Hardware:** NVIDIA · **Benchmark:** KernelBench
+- **InCoder-32B-Thinking: Industrial Code World Model for Thinking** [![arXiv](https://img.shields.io/badge/arXiv-26.04-red)](https://arxiv.org/abs/2604.03144) [![Stars](https://img.shields.io/github/stars/CSJianYang/Industrial-Coder)](https://github.com/CSJianYang/Industrial-Coder)
+  - **Institution:** Beihang University
+  - **Type:** General-purpose system · **Kernel:** `CUDA` · **Hardware:** NVIDIA · **Benchmark:** KernelBench, TritonBench
+- **AlphaLab: Autonomous Multi-Agent Research Across Optimization Domains with Frontier LLMs** [![arXiv](https://img.shields.io/badge/arXiv-26.04-red)](https://arxiv.org/abs/2604.08590) [![Code](https://img.shields.io/badge/Code-GitHub-blue)](https://github.com/morganstanley/MSML/tree/ecff6184ab96102b189df8fba16f949a65356ee5/projects/alpha-lab) [![Project](https://img.shields.io/badge/Project-Page-blue)](https://brendanhogan.github.io/alphalab-paper)
+  - **Institution:** Morgan Stanley
+  - **Type:** General-purpose system · **Kernel:** `CUDA` · **Hardware:** NVIDIA · **Benchmark:** KernelBench
+- **CUDA Agent: Large-Scale Agentic RL for High-Performance CUDA Kernel Generation** [![arXiv](https://img.shields.io/badge/arXiv-26.02-red)](https://arxiv.org/abs/2602.24286) [![Stars](https://img.shields.io/github/stars/BytedTsinghua-SIA/CUDA-Agent)](https://github.com/BytedTsinghua-SIA/CUDA-Agent) [![Dataset](https://img.shields.io/badge/Dataset-HuggingFace-yellow)](https://huggingface.co/datasets/BytedTsinghua-SIA/CUDA-Agent-Ops-6K) [![Project](https://img.shields.io/badge/Project-Page-blue)](https://cuda-agent.github.io)
+  - **Institution:** ByteDance, Tsinghua University
+  - **Type:** Trained model · **Kernel:** `CUDA` · **Hardware:** NVIDIA · **Benchmark:** KernelBench
+- **KernelBlaster: Continual Cross-Task CUDA Optimization via Memory-Augmented In-Context Reinforcement Learning** [![arXiv](https://img.shields.io/badge/arXiv-26.02-red)](https://arxiv.org/abs/2602.14293)
+  - **Institution:** NVIDIA, UC Berkeley
+  - **Type:** Trained model · **Kernel:** `CUDA` · **Hardware:** NVIDIA · **Benchmark:** KernelBench
+- **DICE: Diffusion Large Language Models Excel at Generating CUDA Kernels** [![arXiv](https://img.shields.io/badge/arXiv-26.02-red)](https://arxiv.org/abs/2602.11715) [![Stars](https://img.shields.io/github/stars/deadlykitten4/DICE)](https://github.com/deadlykitten4/DICE)
+  - **Institution:** Westlake University
+  - **Type:** Trained model · **Kernel:** `CUDA` · **Hardware:** NVIDIA · **Benchmark:** KernelBench
+- **Makora: Fine-Tuning GPT-5 for GPU Kernel Generation** [![arXiv](https://img.shields.io/badge/arXiv-26.02-red)](https://arxiv.org/abs/2602.11000)
+  - **Institution:** Makora
+  - **Type:** Trained model · **Kernel:** `Triton` · **Hardware:** NVIDIA · **Benchmark:** KernelBench
+- **Surprisal-Guided Selection: Compute-Optimal Test-Time Strategies for Execution-Grounded Code Generation** [![arXiv](https://img.shields.io/badge/arXiv-26.02-red)](https://arxiv.org/abs/2602.07670) [![Stars](https://img.shields.io/github/stars/jbarnes850/test-time-training)](https://github.com/jbarnes850/test-time-training) [![Model](https://img.shields.io/badge/Model-HuggingFace-yellow)](https://huggingface.co/Jarrodbarnes/KernelBench-RLVR-120b)
+  - **Institution:** Arc Intelligence
+  - **Type:** Trained model · **Benchmark:** KernelBench
+- **DR. KERNEL: Reinforcement Learning Done Right for Triton Kernel Generations** [![ICML 2026](https://img.shields.io/badge/ICML-26-green)](https://arxiv.org/abs/2602.05885) [![Stars](https://img.shields.io/github/stars/hkust-nlp/KernelGYM)](https://github.com/hkust-nlp/KernelGYM)
+  - **Institution:** Hong Kong University of Science and Technology
+  - **Type:** Trained model · **Kernel:** `Triton` · **Hardware:** NVIDIA · **Benchmark:** KernelBench
+- **MaxCode: A Max-Reward Reinforcement Learning Framework for Automated Code Optimization** [![arXiv](https://img.shields.io/badge/arXiv-26.01-red)](https://arxiv.org/abs/2601.05475)
+  - **Institution:** Johns Hopkins University, AWS
+  - **Type:** General-purpose system · **Kernel:** `CUDA` · **Benchmark:** KernelBench
+- **Xe-Forge: Multi-Stage LLM-Powered Kernel Optimization for Intel GPU** [![Stars](https://img.shields.io/github/stars/IntelLabs/Xe-Forge)](https://github.com/IntelLabs/Xe-Forge)
+  - **Institution:** Intel Labs
+  - **Type:** Open-source / industry system · **Kernel:** `Triton` · **Hardware:** Intel · **Benchmark:** KernelBench
+- **CUDAnalyst: Towards Feedback-to-Plan Decisions for Self-Evolving LLM Agents in CUDA Kernel Generation** [![ICML 2026](https://img.shields.io/badge/ICML-26-green)](https://openreview.net/forum?id=s70zO5Lvvj) [![Stars](https://img.shields.io/github/stars/yuxuan-z19/cudanalyst)](https://github.com/yuxuan-z19/cudanalyst)
+  - **Institution:** Tsinghua University, Beijing National Research Center for Information Science and Technology
+  - **Type:** Search & evolution · **Kernel:** `CUDA` · **Hardware:** NVIDIA · **Benchmark:** KernelBench
+
+## 2025
+
+- **KernelEvolve: Scaling Agentic Kernel Coding for Heterogeneous AI Accelerators at Meta** [![ISCA 2026](https://img.shields.io/badge/ISCA-26-green)](https://arxiv.org/abs/2512.23236) [![Blog](https://img.shields.io/badge/Blog-Meta-blue)](https://engineering.fb.com/2026/04/02/developer-tools/kernelevolve-how-metas-ranking-engineer-agent-optimizes-ai-infrastructure)
+  - **Institution:** Meta
+  - **Type:** Trained model · **Kernel:** `CUDA` `Triton` `TileLang` `CUTLASS` `HIP` · **Hardware:** NVIDIA, Meta MTIA · **Benchmark:** KernelBench
+- **AKG-AGENT: AKG kernel Agent: A Multi-Agent Framework for Cross-Platform Kernel Synthesis** [![arXiv](https://img.shields.io/badge/arXiv-25.12-red)](https://arxiv.org/abs/2512.23424) [![Code](https://img.shields.io/badge/Code-GitHub-blue)](https://github.com/mindspore-ai/akg/tree/master/akg_agents)
+  - **Institution:** Huawei, Hunan University
+  - **Type:** Agentic workflow · **Kernel:** `Triton` `TileLang` `Ascend C` `CUDA` · **Hardware:** NVIDIA, Ascend, CPU · **Benchmark:** KernelBench
+- **cuPilot: A Strategy-Coordinated Multi-agent Framework for CUDA Kernel Evolution** [![DAC 2026](https://img.shields.io/badge/DAC-26-green)](https://arxiv.org/abs/2512.16465) [![Artifacts](https://img.shields.io/badge/Artifacts-GitHub-lightgrey)](https://github.com/champloo2878/cuPilot-Kernels)
+  - **Institution:** Southeast University, Tsinghua University, Tsing Micro
+  - **Type:** Agentic workflow · **Kernel:** `CUDA` · **Hardware:** NVIDIA · **Benchmark:** KernelBench
+- **Automated Design Optimization via Strategic Search with Large Language Models** [![arXiv](https://img.shields.io/badge/arXiv-25.11-red)](https://arxiv.org/abs/2511.22651)
+  - **Institution:** University of Michigan
+  - **Type:** Agentic workflow · **Hardware:** NVIDIA · **Benchmark:** KernelBench
+- **QiMeng-Kernel: Macro-Thinking Micro-Coding Paradigm for LLM-Based High-Performance GPU Kernel Generation** [![AAAI 2026](https://img.shields.io/badge/AAAI-26-green)](https://arxiv.org/abs/2511.20100) [![Stars](https://img.shields.io/github/stars/QiMeng-IPRC/QiMeng-Kernel)](https://github.com/QiMeng-IPRC/QiMeng-Kernel)
+  - **Institution:** Institute of Computing Technology (CAS)
+  - **Type:** Trained model · **Kernel:** `CUDA` · **Hardware:** NVIDIA · **Benchmark:** KernelBench, TritonBench
+- **Optimizing PyTorch Inference with LLM-Based Multi-Agent Systems** [![MLSys 2026](https://img.shields.io/badge/MLSys-26-green)](https://arxiv.org/abs/2511.16964) [![Stars](https://img.shields.io/github/stars/pike-project/pike)](https://github.com/pike-project/pike) [![Dataset](https://img.shields.io/badge/Dataset-HuggingFace-yellow)](https://huggingface.co/datasets/knagaitsev/pike-data-compressed)
+  - **Institution:** Northwestern University, Lawrence Berkeley National Laboratory
+  - **Type:** Agentic workflow · **Hardware:** NVIDIA · **Benchmark:** KernelBench
+- **PRAGMA: A Profiling-Reasoned Multi-Agent Framework for Automatic Kernel Optimization** [![arXiv](https://img.shields.io/badge/arXiv-25.11-red)](https://arxiv.org/abs/2511.06345)
+  - **Institution:** Beihang University
+  - **Type:** Agentic workflow · **Kernel:** `Triton` · **Hardware:** NVIDIA · **Benchmark:** KernelBench
+- **CudaForge: An Agent Framework with Hardware Feedback for CUDA Kernel Optimization** [![arXiv](https://img.shields.io/badge/arXiv-25.11-red)](https://arxiv.org/abs/2511.01884) [![Stars](https://img.shields.io/github/stars/OptimAI-Lab/CudaForge)](https://github.com/OptimAI-Lab/CudaForge)
+  - **Institution:** University of Minnesota
+  - **Type:** Agentic workflow · **Kernel:** `CUDA` · **Hardware:** NVIDIA · **Benchmark:** KernelBench
+- **KForge: A Multi-Agent System for Cross-Platform Kernel Synthesis** [![ICML Workshop 2026](https://img.shields.io/badge/ICML_Workshop-26-green)](https://arxiv.org/abs/2606.02963)
+  - **Institution:** Gimlet Labs
+  - **Type:** Agentic workflow · **Kernel:** `Triton` `CUDA` `CUTLASS` `HIP` `SYCL` `Metal` · **Hardware:** NVIDIA, AMD, Intel, Apple · **Benchmark:** KernelBench
+- **KernelFalcon** [![Blog](https://img.shields.io/badge/Blog-PyTorch-blue)](https://pytorch.org/blog/kernelfalcon-autonomous-gpu-kernel-generation-via-deep-agents)
+  - *Predecessor of PyTorch KernelAgent.*
+  - **Institution:** Meta
+  - **Type:** Open-source / industry system · **Kernel:** `Triton` · **Hardware:** NVIDIA · **Benchmark:** KernelBench
+- **STARK: Strategic Team of Agents for Refining Kernels** [![ICLR 2026](https://img.shields.io/badge/ICLR-26-green)](https://arxiv.org/abs/2510.16996)
+  - **Institution:** Meta
+  - **Type:** Agentic workflow · **Kernel:** `CUDA` · **Hardware:** NVIDIA · **Benchmark:** KernelBench
+- **TritonRL: Training LLMs to Think and Code Triton Without Cheating** [![COLM 2026](https://img.shields.io/badge/COLM-26-green)](https://arxiv.org/abs/2510.17891)
+  - **Institution:** Carnegie Mellon University, Amazon
+  - **Type:** Trained model · **Kernel:** `Triton` · **Hardware:** NVIDIA · **Benchmark:** KernelBench, TritonBench
+- **ConCuR: Conciseness Makes State-of-the-Art Kernel Generation** [![arXiv](https://img.shields.io/badge/arXiv-25.10-red)](https://arxiv.org/abs/2510.07356) [![Model](https://img.shields.io/badge/Model-HuggingFace-yellow)](https://huggingface.co/lkongam/KernelCoder)
+  - **Institution:** Hong Kong University of Science and Technology
+  - **Type:** Trained model · **Kernel:** `Triton` · **Hardware:** NVIDIA · **Benchmark:** KernelBench
+- **EvoEngineer: Mastering Automated CUDA Kernel Code Evolution with Large Language Models** [![arXiv](https://img.shields.io/badge/arXiv-25.10-red)](https://arxiv.org/abs/2510.03760)
+  - **Institution:** City University of Hong Kong
+  - **Type:** Search & evolution · **Kernel:** `CUDA` · **Hardware:** NVIDIA · **Benchmark:** KernelBench
+- **CUDA-L1: Improving CUDA Optimization via Contrastive Reinforcement Learning** [![ICLR 2026](https://img.shields.io/badge/ICLR-26-green)](https://arxiv.org/abs/2507.14111) [![Stars](https://img.shields.io/github/stars/ornith-ai/CUDA-L1)](https://github.com/ornith-ai/CUDA-L1)
+  - **Institution:** DeepReinforce
+  - **Type:** Trained model · **Kernel:** `CUDA` · **Hardware:** NVIDIA · **Benchmark:** KernelBench
+- **Kevin: Multi-Turn RL for Generating CUDA Kernels** [![ICLR 2026](https://img.shields.io/badge/ICLR-26-green)](https://arxiv.org/abs/2507.11948)
+  - **Institution:** Cognition
+  - **Type:** Trained model · **Kernel:** `CUDA` · **Hardware:** NVIDIA · **Benchmark:** KernelBench
+- **AutoTriton: Automatic Triton Programming with Reinforcement Learning in LLMs** [![arXiv](https://img.shields.io/badge/arXiv-25.07-red)](https://arxiv.org/abs/2507.05687) [![Stars](https://img.shields.io/github/stars/AI9Stars/AutoTriton)](https://github.com/AI9Stars/AutoTriton)
+  - **Institution:** Tsinghua University (THUNLP), AI9Stars
+  - **Type:** Trained model · **Kernel:** `Triton` · **Hardware:** NVIDIA · **Benchmark:** KernelBench, TritonBench
+- **HPCTransCompile: An AI Compiler Generated Dataset for High-Performance CUDA Transpilation and LLM Preliminary Exploration** [![arXiv](https://img.shields.io/badge/arXiv-25.06-red)](https://arxiv.org/abs/2506.10401) [![Stars](https://img.shields.io/github/stars/PJLAB-CHIP/HPCTransCompile)](https://github.com/PJLAB-CHIP/HPCTransCompile)
+  - **Institution:** Tongji University, Shanghai Artificial Intelligence Laboratory, Tsinghua University
+  - **Type:** Benchmark
+- **Autocomp: A Powerful and Portable Code Optimizer for Tensor Accelerators** [![NeurIPS Workshop 2025](https://img.shields.io/badge/NeurIPS_Workshop-25-green)](https://arxiv.org/abs/2505.18574) [![Stars](https://img.shields.io/github/stars/ucb-bar/autocomp)](https://github.com/ucb-bar/autocomp)
+  - **Institution:** UC Berkeley
+  - **Type:** Search & evolution · **Hardware:** NVIDIA, AWS Neuron, Research accelerators · **Benchmark:** KernelBench
+- **KernelBench: Can LLMs Write Efficient GPU Kernels?** [![ICML 2025](https://img.shields.io/badge/ICML-25-green)](https://proceedings.mlr.press/v267/ouyang25a.html) [![Stars](https://img.shields.io/github/stars/ScalingIntelligence/KernelBench)](https://github.com/ScalingIntelligence/KernelBench) [![Dataset](https://img.shields.io/badge/Dataset-HuggingFace-yellow)](https://huggingface.co/datasets/ScalingIntelligence/KernelBench)
+  - **Institution:** Stanford University, Princeton University
+  - **Type:** Benchmark · **Kernel:** `CUDA` · **Hardware:** NVIDIA
+- **AI CUDA Engineer: Towards Robust Agentic CUDA Kernel Benchmarking, Verification, and Optimization** [![arXiv](https://img.shields.io/badge/arXiv-25.09-red)](https://arxiv.org/abs/2509.14279) [![Dataset](https://img.shields.io/badge/Dataset-HuggingFace-yellow)](https://huggingface.co/datasets/SakanaAI/AI-CUDA-Engineer-Archive)
+  - **Institution:** Sakana AI
+  - **Type:** Agentic workflow · **Kernel:** `CUDA` · **Hardware:** NVIDIA · **Benchmark:** KernelBench

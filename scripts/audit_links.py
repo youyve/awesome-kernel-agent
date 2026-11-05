@@ -22,15 +22,13 @@ from urllib.error import HTTPError, URLError
 from urllib.parse import urlparse
 from urllib.request import Request, urlopen
 
-try:
-    from .lib.loader import load_catalog
-except ImportError:  # Direct execution.
-    from lib.loader import load_catalog
+import yaml
 
 
 ROOT = Path(__file__).resolve().parents[1]
-LINK_TYPES = ("paper", "code", "article", "project", "artifact", "model", "dataset")
-USER_AGENT = "awesome-kernel-agent-link-audit/2 (+https://github.com/youyve/awesome-kernel-agent)"
+LINK_TYPES = ("paper", "code", "model", "dataset", "project", "blog", "artifacts")
+DATA = ROOT / "data" / "entries.yaml"
+USER_AGENT = "awesome-kernel-agent-link-audit/3 (+https://github.com/youyve/awesome-kernel-agent)"
 
 
 def _sequence(value: object) -> list[object]:
@@ -39,38 +37,19 @@ def _sequence(value: object) -> list[object]:
     return list(value)
 
 
-def collect_urls(catalog: Mapping[str, object]) -> dict[str, list[dict[str, str]]]:
+def load_entries(path: Path = DATA) -> list[dict[str, object]]:
+    data = yaml.safe_load(path.read_text(encoding="utf-8")) or {}
+    return [entry for entry in _sequence(data.get("entries")) if isinstance(entry, Mapping)]
+
+
+def collect_urls(entries: Sequence[Mapping[str, object]]) -> dict[str, list[dict[str, str]]]:
     usages: dict[str, list[dict[str, str]]] = defaultdict(list)
-    for entry in _sequence(catalog.get("agents")):
-        if not isinstance(entry, Mapping):
-            continue
+    for entry in entries:
         entry_id = str(entry.get("id"))
-        links = entry.get("links")
-        links = links if isinstance(links, Mapping) else {}
         for link_type in LINK_TYPES:
-            for link in _sequence(links.get(link_type)):
-                if isinstance(link, Mapping) and link.get("url"):
-                    usages[str(link["url"])].append({"entry_id": entry_id, "type": link_type})
-        for claim in _sequence(entry.get("claims")):
-            if not isinstance(claim, Mapping):
-                continue
-            claim_id = str(claim.get("id"))
-            source = claim.get("primary_source")
-            if isinstance(source, Mapping) and source.get("url"):
-                usages[str(source["url"])].append(
-                    {"entry_id": entry_id, "type": "claim-primary-source", "claim_id": claim_id}
-                )
-            reproducibility = claim.get("reproducibility")
-            if isinstance(reproducibility, Mapping) and reproducibility.get("artifact_url"):
-                usages[str(reproducibility["artifact_url"])].append(
-                    {"entry_id": entry_id, "type": "claim-artifact", "claim_id": claim_id}
-                )
-            baseline = claim.get("baseline")
-            evidence = baseline.get("evidence") if isinstance(baseline, Mapping) else None
-            if isinstance(evidence, Mapping) and evidence.get("url"):
-                usages[str(evidence["url"])].append(
-                    {"entry_id": entry_id, "type": "baseline-evidence", "claim_id": claim_id}
-                )
+            url = entry.get(link_type)
+            if isinstance(url, str) and url:
+                usages[url].append({"entry_id": entry_id, "type": link_type})
     return dict(usages)
 
 
@@ -168,8 +147,8 @@ def check_url(url: str, timeout: float = 15.0, retries: int = 2) -> dict[str, ob
     }
 
 
-def run_audit(catalog: Mapping[str, object], workers: int, timeout: float) -> dict[str, object]:
-    usages = collect_urls(catalog)
+def run_audit(entries: Sequence[Mapping[str, object]], workers: int, timeout: float) -> dict[str, object]:
+    usages = collect_urls(entries)
     results: list[dict[str, object]] = []
     with ThreadPoolExecutor(max_workers=workers) as executor:
         futures = {executor.submit(check_url, url, timeout): url for url in sorted(usages)}
@@ -201,7 +180,7 @@ def main() -> int:
     if not 1 <= args.workers <= 16:
         parser.error("--workers must be between 1 and 16")
 
-    report = run_audit(load_catalog(), args.workers, args.timeout)
+    report = run_audit(load_entries(), args.workers, args.timeout)
     output = json.dumps(report, indent=2, ensure_ascii=False) + "\n"
     if args.output:
         args.output.parent.mkdir(parents=True, exist_ok=True)

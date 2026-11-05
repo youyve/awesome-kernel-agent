@@ -1,0 +1,115 @@
+# Open-source and industry systems
+
+[← README](../README.md) · 28 entries, newest first
+
+_Open-source repositories, products, and vendor systems without a research paper._
+
+## 2026
+
+- **ServingStudio** [![Stars](https://img.shields.io/github/stars/SyFI-ServingStudio/ServingStudio)](https://github.com/SyFI-ServingStudio/ServingStudio) [![Blog](https://img.shields.io/badge/Blog-UW-blue)](https://syfi.cs.washington.edu/blog/2026-09-24-introducing-servingstudio) [![Artifacts](https://img.shields.io/badge/Artifacts-GitHub-lightgrey)](https://github.com/sgl-project/sglang/pull/38560)
+  - *Agent workbench that uses serving simulation, kernel profiling and hardware validation to implement kernel and serving-stack improvements.*
+  - **Institution:** University of Washington · SyFI Lab
+  - **Type:** Open-source / industry system · **Hardware:** NVIDIA
+- **GEAK v4** [![Stars](https://img.shields.io/github/stars/AMD-AGI/GEAK)](https://github.com/AMD-AGI/GEAK) [![Project](https://img.shields.io/badge/Project-Page-blue)](https://rocm.docs.amd.com/projects/geak/en/latest) [![Blog](https://img.shields.io/badge/Blog-AMD-blue)](https://www.amd.com/en/developer/resources/technical-articles/2026/geak-v4.html)
+  - *AMD's multi-agent kernel optimizer spans HIP, Triton, FlyDSL, TileLang and Composable Kernel.*
+  - **Institution:** AMD-AGI
+  - **Type:** Open-source / industry system · **Kernel:** `HIP` `Triton` `FlyDSL` `TileLang` `Composable Kernel` · **Hardware:** AMD
+- **MoziFlux** [![Code unavailable](https://img.shields.io/badge/Code-unavailable-lightgrey)](https://github.com/BiSheng-Compiler-Agents/MoziFlux)
+  - *Apache-2.0 Hermes-driven Triton-Ascend optimizer with CANN/cannsim local and remote gates, an episode store, a 100-task KernelBench L1 corpus, and checked-in optimized kernels with per-task reports.*
+  - **Institution:** BiSheng-Compiler-Agents
+  - **Type:** Open-source / industry system · **Kernel:** `Triton` · **Hardware:** Ascend
+- **Qwen3.7-Max Autonomous Kernel Optimization** [![Blog](https://img.shields.io/badge/Blog-Qwen-blue)](https://qwen.ai/blog?id=qwen3.7)
+  - *Qwen3.7-Max autonomously optimized SGLang's Extend Attention Kernel for a previously-unseen accelerator (T-Head Zhenwu M890 PPU, styled 'ZW-M890' in Qwen's own blog) with no hardware docs/reference ke.*
+  - **Institution:** Alibaba (Qwen Team)
+  - **Type:** Open-source / industry system · **Kernel:** `Triton` · **Hardware:** T-Head PPU
+- **MoE-Kernel-Agent: Full-Agent Technical Write-up** [![Stars](https://img.shields.io/github/stars/Jerry2423/MoE-Kernel-Agent)](https://github.com/Jerry2423/MoE-Kernel-Agent)
+  - **Type:** Open-source / industry system · **Kernel:** `Triton` · **Hardware:** NVIDIA · **Benchmark:** FlashInfer-Bench
+- **Kernel Design Agents (KDA): Developing GPU Kernels with Agentic Loops** [![Stars](https://img.shields.io/github/stars/NVlabs/kda)](https://github.com/NVlabs/kda)
+  - **Institution:** MIT HAN Lab
+  - **Type:** Open-source / industry system · **Kernel:** `CUDA` · **Hardware:** NVIDIA · **Benchmark:** FlashInfer-Bench
+- **KDA-Pilot** [![Stars](https://img.shields.io/github/stars/BBuf/KDA-Pilot)](https://github.com/BBuf/KDA-Pilot)
+  - *Evidence-first autonomous SGLang kernel-optimization campaigns with production baselines, strict correctness gates, NCU/KernelWiki evidence, and replayable logs.*
+  - **Institution:** RadixArk
+  - **Type:** Open-source / industry system · **Kernel:** `Triton` `CUDA` `CUTLASS` · **Hardware:** NVIDIA
+- **cuda-opt-agent** [![Stars](https://img.shields.io/github/stars/KernelFlow-ops/cuda-opt-agent)](https://github.com/KernelFlow-ops/cuda-opt-agent)
+  - *LangGraph-orchestrated agent for CUDA kernel optimization with an nvcc compile+correctness gate, adaptive 3-phase NCU profiling, and multi-GPU hyperparameter search.*
+  - **Type:** Open-source / industry system · **Kernel:** `CUDA` · **Hardware:** NVIDIA
+- **Auto GPU Kernel: Autonomous Kernel Discovery for DeepSeek Sparse Attention** [![Stars](https://img.shields.io/github/stars/Dogacel/auto-gpu-kernel)](https://github.com/Dogacel/auto-gpu-kernel)
+  - **Institution:** fal
+  - **Type:** Open-source / industry system · **Kernel:** `Triton` · **Hardware:** NVIDIA · **Benchmark:** FlashInfer-Bench
+- **AKO4X: AKO: Agentic Kernel Optimization** [![Stars](https://img.shields.io/github/stars/TongmingLAIC/AKO4X)](https://github.com/TongmingLAIC/AKO4X)
+  - **Institution:** TLAIC
+  - **Type:** Open-source / industry system · **Kernel:** `Triton` `CUDA` `TileLang` `CUTLASS` `CuTe` · **Hardware:** NVIDIA · **Benchmark:** FlashInfer-Bench
+- **TileGym** [![Stars](https://img.shields.io/github/stars/NVIDIA/TileGym)](https://github.com/NVIDIA/TileGym) [![Blog](https://img.shields.io/badge/Blog-NVIDIA-blue)](https://developer.nvidia.com/blog/automating-gpu-kernel-translation-with-ai-agents-cutile-python-to-cutile-jl)
+  - *LLM agent 'skill' auto-translating cuTile Python kernels to cuTile.jl (Julia) in one validated pass (17 rules, static validator).*
+  - **Institution:** NVIDIA
+  - **Type:** Open-source / industry system · **Kernel:** `cuTile` · **Hardware:** NVIDIA
+- **Neuron Agentic Development** [![Stars](https://img.shields.io/github/stars/aws-neuron/neuron-agentic-development)](https://github.com/aws-neuron/neuron-agentic-development) [![Blog](https://img.shields.io/badge/Blog-AWS-blue)](https://aws.amazon.com/blogs/machine-learning/stop-hand-tuning-kernels-how-neuron-agentic-development-accelerates-aws-trainium-optimizations)
+  - *Open-source agent/skill toolkit for the NKI kernel lifecycle: authoring, debugging, profiling, performance optimization, and API migration on Trainium and Inferentia.*
+  - **Institution:** AWS
+  - **Type:** Open-source / industry system · **Kernel:** `NKI` · **Hardware:** AWS Neuron
+- **Cursor Multi-Agent Kernel Optimization** [![Blog](https://img.shields.io/badge/Blog-Cursor-blue)](https://cursor.com/blog/multi-agent-kernels) [![Artifacts](https://img.shields.io/badge/Artifacts-GitHub-lightgrey)](https://github.com/anysphere/kernel-optimization-results)
+  - *Planner + autonomous parallel workers optimized 235 kernels from 124+ open-source models (CUDA C w/ inline PTX and CuTe DSL) on 27x Blackwell B200 over 3 weeks using NVIDIA's SOL-ExecBench test-debug-.*
+  - **Institution:** Cursor, NVIDIA
+  - **Type:** Open-source / industry system · **Kernel:** `CUDA` `CUTLASS` `CuTe` `PTX` · **Hardware:** NVIDIA · **Benchmark:** SOL-ExecBench
+- **Standard Kernel** [![Blog](https://img.shields.io/badge/Blog-Standard_Kernel-blue)](https://standardkernel.com/blog/announcing-our-seed-round-is-kernel-generation-solved)
+  - *Hybrid program-analysis + LLM reasoning at the PTX layer across Triton / TileLang / ThunderKittens / CUTLASS.*
+  - **Institution:** Standard Kernel
+  - **Type:** Open-source / industry system · **Kernel:** `PTX` · **Hardware:** NVIDIA
+- **ROCm Hyperloom** [![Stars](https://img.shields.io/github/stars/AMD-AGI/Hyperloom)](https://github.com/AMD-AGI/Hyperloom) [![Project](https://img.shields.io/badge/Project-Page-blue)](https://rocm.docs.amd.com/projects/hyperloom/en/latest/index.html) [![Blog](https://img.shields.io/badge/Blog-AMD-blue)](https://rocm.blogs.amd.com/software-tools-optimization/hyperloom-optimization/README.html) [![Artifacts](https://img.shields.io/badge/Artifacts-GitHub-lightgrey)](https://github.com/AMD-AGI/Hyperloom/tree/79856335c65047ac11264132167def97047f83e5/.cursor/skills/inference-optimization/results/qwen3-14b-mi355x)
+  - *Multi-agent inference optimization across serving settings, framework source, and generated GPU kernels, with independent end-to-end measurement and a reusable recipe knowledge base.*
+  - **Institution:** AMD
+  - **Type:** Open-source / industry system · **Kernel:** `HIP` `Triton` `FlyDSL` · **Hardware:** AMD
+- **PyTorch KernelAgent** [![Stars](https://img.shields.io/github/stars/meta-pytorch/KernelAgent)](https://github.com/meta-pytorch/KernelAgent) [![Blog](https://img.shields.io/badge/Blog-PyTorch-blue)](https://pytorch.org/blog/kernelagent-hardware-guided-gpu-kernel-optimization-via-multi-agent-orchestration)
+  - *5-agent system (Profiler / Judge / Analyze / Orchestrator / Benchmark) + NCU + roofline.*
+  - **Institution:** Meta
+  - **Type:** Open-source / industry system · **Kernel:** `Triton` · **Hardware:** NVIDIA · **Benchmark:** KernelBench
+- **CANNBot Skills** [![Code](https://img.shields.io/badge/Code-GitCode-blue)](https://gitcode.com/cann/cannbot-skills) [![Changelog](https://img.shields.io/badge/Changelog-GitCode-blue)](https://gitcode.com/cann/cannbot-skills/blob/master/CHANGELOG.md)
+  - *Public plugin/agent/skill suite for staged NPU-operator development: architect, developer, reviewer and tester workflows cover direct and registered Ascend C kernels plus Catlass, PyPTO, TileLang and.*
+  - **Institution:** Huawei CANN
+  - **Type:** Open-source / industry system · **Kernel:** `Ascend C` `Catlass` `PyPTO` `TileLang` `Triton` · **Hardware:** Ascend
+- **AscendOpGenAgent** [![Stars](https://img.shields.io/github/stars/Just-it/AscendOpGenAgent)](https://github.com/Just-it/AscendOpGenAgent) [![Artifacts](https://img.shields.io/badge/Artifacts-GitHub-lightgrey)](https://github.com/Just-it/AscendOpGenAgent/tree/main/archive_tasks)
+  - *Claude Code agent and skill workflows generate and validate Triton-Ascend and Ascend C operators, with batch evaluation and an AutoResearch plan/edit/evaluate/keep-or-discard loop.*
+  - **Type:** Open-source / industry system · **Kernel:** `Triton` `Ascend C` · **Hardware:** Ascend
+- **AKO / AKO4ALL** [![Stars](https://img.shields.io/github/stars/TongmingLAIC/AKO4ALL)](https://github.com/TongmingLAIC/AKO4ALL) [![Project](https://img.shields.io/badge/Project-Page-blue)](https://tongminglaic.github.io/AKO)
+  - *Generic coding-agent harness for kernel optimization.*
+  - **Institution:** TLAIC
+  - **Type:** Open-source / industry system · **Kernel:** `Triton` `CUDA` `TileLang` · **Hardware:** NVIDIA · **Benchmark:** SOL-ExecBench
+- **Apex** [![Stars](https://img.shields.io/github/stars/AMD-AGI/Apex)](https://github.com/AMD-AGI/Apex)
+  - *Agent harness (Claude Code/Codex/Cursor Agent backends) that iterates HIP/Triton kernels against a compile+correctness+speedup grader across 12 LLM-serving kernel types (flash attn, MoE, GEMM, RoPE, K.*
+  - **Institution:** AMD
+  - **Type:** Open-source / industry system · **Kernel:** `HIP` `Triton` · **Hardware:** AMD
+- **Xe-Forge: Multi-Stage LLM-Powered Kernel Optimization for Intel GPU** [![Stars](https://img.shields.io/github/stars/IntelLabs/Xe-Forge)](https://github.com/IntelLabs/Xe-Forge)
+  - **Institution:** Intel Labs
+  - **Type:** Open-source / industry system · **Kernel:** `Triton` · **Hardware:** Intel · **Benchmark:** KernelBench
+- **TT-Lang + Claude Skills** [![Stars](https://img.shields.io/github/stars/tenstorrent/tt-lang)](https://github.com/tenstorrent/tt-lang)
+  - *Python-embedded DSL for Tenstorrent hardware with AI codegen in the loop.*
+  - **Institution:** Tenstorrent
+  - **Type:** Open-source / industry system · **Kernel:** `TT-Lang` · **Hardware:** Tenstorrent
+- **GEAK-Triton v2** [![Stars](https://img.shields.io/github/stars/AMD-AGI/GEAK)](https://github.com/AMD-AGI/GEAK) [![Blog](https://img.shields.io/badge/Blog-AMD-blue)](https://rocm.blogs.amd.com/artificial-intelligence/geak-agents-family/README.html)
+  - *Extension of the GEAK family for AMD GPUs.*
+  - **Institution:** AMD-AGI
+  - **Type:** Open-source / industry system · **Kernel:** `Triton` · **Hardware:** AMD
+- **GEAK-HIP** [![Stars](https://img.shields.io/github/stars/AMD-AGI/GEAK)](https://github.com/AMD-AGI/GEAK) [![Blog](https://img.shields.io/badge/Blog-AMD-blue)](https://rocm.blogs.amd.com/software-tools-optimization/geak-hip-optimizations/README.html)
+  - *GEAK extension for iterative HIP-kernel optimization on AMD GPUs.*
+  - **Institution:** AMD-AGI
+  - **Type:** Open-source / industry system · **Kernel:** `HIP` · **Hardware:** AMD
+
+## 2025
+
+- **KernelFalcon** [![Blog](https://img.shields.io/badge/Blog-PyTorch-blue)](https://pytorch.org/blog/kernelfalcon-autonomous-gpu-kernel-generation-via-deep-agents)
+  - *Predecessor of PyTorch KernelAgent.*
+  - **Institution:** Meta
+  - **Type:** Open-source / industry system · **Kernel:** `Triton` · **Hardware:** NVIDIA · **Benchmark:** KernelBench
+- **KernelGen (Flagos)** [![Stars](https://img.shields.io/github/stars/flagos-ai/kernelgen)](https://github.com/flagos-ai/kernelgen) [![Project](https://img.shields.io/badge/Project-Page-blue)](https://kernelgen.flagos.io)
+  - *Interactive kernel generation platform.*
+  - **Institution:** Flagos
+  - **Type:** Open-source / industry system · **Kernel:** `Triton` · **Hardware:** NVIDIA
+- **IntelliPerf** [![Stars](https://img.shields.io/github/stars/AMDResearch/intelliperf)](https://github.com/AMDResearch/intelliperf)
+  - *Profiling-guided LLM framework for AMD GPUs.*
+  - **Institution:** AMD Research
+  - **Type:** Open-source / industry system · **Kernel:** `HIP` `Triton` · **Hardware:** AMD
+- **KernelLLM** [![Model](https://img.shields.io/badge/Model-HuggingFace-yellow)](https://huggingface.co/facebook/KernelLLM)
+  - *Llama 3.1 8B fine-tuned on KernelBook (~25K torch-triton pairs).*
+  - **Institution:** Meta
+  - **Type:** Open-source / industry system · **Kernel:** `Triton` · **Hardware:** NVIDIA
