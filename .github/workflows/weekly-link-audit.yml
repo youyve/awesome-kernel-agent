@@ -22,9 +22,9 @@ jobs:
           python-version: "3.11"
           cache: pip
           cache-dependency-path: requirements-dev.txt
-      - name: Install catalog dependency
+      - name: Install dependencies
         run: python3 -m pip install -r requirements-dev.txt
-      - name: Audit external evidence links
+      - name: Audit external links
         env:
           GITHUB_TOKEN: ${{ github.token }}
         run: python3 scripts/audit_links.py --workers 4 --output /tmp/kernel-agent-link-audit.json

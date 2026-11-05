@@ -1,0 +1,2712 @@
+# Awesome Kernel Agent — single source of truth for README.md and browse/.
+# One entry per paper, system, or benchmark. Run `python3 scripts/build_readme.py` after editing.
+# Field reference: CONTRIBUTING.md.
+entries:
+- id: fomtools
+  name: FOMTools
+  title: 'FOMTools: Development and AI-Assisted Code Generation for First-Order Methods'
+  type: application
+  date: '2026-10-19'
+  paper: https://arxiv.org/abs/2610.26743
+  code: https://github.com/stellatogrp/fomtools
+  institution: [MIT, Princeton University]
+  kernel: [C, CUDA]
+  hardware: [NVIDIA, Apple]
+- id: organon
+  name: Organon
+  title: 'Organon: From Evolutionary Search to Recursive Self-Improving Agents for Scientific Discovery'
+  type: general
+  date: '2026-10-17'
+  paper: https://arxiv.org/abs/2610.33046
+  institution: [Huawei]
+- id: edgekernelbench
+  name: EdgeKernelBench
+  title: 'EdgeKernelBench: Unified LLM-Driven Kernel Generation for Edge Backends'
+  type: benchmark
+  date: '2026-10-17'
+  paper: https://arxiv.org/abs/2610.24648
+  code: https://github.com/pillor9/EdgeKernelBench
+  project: https://pillor9.github.io/EdgeKernelBench
+  institution: [Westlake University, Zhejiang University]
+  kernel: [TVM]
+  hardware: [Mobile GPU]
+- id: principle-level-collapse
+  name: An important Bottleneck in LLM Optimizers
+  title: 'An important Bottleneck in LLM Optimizers: Principle-Level Local Optima'
+  type: general
+  date: '2026-10-16'
+  paper: https://arxiv.org/abs/2610.24291
+  institution: [University of Manchester, University of Chinese Academy of Sciences, Zhongguancun Academy, NVIDIA, XinZhuAI, Honda Research Institute Europe]
+- id: meta-amd-codesign
+  name: Architecting for Hardware Diversity
+  title: 'Architecting for Hardware Diversity: Meta''s End-to-End Co-Design for High-Performance AI Training on AMD GPUs'
+  type: application
+  date: '2026-10-15'
+  paper: https://arxiv.org/abs/2610.22230
+  institution: [Meta, AMD]
+- id: little-dragon
+  name: How to Train Your Little Dragon
+  title: 'How to Train Your Little Dragon: Teaching a Small Language Model to Construct and Refine GPU Optimization Scripts'
+  type: trained
+  date: '2026-10-14'
+  paper: https://arxiv.org/abs/2610.20980
+  code: https://github.com/Anna-Bele/How-To-Train-Your-Little-Dragon
+  institution: [UC San Diego, Amazon]
+  kernel: [TVM]
+  hardware: [NVIDIA]
+- id: hpcagent-bench
+  name: HPCAgent-Bench
+  title: 'HPCAgent-Bench: A Framework for Sound Benchmarking of Code-Optimizing Agents, Harnesses, and Skills'
+  type: benchmark
+  date: '2026-10-14'
+  paper: https://arxiv.org/abs/2610.20673
+  code: https://github.com/spcl/HPCAgent-Bench
+  institution: [ETH Zurich, Institute of High Performance Computing (A*STAR)]
+  hardware: [NVIDIA, AMD]
+- id: areal-rsi
+  name: AReaL-RSI
+  title: 'AReaL-RSI: Adaptive Scaling and Coordination of Recursive Self-Improvement'
+  type: general
+  date: '2026-10-13'
+  paper: https://arxiv.org/abs/2610.18083
+  institution: [Ant Group, Zhejiang University, Hong Kong University of Science and Technology]
+  hardware: [NVIDIA]
+  benchmarks: [KernelBench]
+- id: harnessttt
+  name: HarnessTTT
+  title: 'HarnessTTT: Learn to Optimize Harness at Test-Time for Scientific Discovery'
+  type: general
+  date: '2026-10-12'
+  paper: https://arxiv.org/abs/2610.17370
+  institution: [University of Wisconsin-Madison, NVIDIA, Johns Hopkins University, Stanford University, Meta]
+- id: vibekernel
+  name: VibeKernel
+  title: 'VibeKernel: Long-Horizon GPU Kernel Optimization with General-Purpose Coding Agents'
+  type: agentic
+  date: '2026-10-11'
+  venue: NeurIPS Workshop 2026
+  paper: https://openreview.net/forum?id=WIihTnl976
+  institution: [ETH Zurich]
+  kernel: [Triton]
+  hardware: [NVIDIA]
+  benchmarks: [FlashInfer-Bench, SOL-ExecBench]
+- id: vessel
+  name: Vessel
+  title: 'Vessel: High-Utilization Megakernels by Construction'
+  type: single-pass
+  date: '2026-10-11'
+  venue: NeurIPS Workshop 2026
+  paper: https://openreview.net/forum?id=ZCNEnKYAIc
+  project: https://anonymous.4open.science/r/vessel-artifact-5CE8
+  hardware: [NVIDIA]
+- id: kernel-language-choice
+  name: What Language Should LLMs Write GPU Kernels In? Disentangling Abstraction Level from Resource Level
+  title: What Language Should LLMs Write GPU Kernels In? Disentangling Abstraction Level from Resource Level
+  type: study
+  date: '2026-10-11'
+  venue: NeurIPS Workshop 2026
+  paper: https://openreview.net/forum?id=9Ppcp9PK8i
+  institution: [Pusan National University, Electronics and Telecommunications Research Institute]
+  kernel: [CUDA, PTX, Triton, TileLang]
+  hardware: [NVIDIA]
+  benchmarks: [KernelBench]
+- id: tilecas
+  name: TileCas
+  title: 'TileCas: Cascading Kernel Development Across Programming Abstractions'
+  type: agentic
+  date: '2026-10-10'
+  paper: https://arxiv.org/abs/2610.14740
+  code: https://github.com/TongmingLAIC/tilecas
+  institution: [Fudan University, University of Texas at Dallas, Peking University, Beijing Tongming Lake Information Technology Application Innovation Center]
+  kernel: [TileLang, Ascend C, HIP]
+  hardware: [AMD, Ascend]
+  benchmarks: [KernelBench]
+- id: autoenvscaling
+  name: AutoEnvScaling
+  title: 'AutoEnvScaling: Automating the Data Flywheel with Terminal Agents'
+  type: general
+  date: '2026-10-09'
+  paper: https://arxiv.org/abs/2610.14163
+  institution: [Northeastern University, Microsoft, Stanford University, University of Washington, University of North Carolina at Chapel Hill]
+- id: atrl
+  name: ATRL
+  title: Compaction-Aware Reinforcement Learning For Ascend Triton Kernel Generation
+  type: trained
+  date: '2026-10-09'
+  paper: https://arxiv.org/abs/2610.23950
+  institution: [Huawei]
+  kernel: [Triton]
+  hardware: [Ascend]
+  benchmarks: [KernelBench, NPUKernelBench]
+- id: utt
+  name: UTT
+  title: Universal Textual Teaching for LLMs
+  type: general
+  date: '2026-10-08'
+  paper: https://arxiv.org/abs/2610.12114
+  institution: [Westlake University]
+- id: skillmorph
+  name: SkillMorph
+  title: Trajectory-Guided Fault Localization for Agent Skill Evolution
+  type: general
+  date: '2026-10-08'
+  paper: https://arxiv.org/abs/2610.11858
+  institution: [Nanjing University, Hong Kong Polytechnic University]
+- id: stateless-language-agents
+  name: Stateless Language Agents (SLA)
+  title: 'Stateless Language Agents: Scaling Long-Horizon Automated Research'
+  type: general
+  date: '2026-10-06'
+  paper: https://arxiv.org/abs/2610.07625
+  project: https://github.com/Alex-q-z/stateless-language-agents
+  institution: [Stanford University, Carnegie Mellon University, University of Washington, SambaNova Systems, UC Berkeley]
+  kernel: [Triton]
+  benchmarks: [SOL-ExecBench]
+- id: resolve
+  name: RESOLVE
+  title: 'RESOLVE: Language-Agnostic Validation of GPU Kernels Through Testing, Reduction, and Proof'
+  type: study
+  date: '2026-10-05'
+  paper: https://arxiv.org/abs/2610.05683
+  institution: [UC Riverside, Math Inc., Microsoft Research]
+  kernel: [CUTLASS, Triton, Gluon]
+  hardware: [NVIDIA]
+- id: guidance-ttt
+  name: Guidance-TTT
+  title: 'Evolving in Thought Space: Training a Small Model at Test Time Unlocks Better Discoveries'
+  type: general
+  date: '2026-10-05'
+  paper: https://arxiv.org/abs/2610.06269
+  institution: [MIT, Singapore-MIT Alliance for Research and Technology, Hong Kong Polytechnic University, ByteDance, National University of Singapore, Stanford University, University of Washington, UC Berkeley, Tsinghua University]
+- id: metakernelbench
+  name: MetaKernelBench
+  title: 'MetaKernelBench: Measuring GPU Kernel Knowledge Transfer Beyond Code'
+  type: benchmark
+  date: '2026-10-04'
+  paper: https://arxiv.org/abs/2610.05014
+  code: https://github.com/YIGE24/MetaKernelBench
+  project: https://yige24.github.io/MetaKernelBench
+  institution: [Westlake University, Shanghai Jiao Tong University, Zhejiang University]
+  kernel: [CuTe, TIRx]
+  hardware: [NVIDIA]
+- id: d2k-bench
+  name: D2K-Bench
+  title: 'D2K-Bench: Can LLM Agents Turn Expert Designs into Efficient GPU Kernels?'
+  type: benchmark
+  date: '2026-10-02'
+  paper: https://arxiv.org/abs/2610.03226
+  code: https://github.com/QwenLM/D2K-Bench
+  institution: [Hong Kong University of Science and Technology, Alibaba, University of Science and Technology of China]
+  hardware: [NVIDIA]
+- id: pcpo
+  name: PCPO
+  title: 'Self-Evolving Algorithm-Design Agents: Escaping In-Context Evolutionary Stagnation via Population-Curated Policy Optimization'
+  type: general
+  date: '2026-09-30'
+  paper: https://arxiv.org/abs/2609.38757
+  institution: [Nanjing University, Huawei]
+- id: triton-ai-compiler
+  name: Triton AI Compiler (TAIC)
+  title: 'AI as a Compiler: Compiling Triton kernels without the Triton compiler'
+  type: agentic
+  date: '2026-09-29'
+  paper: https://arxiv.org/abs/2609.36800
+  code: https://github.com/francois141/triton_ai_compiler
+  institution: [Stanford University, EPFL]
+  kernel: [PTX]
+  hardware: [NVIDIA]
+- id: sage
+  name: SAGE
+  title: 'From Experience to Expertise: Adoption-Aware Memory Learning for Data-Scarce NPU Kernel Synthesis'
+  type: agentic
+  date: '2026-09-28'
+  paper: https://arxiv.org/abs/2609.35568
+  institution: [Fudan University, University of Science and Technology of China, Huawei]
+  hardware: [Ascend]
+  benchmarks: [NPUKernelBench]
+- id: areal-tik
+  name: AReaL-TIK
+  title: 'AReaL-TIK: Stateful Agentic Optimization of Unified RL Kernels through an Optimization IR'
+  type: agentic
+  date: '2026-09-28'
+  paper: https://arxiv.org/abs/2609.35140
+  code: https://github.com/areal-project/AReaL-TIK
+  institution: [Hong Kong University of Science and Technology, University of Cambridge, Ant Group, Reflection AI]
+  hardware: [NVIDIA]
+- id: kernelzero
+  name: KernelZero
+  title: 'KernelZero: Co-Evolving Proposer and Coder for Continuously Improved GPU Kernel Generation'
+  type: trained
+  date: '2026-09-27'
+  paper: https://arxiv.org/abs/2609.33074
+  code: https://github.com/kcxain/KernelZero
+  model: https://huggingface.co/collections/kcxain/kernelzero
+  institution: [Institute of Computing Technology (CAS), University of Chinese Academy of Sciences, Institute of Software (CAS), Institute of AI for Industries (CAS)]
+  kernel: [CUDA, Triton]
+  hardware: [NVIDIA]
+  benchmarks: [KernelBench]
+- id: tilebench
+  name: TileBench
+  title: 'TileBench: A Controlled Benchmark for Performance Evaluation and Bottleneck Diagnosis of Tile-Based Programming Models'
+  type: benchmark
+  date: '2026-09-24'
+  paper: https://arxiv.org/abs/2609.29067
+  code: https://github.com/Deep-Learning-Profiling-Tools/Tilebench
+  institution: [George Mason University]
+  kernel: [Triton, cuTile]
+  hardware: [NVIDIA]
+- id: krex
+  name: KREX
+  type: tool
+  date: '2026-09-24'
+  paper: https://arxiv.org/abs/2609.30057
+  institution: [Hong Kong University of Science and Technology, Alibaba]
+  hardware: [NVIDIA, AMD]
+  summary: Runtime for interference-controlled kernel benchmarking on shared GPUs.
+- id: kernelopt
+  name: KernelOPT
+  title: 'KernelOPT: Dispatch-Aware Agentic Search for GPU Kernel Optimization'
+  type: search
+  date: '2026-09-24'
+  paper: https://arxiv.org/abs/2609.30059
+  code: https://github.com/TorchedHat/KernelOPT
+  code_status: unavailable
+  institution: [Red Hat]
+  kernel: [Triton, Helion]
+  hardware: [NVIDIA]
+  benchmarks: [KernelBench]
+- id: xtrace
+  name: Xtrace
+  type: tool
+  date: '2026-09-23'
+  paper: https://arxiv.org/abs/2609.28769
+  project: https://g-watch.github.io
+  artifacts: https://g-watch.github.io/en/open-traces
+  institution: [National University of Singapore, Meta]
+  hardware: [NVIDIA, AMD]
+  summary: Binary-instrumentation tracing infrastructure with GPU kernel-agent case studies.
+- id: cliffcompaction
+  name: CliffCompaction
+  title: 'CliffCompaction: Cost-Efficient Compaction for Long-Horizon Coding Agents'
+  type: general
+  date: '2026-09-22'
+  paper: https://arxiv.org/abs/2609.26779
+  institution: [Carnegie Mellon University, Bosch]
+  kernel: [CUDA]
+- id: synker
+  name: SynKer
+  title: 'SynKer: Synthesize, Kernelize, Reinforce — Teaching GPU Kernel Generation to Small Language Models'
+  type: trained
+  date: '2026-09-19'
+  paper: https://openreview.net/forum?id=nZQqqpYQ0Y
+  hardware: [NVIDIA]
+- id: sparsekernelbench
+  name: SparseKernelBench
+  title: 'SparseKernelBench: A Benchmark for Sparse GPU Computation'
+  type: benchmark
+  date: '2026-09-19'
+  paper: https://openreview.net/forum?id=7LsexQFZfO
+  hardware: [NVIDIA]
+- id: repair
+  name: REPAIR
+  title: 'REPAIR: Learning What to Optimize for Efficient Ascend Kernels'
+  type: trained
+  date: '2026-09-19'
+  paper: https://openreview.net/forum?id=hn8g8PZY5F
+  hardware: [Ascend]
+  benchmarks: [MultiKernelBench]
+- id: rel
+  name: REL
+  title: 'Recursive Experience Learning: As Agents Learn, Worlds Evolve'
+  type: general
+  date: '2026-09-19'
+  paper: https://openreview.net/forum?id=pR1aRoteXn
+- id: qkernelbench
+  name: QKernelBench
+  title: 'QKernelBench: Benchmarking LLMs for Quantized GPU Kernel Generation'
+  type: benchmark
+  date: '2026-09-19'
+  paper: https://openreview.net/forum?id=TwxNTmH7Fu
+  kernel: [CUDA]
+  hardware: [NVIDIA]
+- id: parallel-agent-teams
+  name: Test-Time Compute Scales Better with Parallel Agent Teams
+  title: Test-Time Compute Scales Better with Parallel Agent Teams
+  type: general
+  date: '2026-09-19'
+  paper: https://openreview.net/forum?id=ZweFYN4Dy1
+- id: megakernelbench
+  name: MegaKernelBench
+  title: 'Megakernelbench: a System-Level Benchmark for Megakernel Generation and Optimization'
+  type: benchmark
+  date: '2026-09-19'
+  paper: https://openreview.net/forum?id=PwSoG2iTIm
+  hardware: [NVIDIA]
+- id: kernelmaster
+  name: KernelMaster
+  title: 'KernelMaster: Agentic GPU Kernel Optimization from Semantics to Execution'
+  type: trained
+  date: '2026-09-19'
+  paper: https://openreview.net/forum?id=rIc8lSAsw0
+  project: https://anonymous.4open.science/r/KernelMaster-4A2B
+  kernel: [CUDA]
+  hardware: [NVIDIA]
+- id: hil-rlvr-opencl
+  name: Hardware-in-the-Loop RL for OpenCL Optimization on Mobile GPUs
+  title: Hardware-in-the-Loop RL for OpenCL Optimization on Mobile GPUs
+  type: trained
+  date: '2026-09-19'
+  paper: https://openreview.net/forum?id=Ktya9054vX
+  kernel: [OpenCL]
+  hardware: [NVIDIA, Mobile GPU]
+- id: forgekernel
+  name: ForgeKernel
+  title: 'ForgeKernel: Self-Evolving Kernels Catching And Surpassing Experts And Agents'
+  type: agentic
+  date: '2026-09-19'
+  paper: https://openreview.net/forum?id=EtV3f5BPD4
+  code: https://github.com/OpenBMB/ForgeKernel
+  hardware: [NVIDIA, Ascend]
+  benchmarks: [CANN-Bench]
+- id: evoke-ascendc
+  name: EvoKe
+  title: 'Evoke: Structured Construction and Search for Llm-Based Native Kernel Evolution'
+  type: search
+  date: '2026-09-19'
+  paper: https://openreview.net/forum?id=iatY8aCCHw
+  kernel: [Ascend C]
+  hardware: [Ascend]
+- id: autoscaffold
+  name: AutoScaffold
+  title: 'AutoScaffold: AI-Guided Scaffolding for Reinforcement Learning of Language Models'
+  type: general
+  date: '2026-09-19'
+  paper: https://openreview.net/forum?id=KPRr8wWiqO
+- id: swe-kernel-bench
+  name: SWE-KERNEL-BENCH
+  title: 'SWE-KERNEL-BENCH: A Live Benchmark for GPU Kernel Generation'
+  type: benchmark
+  date: '2026-09-18'
+  paper: https://openreview.net/forum?id=MQHsVFGcVK
+  kernel: [CUDA, Triton]
+  hardware: [NVIDIA]
+- id: sparrow
+  name: Seeing Sparsity
+  title: 'Seeing Sparsity: Pattern-Guided Agents for Hardware-Adaptive SpMV Optimization'
+  type: trained
+  date: '2026-09-18'
+  paper: https://openreview.net/forum?id=tDhF7c1KMz
+  hardware: [NVIDIA, AMD]
+- id: processkernel
+  name: ProcessKernel
+  title: 'ProcessKernel: Calibrated Process Supervision for GPU Kernel Generation'
+  type: search
+  date: '2026-09-18'
+  paper: https://openreview.net/forum?id=gO1SLMPGbi
+  project: https://anonymous.4open.science/r/ProcessKernel-733C
+  hardware: [NVIDIA]
+  benchmarks: [KernelBench]
+- id: modelparts
+  name: ModelParts
+  title: 'ModelParts: Model-Grounded Tasks and Roofline Rewards for Training Kernel Agents on Emerging Accelerators'
+  type: trained
+  date: '2026-09-18'
+  paper: https://openreview.net/forum?id=yUa4J3DuzA
+  kernel: [NKI]
+  hardware: [AWS Neuron]
+- id: lc-dft
+  name: LC-DFT
+  title: 'Allocate, Don''t Just Rank: Reducing Redundancy in Test-Time Search for Scientific Discovery'
+  type: general
+  date: '2026-09-18'
+  paper: https://openreview.net/forum?id=o4wq2eZYdl
+- id: kernelshift
+  name: KernelShift
+  title: 'KernelShift: Benchmarking Kernel Optimization Across Evolving Hardware'
+  type: benchmark
+  date: '2026-09-18'
+  paper: https://openreview.net/forum?id=Px2KW4H05v
+  hardware: [AWS Neuron, Apple]
+- id: kernelmosaic
+  name: KernelMosaic
+  title: 'KernelMosaic: An Open Dataset and Agentic Framework for CUDA Kernel Generation'
+  type: trained
+  date: '2026-09-18'
+  paper: https://openreview.net/forum?id=AMenxeeqRp
+  kernel: [CUDA]
+  hardware: [NVIDIA]
+  benchmarks: [KernelBench]
+- id: evokeagent
+  name: EvokeAgent
+  title: 'EvokeAgent: A Hardware-Aware, Knowledge-Base-Co-Driven Self-Evolving Agent System for GPU Kernel Optimization'
+  type: agentic
+  date: '2026-09-18'
+  paper: https://openreview.net/forum?id=wu2vgmepgJ
+  kernel: [CUDA, Triton]
+  hardware: [NVIDIA]
+  benchmarks: [KernelBench]
+- id: evok
+  name: Evok
+  title: 'Evok: Evidence-Centric Multi-Agent Framework for GPU Kernel Generation'
+  type: agentic
+  date: '2026-09-18'
+  paper: https://openreview.net/forum?id=1iwOWSLQDb
+  hardware: [NVIDIA]
+  benchmarks: [KernelBench]
+- id: beliefopt
+  name: BeliefOPT
+  title: 'BeliefOPT: Recursive Self-Evolving Agents for Autonomous Research'
+  type: agentic
+  date: '2026-09-18'
+  paper: https://openreview.net/forum?id=8tlQHDNJxM
+  hardware: [NVIDIA]
+  benchmarks: [SOL-ExecBench]
+- id: autoprofiler
+  name: AutoProfiler
+  title: 'Less Is More: Learning What to Profile for GPU Kernel Optimization'
+  type: agentic
+  date: '2026-09-18'
+  paper: https://openreview.net/forum?id=tE3EQdUVsO
+  hardware: [NVIDIA]
+  benchmarks: [KernelBench]
+- id: ascendagent
+  name: AscendAgent
+  title: 'AscendAgent: Evolving Context to Fit the Harness in CANN Kernel Optimization'
+  type: search
+  date: '2026-09-18'
+  paper: https://openreview.net/forum?id=gtuspdBfQo
+  hardware: [NVIDIA, Ascend]
+  benchmarks: [CANN-Bench, KernelBench, MultiKernelBench, TritonBench]
+- id: kernelaudit
+  name: KernelAudit
+  title: 'KernelAudit: Can LLM-Generated GPU Kernels Be Both Reliable and Competitive on Real-World Workloads?'
+  type: benchmark
+  date: '2026-09-17'
+  paper: https://openreview.net/forum?id=yTa4gvQUGG
+  project: https://anonymous.4open.science/r/kernelaudit-BD8D
+  hardware: [NVIDIA]
+- id: hap-npu-bench
+  name: A Self-Growing Evaluation Methodology for NPU Operators with Theory-Derived Performance Upper Bounds
+  title: A Self-Growing Evaluation Methodology for NPU Operators with Theory-Derived Performance Upper Bounds
+  type: study
+  date: '2026-09-17'
+  paper: https://openreview.net/forum?id=c6L1TukNbo
+  code: https://gitcode.com/cann/cann-bench
+  hardware: [Ascend]
+- id: glueball
+  name: Glueball
+  title: 'Glueball: Agentic Generation and Verification of Hardware-Optimized Gluon Kernels'
+  type: agentic
+  date: '2026-09-17'
+  paper: https://openreview.net/forum?id=4Lpg8unVZd
+  kernel: [Gluon]
+  hardware: [NVIDIA]
+- id: dlrm-bench
+  name: DLRM-Bench
+  title: How Much of a Real Workload Can LLM-Generated GPU Kernels Actually Reach?
+  type: study
+  date: '2026-09-17'
+  paper: https://arxiv.org/abs/2609.21058
+  code: https://github.com/gauravapiscean/kernel-headroom
+  hardware: [NVIDIA]
+  benchmarks: [KernelBench]
+- id: cudacoach
+  name: CUDACoach
+  title: 'CUDACoach: Guiding CUDA Kernel Optimization with Diverse Strategies Learned from Verified Code'
+  type: trained
+  date: '2026-09-17'
+  paper: https://openreview.net/forum?id=QiCosML9uw
+  kernel: [CUDA]
+  hardware: [NVIDIA]
+  benchmarks: [KernelBench]
+- id: bievolve
+  name: BIEvolve
+  title: 'God Does Not Play Dice: Enforcing Batch Invariance in Agentic Kernel Generation'
+  type: agentic
+  date: '2026-09-17'
+  paper: https://openreview.net/forum?id=hvO7ZzQiqG
+  project: https://anonymous.4open.science/r/BIEvolve-50F0
+  hardware: [NVIDIA]
+  benchmarks: [FlashInfer-Bench]
+- id: ascendevolve
+  name: AscendEvolve
+  title: 'Experience Is Not Enough: Knowledge-Grounded Evolutionary Search for Ascend C Kernel Generation'
+  type: search
+  date: '2026-09-17'
+  paper: https://openreview.net/forum?id=c9fIYOvuw8
+  kernel: [Ascend C]
+  hardware: [Ascend]
+  benchmarks: [CANN-Bench]
+- id: saber
+  name: SABER
+  title: 'SABER: Semantic Abstraction Boundaries for Efficient Refinement of Sparse GPU Kernels'
+  type: agentic
+  date: '2026-09-16'
+  paper: https://openreview.net/forum?id=ayAwDugvxo
+  hardware: [NVIDIA]
+- id: ditrongen
+  name: DitronGen
+  title: 'DitronGen: Compiler–LLM Coordination for Adaptive Kernel Generation and Computation–Communication Overlap'
+  type: agentic
+  date: '2026-09-16'
+  paper: https://openreview.net/forum?id=UHZ5QcK1kW
+  kernel: [Triton]
+  hardware: [NVIDIA]
+- id: autotunebench
+  name: AutoTuneBench
+  title: 'AutoTuneBench: Trustworthy Measurement for Agent Auto-Tuning of LLM Serving Engines'
+  type: benchmark
+  date: '2026-09-16'
+  paper: https://arxiv.org/abs/2609.18123
+  code: https://github.com/li-ch/autotunebench
+  institution: [harnets.ai]
+  hardware: [NVIDIA, Apple]
+  benchmarks: [KernelBench]
+- id: flashvector
+  name: FlashVector
+  title: 'FlashVector: Agent for Hierarchical Model Serving Stack Optimization'
+  type: agentic
+  date: '2026-09-15'
+  paper: https://arxiv.org/abs/2609.17391
+  institution: [Stanford University, Unity Vector AI Team]
+  kernel: [Triton]
+  hardware: [NVIDIA, CPU]
+- id: duodiscover
+  name: DuoDiscover
+  title: 'DuoDiscover: Code Optimization by Discovering What to Optimize and How to Evaluate'
+  type: general
+  date: '2026-09-15'
+  paper: https://openreview.net/forum?id=8ToDSnOfqT
+- id: dual-pruning
+  name: Distill Before You Measure
+  title: 'Distill Before You Measure: Dual Pruning for Evaluation-Efficient GPU Kernel Optimization'
+  type: search
+  date: '2026-09-15'
+  paper: https://openreview.net/forum?id=PJTW1QziqP
+  hardware: [NVIDIA]
+  benchmarks: [KernelBench]
+- id: strutune
+  name: Structure Before Tuning
+  title: 'Structure Before Tuning: Decoupling Structural Search and Local Optimization for LLM-Generated GPU Kernels'
+  type: search
+  date: '2026-09-14'
+  paper: https://openreview.net/forum?id=zUPEDRs09x
+  hardware: [NVIDIA]
+  benchmarks: [FlashInfer-Bench, SOL-ExecBench]
+- id: rvvcoder
+  name: RVVCoder
+  title: 'RvvCoder: ISA-Grounded LLMs for High-Performance RISC-V Vector Kernel Generation'
+  type: trained
+  date: '2026-09-14'
+  paper: https://openreview.net/forum?id=Xi1nczXKQL
+  kernel: [RVV]
+  hardware: [RISC-V]
+- id: artisan
+  name: ARTISAN
+  title: 'ARTISAN: Unlocking LLM Kernel Optimization on Unfamiliar Hardware'
+  type: agentic
+  date: '2026-09-14'
+  paper: https://openreview.net/forum?id=f5EFsSJVUz
+  hardware: [AWS Neuron]
+- id: forgemegakernel
+  name: ForgeMegakernel
+  title: 'ForgeMegakernel: A General Framework for Efficient Auto-Regressive Model Decode Megakernels'
+  type: agentic
+  date: '2026-09-11'
+  paper: https://arxiv.org/abs/2609.12379
+  institution: [Tsinghua University, University of Chinese Academy of Sciences, ModelBest]
+  kernel: [CUDA]
+  hardware: [NVIDIA]
+- id: dream-rsi
+  name: Dream-RSI
+  title: 'Dream-RSI: Recursive Self-Improvement through Evolving Worlds'
+  type: general
+  date: '2026-09-11'
+  paper: https://arxiv.org/abs/2609.14858
+  project: https://github.com/zhengkid/Dream-RSI
+  institution: [Google, Google DeepMind, University of Maryland, University of Virginia]
+  kernel: [Triton]
+  hardware: [NVIDIA]
+  benchmarks: [KernelBench]
+- id: argus-measurement
+  name: Argus
+  title: 'Argus: Orchestrating Cross-Layer GPU Performance Measurements around Semantic Regions'
+  type: agentic
+  date: '2026-09-11'
+  paper: https://arxiv.org/abs/2609.12299
+  institution: [Princeton University, UC San Diego, Meta]
+  hardware: [NVIDIA]
+- id: kernelcompass
+  name: KernelCompass
+  title: 'KernelCompass: Traversing the Feasible Resource Space of the Target GPU Toward a Task-Contracted Objective'
+  type: agentic
+  date: '2026-09-09'
+  paper: https://openreview.net/forum?id=RkwGoFufl8
+  hardware: [NVIDIA]
+  benchmarks: [KernelBench]
+- id: sol-video
+  name: Sol Video Inference Engine
+  title: 'Sol Video Inference Engine: Agent-Native Full-Stack Acceleration Framework for Efficient Video Generation'
+  type: application
+  date: 2026-09
+  paper: https://arxiv.org/abs/2606.23743
+  institution: [NVIDIA]
+- id: servingstudio
+  name: ServingStudio
+  type: industry
+  date: 2026-09
+  code: https://github.com/SyFI-ServingStudio/ServingStudio
+  blog: https://syfi.cs.washington.edu/blog/2026-09-24-introducing-servingstudio
+  artifacts: https://github.com/sgl-project/sglang/pull/38560
+  institution: [University of Washington · SyFI Lab]
+  hardware: [NVIDIA]
+  summary: Agent workbench that uses serving simulation, kernel profiling and hardware validation to implement kernel and serving-stack improvements.
+- id: kope
+  name: Beyond Scaling
+  title: 'Beyond Scaling: Self-Evolving LLM Agents for Hardware Kernel Optimization via an Experience-Driven Workflow and Experience Graph Memory'
+  type: agentic
+  date: '2026-08-26'
+  paper: https://arxiv.org/abs/2608.25570
+  institution: [City University of Hong Kong, Huawei]
+  hardware: [Ascend, RISC-V]
+- id: fabrica
+  name: FABRICA
+  title: 'FABRICA: Agentic CUDA-to-CSL Translation and Optimization for Wafer-Scale Systems'
+  type: trained
+  date: '2026-08-25'
+  paper: https://arxiv.org/abs/2608.25124
+  institution: [University of Minnesota, Argonne National Laboratory, University of Chicago]
+  kernel: [CSL]
+  hardware: [Cerebras]
+- id: llm4llm
+  name: LLM4LLM
+  title: 'LLM4LLM: Bridging Kernel Benchmarks and Real Deployment via Closed-Loop Agentic Optimization'
+  type: agentic
+  date: '2026-08-22'
+  paper: https://arxiv.org/abs/2608.21836
+  code: https://github.com/hzeng2000/LLM4LLM
+  institution: [Xidian University, Zhongguancun Academy]
+  kernel: [Triton, CUDA, TileLang]
+  hardware: [NVIDIA]
+  benchmarks: [KernelBench]
+- id: hiera
+  name: HIERA
+  title: 'HIERA: Workload-Aware Planning Across Implementation Spaces for GPU Kernel Optimization'
+  type: agentic
+  date: '2026-08-21'
+  paper: https://arxiv.org/abs/2608.21157
+  institution: [Shanghai Jiao Tong University]
+  kernel: [CUDA]
+  hardware: [NVIDIA]
+  benchmarks: [KernelBench]
+- id: asmevo
+  name: AsmEvo
+  title: 'AsmEvo: Agentic Assembly-Level Optimization of AMD GPU Kernels with Functional Equivalence Verification'
+  type: agentic
+  date: '2026-08-21'
+  paper: https://arxiv.org/abs/2608.20711
+  institution: [AMD, Southern University of Science and Technology]
+  kernel: [AMDGPU ISA]
+  hardware: [AMD]
+  benchmarks: [KernelBench]
+- id: rlek
+  name: RLEK
+  title: Reinforcement Learning from Environment Knowledge
+  type: trained
+  date: '2026-08-20'
+  paper: https://openreview.net/forum?id=trHfIrhMk3
+  hardware: [NVIDIA]
+- id: kernelweaver
+  name: KernelWeaver
+  title: 'KernelWeaver: A Shape-Aware Kernel Agent for GPU Kernel Optimization'
+  type: agentic
+  date: '2026-08-20'
+  paper: https://openreview.net/forum?id=SaboBZsQiW
+  hardware: [NVIDIA]
+- id: ptxbench-miniptxagent
+  name: PTXBench / MiniPTXAgent
+  title: 'PTXBench: Evaluating and Adapting LLMs for GPU Kernel Optimization with Architecture-specific PTX'
+  type: trained
+  date: '2026-08-18'
+  venue: NeurIPS Workshop 2026
+  paper: https://arxiv.org/abs/2608.17379
+  code: https://github.com/zhang677/PTXBench
+  model: https://huggingface.co/collections/Genghan/ptxbench-qwen36-27b-sft-series
+  dataset: https://huggingface.co/datasets/AccRL/accrl-training
+  blog: https://zhang677.github.io/blog_md/ptxbench.html
+  institution: [Stanford University, Carnegie Mellon University, RadixArk]
+  kernel: [CUDA, PTX, Triton]
+  hardware: [NVIDIA]
+  benchmarks: [FlashInfer-Bench]
+- id: kernelarc
+  name: KernelArc
+  title: 'KernelArc: A Multi-Agent Framework for GPU Kernel Optimization'
+  type: search
+  date: '2026-08-17'
+  paper: https://arxiv.org/abs/2608.17071
+  institution: [AI Labs, imec]
+  kernel: [CUDA, PTX, Triton, CUTLASS]
+  hardware: [NVIDIA]
+  benchmarks: [SOL-ExecBench]
+- id: realistictritonbench
+  name: RealisticTritonBench
+  title: 'RealisticTritonBench: A Benchmark for Triton-Kernel Generation in Real-World AI Frameworks'
+  type: benchmark
+  date: '2026-08-12'
+  venue: ASE 2026
+  paper: https://arxiv.org/abs/2608.12004
+  code: https://github.com/ZJU-CTAG/RealisticTritonBench
+  institution: [Zhejiang University, Nanjing University, Huawei, Chongqing University]
+  kernel: [Triton]
+  hardware: [NVIDIA]
+  benchmarks: [TritonBench]
+- id: cake
+  name: CAKE
+  title: 'CAKE: Compiler-Agent Co-Design for Frontier Kernel Evolution'
+  type: agentic
+  date: '2026-08-12'
+  paper: https://arxiv.org/abs/2608.12629
+  artifacts: https://github.com/flashinfer-ai/flashinfer/issues/4254
+  institution: [NVIDIA, Carnegie Mellon University]
+  kernel: [CAKE IR, CUDA, PTX]
+  hardware: [NVIDIA]
+- id: evomem
+  name: EvoMem
+  title: 'EvoMem: Memory-Augmented Evolution for Code Optimization'
+  type: general
+  date: '2026-08-11'
+  paper: https://arxiv.org/abs/2608.10795
+  institution: [Applied AI Institute, Lomonosov Moscow State University]
+  kernel: [Triton]
+  hardware: [NVIDIA]
+- id: kernel-fingerprinting
+  name: Gaming Without an Attacker
+  title: 'Gaming Without an Attacker: Benchmark Fingerprinting in LLM-Driven Search Under Selection Pressure'
+  type: benchmark
+  date: '2026-08-09'
+  venue: COLM Workshop 2026
+  paper: https://arxiv.org/abs/2608.08722
+  code: https://github.com/vicgalle/kernel-fingerprinting
+  institution: [Komorebi AI Technologies]
+  kernel: [Metal]
+  hardware: [Apple]
+- id: sparse-ditto
+  name: SparseDitto
+  title: 'SparseDitto: An Agentic Sparse Compilation Framework through Architecture-Aware Synthesis on GPUs'
+  type: agentic
+  date: '2026-08-05'
+  paper: https://arxiv.org/abs/2608.05033
+  institution: [University of Minnesota, Northeastern University]
+  kernel: [CUDA]
+  hardware: [NVIDIA]
+- id: argus-runtime
+  name: Argus
+  title: 'Argus: A General-Purpose Agentic Reasoning Runtime for Long-Horizon Tasks'
+  type: general
+  date: '2026-08-05'
+  paper: https://arxiv.org/abs/2608.05144
+- id: leap-kernel-rl
+  name: LEAP
+  type: trained
+  date: '2026-08-03'
+  paper: https://arxiv.org/abs/2608.01804
+  institution: [Moore Threads AI]
+  kernel: [CUDA]
+  hardware: [NVIDIA]
+  benchmarks: [KernelBench]
+  summary: Multi-turn code RL prunes environment feedback adaptively instead of returning every compiler/test detail.
+- id: ascend-debug-agent
+  name: Ascend Debug Agent
+  type: agentic
+  date: '2026-08-03'
+  paper: https://arxiv.org/abs/2608.02712
+  institution: [City University of Hong Kong, Huawei]
+  kernel: [Ascend C]
+  hardware: [Ascend]
+  benchmarks: [NPUKernelBench]
+  summary: Domain-specific repair loop for near-miss operators that already compile and run.
+- id: zomboss
+  name: Zomboss
+  title: Rethinking Agentic Kernel Generation for Emerging Accelerators
+  type: agentic
+  date: '2026-08-01'
+  paper: https://arxiv.org/abs/2608.00894
+  institution: [University of Michigan, University of Texas at Austin]
+  kernel: [ACT, TAIDL]
+  hardware: [Research accelerators]
+- id: icoder
+  name: iCoder-27B
+  title: 'iCoder-27B: Recursive AI-Led Development of Frontier Industrial Coding Model'
+  type: general
+  date: 2026-08
+  paper: https://arxiv.org/abs/2609.29626
+  institution: [Shanghai Jiao Tong University, National University of Singapore, DP Technology, Endless Frontier]
+  kernel: [Triton]
+- id: forgestencil
+  name: ForgeStencil
+  title: 'ForgeStencil: Automating Per-Case Stencil Specialization from Kernels to 100+ Real Applications'
+  type: agentic
+  date: 2026-08
+  paper: https://arxiv.org/abs/2609.06694
+  code: https://github.com/OpenBMB/ForgeStencil
+  institution: [OpenBMB]
+  kernel: [CUDA]
+  hardware: [NVIDIA]
+- id: cuda-harness
+  name: CUDA-Harness
+  title: 'CUDA-Harness: Harnessing Agentic CUDA Kernel Generation and Optimization from Natural Language'
+  type: agentic
+  date: 2026-08
+  paper: https://arxiv.org/abs/2609.00058
+  institution: [Shanghai Jiao Tong University]
+  kernel: [CUDA]
+  hardware: [NVIDIA]
+- id: agenticcann
+  name: AgenticCANN
+  title: 'AgenticCANN: Automated Ascend C Operator Generation via Knowledge-Augmented Agentic Evolution'
+  type: search
+  date: '2026-07-29'
+  paper: https://arxiv.org/abs/2607.26661
+  institution: [City University of Hong Kong, Hong Kong Yuwin Technology]
+  kernel: [Ascend C]
+  hardware: [Ascend]
+- id: compiler-grounded-hierarchical-diagnosis
+  name: Compiler-Grounded Hierarchical Diagnosis
+  title: Compiler-Grounded Hierarchical Diagnosis for LLM-Based Triton Kernel Optimization
+  type: agentic
+  date: '2026-07-25'
+  paper: https://arxiv.org/abs/2607.23089
+  code: https://gitcode.com/cann/cannbot-skills
+  institution: [Huawei]
+  kernel: [Triton]
+  hardware: [Ascend]
+  benchmarks: [NPUKernelBench]
+- id: cudaperf
+  name: CUDAPerf
+  title: Multi-turn RL with Structural and Performance Aware Rewards for CUDA Kernel Generation
+  type: trained
+  date: '2026-07-23'
+  paper: https://arxiv.org/abs/2607.20908
+  institution: [Iowa State University, Cisco AI Research]
+  kernel: [CUDA]
+  hardware: [NVIDIA]
+  benchmarks: [KernelBench]
+- id: kernelgenbench
+  name: KernelGenBench
+  title: 'KernelGenBench: Can LLMs and Agents Write Efficient Kernels Across Operator Sources and Hardware Platforms?'
+  type: benchmark
+  date: '2026-07-22'
+  paper: https://arxiv.org/abs/2607.27231
+  code: https://github.com/flagos-ai/KernelGenBench
+  institution: [Beijing Normal University, Beijing Academy of Artificial Intelligence, Beijing Jiaotong University, Institute of Automation (CAS), Peking University]
+  kernel: [Triton]
+  hardware: [NVIDIA, Moore Threads, Hygon DCU, Other]
+- id: researcharena
+  name: ResearchArena
+  title: 'ResearchArena: Evaluating Sabotage and Monitoring in Automated AI R&D'
+  type: general
+  date: '2026-07-21'
+  paper: https://arxiv.org/abs/2607.19321
+  institution: [ELLIS Institute Tübingen, Max Planck Institute for Intelligent Systems, Tübingen AI Center, ETH Zurich, University of Amsterdam]
+  kernel: [CUDA]
+- id: llm-cuda-harness-engineering
+  name: LLM-CUDA / Harness Engineering
+  title: Harness Engineering for LLM-Driven GPU Kernel Generation
+  type: agentic
+  date: '2026-07-20'
+  paper: https://arxiv.org/abs/2607.17979
+  code: https://github.com/syhya/mlsys26-flashinfer-contest
+  institution: [Baidu]
+  kernel: [CUDA, Triton, CUTLASS]
+  hardware: [NVIDIA]
+  benchmarks: [FlashInfer-Bench]
+- id: astronomix
+  name: Astronomix
+  title: 'Per Astronomix ad Astra: High-Order Differentiable (Magneto)hydrodynamics with Energy-Conserving Self-Gravity'
+  type: application
+  date: '2026-07-20'
+  paper: https://arxiv.org/abs/2607.18176
+  kernel: [Pallas]
+- id: msinfer-gdn
+  name: AI-Assisted Gated DeltaNet Optimization on NVIDIA Blackwell
+  title: 'Technical Report: AI-Assisted Gated DeltaNet Optimization on NVIDIA Blackwell'
+  type: study
+  date: '2026-07-18'
+  paper: https://arxiv.org/abs/2607.16831
+  code: https://github.com/Bammuri/mlsys26
+  institution: [Independent researcher]
+  hardware: [NVIDIA]
+  benchmarks: [FlashInfer-Bench]
+- id: shadb
+  name: SHADB
+  title: 'From Custom-Fit to Portable: Bridging the Gap Between Synthesized and Engineered GPU Query Execution'
+  type: agentic
+  date: '2026-07-08'
+  paper: https://arxiv.org/abs/2607.07632
+  code: https://gitlab.eurecom.fr/dislab/SHADB
+  institution: [EURECOM]
+  kernel: [CUDA, HIP]
+  hardware: [NVIDIA, AMD]
+- id: atx-custom-nki-agent
+  name: NKI-Agent / ATX Custom NKI Agent
+  type: trained
+  date: '2026-07-05'
+  paper: https://arxiv.org/abs/2607.04395
+  code: https://github.com/aws-samples/sample-ATX-custom-NKI-Agent
+  institution: [AWS]
+  kernel: [NKI]
+  hardware: [AWS Neuron]
+  summary: Compile-verify-fix agent plus domain SFT for Neuron kernels.
+- id: hawk-npu
+  name: Hawk
+  title: 'Hawk: Harnessing Hardware-Aware Knowledge for High-Performance NPU Kernel Generation'
+  type: trained
+  date: '2026-07-02'
+  paper: https://arxiv.org/abs/2607.01590
+  institution: [Sun Yat-sen University, GBA National Technology Innovation Center, Peng Cheng Laboratory]
+  kernel: [Ascend C]
+  hardware: [Ascend]
+  benchmarks: [CANN-Bench, MultiKernelBench]
+- id: geak-v4
+  name: GEAK v4
+  type: industry
+  date: 2026-07
+  code: https://github.com/AMD-AGI/GEAK
+  project: https://rocm.docs.amd.com/projects/geak/en/latest
+  blog: https://www.amd.com/en/developer/resources/technical-articles/2026/geak-v4.html
+  institution: [AMD-AGI]
+  kernel: [HIP, Triton, FlyDSL, TileLang, Composable Kernel]
+  hardware: [AMD]
+  summary: AMD's multi-agent kernel optimizer spans HIP, Triton, FlyDSL, TileLang and Composable Kernel.
+- id: trellis
+  name: Experience Graphs
+  title: 'Experience Graphs: The Data Foundation for Self-Improving Agents'
+  type: trained
+  date: '2026-06-29'
+  paper: https://arxiv.org/abs/2606.29823
+  institution: [Meta, University of Maryland]
+- id: egg-kernel
+  name: EGG
+  title: 'EGG: An Expert-Guided Agent Framework for Kernel Generation'
+  type: agentic
+  date: '2026-06-25'
+  venue: ICML 2026
+  paper: https://arxiv.org/abs/2606.26758
+  institution: [Beihang University, Shanghai Jiao Tong University, Tsinghua University, Approaching.AI]
+  kernel: [Triton]
+  hardware: [NVIDIA]
+  benchmarks: [KernelBench, TritonBench]
+- id: kernelpro
+  name: KernelPro
+  title: 'Optimizing CUDA like a Human: Micro-Profiling Tools as Expert Surrogates for LLM-Based GPU Kernel Optimization'
+  type: search
+  date: '2026-06-24'
+  paper: https://arxiv.org/abs/2606.26453
+  artifacts: https://arxiv.org/abs/2606.26453
+  institution: [AWS, Siemens, University of Minnesota]
+  kernel: [CUDA, CUTLASS, CuTe]
+  hardware: [NVIDIA]
+  benchmarks: [KernelBench]
+- id: foundry-swarm
+  name: Foundry
+  title: 'Foundry: Host-Owned Trust and Memory for Long-Horizon Agent Swarms'
+  type: general
+  date: '2026-06-17'
+  venue: ICML Workshop 2026
+  paper: https://openreview.net/forum?id=MWLIRDa4DC
+  institution: [UC Berkeley, Together AI, Stanford University, University of Texas at Austin]
+- id: specgen
+  name: SpecGen
+  title: 'SpecGen: Accelerating Agentic Kernel Optimization with Speculative Generation'
+  type: agentic
+  date: '2026-06-16'
+  paper: https://arxiv.org/abs/2606.17518
+  institution: [Fudan University, Shanghai Jiao Tong University, Shanghai AI Laboratory, Hong Kong University of Science and Technology, CUHK, SenseTime Research]
+  kernel: [CUDA, Triton]
+  hardware: [NVIDIA]
+  benchmarks: [KernelBench]
+- id: parallelkernelbench
+  name: ParallelKernelBench
+  title: 'ParallelKernelBench: Can LLMs Write Fast Multi-GPU Kernels?'
+  type: benchmark
+  date: '2026-06-16'
+  venue: ICML Workshop 2026
+  paper: https://openreview.net/forum?id=4IGomFc9dx
+  code: https://github.com/togethercomputer/ParallelKernelBench
+  hardware: [NVIDIA]
+- id: hawkeye
+  name: Hawkeye
+  title: 'Hawkeye: Hardware-Aware GPU Kernel Optimization with Minimal Supervision'
+  type: agentic
+  date: '2026-06-16'
+  venue: ICML Workshop 2026
+  paper: https://openreview.net/forum?id=e3pxJbBRBk
+  hardware: [NVIDIA]
+- id: davinci-kernel
+  name: daVinci-kernel
+  title: 'daVinci-kernel: Co-Evolving Skill Selection, Summarization, and Utilization via RL for GPU Kernel Optimization'
+  type: trained
+  date: '2026-06-15'
+  paper: https://arxiv.org/abs/2606.16497
+  code: https://github.com/GAIR-NLP/daVinci-kernel
+  institution: [Shanghai Innovation Institute, Shanghai Jiao Tong University, GAIR]
+  kernel: [CUDA, Triton]
+  hardware: [NVIDIA]
+  benchmarks: [KernelBench]
+- id: automegakernel
+  name: AutoMegaKernel
+  title: 'AutoMegaKernel: A Statically-Checked Agent Harness for Self-Retargeting Megakernel Synthesis'
+  type: agentic
+  date: '2026-06-08'
+  paper: https://arxiv.org/abs/2606.09682
+  code: https://github.com/RightNow-AI/AutoMegaKernel
+  institution: [RightNow AI (YC)]
+  kernel: [CUDA]
+  hardware: [NVIDIA]
+- id: agentcompile
+  name: AgentCompile
+  title: 'AgentCompile: An LLM-Guided Compiler for Direct CUDA Inference'
+  type: agentic
+  date: '2026-06-04'
+  paper: https://arxiv.org/abs/2606.07665
+  code: https://github.com/veneno1213822/AgentCompile
+  institution: [City University of Hong Kong (Dongguan), City University of Hong Kong]
+  kernel: [CUDA]
+  hardware: [NVIDIA]
+- id: musacoder
+  name: MusaCoder
+  title: 'MusaCoder: Native GPU Kernel Generation with Full-Stack Training on Moore Threads GPU'
+  type: trained
+  date: '2026-06-03'
+  paper: https://arxiv.org/abs/2606.04847
+  model: https://huggingface.co/MooreThreads/MusaCoder-27B
+  institution: [Moore Threads]
+  kernel: [MUSA C, CUDA]
+  hardware: [NVIDIA, Moore Threads]
+  benchmarks: [KernelBench]
+- id: autolab
+  name: AutoLab
+  title: 'AutoLab: Can Frontier Models Solve Long-Horizon Auto Research and Engineering Tasks?'
+  type: general
+  date: '2026-06-03'
+  paper: https://arxiv.org/abs/2606.05080
+  institution: [University of Washington, Bake AI, UC San Diego, University of Notre Dame, University of Waterloo, NVIDIA, Google, MIT-IBM Computing Research Lab, National University of Singapore, Stanford University, Independent researcher, Princeton University, UC Santa Barbara, MIT]
+  kernel: [CUDA]
+- id: moziflux
+  name: MoziFlux
+  type: industry
+  date: 2026-06
+  code: https://github.com/BiSheng-Compiler-Agents/MoziFlux
+  code_status: unavailable
+  institution: [BiSheng-Compiler-Agents]
+  kernel: [Triton]
+  hardware: [Ascend]
+  summary: Apache-2.0 Hermes-driven Triton-Ascend optimizer with CANN/cannsim local and remote gates, an episode store, a 100-task KernelBench L1 corpus, and checked-in optimized kernels with per-task reports.
+- id: mkevolve
+  name: MKEvolve
+  title: 'MKEvolve: A Modular Multi-Agent Framework for Kernel Code Generation'
+  type: search
+  date: 2026-06
+  venue: ICML Workshop 2026
+  paper: https://arxiv.org/abs/2607.20501
+  code: https://github.com/amazon-science/ModularKernelEvolution
+  code_status: unavailable
+  institution: [University of British Columbia, AWS]
+  kernel: [Triton]
+  hardware: [NVIDIA]
+  benchmarks: [FlashInfer-Bench, KernelBench]
+- id: kernelbench-verified
+  name: KernelBench-Verified
+  title: 'KernelBench-Verified: Do LLM-Generated Kernels Actually Beat PyTorch?'
+  type: benchmark
+  date: 2026-06
+  paper: https://arxiv.org/abs/2607.16241
+  code: https://github.com/facebookresearch/kernel_bench_verified
+  project: https://scalingintelligence.stanford.edu/kernelbenchverifiedleaderboard
+  institution: [Meta, Stanford University]
+  kernel: [CUDA]
+  hardware: [NVIDIA]
+  benchmarks: [KernelBench]
+- id: kernel-forge
+  name: Kernel Forge
+  title: 'Kernel Forge: An Agent Harness for LLM-based Generation and Optimization of CUDA Kernels'
+  type: search
+  date: 2026-06
+  paper: https://arxiv.org/abs/2607.24762
+  code: https://github.com/TheJoshBrod/KernelForge
+  institution: [University of Michigan]
+  kernel: [CUDA, Triton]
+  hardware: [NVIDIA, AMD]
+- id: atrex-kernel-agent
+  name: Atrex Kernel Agent (AKA)
+  title: Are LLM-Generated GPU Kernels Production-Ready? A Trace-Driven Benchmark and Optimization Agent
+  type: agentic
+  date: 2026-06
+  paper: https://arxiv.org/abs/2607.14541
+  code: https://github.com/alibaba/atrex-kernel-agent
+  blog: https://github.com/alibaba/atrex-kernel-agent/releases/tag/v0.3.0
+  institution: [ATREX Team, Alibaba Group]
+  kernel: [FlyDSL, Triton, CUDA, Gluon, CUTLASS, CuTe, TileLang]
+  hardware: [NVIDIA, AMD, T-Head PPU]
+- id: scikernelbench
+  name: SciKernelBench
+  title: 'SciKernelBench: Evaluating LLM Kernels for Higher-Order Autodiff and Scientific Residuals'
+  type: benchmark
+  date: '2026-05-30'
+  venue: ICML Workshop 2026
+  paper: https://openreview.net/forum?id=iywEUhqGmH
+  code: https://github.com/SciKernelBench/SciKernelBench
+  code_status: unavailable
+  institution: [Yandex School of Data Analysis, Applied AI Institute, GigaCode Research Center, ITMO University, Mohamed bin Zayed University of Artificial Intelligence]
+- id: gpu-forecasters
+  name: GPU Forecasters
+  title: 'GPU Forecasters: Language Models as Selective Surrogates for Kernel Runtime Optimization'
+  type: trained
+  date: '2026-05-29'
+  paper: https://arxiv.org/abs/2605.31464
+  code: https://github.com/codezakh/gpu-forecasters
+  model: https://huggingface.co/codezakh/gpu-forecasters-gpt-oss-20b-correctness-brier
+  dataset: https://huggingface.co/datasets/codezakh/gpu-forecasters-puct-search-events
+  institution: [University of North Carolina at Chapel Hill, Allen Institute for AI, Johns Hopkins University, University of Texas at Austin]
+  hardware: [NVIDIA]
+- id: passnet
+  name: PassNet
+  title: 'PassNet: Scaling Large Language Models for Graph Compiler Pass Generation'
+  type: benchmark
+  date: '2026-05-28'
+  paper: https://arxiv.org/abs/2605.29357
+  code: https://github.com/PaddlePaddle/PassNet
+  dataset: https://huggingface.co/datasets/PassNet/PassNet
+  project: https://paddlepaddle.github.io/PassNet/leaderboard.html
+  institution: [Baidu]
+  hardware: [NVIDIA]
+- id: htam
+  name: HTAM
+  title: 'HTAM: Hierarchical Transition-Attended Memory for Operator Optimization'
+  type: search
+  date: '2026-05-28'
+  paper: https://arxiv.org/abs/2605.29734
+  institution: [University of Chinese Academy of Sciences, Institute of Automation (CAS), Zhongguancun Academy, Renmin University of China, XinZhuAI]
+  kernel: [CUDA]
+  hardware: [NVIDIA]
+  benchmarks: [KernelBench]
+- id: klineage
+  name: KLineage
+  title: 'KLineage: Recovering the Missing When of Kernel Optimization by Deoptimizing Experts'
+  type: agentic
+  date: '2026-05-27'
+  paper: https://arxiv.org/abs/2605.28213
+  code: https://github.com/ict-agent/klineage
+  institution: [Institute of Computing Technology (CAS), University of Chinese Academy of Sciences, Xi'an Jiaotong University]
+  hardware: [NVIDIA, Ascend]
+  benchmarks: [KernelBench, MultiKernelBench]
+- id: sia
+  name: SIA
+  title: 'SIA: Self Improving AI with Harness & Weight Updates'
+  type: general
+  date: '2026-05-26'
+  paper: https://arxiv.org/abs/2605.27276
+  institution: [Hexo Labs, University of Oxford]
+- id: step-tp
+  name: Step-TP
+  title: 'Step-TP: A Grounded, Step-Level Dataset with Chain-of-Thought Reasoning for LLM-Guided Tensor Program Optimization'
+  type: trained
+  date: '2026-05-25'
+  paper: https://arxiv.org/abs/2605.25954
+  code: https://github.com/LIUMENGFAN-gif/StepTP
+  institution: [University of Hong Kong, Ant Group, University of Science and Technology of China]
+  kernel: [TVM]
+  hardware: [NVIDIA]
+- id: fastkernels
+  name: FastKernels
+  title: 'FastKernels: Benchmarking GPU Kernel Generation in Production'
+  type: benchmark
+  date: '2026-05-22'
+  paper: https://arxiv.org/abs/2605.23215
+  code: https://github.com/Snowflake-AI-Research/fastkernels
+  institution: [Snowflake, Carnegie Mellon University, UC San Diego, Independent researcher]
+  hardware: [NVIDIA]
+- id: prior-knowledge-or-search
+  name: Prior Knowledge or Search? A Study of LLM Agents in Hardware-Aware Code Optimization
+  title: Prior Knowledge or Search? A Study of LLM Agents in Hardware-Aware Code Optimization
+  type: general
+  date: '2026-05-19'
+  paper: https://arxiv.org/abs/2605.19782
+  institution: [Applied AI Institute, ITMO University, Yandex School of Data Analysis]
+  kernel: [CUDA, TVM]
+- id: optimize-anything
+  name: optimize_anything
+  title: 'optimize_anything: A Universal API for Optimizing any Text Parameter'
+  type: general
+  date: '2026-05-19'
+  paper: https://arxiv.org/abs/2605.19633
+  institution: [UC Berkeley, MIT]
+  kernel: [CUDA]
+- id: coda
+  name: CODA
+  title: 'CODA: Rewriting Transformer Blocks as GEMM-Epilogue Programs'
+  type: agentic
+  date: '2026-05-19'
+  paper: https://arxiv.org/abs/2605.19269
+  code: https://github.com/open-lm-engine/coda-kernels
+  institution: [MIT, Princeton University, Meta, Together AI]
+  kernel: [CODA]
+  hardware: [NVIDIA]
+- id: agentkernelarena
+  name: AgentKernelArena
+  title: 'AgentKernelArena: Generalization-Aware Benchmarking of GPU Kernel Optimization Agents'
+  type: benchmark
+  date: '2026-05-16'
+  paper: https://arxiv.org/abs/2605.16819
+  code: https://github.com/AMD-AGI/AgentKernelArena
+  institution: [AMD]
+  kernel: [HIP, Triton]
+  hardware: [AMD]
+- id: alphaevolve-fhe
+  name: AlphaEvolve for FHE on TPUs
+  title: Adapting AlphaEvolve to Optimize Fully Homomorphic Encryption on TPUs
+  type: search
+  date: '2026-05-14'
+  venue: ISCA Workshop 2026
+  paper: https://arxiv.org/abs/2605.14718
+  institution: [Google]
+  kernel: [JAX]
+  hardware: [Google TPU]
+- id: skillevolver
+  name: SkillEvolver
+  title: 'SkillEvolver: Skill Learning as a Meta-Skill'
+  type: general
+  date: '2026-05-11'
+  paper: https://arxiv.org/abs/2605.10500
+  institution: [Beijing Jiaotong University, Tsinghua University]
+- id: metal-sci
+  name: Metal-Sci
+  title: 'Metal-Sci: A Scientific Compute Benchmark for Evolutionary LLM Kernel Search on Apple Silicon'
+  type: benchmark
+  date: '2026-05-08'
+  venue: ICML Workshop 2026
+  paper: https://arxiv.org/abs/2605.09708
+  code: https://github.com/vicgalle/metal-sci-kernels
+  institution: [Komorebi AI Technologies]
+  kernel: [Metal]
+  hardware: [Apple]
+- id: kernel-foundry-diag
+  name: Kernel Foundry
+  title: 'Kernel Foundry: A Diagnosis-driven Evolutionary Kernel Optimizer with Multi-Experts'
+  type: search
+  date: '2026-05-08'
+  paper: https://arxiv.org/abs/2605.30359
+  institution: [Chinese University of Hong Kong, Huawei]
+  hardware: [NVIDIA]
+  benchmarks: [KernelBench]
+- id: cudabeaver
+  name: CUDABeaver
+  title: 'CUDABeaver: Benchmarking LLM-Based Automated CUDA Debugging'
+  type: benchmark
+  date: '2026-05-08'
+  paper: https://arxiv.org/abs/2605.08455
+  code: https://github.com/UMN-APEX-Lab/CUDABeaver
+  institution: [University of Minnesota]
+  kernel: [CUDA]
+  hardware: [NVIDIA]
+- id: kernelbenchx
+  name: KernelBenchX
+  title: 'KernelBenchX: A Comprehensive Benchmark for Evaluating LLM-Generated GPU Kernels'
+  type: benchmark
+  date: '2026-05-06'
+  paper: https://arxiv.org/abs/2605.04956
+  code: https://github.com/BonnieW05/KernelBenchX
+  dataset: https://huggingface.co/datasets/BonnieWang/KernelBenchX
+  kernel: [Triton]
+  hardware: [NVIDIA]
+  benchmarks: [KernelBench]
+- id: keet
+  name: KEET
+  title: 'KEET: Explaining Performance of GPU Kernels Using LLM Agents'
+  type: single-pass
+  date: '2026-05-06'
+  paper: https://arxiv.org/abs/2605.04467
+  institution: [University of Maryland, NVIDIA, Lawrence Livermore National Laboratory]
+  kernel: [CUDA]
+  hardware: [NVIDIA]
+- id: cubridge
+  name: CuBridge
+  title: 'CuBridge: An LLM-Based Framework for Understanding and Reconstructing High-Performance Attention Kernels'
+  type: agentic
+  date: '2026-05-06'
+  venue: ACL 2026
+  paper: https://arxiv.org/abs/2605.05023
+  institution: [Shanghai Jiao Tong University]
+  kernel: [CUDA]
+  hardware: [NVIDIA]
+  benchmarks: [FlashInfer-Bench]
+- id: xdna2-agent-skills
+  name: From Human Guidance to Autonomy
+  title: 'From Human Guidance to Autonomy: Agent Skill System for End-to-End LLM Deployment on Spatial NPUs'
+  type: application
+  date: 2026-05
+  paper: https://arxiv.org/abs/2606.07586
+  institution: [Cornell University, AMD]
+- id: qwen3.7-max-kernel-opt
+  name: Qwen3.7-Max Autonomous Kernel Optimization
+  type: industry
+  date: 2026-05
+  blog: https://qwen.ai/blog?id=qwen3.7
+  institution: [Alibaba (Qwen Team)]
+  kernel: [Triton]
+  hardware: [T-Head PPU]
+  summary: Qwen3.7-Max autonomously optimized SGLang's Extend Attention Kernel for a previously-unseen accelerator (T-Head Zhenwu M890 PPU, styled 'ZW-M890' in Qwen's own blog) with no hardware docs/reference ke.
+- id: moe-kernel-agent
+  name: MoE-Kernel-Agent
+  title: Full-Agent Technical Write-up
+  type: industry
+  date: 2026-05
+  code: https://github.com/Jerry2423/MoE-Kernel-Agent
+  kernel: [Triton]
+  hardware: [NVIDIA]
+  benchmarks: [FlashInfer-Bench]
+- id: kernelpilot
+  name: KDA-Pilot
+  type: industry
+  date: 2026-05
+  code: https://github.com/BBuf/KDA-Pilot
+  institution: [RadixArk]
+  kernel: [Triton, CUDA, CUTLASS]
+  hardware: [NVIDIA]
+  summary: Evidence-first autonomous SGLang kernel-optimization campaigns with production baselines, strict correctness gates, NCU/KernelWiki evidence, and replayable logs.
+- id: kernelbrain
+  name: KernelBrain
+  title: 'KernelBrain: Coarse-to-Fine, Budget-Aware Search for Agentic GPU Kernel Optimization'
+  type: search
+  date: 2026-05
+  paper: https://arxiv.org/abs/2608.02611
+  institution: [Microsoft]
+  kernel: [Triton]
+  hardware: [NVIDIA]
+- id: kernel-design-agents
+  name: Kernel Design Agents (KDA)
+  title: Developing GPU Kernels with Agentic Loops
+  type: industry
+  date: 2026-05
+  code: https://github.com/NVlabs/kda
+  institution: [MIT HAN Lab]
+  kernel: [CUDA]
+  hardware: [NVIDIA]
+  benchmarks: [FlashInfer-Bench]
+- id: kachua
+  name: Kachua
+  title: FlashInfer MLSys 2026 GDN Kernel - Team Kachua
+  type: agentic
+  date: 2026-05
+  paper: https://github.com/flashinfer-ai/mlsys26-contest/blob/2f87893/writeups/Kachua-GDN-Agent-Assisted.pdf
+  code: https://github.com/romitjain/kachua-mlsys
+  hardware: [NVIDIA]
+  benchmarks: [FlashInfer-Bench]
+- id: jaxbench
+  name: JAXBench
+  title: 'JAXBench: Benchmarking Autonomous TPU Kernel Optimization'
+  type: benchmark
+  date: 2026-05
+  paper: https://arxiv.org/abs/2607.20466
+  code: https://github.com/AI-Hypercomputer/accelerator-agents/tree/main/JAXBench
+  institution: [Harvard University, Google, UC Berkeley, Google DeepMind]
+  hardware: [Google TPU]
+- id: houmao-agentic-kernel-optimization
+  name: Houmao Agentic Kernel Optimization
+  title: 'Agentic Kernel Optimization: Generating State-of-the-Art GPU Kernels Without Hand-Written CUDA'
+  type: agentic
+  date: 2026-05
+  paper: https://arxiv.org/abs/2608.14560
+  code: https://github.com/igamenovoer/houmao
+  artifacts: https://github.com/CodeGandee/flashinfer-bench-starter-kit/tree/main/solution/cuda
+  institution: [Intellifusion]
+  kernel: [CUDA, CUTLASS]
+  hardware: [NVIDIA]
+  benchmarks: [FlashInfer-Bench]
+- id: cuda-opt-agent
+  name: cuda-opt-agent
+  type: industry
+  date: 2026-05
+  code: https://github.com/KernelFlow-ops/cuda-opt-agent
+  kernel: [CUDA]
+  hardware: [NVIDIA]
+  summary: LangGraph-orchestrated agent for CUDA kernel optimization with an nvcc compile+correctness gate, adaptive 3-phase NCU profiling, and multi-GPU hyperparameter search.
+- id: auto-gpu-kernel
+  name: auto-gpu-kernel
+  title: 'Auto GPU Kernel: Autonomous Kernel Discovery for DeepSeek Sparse Attention'
+  type: industry
+  date: 2026-05
+  code: https://github.com/Dogacel/auto-gpu-kernel
+  institution: [fal]
+  kernel: [Triton]
+  hardware: [NVIDIA]
+  benchmarks: [FlashInfer-Bench]
+- id: amdkernelvault
+  name: AMDKernelVault
+  title: 'AMDKernelVault: Large-Scale Datasets and Agentic Training for AMD GPU Kernel Optimization'
+  type: trained
+  date: 2026-05
+  paper: https://arxiv.org/abs/2609.12471
+  code: https://github.com/AMD-AGI/AMDKernelVault
+  dataset: https://huggingface.co/datasets/amd/AIG-Datasets
+  institution: [AMD]
+  kernel: [HIP, Triton]
+  hardware: [AMD]
+  benchmarks: [KernelBench, TritonBench]
+- id: ako4x
+  name: AKO4X
+  title: 'AKO: Agentic Kernel Optimization'
+  type: industry
+  date: 2026-05
+  code: https://github.com/TongmingLAIC/AKO4X
+  institution: [TLAIC]
+  kernel: [Triton, CUDA, TileLang, CUTLASS, CuTe]
+  hardware: [NVIDIA]
+  benchmarks: [FlashInfer-Bench]
+- id: lego
+  name: LEGO
+  title: 'LEGO: An LLM-Enabled Hierarchical Optimizer for Tensor Computation Graphs with Structure-Aware Search and Compositional Synthesis'
+  type: search
+  date: '2026-04-30'
+  venue: ICML 2026
+  paper: https://openreview.net/forum?id=kYqJ5gGjHE
+  code: https://github.com/mmt-at/LEGO
+  institution: [Institute of Computing Technology (CAS), University of Chinese Academy of Sciences, University of New South Wales, University of Leeds]
+  hardware: [NVIDIA]
+- id: fact
+  name: FACT
+  title: 'FACT: Compositional Kernel Synthesis with a Three-Stage Agentic Workflow'
+  type: agentic
+  date: '2026-04-29'
+  paper: https://arxiv.org/abs/2604.26666
+  institution: [Virginia Tech]
+  kernel: [CUTLASS]
+  hardware: [NVIDIA]
+  benchmarks: [KernelBench]
+- id: adaexplore
+  name: AdaExplore
+  title: 'AdaExplore: Failure-Driven Adaptation and Diversity-Preserving Search for Efficient Kernel Generation'
+  type: agentic
+  date: '2026-04-17'
+  venue: COLM Workshop 2026
+  paper: https://arxiv.org/abs/2604.16625
+  code: https://github.com/StigLidu/AdaExplore
+  institution: [Carnegie Mellon University]
+  kernel: [CUDA]
+  hardware: [NVIDIA]
+  benchmarks: [FlashInfer-Bench, KernelBench, TritonBench]
+- id: simpletes
+  name: SimpleTES
+  title: Structured Scaling of AI Discovery Across Diverse Scientific Domains
+  type: general
+  date: '2026-04-16'
+  paper: https://arxiv.org/abs/2604.19341
+  code: https://github.com/wq-will/SimpleTES
+  project: https://www.wizardquant.com/will/simpletes
+  institution: [Stanford University, Peking University, Tsinghua University, Hong Kong University of Science and Technology (Guangzhou)]
+  hardware: [NVIDIA]
+- id: argus
+  name: Ave (formerly ARGUS)
+  title: 'Ave: Guiding Agentic GPU Optimization Using Data-Flow Invariants'
+  type: agentic
+  date: '2026-04-16'
+  venue: SOSP 2026
+  paper: https://arxiv.org/abs/2604.18616
+  institution: [CausalFlow, Hong Kong University of Science and Technology, University of Chinese Academy of Sciences, UC Riverside, Tsinghua University, Stanford University]
+  kernel: [HIP]
+  hardware: [AMD]
+  benchmarks: [KernelBench]
+- id: record-remix-replay
+  name: Record-Remix-Replay
+  title: 'Record-Remix-Replay: Hierarchical GPU Kernel Optimization using Evolutionary Search'
+  type: search
+  date: '2026-04-13'
+  paper: https://arxiv.org/abs/2604.11109
+  code: https://github.com/llnl/Mneme
+  institution: [Lawrence Livermore National Laboratory]
+  hardware: [NVIDIA, AMD]
+- id: turboevolve
+  name: TurboEvolve
+  title: 'TurboEvolve: Towards Fast and Robust LLM-Driven Program Evolution'
+  type: general
+  date: '2026-04-12'
+  paper: https://arxiv.org/abs/2604.18607
+  institution: [Hong Kong University of Science and Technology (Guangzhou), Institute of Deep Perception Technology (JITRI)]
+- id: cutegen
+  name: CuTeGen
+  title: 'CuTeGen: An LLM-Based Agentic Framework for Generation and Optimization of High-Performance GPU Kernels using CuTe'
+  type: agentic
+  date: '2026-04-01'
+  paper: https://arxiv.org/abs/2604.01489
+  code: https://github.com/taratt/cutegen
+  institution: [University of Toronto, Standard Kernel]
+  kernel: [CuTe]
+  hardware: [NVIDIA]
+  benchmarks: [KernelBench]
+- id: tilegym
+  name: TileGym
+  type: industry
+  date: 2026-04
+  code: https://github.com/NVIDIA/TileGym
+  blog: https://developer.nvidia.com/blog/automating-gpu-kernel-translation-with-ai-agents-cutile-python-to-cutile-jl
+  institution: [NVIDIA]
+  kernel: [cuTile]
+  hardware: [NVIDIA]
+  summary: LLM agent 'skill' auto-translating cuTile Python kernels to cuTile.jl (Julia) in one validated pass (17 rules, static validator).
+- id: neuron-agentic-development
+  name: Neuron Agentic Development
+  type: industry
+  date: 2026-04
+  code: https://github.com/aws-neuron/neuron-agentic-development
+  blog: https://aws.amazon.com/blogs/machine-learning/stop-hand-tuning-kernels-how-neuron-agentic-development-accelerates-aws-trainium-optimizations
+  institution: [AWS]
+  kernel: [NKI]
+  hardware: [AWS Neuron]
+  summary: 'Open-source agent/skill toolkit for the NKI kernel lifecycle: authoring, debugging, profiling, performance optimization, and API migration on Trainium and Inferentia.'
+- id: cursor-nvidia-multi-agent-kernels
+  name: Cursor Multi-Agent Kernel Optimization
+  type: industry
+  date: 2026-04
+  blog: https://cursor.com/blog/multi-agent-kernels
+  artifacts: https://github.com/anysphere/kernel-optimization-results
+  institution: [Cursor, NVIDIA]
+  kernel: [CUDA, CUTLASS, CuTe, PTX]
+  hardware: [NVIDIA]
+  benchmarks: [SOL-ExecBench]
+  summary: Planner + autonomous parallel workers optimized 235 kernels from 124+ open-source models (CUDA C w/ inline PTX and CuTe DSL) on 27x Blackwell B200 over 3 weeks using NVIDIA's SOL-ExecBench test-debug-.
+- id: mucutlass-sol
+  name: muCUTLASS + Speed-of-Light Guidance
+  title: Improving Efficiency of GPU Kernel Optimization Agents using a Domain-Specific Language and Speed-of-Light Guidance
+  type: agentic
+  date: '2026-03-30'
+  paper: https://arxiv.org/abs/2603.29010
+  institution: [NVIDIA, Stanford University]
+  kernel: [CUTLASS]
+  hardware: [NVIDIA]
+  benchmarks: [KernelBench]
+- id: kernel-smith
+  name: Kernel-Smith
+  title: 'Kernel-Smith: A Unified Recipe for Evolutionary Kernel Optimization'
+  type: trained
+  date: '2026-03-30'
+  venue: ICML Workshop 2026
+  paper: https://arxiv.org/abs/2603.28342
+  institution: [Shanghai AI Laboratory]
+  kernel: [Triton]
+  hardware: [NVIDIA]
+  benchmarks: [KernelBench]
+- id: avo
+  name: AVO
+  title: 'AVO: Agentic Variation Operators for Autonomous Evolutionary Search'
+  type: search
+  date: '2026-03-24'
+  paper: https://arxiv.org/abs/2603.24517
+  project: https://github.com/austin1997/AVO
+  institution: [NVIDIA, OctoML]
+  kernel: [CUDA, PTX]
+  hardware: [NVIDIA]
+- id: ascendoptimizer
+  name: AscendOptimizer
+  title: 'AscendOptimizer: Episodic Agent for Ascend NPU Operator Optimization'
+  type: agentic
+  date: '2026-03-24'
+  paper: https://arxiv.org/abs/2603.23566
+  institution: [East China Normal University, Tongji University]
+  kernel: [Ascend C]
+  hardware: [Ascend]
+- id: drtriton
+  name: DRTriton
+  title: 'DRTriton: Large-Scale Synthetic Data Driven Reinforcement Learning for Triton Kernel Generation'
+  type: trained
+  date: '2026-03-23'
+  paper: https://arxiv.org/abs/2603.21465
+  institution: [Texas A&M University]
+  kernel: [Triton]
+  hardware: [NVIDIA]
+  benchmarks: [KernelBench]
+- id: autokernel
+  name: AutoKernel
+  title: 'AutoKernel: Autonomous GPU Kernel Optimization via Iterative Agent-Driven Search'
+  type: agentic
+  date: '2026-03-22'
+  paper: https://arxiv.org/abs/2603.21331
+  code: https://github.com/RightNow-AI/autokernel
+  institution: [RightNow AI (YC)]
+  kernel: [CUDA, Triton]
+  hardware: [NVIDIA]
+- id: sol-execbench
+  name: SOL-ExecBench
+  title: 'SOL-ExecBench: Speed-of-Light Benchmarking for Real-World GPU Kernels Against Hardware Limits'
+  type: benchmark
+  date: '2026-03-19'
+  paper: https://arxiv.org/abs/2603.19173
+  code: https://github.com/NVIDIA/SOL-ExecBench
+  dataset: https://huggingface.co/datasets/nvidia/SOL-ExecBench
+  project: https://research.nvidia.com/benchmarks/sol-execbench
+  institution: [NVIDIA]
+  kernel: [CUDA]
+  hardware: [NVIDIA]
+  benchmarks: [SOL-ExecBench]
+- id: semrep
+  name: SemRep
+  title: 'SemRep: Generative Code Representation Learning with Code Transformations'
+  type: general
+  date: '2026-03-13'
+  paper: https://arxiv.org/abs/2603.13640
+  institution: [University of Chicago, University of Illinois Urbana-Champaign, Columbia University, Microsoft]
+- id: mobilekernelbench
+  name: MobileKernelBench
+  title: 'MobileKernelBench: Can LLMs Write Efficient Kernels for Mobile Devices?'
+  type: benchmark
+  date: '2026-03-12'
+  venue: ICLR Workshop 2026
+  paper: https://arxiv.org/abs/2603.11935
+  institution: [Zhejiang University, Westlake University, Hong Kong University of Science and Technology, Universiti Teknologi Malaysia, Alibaba]
+  hardware: [Mobile GPU]
+- id: kernelfoundry
+  name: KernelFoundry
+  title: 'KernelFoundry: Hardware-Aware Evolutionary GPU Kernel Optimization'
+  type: search
+  date: '2026-03-12'
+  venue: ICML 2026
+  paper: https://arxiv.org/abs/2603.12440
+  institution: [Intel]
+  kernel: [SYCL, CUDA]
+  hardware: [NVIDIA, Intel]
+  benchmarks: [KernelBench]
+- id: evokernel
+  name: EvoKernel
+  title: 'Towards Cold-Start Drafting and Continual Refining: A Value-Driven Memory Approach with Application to NPU Kernel Synthesis'
+  type: trained
+  date: '2026-03-11'
+  venue: ICML 2026
+  paper: https://arxiv.org/abs/2603.10846
+  project: https://evokernel.zhuo.li
+  institution: [Shanghai Jiao Tong University]
+  kernel: [Ascend C]
+  hardware: [Ascend]
+  benchmarks: [KernelBench]
+- id: kernelskill
+  name: KernelSkill
+  title: 'KernelClaw: A Multi-Agent Framework for GPU Kernel Optimization with Dual-Memory Mechanisms'
+  type: agentic
+  date: '2026-03-10'
+  paper: https://arxiv.org/abs/2603.10085
+  code: https://github.com/0satan0/KernelMem
+  institution: [Beihang University]
+  kernel: [CUDA]
+  hardware: [NVIDIA]
+  benchmarks: [KernelBench, TritonBench]
+- id: cudamaster
+  name: CUDAMaster
+  title: Making LLMs Optimize Multi-Scenario CUDA Kernels Like Experts
+  type: agentic
+  date: '2026-03-07'
+  paper: https://arxiv.org/abs/2603.07169
+  project: https://hanyx2021.github.io/MSKernelBenchDemo
+  institution: [Tsinghua University]
+  kernel: [CUDA]
+  hardware: [NVIDIA]
+- id: reward-hacking-code-agents
+  name: Reward Hacking in Self-Improving Code Agents
+  title: Reward Hacking in Self-Improving Code Agents
+  type: general
+  date: '2026-03-05'
+  venue: ICLR Workshop 2026
+  paper: https://openreview.net/forum?id=ikrQWGgxYg
+  institution: [Weco AI]
+- id: curobov2
+  name: cuRoboV2
+  title: 'cuRoboV2: Dynamics-Aware Motion Generation with Depth-Fused Distance Fields for High-DoF Robots'
+  type: application
+  date: '2026-03-05'
+  paper: https://arxiv.org/abs/2603.05493
+  code: https://github.com/NVlabs/curobo
+  institution: [NVIDIA]
+  kernel: [CUDA]
+  hardware: [NVIDIA]
+- id: stitchcuda
+  name: StitchCUDA
+  title: 'StitchCUDA: An Automated Multi-Agents End-to-End GPU Programing Framework with Rubric-based Agentic Reinforcement Learning'
+  type: trained
+  date: '2026-03-03'
+  venue: ICML 2026
+  paper: https://arxiv.org/abs/2603.02637
+  institution: [University of Minnesota]
+  kernel: [CUDA]
+  hardware: [NVIDIA]
+  benchmarks: [KernelBench]
+- id: cuco
+  name: CUCo
+  title: 'CUCo: An Agentic Framework for Compute and Communication Co-design'
+  type: search
+  date: '2026-03-02'
+  paper: https://arxiv.org/abs/2603.02376
+  code: https://github.com/UT-InfraAI/cuco
+  institution: [University of Texas at Austin]
+  kernel: [CUDA]
+  hardware: [NVIDIA]
+- id: dsl-monkeys
+  name: DSL-Monkeys
+  title: 'DSL-Monkeys: Self-Generated In-Context Examples for Low-Resource GPU DSL Kernels'
+  type: trained
+  date: '2026-03-01'
+  venue: ICLR Workshop 2026
+  paper: https://openreview.net/forum?id=2yS4j1C3zi
+  kernel: [TileLang, ThunderKittens]
+  hardware: [NVIDIA]
+  benchmarks: [KernelBench]
+- id: standard-kernel
+  name: Standard Kernel
+  type: industry
+  date: 2026-03
+  blog: https://standardkernel.com/blog/announcing-our-seed-round-is-kernel-generation-solved
+  institution: [Standard Kernel]
+  kernel: [PTX]
+  hardware: [NVIDIA]
+  summary: Hybrid program-analysis + LLM reasoning at the PTX layer across Triton / TileLang / ThunderKittens / CUTLASS.
+- id: pytorch-kernelagent
+  name: PyTorch KernelAgent
+  type: industry
+  date: 2026-03
+  code: https://github.com/meta-pytorch/KernelAgent
+  blog: https://pytorch.org/blog/kernelagent-hardware-guided-gpu-kernel-optimization-via-multi-agent-orchestration
+  institution: [Meta]
+  kernel: [Triton]
+  hardware: [NVIDIA]
+  benchmarks: [KernelBench]
+  summary: 5-agent system (Profiler / Judge / Analyze / Orchestrator / Benchmark) + NCU + roofline.
+- id: polca
+  name: POLCA
+  title: 'POLCA: Stochastic Generative Optimization with LLM'
+  type: general
+  date: 2026-03
+  venue: ICML 2026
+  paper: https://proceedings.mlr.press/v306/ren26l.html
+  code: https://github.com/rlx-lab/POLCA
+  institution: [University of Wisconsin-Madison, Google DeepMind, Google]
+  kernel: [CUDA]
+  hardware: [NVIDIA]
+  benchmarks: [KernelBench]
+- id: maxkernel
+  name: MaxKernel
+  title: 'MaxKernel: Agentic Kernel Generation for TPUs'
+  type: search
+  date: 2026-03
+  venue: NeurIPS Workshop 2026
+  paper: https://arxiv.org/abs/2609.04523
+  code: https://github.com/AI-Hypercomputer/accelerator-agents/tree/main/maxkernel/adk
+  dataset: https://github.com/AI-Hypercomputer/accelerator-agents/tree/main/JAXBench
+  blog: https://discuss.google.dev/t/maxkernel-automating-pallas-kernel-generation-and-optimization-via-agentic-systems/366686
+  artifacts: https://github.com/AI-Hypercomputer/accelerator-agents/tree/main/maxkernel/adk/evaluation
+  institution: [Google, Google DeepMind]
+  kernel: [Pallas, JAX]
+  hardware: [Google TPU]
+- id: incoder-32b
+  name: InCoder-32B
+  title: 'InCoder-32B-Thinking: Industrial Code World Model for Thinking'
+  type: general
+  date: 2026-03
+  paper: https://arxiv.org/abs/2604.03144
+  code: https://github.com/CSJianYang/Industrial-Coder
+  institution: [Beihang University]
+  kernel: [CUDA]
+  hardware: [NVIDIA]
+  benchmarks: [KernelBench, TritonBench]
+- id: hyperloom
+  name: ROCm Hyperloom
+  type: industry
+  date: 2026-03
+  code: https://github.com/AMD-AGI/Hyperloom
+  project: https://rocm.docs.amd.com/projects/hyperloom/en/latest/index.html
+  blog: https://rocm.blogs.amd.com/software-tools-optimization/hyperloom-optimization/README.html
+  artifacts: https://github.com/AMD-AGI/Hyperloom/tree/79856335c65047ac11264132167def97047f83e5/.cursor/skills/inference-optimization/results/qwen3-14b-mi355x
+  institution: [AMD]
+  kernel: [HIP, Triton, FlyDSL]
+  hardware: [AMD]
+  summary: Multi-agent inference optimization across serving settings, framework source, and generated GPU kernels, with independent end-to-end measurement and a reusable recipe knowledge base.
+- id: cannbot-skills
+  name: CANNBot Skills
+  type: industry
+  date: 2026-03
+  code: https://gitcode.com/cann/cannbot-skills
+  blog: https://gitcode.com/cann/cannbot-skills/blob/master/CHANGELOG.md
+  institution: [Huawei CANN]
+  kernel: [Ascend C, Catlass, PyPTO, TileLang, Triton]
+  hardware: [Ascend]
+  summary: 'Public plugin/agent/skill suite for staged NPU-operator development: architect, developer, reviewer and tester workflows cover direct and registered Ascend C kernels plus Catlass, PyPTO, TileLang and.'
+- id: ascendopgenagent
+  name: AscendOpGenAgent
+  type: industry
+  date: 2026-03
+  code: https://github.com/Just-it/AscendOpGenAgent
+  artifacts: https://github.com/Just-it/AscendOpGenAgent/tree/main/archive_tasks
+  kernel: [Triton, Ascend C]
+  hardware: [Ascend]
+  summary: Claude Code agent and skill workflows generate and validate Triton-Ascend and Ascend C operators, with batch evaluation and an AutoResearch plan/edit/evaluate/keep-or-discard loop.
+- id: alphalab
+  name: AlphaLab
+  title: 'AlphaLab: Autonomous Multi-Agent Research Across Optimization Domains with Frontier LLMs'
+  type: general
+  date: 2026-03
+  paper: https://arxiv.org/abs/2604.08590
+  code: https://github.com/morganstanley/MSML/tree/ecff6184ab96102b189df8fba16f949a65356ee5/projects/alpha-lab
+  project: https://brendanhogan.github.io/alphalab-paper
+  institution: [Morgan Stanley]
+  kernel: [CUDA]
+  hardware: [NVIDIA]
+  benchmarks: [KernelBench]
+- id: ako
+  name: AKO / AKO4ALL
+  type: industry
+  date: 2026-03
+  code: https://github.com/TongmingLAIC/AKO4ALL
+  project: https://tongminglaic.github.io/AKO
+  institution: [TLAIC]
+  kernel: [Triton, CUDA, TileLang]
+  hardware: [NVIDIA]
+  benchmarks: [SOL-ExecBench]
+  summary: Generic coding-agent harness for kernel optimization.
+- id: cuda-agent
+  name: CUDA Agent
+  title: 'CUDA Agent: Large-Scale Agentic RL for High-Performance CUDA Kernel Generation'
+  type: trained
+  date: '2026-02-27'
+  paper: https://arxiv.org/abs/2602.24286
+  code: https://github.com/BytedTsinghua-SIA/CUDA-Agent
+  dataset: https://huggingface.co/datasets/BytedTsinghua-SIA/CUDA-Agent-Ops-6K
+  project: https://cuda-agent.github.io
+  institution: [ByteDance, Tsinghua University]
+  kernel: [CUDA]
+  hardware: [NVIDIA]
+  benchmarks: [KernelBench]
+- id: k-search
+  name: K-Search
+  title: 'K-Search: LLM Kernel Generation via Co-Evolving Intrinsic World Model'
+  type: search
+  date: '2026-02-22'
+  paper: https://arxiv.org/abs/2602.19128
+  code: https://github.com/caoshiyi/K-Search
+  institution: [UC Berkeley]
+  kernel: [CUDA]
+  hardware: [NVIDIA]
+  benchmarks: [FlashInfer-Bench]
+- id: kernelblaster
+  name: KernelBlaster
+  title: 'KernelBlaster: Continual Cross-Task CUDA Optimization via Memory-Augmented In-Context Reinforcement Learning'
+  type: trained
+  date: '2026-02-15'
+  paper: https://arxiv.org/abs/2602.14293
+  institution: [NVIDIA, UC Berkeley]
+  kernel: [CUDA]
+  hardware: [NVIDIA]
+  benchmarks: [KernelBench]
+- id: optiml
+  name: OptiML
+  title: 'OptiML: An End-to-End Framework for Program Synthesis and CUDA Kernel Optimization'
+  type: trained
+  date: '2026-02-12'
+  paper: https://arxiv.org/abs/2602.12305
+  institution: [Iowa State University]
+  kernel: [CUDA]
+  hardware: [NVIDIA]
+- id: dice
+  name: DICE
+  title: 'DICE: Diffusion Large Language Models Excel at Generating CUDA Kernels'
+  type: trained
+  date: '2026-02-12'
+  paper: https://arxiv.org/abs/2602.11715
+  code: https://github.com/deadlykitten4/DICE
+  institution: [Westlake University]
+  kernel: [CUDA]
+  hardware: [NVIDIA]
+  benchmarks: [KernelBench]
+- id: makora
+  name: Makora
+  title: Fine-Tuning GPT-5 for GPU Kernel Generation
+  type: trained
+  date: '2026-02-11'
+  paper: https://arxiv.org/abs/2602.11000
+  institution: [Makora]
+  kernel: [Triton]
+  hardware: [NVIDIA]
+  benchmarks: [KernelBench]
+- id: surprisal-guided-selection
+  name: Surprisal-Guided Selection
+  title: 'Surprisal-Guided Selection: Compute-Optimal Test-Time Strategies for Execution-Grounded Code Generation'
+  type: trained
+  date: '2026-02-07'
+  paper: https://arxiv.org/abs/2602.07670
+  code: https://github.com/jbarnes850/test-time-training
+  model: https://huggingface.co/Jarrodbarnes/KernelBench-RLVR-120b
+  institution: [Arc Intelligence]
+  benchmarks: [KernelBench]
+- id: dr-kernel
+  name: Dr. Kernel
+  title: 'DR. KERNEL: Reinforcement Learning Done Right for Triton Kernel Generations'
+  type: trained
+  date: '2026-02-05'
+  venue: ICML 2026
+  paper: https://arxiv.org/abs/2602.05885
+  code: https://github.com/hkust-nlp/KernelGYM
+  institution: [Hong Kong University of Science and Technology]
+  kernel: [Triton]
+  hardware: [NVIDIA]
+  benchmarks: [KernelBench]
+- id: aster
+  name: Aster
+  title: 'Aster: Autonomous Scientific Discovery over 20x Faster Than Existing Methods'
+  type: general
+  date: '2026-02-03'
+  paper: https://arxiv.org/abs/2602.07040
+  code: https://github.com/aster-ai-labs/announcing-results
+  project: https://www.asterlab.ai
+  institution: [Aster AI Labs]
+  hardware: [NVIDIA]
+- id: kernelcraft
+  name: KernelCraft
+  title: 'KernelCraft: Benchmarking for Agentic Close-to-Metal Kernel Generation on Emerging Hardware'
+  type: benchmark
+  date: 2026-02
+  venue: ICML 2026
+  paper: https://proceedings.mlr.press/v306/nie26c.html
+  project: https://kernelcraft-cam.github.io
+  institution: [University of Cambridge, Imperial College London, AMD, University of Edinburgh]
+  kernel: [Assembly]
+  hardware: [NVIDIA, AMD, Google TPU, RISC-V, Research accelerators]
+- id: cudabench
+  name: CUDABench
+  title: 'CUDABench: Benchmarking LLMs for Text-to-CUDA Generation'
+  type: benchmark
+  date: 2026-02
+  paper: https://arxiv.org/abs/2603.02236
+  code: https://github.com/CUDA-Bench/CUDABench
+  dataset: https://huggingface.co/datasets/CUDABench/CUDABench-Set
+  institution: [Shanghai Jiao Tong University]
+  kernel: [CUDA]
+  hardware: [NVIDIA]
+- id: amd-apex
+  name: Apex
+  type: industry
+  date: 2026-02
+  code: https://github.com/AMD-AGI/Apex
+  institution: [AMD]
+  kernel: [HIP, Triton]
+  hardware: [AMD]
+  summary: Agent harness (Claude Code/Codex/Cursor Agent backends) that iterates HIP/Triton kernels against a compile+correctness+speedup grader across 12 LLM-serving kernel types (flash attn, MoE, GEMM, RoPE, K.
+- id: ascendcraft
+  name: AscendCraft
+  title: 'AscendCraft: Automatic Ascend NPU Kernel Generation via DSL-Guided Transcompilation'
+  type: agentic
+  date: '2026-01-30'
+  paper: https://arxiv.org/abs/2601.22760
+  institution: [Nanjing University, Huawei]
+  kernel: [Ascend C]
+  hardware: [Ascend]
+  benchmarks: [MultiKernelBench]
+- id: sparserl
+  name: SparseRL
+  title: Mastering Sparse CUDA Generation through Pretrained Models and Deep Reinforcement Learning
+  type: trained
+  date: '2026-01-26'
+  venue: ICLR 2026
+  paper: https://openreview.net/forum?id=VdLEaGPYWT
+  code: https://github.com/QiWu-NCIC/SparseRL
+  institution: [Institute of Computing Technology (CAS), University of Chinese Academy of Sciences, Hong Kong University of Science and Technology]
+  kernel: [CUDA]
+  hardware: [NVIDIA]
+- id: two-stage-kernel-tuner
+  name: A Two-Stage GPU Kernel Tuner Combining Semantic Refactoring and Search-Based Optimization
+  title: A Two-Stage GPU Kernel Tuner Combining Semantic Refactoring and Search-Based Optimization
+  type: agentic
+  date: '2026-01-19'
+  paper: https://arxiv.org/abs/2601.12698
+  institution: [Nankai University, Beijing Institute of Computer Technology and Applications]
+  kernel: [CUDA]
+  hardware: [NVIDIA]
+- id: ascendkernelgen
+  name: AscendKernelGen
+  title: 'AscendKernelGen: LLM-Driven Kernel Generation for NPUs'
+  type: trained
+  date: '2026-01-12'
+  venue: ACL Findings 2026
+  paper: https://arxiv.org/abs/2601.07160
+  dataset: https://huggingface.co/datasets/AscendKernelGen/Ascend-COT-v1
+  institution: [Peng Cheng Laboratory]
+  kernel: [Ascend C]
+  hardware: [Ascend]
+  benchmarks: [NPUKernelBench]
+- id: maxcode
+  name: MaxCode
+  title: 'MaxCode: A Max-Reward Reinforcement Learning Framework for Automated Code Optimization'
+  type: general
+  date: '2026-01-09'
+  paper: https://arxiv.org/abs/2601.05475
+  institution: [Johns Hopkins University, AWS]
+  kernel: [CUDA]
+  benchmarks: [KernelBench]
+- id: xe-forge
+  name: Xe-Forge
+  title: 'Xe-Forge: Multi-Stage LLM-Powered Kernel Optimization for Intel GPU'
+  type: industry
+  date: 2026-01
+  code: https://github.com/IntelLabs/Xe-Forge
+  institution: [Intel Labs]
+  kernel: [Triton]
+  hardware: [Intel]
+  benchmarks: [KernelBench]
+- id: ttt-discover
+  name: TTT-Discover
+  title: Learning to Discover at Test Time
+  type: general
+  date: 2026-01
+  venue: ICML 2026
+  paper: https://proceedings.mlr.press/v306/yuksekgonul26a.html
+  code: https://github.com/test-time-training/discover
+  project: https://test-time-training.github.io/discover
+  institution: [Stanford University, UC San Diego, Together AI, Astera Institute, NVIDIA]
+  hardware: [NVIDIA, AMD]
+- id: tt-lang-claude-skills
+  name: TT-Lang + Claude Skills
+  type: industry
+  date: 2026-01
+  code: https://github.com/tenstorrent/tt-lang
+  institution: [Tenstorrent]
+  kernel: [TT-Lang]
+  hardware: [Tenstorrent]
+  summary: Python-embedded DSL for Tenstorrent hardware with AI codegen in the loop.
+- id: tileops
+  name: TileOPs (TOPS)
+  type: tool
+  date: 2026-01
+  code: https://github.com/tile-ai/TileOPs
+  institution: [tile-ai]
+  kernel: [TileLang]
+  hardware: [NVIDIA]
+  summary: 'Spec-driven operator library: AI agents read declarative manifests (signatures, workloads, roofline formulas), generate TileLang kernels, and self-validate against Speed-of-Light bounds.'
+- id: pacevolve
+  name: PACEvolve
+  title: 'PACEvolve: Enabling Long-Horizon Progress-Aware Consistent Evolution'
+  type: general
+  date: 2026-01
+  venue: ICLR Workshop 2026
+  paper: https://openreview.net/forum?id=7qsTTBK1vU
+  institution: [University of Wisconsin-Madison, Google, Google DeepMind, UC San Diego]
+- id: geak-triton-v2
+  name: GEAK-Triton v2
+  type: industry
+  date: 2026-01
+  code: https://github.com/AMD-AGI/GEAK
+  blog: https://rocm.blogs.amd.com/artificial-intelligence/geak-agents-family/README.html
+  institution: [AMD-AGI]
+  kernel: [Triton]
+  hardware: [AMD]
+  summary: Extension of the GEAK family for AMD GPUs.
+- id: geak-hip
+  name: GEAK-HIP
+  type: industry
+  date: 2026-01
+  code: https://github.com/AMD-AGI/GEAK
+  blog: https://rocm.blogs.amd.com/software-tools-optimization/geak-hip-optimizations/README.html
+  institution: [AMD-AGI]
+  kernel: [HIP]
+  hardware: [AMD]
+  summary: GEAK extension for iterative HIP-kernel optimization on AMD GPUs.
+- id: flashinfer-bench
+  name: FlashInfer-Bench
+  title: 'FlashInfer-Bench: Building the Virtuous Cycle for AI-driven LLM Systems'
+  type: benchmark
+  date: 2026-01
+  venue: MLSys 2026
+  paper: https://proceedings.mlsys.org/paper_files/paper/2026/file/37e44c4b5321605735be9761f9b758fc-Paper-Conference.pdf
+  code: https://github.com/flashinfer-ai/flashinfer-bench
+  dataset: https://huggingface.co/datasets/flashinfer-ai/flashinfer-trace
+  project: https://bench.flashinfer.ai
+  institution: [University of Washington, Carnegie Mellon University, NVIDIA, UC Berkeley, Independent researcher]
+  hardware: [NVIDIA]
+  benchmarks: [FlashInfer-Bench]
+- id: cudanalyst
+  name: CUDAnalyst
+  title: Towards Feedback-to-Plan Decisions for Self-Evolving LLM Agents in CUDA Kernel Generation
+  type: search
+  date: 2026-01
+  venue: ICML 2026
+  paper: https://openreview.net/forum?id=s70zO5Lvvj
+  code: https://github.com/yuxuan-z19/cudanalyst
+  institution: [Tsinghua University, Beijing National Research Center for Information Science and Technology]
+  kernel: [CUDA]
+  hardware: [NVIDIA]
+  benchmarks: [KernelBench]
+- id: kernelevolve
+  name: KernelEvolve
+  title: 'KernelEvolve: Scaling Agentic Kernel Coding for Heterogeneous AI Accelerators at Meta'
+  type: trained
+  date: '2025-12-29'
+  venue: ISCA 2026
+  paper: https://arxiv.org/abs/2512.23236
+  blog: https://engineering.fb.com/2026/04/02/developer-tools/kernelevolve-how-metas-ranking-engineer-agent-optimizes-ai-infrastructure
+  institution: [Meta]
+  kernel: [CUDA, Triton, TileLang, CUTLASS, HIP]
+  hardware: [NVIDIA, Meta MTIA]
+  benchmarks: [KernelBench]
+- id: akg-agent
+  name: AKG-AGENT
+  title: 'AKG kernel Agent: A Multi-Agent Framework for Cross-Platform Kernel Synthesis'
+  type: agentic
+  date: '2025-12-29'
+  paper: https://arxiv.org/abs/2512.23424
+  code: https://github.com/mindspore-ai/akg/tree/master/akg_agents
+  institution: [Huawei, Hunan University]
+  kernel: [Triton, TileLang, Ascend C, CUDA]
+  hardware: [NVIDIA, Ascend, CPU]
+  benchmarks: [KernelBench]
+- id: peak
+  name: PEAK
+  title: 'PEAK: A Performance Engineering AI-Assistant for GPU Kernels Powered by Natural Language Transformations'
+  type: agentic
+  date: '2025-12-22'
+  paper: https://arxiv.org/abs/2512.19018
+  institution: [Stanford University, Microsoft Research]
+  kernel: [CUDA, HIP]
+  hardware: [NVIDIA, AMD]
+- id: cupilot
+  name: cuPilot
+  title: 'cuPilot: A Strategy-Coordinated Multi-agent Framework for CUDA Kernel Evolution'
+  type: agentic
+  date: '2025-12-18'
+  venue: DAC 2026
+  paper: https://arxiv.org/abs/2512.16465
+  artifacts: https://github.com/champloo2878/cuPilot-Kernels
+  institution: [Southeast University, Tsinghua University, Tsing Micro]
+  kernel: [CUDA]
+  hardware: [NVIDIA]
+  benchmarks: [KernelBench]
+- id: mep-kernel-opt
+  name: GPU Kernel Optimization Beyond Full Builds
+  title: 'GPU Kernel Optimization Beyond Full Builds: An LLM Framework with Minimal Executable Programs'
+  type: agentic
+  date: '2025-12-15'
+  venue: PAKDD 2026
+  paper: https://arxiv.org/abs/2512.22147
+  institution: [Xi'an Jiaotong University]
+  hardware: [NVIDIA, Hygon DCU]
+- id: tritonforge
+  name: TritonForge
+  title: 'TritonForge: Profiling-Guided Framework for Automated Triton Kernel Optimization'
+  type: trained
+  date: '2025-12-09'
+  venue: ICSE Workshop 2026
+  paper: https://arxiv.org/abs/2512.09196
+  code: https://github.com/RLsys-Foundation/TritonForge
+  institution: [RLsys Foundation]
+  kernel: [Triton]
+  hardware: [NVIDIA, AMD]
+  benchmarks: [TritonBench]
+- id: tritorx
+  name: TritorX
+  type: agentic
+  date: '2025-12-03'
+  paper: https://arxiv.org/abs/2512.10977
+  institution: [Meta]
+  kernel: [Triton]
+  hardware: [Meta MTIA]
+  summary: Generates functionally-correct Triton ATen kernels at scale for emerging accelerators.
+- id: cuda-l2
+  name: CUDA-L2
+  title: 'CUDA-L2: Surpassing cuBLAS Performance for Matrix Multiplication through Reinforcement Learning'
+  type: trained
+  date: '2025-12-02'
+  paper: https://arxiv.org/abs/2512.02551
+  code: https://github.com/ornith-ai/CUDA-L2
+  institution: [DeepReinforce]
+  kernel: [CUDA]
+  hardware: [NVIDIA]
+- id: auto
+  name: AUTO
+  title: Automated Design Optimization via Strategic Search with Large Language Models
+  type: agentic
+  date: '2025-11-27'
+  paper: https://arxiv.org/abs/2511.22651
+  institution: [University of Michigan]
+  hardware: [NVIDIA]
+  benchmarks: [KernelBench]
+- id: qimeng-kernel
+  name: QiMeng-Kernel
+  title: 'QiMeng-Kernel: Macro-Thinking Micro-Coding Paradigm for LLM-Based High-Performance GPU Kernel Generation'
+  type: trained
+  date: '2025-11-25'
+  venue: AAAI 2026
+  paper: https://arxiv.org/abs/2511.20100
+  code: https://github.com/QiMeng-IPRC/QiMeng-Kernel
+  institution: [Institute of Computing Technology (CAS)]
+  kernel: [CUDA]
+  hardware: [NVIDIA]
+  benchmarks: [KernelBench, TritonBench]
+- id: kernelband
+  name: KernelBand
+  title: 'KernelBand: Steering LLM-based Kernel Optimization via Hardware-Aware Multi-Armed Bandits'
+  type: search
+  date: '2025-11-24'
+  venue: ICML 2026
+  paper: https://arxiv.org/abs/2511.18868
+  institution: [Peking University]
+  kernel: [Triton]
+  hardware: [NVIDIA]
+  benchmarks: [TritonBench]
+- id: pike
+  name: Optimizing PyTorch Inference with LLM-Based Multi-Agent Systems
+  title: Optimizing PyTorch Inference with LLM-Based Multi-Agent Systems
+  type: agentic
+  date: '2025-11-21'
+  venue: MLSys 2026
+  paper: https://arxiv.org/abs/2511.16964
+  code: https://github.com/pike-project/pike
+  dataset: https://huggingface.co/datasets/knagaitsev/pike-data-compressed
+  institution: [Northwestern University, Lawrence Berkeley National Laboratory]
+  hardware: [NVIDIA]
+  benchmarks: [KernelBench]
+- id: accelopt
+  name: AccelOpt
+  title: 'AccelOpt: A Self-Improving LLM Agentic System for AI Accelerator Kernel Optimization'
+  type: agentic
+  date: '2025-11-19'
+  venue: MLSys 2026
+  paper: https://arxiv.org/abs/2511.15915
+  code: https://github.com/zhang677/AccelOpt
+  institution: [Stanford University, AWS]
+  kernel: [NKI]
+  hardware: [AWS Neuron]
+  benchmarks: [FlashInfer-Bench]
+- id: pragma
+  name: PRAGMA
+  title: 'PRAGMA: A Profiling-Reasoned Multi-Agent Framework for Automatic Kernel Optimization'
+  type: agentic
+  date: '2025-11-09'
+  paper: https://arxiv.org/abs/2511.06345
+  institution: [Beihang University]
+  kernel: [Triton]
+  hardware: [NVIDIA]
+  benchmarks: [KernelBench]
+- id: cudaforge
+  name: CudaForge
+  title: 'CudaForge: An Agent Framework with Hardware Feedback for CUDA Kernel Optimization'
+  type: agentic
+  date: '2025-11-01'
+  paper: https://arxiv.org/abs/2511.01884
+  code: https://github.com/OptimAI-Lab/CudaForge
+  institution: [University of Minnesota]
+  kernel: [CUDA]
+  hardware: [NVIDIA]
+  benchmarks: [KernelBench]
+- id: kforge
+  name: KForge
+  title: 'KForge: A Multi-Agent System for Cross-Platform Kernel Synthesis'
+  type: agentic
+  date: 2025-11
+  venue: ICML Workshop 2026
+  paper: https://arxiv.org/abs/2606.02963
+  institution: [Gimlet Labs]
+  kernel: [Triton, CUDA, CUTLASS, HIP, SYCL, Metal]
+  hardware: [NVIDIA, AMD, Intel, Apple]
+  benchmarks: [KernelBench]
+- id: kernelfalcon
+  name: KernelFalcon
+  type: industry
+  date: 2025-11
+  blog: https://pytorch.org/blog/kernelfalcon-autonomous-gpu-kernel-generation-via-deep-agents
+  institution: [Meta]
+  kernel: [Triton]
+  hardware: [NVIDIA]
+  benchmarks: [KernelBench]
+  summary: Predecessor of PyTorch KernelAgent.
+- id: fm-agent
+  name: The FM Agent
+  title: The FM Agent
+  type: general
+  date: '2025-10-30'
+  paper: https://arxiv.org/abs/2510.26144
+  institution: [Baidu]
+- id: opt-r1
+  name: Integrating Performance Tools in Model Reasoning for GPU Kernel Optimization
+  title: Integrating Performance Tools in Model Reasoning for GPU Kernel Optimization
+  type: trained
+  date: '2025-10-20'
+  paper: https://arxiv.org/abs/2510.17158
+  institution: [Lawrence Livermore National Laboratory, University of Maryland]
+  hardware: [NVIDIA]
+- id: stark
+  name: STARK
+  title: 'STARK: Strategic Team of Agents for Refining Kernels'
+  type: agentic
+  date: '2025-10-19'
+  venue: ICLR 2026
+  paper: https://arxiv.org/abs/2510.16996
+  institution: [Meta]
+  kernel: [CUDA]
+  hardware: [NVIDIA]
+  benchmarks: [KernelBench]
+- id: tritonrl
+  name: TritonRL
+  title: 'TritonRL: Training LLMs to Think and Code Triton Without Cheating'
+  type: trained
+  date: '2025-10-18'
+  venue: COLM 2026
+  paper: https://arxiv.org/abs/2510.17891
+  institution: [Carnegie Mellon University, Amazon]
+  kernel: [Triton]
+  hardware: [NVIDIA]
+  benchmarks: [KernelBench, TritonBench]
+- id: concur
+  name: ConCuR
+  title: 'ConCuR: Conciseness Makes State-of-the-Art Kernel Generation'
+  type: trained
+  date: '2025-10-08'
+  paper: https://arxiv.org/abs/2510.07356
+  model: https://huggingface.co/lkongam/KernelCoder
+  institution: [Hong Kong University of Science and Technology]
+  kernel: [Triton]
+  hardware: [NVIDIA]
+  benchmarks: [KernelBench]
+- id: evoengineer
+  name: EvoEngineer
+  title: 'EvoEngineer: Mastering Automated CUDA Kernel Code Evolution with Large Language Models'
+  type: search
+  date: '2025-10-04'
+  paper: https://arxiv.org/abs/2510.03760
+  institution: [City University of Hong Kong]
+  kernel: [CUDA]
+  hardware: [NVIDIA]
+  benchmarks: [KernelBench]
+- id: opal
+  name: Opal
+  title: 'Opal: A Modular Framework for Optimizing Performance using Analytics and LLMs'
+  type: single-pass
+  date: '2025-10-01'
+  paper: https://arxiv.org/abs/2510.00932
+  institution: [Texas State University, University of Novi Sad]
+  hardware: [NVIDIA, AMD]
+- id: tilelang-ascend
+  name: TileLang-Ascend
+  type: tool
+  date: 2025-10
+  code: https://github.com/tile-ai/tilelang-ascend
+  institution: [tile-ai]
+  kernel: [TileLang]
+  hardware: [Ascend]
+  summary: Adapter layer connecting TileLang to the Ascend backend (not an agent).
+- id: regrapht
+  name: ReGraphT
+  title: 'From Large to Small: Transferring CUDA Optimization Expertise via Reasoning Graph'
+  type: search
+  date: 2025-10
+  venue: ICLR 2026
+  paper: https://proceedings.iclr.cc/paper_files/paper/2026/hash/c4e40d310af1be55f2c0f32cb16a9a16-Abstract-Conference.html
+  code: https://github.com/blacknickwield/ReGraphT
+  institution: [Institute of Computing Technology (CAS), University of Chinese Academy of Sciences, South China University of Technology]
+  kernel: [CUDA]
+  hardware: [NVIDIA]
+- id: kernelgen-flagos
+  name: KernelGen (Flagos)
+  type: industry
+  date: 2025-10
+  code: https://github.com/flagos-ai/kernelgen
+  project: https://kernelgen.flagos.io
+  institution: [Flagos]
+  kernel: [Triton]
+  hardware: [NVIDIA]
+  summary: Interactive kernel generation platform.
+- id: llm-3dgs-kernel-opt
+  name: LLM-Powered Code Analysis and Optimization for Gaussian Splatting Kernels
+  title: LLM-Powered Code Analysis and Optimization for Gaussian Splatting Kernels
+  type: study
+  date: '2025-09-30'
+  paper: https://arxiv.org/abs/2509.25626
+  institution: [North Carolina State University]
+  hardware: [NVIDIA]
+- id: eok
+  name: EoK
+  title: 'Evolution of Kernels: Automated RISC-V Kernel Optimization with Large Language Models'
+  type: search
+  date: '2025-09-14'
+  paper: https://arxiv.org/abs/2509.14265
+  code: https://github.com/Optima-CityU/Evolution_of_Kernels
+  institution: [City University of Hong Kong]
+  hardware: [RISC-V]
+- id: tritongym
+  name: TritonGym
+  title: 'TritonGym: A Benchmark for Agentic LLM Workflows in Triton GPU Code Generation'
+  type: benchmark
+  date: '2025-09-09'
+  venue: ICML 2026
+  paper: https://openreview.net/forum?id=Htq2loTQTL
+  kernel: [Triton]
+  hardware: [NVIDIA]
+- id: astra
+  name: Astra
+  title: 'Astra: A Multi-Agent System for GPU Kernel Performance Optimization'
+  type: agentic
+  date: '2025-09-09'
+  venue: NeurIPS Workshop 2025
+  paper: https://arxiv.org/abs/2509.07506
+  code: https://github.com/Anjiang-Wei/Astra
+  institution: [Stanford University]
+  kernel: [CUDA]
+  hardware: [NVIDIA]
+- id: swizzleperf
+  name: SwizzlePerf
+  title: 'SwizzlePerf: Hardware-Aware LLMs for GPU Kernel Performance Optimization'
+  type: agentic
+  date: '2025-08-27'
+  venue: NeurIPS Workshop 2025
+  paper: https://arxiv.org/abs/2508.20258
+  institution: [Harvard University, AMD]
+  kernel: [Triton]
+  hardware: [AMD]
+- id: tutoring-llm-cuda
+  name: Tutoring LLM into a Better CUDA Optimizer
+  title: Tutoring LLM into a Better CUDA Optimizer
+  type: study
+  date: 2025-08
+  venue: Euro-Par 2025
+  paper: https://arxiv.org/abs/2510.16933
+  code: https://github.com/matyas-brabec/2025-europar-llm
+  institution: [Charles University]
+  kernel: [CUDA]
+  hardware: [NVIDIA]
+- id: geak
+  name: GEAK
+  title: 'GEAK: Introducing Triton Kernel AI Agent & Evaluation Benchmarks'
+  type: agentic
+  date: '2025-07-31'
+  paper: https://arxiv.org/abs/2507.23194
+  code: https://github.com/AMD-AGI/GEAK
+  institution: [AMD-AGI]
+  kernel: [Triton]
+  hardware: [AMD]
+  benchmarks: [TritonBench]
+- id: multikernelbench
+  name: MultiKernelBench
+  title: 'MultiKernelBench: A Multi-Platform Benchmark for Kernel Generation'
+  type: benchmark
+  date: '2025-07-20'
+  venue: ASE 2026
+  paper: https://arxiv.org/abs/2507.17773
+  code: https://github.com/wzzll123/MultiKernelBench
+  institution: [Nanjing University, Zhejiang University]
+  hardware: [NVIDIA, Ascend, Google TPU]
+  benchmarks: [MultiKernelBench]
+- id: cuda-l1
+  name: CUDA-L1
+  title: 'CUDA-L1: Improving CUDA Optimization via Contrastive Reinforcement Learning'
+  type: trained
+  date: '2025-07-18'
+  venue: ICLR 2026
+  paper: https://arxiv.org/abs/2507.14111
+  code: https://github.com/ornith-ai/CUDA-L1
+  institution: [DeepReinforce]
+  kernel: [CUDA]
+  hardware: [NVIDIA]
+  benchmarks: [KernelBench]
+- id: kevin
+  name: Kevin
+  title: 'Kevin: Multi-Turn RL for Generating CUDA Kernels'
+  type: trained
+  date: '2025-07-11'
+  venue: ICLR 2026
+  paper: https://arxiv.org/abs/2507.11948
+  institution: [Cognition]
+  kernel: [CUDA]
+  hardware: [NVIDIA]
+  benchmarks: [KernelBench]
+- id: autotriton
+  name: AutoTriton
+  title: 'AutoTriton: Automatic Triton Programming with Reinforcement Learning in LLMs'
+  type: trained
+  date: '2025-07-08'
+  paper: https://arxiv.org/abs/2507.05687
+  code: https://github.com/AI9Stars/AutoTriton
+  institution: [Tsinghua University (THUNLP), AI9Stars]
+  kernel: [Triton]
+  hardware: [NVIDIA]
+  benchmarks: [KernelBench, TritonBench]
+- id: qimeng-attention
+  name: QiMeng-Attention
+  title: 'QiMeng-Attention: SOTA Attention Operator is generated by SOTA Attention Algorithm'
+  type: single-pass
+  date: 2025-07
+  venue: ACL Findings 2025
+  paper: https://aclanthology.org/2025.findings-acl.446/
+  institution: [Institute of Computing Technology (CAS)]
+  kernel: [CUDA]
+  hardware: [NVIDIA]
+- id: gpu-kernel-scientist
+  name: GPU Kernel Scientist
+  title: 'GPU Kernel Scientist: An LLM-Driven Framework for Iterative Kernel Optimization'
+  type: search
+  date: '2025-06-25'
+  venue: ICML Workshop 2025
+  paper: https://arxiv.org/abs/2506.20807
+  kernel: [CUDA]
+  hardware: [NVIDIA]
+- id: alphaevolve
+  name: AlphaEvolve
+  title: 'AlphaEvolve: A coding agent for scientific and algorithmic discovery'
+  type: general
+  date: '2025-06-13'
+  paper: https://arxiv.org/abs/2506.13131
+  code: https://github.com/google-deepmind/alphaevolve_results
+  institution: [Google DeepMind]
+- id: hpctranscompile
+  name: HPCTransCompile
+  title: 'HPCTransCompile: An AI Compiler Generated Dataset for High-Performance CUDA Transpilation and LLM Preliminary Exploration'
+  type: benchmark
+  date: '2025-06-12'
+  paper: https://arxiv.org/abs/2506.10401
+  code: https://github.com/PJLAB-CHIP/HPCTransCompile
+  institution: [Tongji University, Shanghai Artificial Intelligence Laboratory, Tsinghua University]
+  benchmarks: [KernelBench]
+- id: cuda-llm
+  name: CUDA-LLM
+  title: 'CUDA-LLM: LLMs Can Write Efficient CUDA Kernels'
+  type: search
+  date: '2025-06-10'
+  paper: https://arxiv.org/abs/2506.09092
+  institution: [Shanghai Jiao Tong University]
+  kernel: [CUDA]
+  hardware: [NVIDIA]
+- id: qimeng-mupa
+  name: QiMeng-MuPa
+  title: 'QiMeng-MuPa: Mutual-Supervised Learning for Sequential-to-Parallel Code Translation'
+  type: trained
+  date: 2025-06
+  venue: NeurIPS 2025
+  paper: https://proceedings.neurips.cc/paper_files/paper/2025/hash/d34f0c1158c1b8c4fcbe8fb2dbf0c552-Abstract-Conference.html
+  code: https://github.com/QiMeng-IPRC/QiMeng-MuPa
+  model: https://huggingface.co/collections/kcxain/qimeng-mupa
+  dataset: https://huggingface.co/datasets/kcxain/BabelTower
+  institution: [Institute of Computing Technology (CAS), University of Chinese Academy of Sciences, Institute of Microelectronics (CAS), Institute of Software (CAS)]
+  kernel: [CUDA]
+  hardware: [NVIDIA]
+- id: intelliperf
+  name: IntelliPerf
+  type: industry
+  date: 2025-06
+  code: https://github.com/AMDResearch/intelliperf
+  institution: [AMD Research]
+  kernel: [HIP, Triton]
+  hardware: [AMD]
+  summary: Profiling-guided LLM framework for AMD GPUs.
+- id: autocomp
+  name: Autocomp
+  title: 'Autocomp: A Powerful and Portable Code Optimizer for Tensor Accelerators'
+  type: search
+  date: '2025-05-20'
+  venue: NeurIPS Workshop 2025
+  paper: https://arxiv.org/abs/2505.18574
+  code: https://github.com/ucb-bar/autocomp
+  institution: [UC Berkeley]
+  hardware: [NVIDIA, AWS Neuron, Research accelerators]
+  benchmarks: [KernelBench]
+- id: qimeng-tensorop
+  name: QiMeng-TensorOp
+  title: 'QiMeng-TensorOp: One-Line Prompt is Enough for High-Performance Tensor Operator Generation with Hardware Primitives'
+  type: search
+  date: '2025-05-07'
+  venue: IJCAI 2025
+  paper: https://arxiv.org/abs/2505.06302
+  institution: [Institute of Computing Technology (CAS)]
+  kernel: [CUDA]
+  hardware: [NVIDIA, RISC-V]
+- id: qimeng-xpiler
+  name: QiMeng-Xpiler
+  title: 'QiMeng-Xpiler: Transcompiling Tensor Programs for Deep Learning Systems with a Neural-Symbolic Approach'
+  type: agentic
+  date: '2025-05-04'
+  venue: OSDI 2025
+  paper: https://arxiv.org/abs/2505.02146
+  institution: [Institute of Computing Technology (CAS), University of Science and Technology of China, Cambricon]
+  kernel: [CUDA, HIP]
+  hardware: [NVIDIA, AMD, CPU, Cambricon]
+- id: kernelllm
+  name: KernelLLM
+  type: industry
+  date: 2025-05
+  model: https://huggingface.co/facebook/KernelLLM
+  institution: [Meta]
+  kernel: [Triton]
+  hardware: [NVIDIA]
+  summary: Llama 3.1 8B fine-tuned on KernelBook (~25K torch-triton pairs).
+- id: intellikit
+  name: IntelliKit
+  type: tool
+  date: 2025-03
+  code: https://github.com/AMDResearch/intellikit
+  institution: [AMD Research]
+  kernel: [HIP]
+  hardware: [AMD]
+  summary: LLM-ready profiling toolkit for AMD GPUs.
+- id: tritonbench
+  name: TritonBench
+  title: 'TritonBench: Benchmarking Large Language Model Capabilities for Generating Triton Operators'
+  type: benchmark
+  date: 2025-02
+  venue: ACL Findings 2025
+  paper: https://aclanthology.org/2025.findings-acl.1183/
+  code: https://github.com/thunlp/TritonBench
+  model: https://huggingface.co/collections/LiShangZ/tritonbench-67c0016bc8a8654cfd612a1a
+  institution: [Tianjin University, Harbin Institute of Technology, Hong Kong University of Science and Technology (Guangzhou), Tsinghua University]
+  kernel: [Triton]
+  hardware: [NVIDIA]
+  benchmarks: [TritonBench]
+- id: qimeng-gemm
+  name: QiMeng-GEMM
+  title: 'QiMeng-GEMM: Automatically Generating High-Performance Matrix Multiplication Code by Exploiting Large Language Models'
+  type: search
+  date: 2025-02
+  venue: AAAI 2025
+  paper: https://ojs.aaai.org/index.php/AAAI/article/view/34461
+  institution: [Institute of Computing Technology (CAS)]
+  kernel: [CUDA]
+  hardware: [NVIDIA, RISC-V]
+- id: kernelbench-caesar
+  name: KernelBench
+  title: 'KernelBench: Can LLMs Write Efficient GPU Kernels?'
+  type: benchmark
+  date: 2025-02
+  venue: ICML 2025
+  paper: https://proceedings.mlr.press/v267/ouyang25a.html
+  code: https://github.com/ScalingIntelligence/KernelBench
+  dataset: https://huggingface.co/datasets/ScalingIntelligence/KernelBench
+  institution: [Stanford University, Princeton University]
+  kernel: [CUDA]
+  hardware: [NVIDIA]
+  benchmarks: [KernelBench]
+- id: ai-cuda-engineer
+  name: AI CUDA Engineer
+  title: Towards Robust Agentic CUDA Kernel Benchmarking, Verification, and Optimization
+  type: agentic
+  date: 2025-02
+  paper: https://arxiv.org/abs/2509.14279
+  dataset: https://huggingface.co/datasets/SakanaAI/AI-CUDA-Engineer-Archive
+  institution: [Sakana AI]
+  kernel: [CUDA]
+  hardware: [NVIDIA]
+  benchmarks: [KernelBench]
+- id: re-bench
+  name: RE-Bench
+  title: 'RE-Bench: Evaluating frontier AI R&D capabilities of language model agents against human experts'
+  type: general
+  date: '2024-11-22'
+  paper: https://arxiv.org/abs/2411.15114
+  institution: [METR]
+  kernel: [Triton]
+- id: vscuda
+  name: VSCuda
+  title: 'VSCuda: LLM based CUDA extension for Visual Studio Code'
+  type: single-pass
+  date: 2023-11
+  venue: SC Workshop 2023
+  paper: https://doi.org/10.1145/3624062.3624064
+  institution: [UC Riverside]
+  kernel: [CUDA]
+  hardware: [NVIDIA]

@@ -1,0 +1,152 @@
+# Trained kernel models
+
+[← README](../README.md) · 50 entries, newest first
+
+_Models trained (SFT, RL, distillation) specifically to write or optimize kernels._
+
+## 2026
+
+- **How to Train Your Little Dragon: Teaching a Small Language Model to Construct and Refine GPU Optimization Scripts** [![arXiv](https://img.shields.io/badge/arXiv-26.10-red)](https://arxiv.org/abs/2610.20980) [![Stars](https://img.shields.io/github/stars/Anna-Bele/How-To-Train-Your-Little-Dragon)](https://github.com/Anna-Bele/How-To-Train-Your-Little-Dragon)
+  - **Institution:** UC San Diego, Amazon
+  - **Type:** Trained model · **Kernel:** `TVM` · **Hardware:** NVIDIA
+- **ATRL: Compaction-Aware Reinforcement Learning For Ascend Triton Kernel Generation** [![arXiv](https://img.shields.io/badge/arXiv-26.10-red)](https://arxiv.org/abs/2610.23950)
+  - **Institution:** Huawei
+  - **Type:** Trained model · **Kernel:** `Triton` · **Hardware:** Ascend · **Benchmark:** KernelBench, NPUKernelBench
+- **KernelZero: Co-Evolving Proposer and Coder for Continuously Improved GPU Kernel Generation** [![arXiv](https://img.shields.io/badge/arXiv-26.09-red)](https://arxiv.org/abs/2609.33074) [![Stars](https://img.shields.io/github/stars/kcxain/KernelZero)](https://github.com/kcxain/KernelZero) [![Model](https://img.shields.io/badge/Model-HuggingFace-yellow)](https://huggingface.co/collections/kcxain/kernelzero)
+  - **Institution:** Institute of Computing Technology (CAS), University of Chinese Academy of Sciences, Institute of Software (CAS), Institute of AI for Industries (CAS)
+  - **Type:** Trained model · **Kernel:** `CUDA` `Triton` · **Hardware:** NVIDIA · **Benchmark:** KernelBench
+- **SynKer: Synthesize, Kernelize, Reinforce — Teaching GPU Kernel Generation to Small Language Models** [![OpenReview](https://img.shields.io/badge/OpenReview-26.09-lightgrey)](https://openreview.net/forum?id=nZQqqpYQ0Y)
+  - **Type:** Trained model · **Hardware:** NVIDIA
+- **REPAIR: Learning What to Optimize for Efficient Ascend Kernels** [![OpenReview](https://img.shields.io/badge/OpenReview-26.09-lightgrey)](https://openreview.net/forum?id=hn8g8PZY5F)
+  - **Type:** Trained model · **Hardware:** Ascend · **Benchmark:** MultiKernelBench
+- **KernelMaster: Agentic GPU Kernel Optimization from Semantics to Execution** [![OpenReview](https://img.shields.io/badge/OpenReview-26.09-lightgrey)](https://openreview.net/forum?id=rIc8lSAsw0) [![Code](https://img.shields.io/badge/Code-Anonymous-lightgrey)](https://anonymous.4open.science/r/KernelMaster-4A2B)
+  - **Type:** Trained model · **Kernel:** `CUDA` · **Hardware:** NVIDIA
+- **Hardware-in-the-Loop RL for OpenCL Optimization on Mobile GPUs** [![OpenReview](https://img.shields.io/badge/OpenReview-26.09-lightgrey)](https://openreview.net/forum?id=Ktya9054vX)
+  - **Type:** Trained model · **Kernel:** `OpenCL` · **Hardware:** NVIDIA, Mobile GPU
+- **Seeing Sparsity: Pattern-Guided Agents for Hardware-Adaptive SpMV Optimization** [![OpenReview](https://img.shields.io/badge/OpenReview-26.09-lightgrey)](https://openreview.net/forum?id=tDhF7c1KMz)
+  - **Type:** Trained model · **Hardware:** NVIDIA, AMD
+- **ModelParts: Model-Grounded Tasks and Roofline Rewards for Training Kernel Agents on Emerging Accelerators** [![OpenReview](https://img.shields.io/badge/OpenReview-26.09-lightgrey)](https://openreview.net/forum?id=yUa4J3DuzA)
+  - **Type:** Trained model · **Kernel:** `NKI` · **Hardware:** AWS Neuron
+- **KernelMosaic: An Open Dataset and Agentic Framework for CUDA Kernel Generation** [![OpenReview](https://img.shields.io/badge/OpenReview-26.09-lightgrey)](https://openreview.net/forum?id=AMenxeeqRp)
+  - **Type:** Trained model · **Kernel:** `CUDA` · **Hardware:** NVIDIA · **Benchmark:** KernelBench
+- **CUDACoach: Guiding CUDA Kernel Optimization with Diverse Strategies Learned from Verified Code** [![OpenReview](https://img.shields.io/badge/OpenReview-26.09-lightgrey)](https://openreview.net/forum?id=QiCosML9uw)
+  - **Type:** Trained model · **Kernel:** `CUDA` · **Hardware:** NVIDIA · **Benchmark:** KernelBench
+- **RvvCoder: ISA-Grounded LLMs for High-Performance RISC-V Vector Kernel Generation** [![OpenReview](https://img.shields.io/badge/OpenReview-26.09-lightgrey)](https://openreview.net/forum?id=Xi1nczXKQL)
+  - **Type:** Trained model · **Kernel:** `RVV` · **Hardware:** RISC-V
+- **FABRICA: Agentic CUDA-to-CSL Translation and Optimization for Wafer-Scale Systems** [![arXiv](https://img.shields.io/badge/arXiv-26.08-red)](https://arxiv.org/abs/2608.25124)
+  - **Institution:** University of Minnesota, Argonne National Laboratory, University of Chicago
+  - **Type:** Trained model · **Kernel:** `CSL` · **Hardware:** Cerebras
+- **RLEK: Reinforcement Learning from Environment Knowledge** [![OpenReview](https://img.shields.io/badge/OpenReview-26.08-lightgrey)](https://openreview.net/forum?id=trHfIrhMk3)
+  - **Type:** Trained model · **Hardware:** NVIDIA
+- **PTXBench: Evaluating and Adapting LLMs for GPU Kernel Optimization with Architecture-specific PTX** [![NeurIPS Workshop 2026](https://img.shields.io/badge/NeurIPS_Workshop-26-green)](https://arxiv.org/abs/2608.17379) [![Stars](https://img.shields.io/github/stars/zhang677/PTXBench)](https://github.com/zhang677/PTXBench) [![Model](https://img.shields.io/badge/Model-HuggingFace-yellow)](https://huggingface.co/collections/Genghan/ptxbench-qwen36-27b-sft-series) [![Dataset](https://img.shields.io/badge/Dataset-HuggingFace-yellow)](https://huggingface.co/datasets/AccRL/accrl-training) [![Blog](https://img.shields.io/badge/Blog-Stanford_University-blue)](https://zhang677.github.io/blog_md/ptxbench.html)
+  - **Institution:** Stanford University, Carnegie Mellon University, RadixArk
+  - **Type:** Trained model · **Kernel:** `CUDA` `PTX` `Triton` · **Hardware:** NVIDIA · **Benchmark:** FlashInfer-Bench
+- **LEAP** [![arXiv](https://img.shields.io/badge/arXiv-26.08-red)](https://arxiv.org/abs/2608.01804)
+  - *Multi-turn code RL prunes environment feedback adaptively instead of returning every compiler/test detail.*
+  - **Institution:** Moore Threads AI
+  - **Type:** Trained model · **Kernel:** `CUDA` · **Hardware:** NVIDIA · **Benchmark:** KernelBench
+- **CUDAPerf: Multi-turn RL with Structural and Performance Aware Rewards for CUDA Kernel Generation** [![arXiv](https://img.shields.io/badge/arXiv-26.07-red)](https://arxiv.org/abs/2607.20908)
+  - **Institution:** Iowa State University, Cisco AI Research
+  - **Type:** Trained model · **Kernel:** `CUDA` · **Hardware:** NVIDIA · **Benchmark:** KernelBench
+- **NKI-Agent / ATX Custom NKI Agent** [![arXiv](https://img.shields.io/badge/arXiv-26.07-red)](https://arxiv.org/abs/2607.04395) [![Stars](https://img.shields.io/github/stars/aws-samples/sample-ATX-custom-NKI-Agent)](https://github.com/aws-samples/sample-ATX-custom-NKI-Agent)
+  - *Compile-verify-fix agent plus domain SFT for Neuron kernels.*
+  - **Institution:** AWS
+  - **Type:** Trained model · **Kernel:** `NKI` · **Hardware:** AWS Neuron
+- **Hawk: Harnessing Hardware-Aware Knowledge for High-Performance NPU Kernel Generation** [![arXiv](https://img.shields.io/badge/arXiv-26.07-red)](https://arxiv.org/abs/2607.01590)
+  - **Institution:** Sun Yat-sen University, GBA National Technology Innovation Center, Peng Cheng Laboratory
+  - **Type:** Trained model · **Kernel:** `Ascend C` · **Hardware:** Ascend · **Benchmark:** CANN-Bench, MultiKernelBench
+- **Experience Graphs: The Data Foundation for Self-Improving Agents** [![arXiv](https://img.shields.io/badge/arXiv-26.06-red)](https://arxiv.org/abs/2606.29823)
+  - **Institution:** Meta, University of Maryland
+  - **Type:** Trained model
+- **daVinci-kernel: Co-Evolving Skill Selection, Summarization, and Utilization via RL for GPU Kernel Optimization** [![arXiv](https://img.shields.io/badge/arXiv-26.06-red)](https://arxiv.org/abs/2606.16497) [![Stars](https://img.shields.io/github/stars/GAIR-NLP/daVinci-kernel)](https://github.com/GAIR-NLP/daVinci-kernel)
+  - **Institution:** Shanghai Innovation Institute, Shanghai Jiao Tong University, GAIR
+  - **Type:** Trained model · **Kernel:** `CUDA` `Triton` · **Hardware:** NVIDIA · **Benchmark:** KernelBench
+- **MusaCoder: Native GPU Kernel Generation with Full-Stack Training on Moore Threads GPU** [![arXiv](https://img.shields.io/badge/arXiv-26.06-red)](https://arxiv.org/abs/2606.04847) [![Model](https://img.shields.io/badge/Model-HuggingFace-yellow)](https://huggingface.co/MooreThreads/MusaCoder-27B)
+  - **Institution:** Moore Threads
+  - **Type:** Trained model · **Kernel:** `MUSA C` `CUDA` · **Hardware:** NVIDIA, Moore Threads · **Benchmark:** KernelBench
+- **GPU Forecasters: Language Models as Selective Surrogates for Kernel Runtime Optimization** [![arXiv](https://img.shields.io/badge/arXiv-26.05-red)](https://arxiv.org/abs/2605.31464) [![Stars](https://img.shields.io/github/stars/codezakh/gpu-forecasters)](https://github.com/codezakh/gpu-forecasters) [![Model](https://img.shields.io/badge/Model-HuggingFace-yellow)](https://huggingface.co/codezakh/gpu-forecasters-gpt-oss-20b-correctness-brier) [![Dataset](https://img.shields.io/badge/Dataset-HuggingFace-yellow)](https://huggingface.co/datasets/codezakh/gpu-forecasters-puct-search-events)
+  - **Institution:** University of North Carolina at Chapel Hill, Allen Institute for AI, Johns Hopkins University, University of Texas at Austin
+  - **Type:** Trained model · **Hardware:** NVIDIA
+- **Step-TP: A Grounded, Step-Level Dataset with Chain-of-Thought Reasoning for LLM-Guided Tensor Program Optimization** [![arXiv](https://img.shields.io/badge/arXiv-26.05-red)](https://arxiv.org/abs/2605.25954) [![Stars](https://img.shields.io/github/stars/LIUMENGFAN-gif/StepTP)](https://github.com/LIUMENGFAN-gif/StepTP)
+  - **Institution:** University of Hong Kong, Ant Group, University of Science and Technology of China
+  - **Type:** Trained model · **Kernel:** `TVM` · **Hardware:** NVIDIA
+- **AMDKernelVault: Large-Scale Datasets and Agentic Training for AMD GPU Kernel Optimization** [![arXiv](https://img.shields.io/badge/arXiv-26.09-red)](https://arxiv.org/abs/2609.12471) [![Stars](https://img.shields.io/github/stars/AMD-AGI/AMDKernelVault)](https://github.com/AMD-AGI/AMDKernelVault) [![Dataset](https://img.shields.io/badge/Dataset-HuggingFace-yellow)](https://huggingface.co/datasets/amd/AIG-Datasets)
+  - **Institution:** AMD
+  - **Type:** Trained model · **Kernel:** `HIP` `Triton` · **Hardware:** AMD · **Benchmark:** KernelBench, TritonBench
+- **Kernel-Smith: A Unified Recipe for Evolutionary Kernel Optimization** [![ICML Workshop 2026](https://img.shields.io/badge/ICML_Workshop-26-green)](https://arxiv.org/abs/2603.28342)
+  - **Institution:** Shanghai AI Laboratory
+  - **Type:** Trained model · **Kernel:** `Triton` · **Hardware:** NVIDIA · **Benchmark:** KernelBench
+- **DRTriton: Large-Scale Synthetic Data Driven Reinforcement Learning for Triton Kernel Generation** [![arXiv](https://img.shields.io/badge/arXiv-26.03-red)](https://arxiv.org/abs/2603.21465)
+  - **Institution:** Texas A&M University
+  - **Type:** Trained model · **Kernel:** `Triton` · **Hardware:** NVIDIA · **Benchmark:** KernelBench
+- **EvoKernel: Towards Cold-Start Drafting and Continual Refining: A Value-Driven Memory Approach with Application to NPU Kernel Synthesis** [![ICML 2026](https://img.shields.io/badge/ICML-26-green)](https://arxiv.org/abs/2603.10846) [![Project](https://img.shields.io/badge/Project-Page-blue)](https://evokernel.zhuo.li)
+  - **Institution:** Shanghai Jiao Tong University
+  - **Type:** Trained model · **Kernel:** `Ascend C` · **Hardware:** Ascend · **Benchmark:** KernelBench
+- **StitchCUDA: An Automated Multi-Agents End-to-End GPU Programing Framework with Rubric-based Agentic Reinforcement Learning** [![ICML 2026](https://img.shields.io/badge/ICML-26-green)](https://arxiv.org/abs/2603.02637)
+  - **Institution:** University of Minnesota
+  - **Type:** Trained model · **Kernel:** `CUDA` · **Hardware:** NVIDIA · **Benchmark:** KernelBench
+- **DSL-Monkeys: Self-Generated In-Context Examples for Low-Resource GPU DSL Kernels** [![ICLR Workshop 2026](https://img.shields.io/badge/ICLR_Workshop-26-green)](https://openreview.net/forum?id=2yS4j1C3zi)
+  - **Type:** Trained model · **Kernel:** `TileLang` `ThunderKittens` · **Hardware:** NVIDIA · **Benchmark:** KernelBench
+- **CUDA Agent: Large-Scale Agentic RL for High-Performance CUDA Kernel Generation** [![arXiv](https://img.shields.io/badge/arXiv-26.02-red)](https://arxiv.org/abs/2602.24286) [![Stars](https://img.shields.io/github/stars/BytedTsinghua-SIA/CUDA-Agent)](https://github.com/BytedTsinghua-SIA/CUDA-Agent) [![Dataset](https://img.shields.io/badge/Dataset-HuggingFace-yellow)](https://huggingface.co/datasets/BytedTsinghua-SIA/CUDA-Agent-Ops-6K) [![Project](https://img.shields.io/badge/Project-Page-blue)](https://cuda-agent.github.io)
+  - **Institution:** ByteDance, Tsinghua University
+  - **Type:** Trained model · **Kernel:** `CUDA` · **Hardware:** NVIDIA · **Benchmark:** KernelBench
+- **KernelBlaster: Continual Cross-Task CUDA Optimization via Memory-Augmented In-Context Reinforcement Learning** [![arXiv](https://img.shields.io/badge/arXiv-26.02-red)](https://arxiv.org/abs/2602.14293)
+  - **Institution:** NVIDIA, UC Berkeley
+  - **Type:** Trained model · **Kernel:** `CUDA` · **Hardware:** NVIDIA · **Benchmark:** KernelBench
+- **OptiML: An End-to-End Framework for Program Synthesis and CUDA Kernel Optimization** [![arXiv](https://img.shields.io/badge/arXiv-26.02-red)](https://arxiv.org/abs/2602.12305)
+  - **Institution:** Iowa State University
+  - **Type:** Trained model · **Kernel:** `CUDA` · **Hardware:** NVIDIA
+- **DICE: Diffusion Large Language Models Excel at Generating CUDA Kernels** [![arXiv](https://img.shields.io/badge/arXiv-26.02-red)](https://arxiv.org/abs/2602.11715) [![Stars](https://img.shields.io/github/stars/deadlykitten4/DICE)](https://github.com/deadlykitten4/DICE)
+  - **Institution:** Westlake University
+  - **Type:** Trained model · **Kernel:** `CUDA` · **Hardware:** NVIDIA · **Benchmark:** KernelBench
+- **Makora: Fine-Tuning GPT-5 for GPU Kernel Generation** [![arXiv](https://img.shields.io/badge/arXiv-26.02-red)](https://arxiv.org/abs/2602.11000)
+  - **Institution:** Makora
+  - **Type:** Trained model · **Kernel:** `Triton` · **Hardware:** NVIDIA · **Benchmark:** KernelBench
+- **Surprisal-Guided Selection: Compute-Optimal Test-Time Strategies for Execution-Grounded Code Generation** [![arXiv](https://img.shields.io/badge/arXiv-26.02-red)](https://arxiv.org/abs/2602.07670) [![Stars](https://img.shields.io/github/stars/jbarnes850/test-time-training)](https://github.com/jbarnes850/test-time-training) [![Model](https://img.shields.io/badge/Model-HuggingFace-yellow)](https://huggingface.co/Jarrodbarnes/KernelBench-RLVR-120b)
+  - **Institution:** Arc Intelligence
+  - **Type:** Trained model · **Benchmark:** KernelBench
+- **DR. KERNEL: Reinforcement Learning Done Right for Triton Kernel Generations** [![ICML 2026](https://img.shields.io/badge/ICML-26-green)](https://arxiv.org/abs/2602.05885) [![Stars](https://img.shields.io/github/stars/hkust-nlp/KernelGYM)](https://github.com/hkust-nlp/KernelGYM)
+  - **Institution:** Hong Kong University of Science and Technology
+  - **Type:** Trained model · **Kernel:** `Triton` · **Hardware:** NVIDIA · **Benchmark:** KernelBench
+- **SparseRL: Mastering Sparse CUDA Generation through Pretrained Models and Deep Reinforcement Learning** [![ICLR 2026](https://img.shields.io/badge/ICLR-26-green)](https://openreview.net/forum?id=VdLEaGPYWT) [![Stars](https://img.shields.io/github/stars/QiWu-NCIC/SparseRL)](https://github.com/QiWu-NCIC/SparseRL)
+  - **Institution:** Institute of Computing Technology (CAS), University of Chinese Academy of Sciences, Hong Kong University of Science and Technology
+  - **Type:** Trained model · **Kernel:** `CUDA` · **Hardware:** NVIDIA
+- **AscendKernelGen: LLM-Driven Kernel Generation for NPUs** [![ACL Findings 2026](https://img.shields.io/badge/ACL_Findings-26-green)](https://arxiv.org/abs/2601.07160) [![Dataset](https://img.shields.io/badge/Dataset-HuggingFace-yellow)](https://huggingface.co/datasets/AscendKernelGen/Ascend-COT-v1)
+  - **Institution:** Peng Cheng Laboratory
+  - **Type:** Trained model · **Kernel:** `Ascend C` · **Hardware:** Ascend · **Benchmark:** NPUKernelBench
+
+## 2025
+
+- **KernelEvolve: Scaling Agentic Kernel Coding for Heterogeneous AI Accelerators at Meta** [![ISCA 2026](https://img.shields.io/badge/ISCA-26-green)](https://arxiv.org/abs/2512.23236) [![Blog](https://img.shields.io/badge/Blog-Meta-blue)](https://engineering.fb.com/2026/04/02/developer-tools/kernelevolve-how-metas-ranking-engineer-agent-optimizes-ai-infrastructure)
+  - **Institution:** Meta
+  - **Type:** Trained model · **Kernel:** `CUDA` `Triton` `TileLang` `CUTLASS` `HIP` · **Hardware:** NVIDIA, Meta MTIA · **Benchmark:** KernelBench
+- **TritonForge: Profiling-Guided Framework for Automated Triton Kernel Optimization** [![ICSE Workshop 2026](https://img.shields.io/badge/ICSE_Workshop-26-green)](https://arxiv.org/abs/2512.09196) [![Stars](https://img.shields.io/github/stars/RLsys-Foundation/TritonForge)](https://github.com/RLsys-Foundation/TritonForge)
+  - **Institution:** RLsys Foundation
+  - **Type:** Trained model · **Kernel:** `Triton` · **Hardware:** NVIDIA, AMD · **Benchmark:** TritonBench
+- **CUDA-L2: Surpassing cuBLAS Performance for Matrix Multiplication through Reinforcement Learning** [![arXiv](https://img.shields.io/badge/arXiv-25.12-red)](https://arxiv.org/abs/2512.02551) [![Stars](https://img.shields.io/github/stars/ornith-ai/CUDA-L2)](https://github.com/ornith-ai/CUDA-L2)
+  - **Institution:** DeepReinforce
+  - **Type:** Trained model · **Kernel:** `CUDA` · **Hardware:** NVIDIA
+- **QiMeng-Kernel: Macro-Thinking Micro-Coding Paradigm for LLM-Based High-Performance GPU Kernel Generation** [![AAAI 2026](https://img.shields.io/badge/AAAI-26-green)](https://arxiv.org/abs/2511.20100) [![Stars](https://img.shields.io/github/stars/QiMeng-IPRC/QiMeng-Kernel)](https://github.com/QiMeng-IPRC/QiMeng-Kernel)
+  - **Institution:** Institute of Computing Technology (CAS)
+  - **Type:** Trained model · **Kernel:** `CUDA` · **Hardware:** NVIDIA · **Benchmark:** KernelBench, TritonBench
+- **Integrating Performance Tools in Model Reasoning for GPU Kernel Optimization** [![arXiv](https://img.shields.io/badge/arXiv-25.10-red)](https://arxiv.org/abs/2510.17158)
+  - **Institution:** Lawrence Livermore National Laboratory, University of Maryland
+  - **Type:** Trained model · **Hardware:** NVIDIA
+- **TritonRL: Training LLMs to Think and Code Triton Without Cheating** [![COLM 2026](https://img.shields.io/badge/COLM-26-green)](https://arxiv.org/abs/2510.17891)
+  - **Institution:** Carnegie Mellon University, Amazon
+  - **Type:** Trained model · **Kernel:** `Triton` · **Hardware:** NVIDIA · **Benchmark:** KernelBench, TritonBench
+- **ConCuR: Conciseness Makes State-of-the-Art Kernel Generation** [![arXiv](https://img.shields.io/badge/arXiv-25.10-red)](https://arxiv.org/abs/2510.07356) [![Model](https://img.shields.io/badge/Model-HuggingFace-yellow)](https://huggingface.co/lkongam/KernelCoder)
+  - **Institution:** Hong Kong University of Science and Technology
+  - **Type:** Trained model · **Kernel:** `Triton` · **Hardware:** NVIDIA · **Benchmark:** KernelBench
+- **CUDA-L1: Improving CUDA Optimization via Contrastive Reinforcement Learning** [![ICLR 2026](https://img.shields.io/badge/ICLR-26-green)](https://arxiv.org/abs/2507.14111) [![Stars](https://img.shields.io/github/stars/ornith-ai/CUDA-L1)](https://github.com/ornith-ai/CUDA-L1)
+  - **Institution:** DeepReinforce
+  - **Type:** Trained model · **Kernel:** `CUDA` · **Hardware:** NVIDIA · **Benchmark:** KernelBench
+- **Kevin: Multi-Turn RL for Generating CUDA Kernels** [![ICLR 2026](https://img.shields.io/badge/ICLR-26-green)](https://arxiv.org/abs/2507.11948)
+  - **Institution:** Cognition
+  - **Type:** Trained model · **Kernel:** `CUDA` · **Hardware:** NVIDIA · **Benchmark:** KernelBench
+- **AutoTriton: Automatic Triton Programming with Reinforcement Learning in LLMs** [![arXiv](https://img.shields.io/badge/arXiv-25.07-red)](https://arxiv.org/abs/2507.05687) [![Stars](https://img.shields.io/github/stars/AI9Stars/AutoTriton)](https://github.com/AI9Stars/AutoTriton)
+  - **Institution:** Tsinghua University (THUNLP), AI9Stars
+  - **Type:** Trained model · **Kernel:** `Triton` · **Hardware:** NVIDIA · **Benchmark:** KernelBench, TritonBench
+- **QiMeng-MuPa: Mutual-Supervised Learning for Sequential-to-Parallel Code Translation** [![NeurIPS 2025](https://img.shields.io/badge/NeurIPS-25-green)](https://proceedings.neurips.cc/paper_files/paper/2025/hash/d34f0c1158c1b8c4fcbe8fb2dbf0c552-Abstract-Conference.html) [![Stars](https://img.shields.io/github/stars/QiMeng-IPRC/QiMeng-MuPa)](https://github.com/QiMeng-IPRC/QiMeng-MuPa) [![Model](https://img.shields.io/badge/Model-HuggingFace-yellow)](https://huggingface.co/collections/kcxain/qimeng-mupa) [![Dataset](https://img.shields.io/badge/Dataset-HuggingFace-yellow)](https://huggingface.co/datasets/kcxain/BabelTower)
+  - **Institution:** Institute of Computing Technology (CAS), University of Chinese Academy of Sciences, Institute of Microelectronics (CAS), Institute of Software (CAS)
+  - **Type:** Trained model · **Kernel:** `CUDA` · **Hardware:** NVIDIA

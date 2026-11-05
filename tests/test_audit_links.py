@@ -4,17 +4,16 @@ from urllib.error import HTTPError
 import unittest
 from unittest.mock import patch
 
-from scripts.audit_links import check_url, collect_urls
-from scripts.lib.loader import load_catalog
+from scripts.audit_links import check_url, collect_urls, load_entries
 
 
 class LinkAuditTests(unittest.TestCase):
-    def test_collect_urls_includes_claim_and_typed_evidence(self) -> None:
-        urls = collect_urls(load_catalog())
-        self.assertIn("https://arxiv.org/abs/2602.24286", urls)
-        usage_types = {usage["type"] for usage in urls["https://arxiv.org/abs/2602.24286"]}
+    def test_collect_urls_covers_papers_and_code(self) -> None:
+        urls = collect_urls(load_entries())
+        usage_types = {usage["type"] for usages in urls.values() for usage in usages}
         self.assertIn("paper", usage_types)
-        self.assertIn("claim-primary-source", usage_types)
+        self.assertIn("code", usage_types)
+        self.assertTrue(all(url.startswith("https://") for url in urls))
 
     @patch("scripts.audit_links._request")
     def test_head_404_is_confirmed_with_get(self, request) -> None:

@@ -13,7 +13,7 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  deterministic-catalog:
+  readme:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -22,20 +22,9 @@ jobs:
           python-version: "3.11"
           cache: pip
           cache-dependency-path: requirements-dev.txt
-      - name: Install validation dependencies
+      - name: Install dependencies
         run: python3 -m pip install -r requirements-dev.txt
-      - name: Validate schema and semantics
-        run: python3 scripts/validate.py
+      - name: Validate data and check README.md / browse/ are up to date
+        run: python3 scripts/build_readme.py --check
       - name: Run tests
         run: python3 -m unittest discover -s tests -p 'test_*.py' -v
-      - name: Regenerate every derived artifact
-        run: python3 scripts/generate.py
-      - name: Verify committed outputs
-        run: |
-          git diff --exit-code
-          if test -n "$(git ls-files --others --exclude-standard)"; then
-            git ls-files --others --exclude-standard
-            exit 1
-          fi
-      - name: Verify idempotence
-        run: python3 scripts/generate.py --check

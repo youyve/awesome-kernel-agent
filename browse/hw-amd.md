@@ -1,0 +1,104 @@
+# Hardware: AMD
+
+[← README](../README.md) · 29 entries, newest first
+
+## 2026
+
+- **HPCAgent-Bench: A Framework for Sound Benchmarking of Code-Optimizing Agents, Harnesses, and Skills** [![arXiv](https://img.shields.io/badge/arXiv-26.10-red)](https://arxiv.org/abs/2610.20673) [![Stars](https://img.shields.io/github/stars/spcl/HPCAgent-Bench)](https://github.com/spcl/HPCAgent-Bench)
+  - **Institution:** ETH Zurich, Institute of High Performance Computing (A\*STAR)
+  - **Type:** Benchmark · **Hardware:** NVIDIA, AMD
+- **TileCas: Cascading Kernel Development Across Programming Abstractions** [![arXiv](https://img.shields.io/badge/arXiv-26.10-red)](https://arxiv.org/abs/2610.14740) [![Stars](https://img.shields.io/github/stars/TongmingLAIC/tilecas)](https://github.com/TongmingLAIC/tilecas)
+  - **Institution:** Fudan University, University of Texas at Dallas, Peking University, Beijing Tongming Lake Information Technology Application Innovation Center
+  - **Type:** Agentic workflow · **Kernel:** `TileLang` `Ascend C` `HIP` · **Hardware:** AMD, Ascend · **Benchmark:** KernelBench
+- **KREX** [![arXiv](https://img.shields.io/badge/arXiv-26.09-red)](https://arxiv.org/abs/2609.30057)
+  - *Runtime for interference-controlled kernel benchmarking on shared GPUs.*
+  - **Institution:** Hong Kong University of Science and Technology, Alibaba
+  - **Type:** Tool · **Hardware:** NVIDIA, AMD
+- **Xtrace** [![arXiv](https://img.shields.io/badge/arXiv-26.09-red)](https://arxiv.org/abs/2609.28769) [![Project](https://img.shields.io/badge/Project-Page-blue)](https://g-watch.github.io) [![Artifacts](https://img.shields.io/badge/Artifacts-g--watch.github.io-lightgrey)](https://g-watch.github.io/en/open-traces)
+  - *Binary-instrumentation tracing infrastructure with GPU kernel-agent case studies.*
+  - **Institution:** National University of Singapore, Meta
+  - **Type:** Tool · **Hardware:** NVIDIA, AMD
+- **Seeing Sparsity: Pattern-Guided Agents for Hardware-Adaptive SpMV Optimization** [![OpenReview](https://img.shields.io/badge/OpenReview-26.09-lightgrey)](https://openreview.net/forum?id=tDhF7c1KMz)
+  - **Type:** Trained model · **Hardware:** NVIDIA, AMD
+- **AsmEvo: Agentic Assembly-Level Optimization of AMD GPU Kernels with Functional Equivalence Verification** [![arXiv](https://img.shields.io/badge/arXiv-26.08-red)](https://arxiv.org/abs/2608.20711)
+  - **Institution:** AMD, Southern University of Science and Technology
+  - **Type:** Agentic workflow · **Kernel:** `AMDGPU ISA` · **Hardware:** AMD · **Benchmark:** KernelBench
+- **SHADB: From Custom-Fit to Portable: Bridging the Gap Between Synthesized and Engineered GPU Query Execution** [![arXiv](https://img.shields.io/badge/arXiv-26.07-red)](https://arxiv.org/abs/2607.07632) [![Stars](https://img.shields.io/gitlab/stars/dislab%2FSHADB?gitlab_url=https%3A%2F%2Fgitlab.eurecom.fr)](https://gitlab.eurecom.fr/dislab/SHADB)
+  - **Institution:** EURECOM
+  - **Type:** Agentic workflow · **Kernel:** `CUDA` `HIP` · **Hardware:** NVIDIA, AMD
+- **GEAK v4** [![Stars](https://img.shields.io/github/stars/AMD-AGI/GEAK)](https://github.com/AMD-AGI/GEAK) [![Project](https://img.shields.io/badge/Project-Page-blue)](https://rocm.docs.amd.com/projects/geak/en/latest) [![Blog](https://img.shields.io/badge/Blog-AMD-blue)](https://www.amd.com/en/developer/resources/technical-articles/2026/geak-v4.html)
+  - *AMD's multi-agent kernel optimizer spans HIP, Triton, FlyDSL, TileLang and Composable Kernel.*
+  - **Institution:** AMD-AGI
+  - **Type:** Open-source / industry system · **Kernel:** `HIP` `Triton` `FlyDSL` `TileLang` `Composable Kernel` · **Hardware:** AMD
+- **Kernel Forge: An Agent Harness for LLM-based Generation and Optimization of CUDA Kernels** [![arXiv](https://img.shields.io/badge/arXiv-26.07-red)](https://arxiv.org/abs/2607.24762) [![Stars](https://img.shields.io/github/stars/TheJoshBrod/KernelForge)](https://github.com/TheJoshBrod/KernelForge)
+  - **Institution:** University of Michigan
+  - **Type:** Search & evolution · **Kernel:** `CUDA` `Triton` · **Hardware:** NVIDIA, AMD
+- **Atrex Kernel Agent (AKA): Are LLM-Generated GPU Kernels Production-Ready? A Trace-Driven Benchmark and Optimization Agent** [![arXiv](https://img.shields.io/badge/arXiv-26.07-red)](https://arxiv.org/abs/2607.14541) [![Stars](https://img.shields.io/github/stars/alibaba/atrex-kernel-agent)](https://github.com/alibaba/atrex-kernel-agent) [![Release notes](https://img.shields.io/badge/Release-Notes-blue)](https://github.com/alibaba/atrex-kernel-agent/releases/tag/v0.3.0)
+  - **Institution:** ATREX Team, Alibaba Group
+  - **Type:** Agentic workflow · **Kernel:** `FlyDSL` `Triton` `CUDA` `Gluon` `CUTLASS` `CuTe` `TileLang` · **Hardware:** NVIDIA, AMD, T-Head PPU
+- **AgentKernelArena: Generalization-Aware Benchmarking of GPU Kernel Optimization Agents** [![arXiv](https://img.shields.io/badge/arXiv-26.05-red)](https://arxiv.org/abs/2605.16819) [![Stars](https://img.shields.io/github/stars/AMD-AGI/AgentKernelArena)](https://github.com/AMD-AGI/AgentKernelArena)
+  - **Institution:** AMD
+  - **Type:** Benchmark · **Kernel:** `HIP` `Triton` · **Hardware:** AMD
+- **AMDKernelVault: Large-Scale Datasets and Agentic Training for AMD GPU Kernel Optimization** [![arXiv](https://img.shields.io/badge/arXiv-26.09-red)](https://arxiv.org/abs/2609.12471) [![Stars](https://img.shields.io/github/stars/AMD-AGI/AMDKernelVault)](https://github.com/AMD-AGI/AMDKernelVault) [![Dataset](https://img.shields.io/badge/Dataset-HuggingFace-yellow)](https://huggingface.co/datasets/amd/AIG-Datasets)
+  - **Institution:** AMD
+  - **Type:** Trained model · **Kernel:** `HIP` `Triton` · **Hardware:** AMD · **Benchmark:** KernelBench, TritonBench
+- **Ave: Guiding Agentic GPU Optimization Using Data-Flow Invariants** [![SOSP 2026](https://img.shields.io/badge/SOSP-26-green)](https://arxiv.org/abs/2604.18616)
+  - **Institution:** CausalFlow, Hong Kong University of Science and Technology, University of Chinese Academy of Sciences, UC Riverside, Tsinghua University, Stanford University
+  - **Type:** Agentic workflow · **Kernel:** `HIP` · **Hardware:** AMD · **Benchmark:** KernelBench
+- **Record-Remix-Replay: Hierarchical GPU Kernel Optimization using Evolutionary Search** [![arXiv](https://img.shields.io/badge/arXiv-26.04-red)](https://arxiv.org/abs/2604.11109) [![Stars](https://img.shields.io/github/stars/llnl/Mneme)](https://github.com/llnl/Mneme)
+  - **Institution:** Lawrence Livermore National Laboratory
+  - **Type:** Search & evolution · **Hardware:** NVIDIA, AMD
+- **ROCm Hyperloom** [![Stars](https://img.shields.io/github/stars/AMD-AGI/Hyperloom)](https://github.com/AMD-AGI/Hyperloom) [![Project](https://img.shields.io/badge/Project-Page-blue)](https://rocm.docs.amd.com/projects/hyperloom/en/latest/index.html) [![Blog](https://img.shields.io/badge/Blog-AMD-blue)](https://rocm.blogs.amd.com/software-tools-optimization/hyperloom-optimization/README.html) [![Artifacts](https://img.shields.io/badge/Artifacts-GitHub-lightgrey)](https://github.com/AMD-AGI/Hyperloom/tree/79856335c65047ac11264132167def97047f83e5/.cursor/skills/inference-optimization/results/qwen3-14b-mi355x)
+  - *Multi-agent inference optimization across serving settings, framework source, and generated GPU kernels, with independent end-to-end measurement and a reusable recipe knowledge base.*
+  - **Institution:** AMD
+  - **Type:** Open-source / industry system · **Kernel:** `HIP` `Triton` `FlyDSL` · **Hardware:** AMD
+- **KernelCraft: Benchmarking for Agentic Close-to-Metal Kernel Generation on Emerging Hardware** [![ICML 2026](https://img.shields.io/badge/ICML-26-green)](https://proceedings.mlr.press/v306/nie26c.html) [![Project](https://img.shields.io/badge/Project-Page-blue)](https://kernelcraft-cam.github.io)
+  - **Institution:** University of Cambridge, Imperial College London, AMD, University of Edinburgh
+  - **Type:** Benchmark · **Kernel:** `Assembly` · **Hardware:** NVIDIA, AMD, Google TPU, RISC-V, Research accelerators
+- **Apex** [![Stars](https://img.shields.io/github/stars/AMD-AGI/Apex)](https://github.com/AMD-AGI/Apex)
+  - *Agent harness (Claude Code/Codex/Cursor Agent backends) that iterates HIP/Triton kernels against a compile+correctness+speedup grader across 12 LLM-serving kernel types (flash attn, MoE, GEMM, RoPE, K.*
+  - **Institution:** AMD
+  - **Type:** Open-source / industry system · **Kernel:** `HIP` `Triton` · **Hardware:** AMD
+- **TTT-Discover: Learning to Discover at Test Time** [![ICML 2026](https://img.shields.io/badge/ICML-26-green)](https://proceedings.mlr.press/v306/yuksekgonul26a.html) [![Stars](https://img.shields.io/github/stars/test-time-training/discover)](https://github.com/test-time-training/discover) [![Project](https://img.shields.io/badge/Project-Page-blue)](https://test-time-training.github.io/discover)
+  - **Institution:** Stanford University, UC San Diego, Together AI, Astera Institute, NVIDIA
+  - **Type:** General-purpose system · **Hardware:** NVIDIA, AMD
+- **GEAK-Triton v2** [![Stars](https://img.shields.io/github/stars/AMD-AGI/GEAK)](https://github.com/AMD-AGI/GEAK) [![Blog](https://img.shields.io/badge/Blog-AMD-blue)](https://rocm.blogs.amd.com/artificial-intelligence/geak-agents-family/README.html)
+  - *Extension of the GEAK family for AMD GPUs.*
+  - **Institution:** AMD-AGI
+  - **Type:** Open-source / industry system · **Kernel:** `Triton` · **Hardware:** AMD
+- **GEAK-HIP** [![Stars](https://img.shields.io/github/stars/AMD-AGI/GEAK)](https://github.com/AMD-AGI/GEAK) [![Blog](https://img.shields.io/badge/Blog-AMD-blue)](https://rocm.blogs.amd.com/software-tools-optimization/geak-hip-optimizations/README.html)
+  - *GEAK extension for iterative HIP-kernel optimization on AMD GPUs.*
+  - **Institution:** AMD-AGI
+  - **Type:** Open-source / industry system · **Kernel:** `HIP` · **Hardware:** AMD
+
+## 2025
+
+- **PEAK: A Performance Engineering AI-Assistant for GPU Kernels Powered by Natural Language Transformations** [![arXiv](https://img.shields.io/badge/arXiv-25.12-red)](https://arxiv.org/abs/2512.19018)
+  - **Institution:** Stanford University, Microsoft Research
+  - **Type:** Agentic workflow · **Kernel:** `CUDA` `HIP` · **Hardware:** NVIDIA, AMD
+- **TritonForge: Profiling-Guided Framework for Automated Triton Kernel Optimization** [![ICSE Workshop 2026](https://img.shields.io/badge/ICSE_Workshop-26-green)](https://arxiv.org/abs/2512.09196) [![Stars](https://img.shields.io/github/stars/RLsys-Foundation/TritonForge)](https://github.com/RLsys-Foundation/TritonForge)
+  - **Institution:** RLsys Foundation
+  - **Type:** Trained model · **Kernel:** `Triton` · **Hardware:** NVIDIA, AMD · **Benchmark:** TritonBench
+- **KForge: A Multi-Agent System for Cross-Platform Kernel Synthesis** [![ICML Workshop 2026](https://img.shields.io/badge/ICML_Workshop-26-green)](https://arxiv.org/abs/2606.02963)
+  - **Institution:** Gimlet Labs
+  - **Type:** Agentic workflow · **Kernel:** `Triton` `CUDA` `CUTLASS` `HIP` `SYCL` `Metal` · **Hardware:** NVIDIA, AMD, Intel, Apple · **Benchmark:** KernelBench
+- **Opal: A Modular Framework for Optimizing Performance using Analytics and LLMs** [![arXiv](https://img.shields.io/badge/arXiv-25.10-red)](https://arxiv.org/abs/2510.00932)
+  - **Institution:** Texas State University, University of Novi Sad
+  - **Type:** Single-pass / tooling · **Hardware:** NVIDIA, AMD
+- **SwizzlePerf: Hardware-Aware LLMs for GPU Kernel Performance Optimization** [![NeurIPS Workshop 2025](https://img.shields.io/badge/NeurIPS_Workshop-25-green)](https://arxiv.org/abs/2508.20258)
+  - **Institution:** Harvard University, AMD
+  - **Type:** Agentic workflow · **Kernel:** `Triton` · **Hardware:** AMD
+- **GEAK: Introducing Triton Kernel AI Agent & Evaluation Benchmarks** [![arXiv](https://img.shields.io/badge/arXiv-25.07-red)](https://arxiv.org/abs/2507.23194) [![Stars](https://img.shields.io/github/stars/AMD-AGI/GEAK)](https://github.com/AMD-AGI/GEAK)
+  - **Institution:** AMD-AGI
+  - **Type:** Agentic workflow · **Kernel:** `Triton` · **Hardware:** AMD · **Benchmark:** TritonBench
+- **IntelliPerf** [![Stars](https://img.shields.io/github/stars/AMDResearch/intelliperf)](https://github.com/AMDResearch/intelliperf)
+  - *Profiling-guided LLM framework for AMD GPUs.*
+  - **Institution:** AMD Research
+  - **Type:** Open-source / industry system · **Kernel:** `HIP` `Triton` · **Hardware:** AMD
+- **QiMeng-Xpiler: Transcompiling Tensor Programs for Deep Learning Systems with a Neural-Symbolic Approach** [![OSDI 2025](https://img.shields.io/badge/OSDI-25-green)](https://arxiv.org/abs/2505.02146)
+  - **Institution:** Institute of Computing Technology (CAS), University of Science and Technology of China, Cambricon
+  - **Type:** Agentic workflow · **Kernel:** `CUDA` `HIP` · **Hardware:** NVIDIA, AMD, CPU, Cambricon
+- **IntelliKit** [![Stars](https://img.shields.io/github/stars/AMDResearch/intellikit)](https://github.com/AMDResearch/intellikit)
+  - *LLM-ready profiling toolkit for AMD GPUs.*
+  - **Institution:** AMD Research
+  - **Type:** Tool · **Kernel:** `HIP` · **Hardware:** AMD
