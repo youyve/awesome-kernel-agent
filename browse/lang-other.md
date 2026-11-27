@@ -1,11 +1,20 @@
 # Kernel language: other
 
-[← README](../README.md) · 15 entries, newest first
+[← README](../README.md) · 18 entries, newest first
 
 ## 2026
 
+- **Migrating a Legacy Scientific Application with an AI Coding Agent: NICAM from Fortran to Kokkos** [![arXiv](https://img.shields.io/badge/arXiv-26.10-red)](https://arxiv.org/abs/2610.41313)
+  - **Institution:** University of Tokyo, National Institute for Environmental Studies
+  - **Type:** Application · **Kernel:** `Kokkos` · **Hardware:** NVIDIA, AMD
+- **A Case Study of a Multi-Agent Kernel-Optimization Loop That Learns a New AI Accelerator** [![arXiv](https://img.shields.io/badge/arXiv-26.10-red)](https://arxiv.org/abs/2610.38329) [![Stars](https://img.shields.io/github/stars/bgchun-fs/multi-agent-kernel-gen-loop)](https://github.com/bgchun-fs/multi-agent-kernel-gen-loop)
+  - **Institution:** Fluidstack
+  - **Type:** Search & evolution · **Kernel:** `furiosa-opt` · **Hardware:** Other
 - **Hardware-in-the-Loop RL for OpenCL Optimization on Mobile GPUs** [![OpenReview](https://img.shields.io/badge/OpenReview-26.09-lightgrey)](https://openreview.net/forum?id=Ktya9054vX)
   - **Type:** Trained model · **Kernel:** `OpenCL` · **Hardware:** NVIDIA, Mobile GPU
+- **KernelShift: Benchmarking Kernel Optimization Across Evolving Hardware** [![arXiv](https://img.shields.io/badge/arXiv-26.11-red)](https://arxiv.org/abs/2611.29590) [![Stars](https://img.shields.io/github/stars/cmu-l3/kernel-shift)](https://github.com/cmu-l3/kernel-shift) [![Dataset](https://img.shields.io/badge/Dataset-HuggingFace-yellow)](https://huggingface.co/datasets/l3lab/KernelShift) [![Project](https://img.shields.io/badge/Project-Page-blue)](https://cmu-l3.github.io/kernel-shift/)
+  - **Institution:** Carnegie Mellon University, Arm
+  - **Type:** Benchmark · **Kernel:** `C++` · **Hardware:** CPU, Apple
 - **Glueball: Agentic Generation and Verification of Hardware-Optimized Gluon Kernels** [![OpenReview](https://img.shields.io/badge/OpenReview-26.09-lightgrey)](https://openreview.net/forum?id=4Lpg8unVZd)
   - **Type:** Agentic workflow · **Kernel:** `Gluon` · **Hardware:** NVIDIA
 - **RvvCoder: ISA-Grounded LLMs for High-Performance RISC-V Vector Kernel Generation** [![OpenReview](https://img.shields.io/badge/OpenReview-26.09-lightgrey)](https://openreview.net/forum?id=Xi1nczXKQL)

@@ -1,9 +1,12 @@
 # Hardware: Mobile GPU
 
-[← README](../README.md) · 3 entries, newest first
+[← README](../README.md) · 4 entries, newest first
 
 ## 2026
 
+- **ModelBlaster: Closing the Performance Gap through Learning-Augmented Agents Across Models, Kernels and Hardware Backends** [![arXiv](https://img.shields.io/badge/arXiv-26.11-red)](https://arxiv.org/abs/2611.04104) [![Stars](https://img.shields.io/github/stars/ucb-bar/ModelBlaster)](https://github.com/ucb-bar/ModelBlaster)
+  - **Institution:** NVIDIA, UC Berkeley
+  - **Type:** Agentic workflow · **Kernel:** `CUDA` `OpenCL` `RVV` · **Hardware:** NVIDIA, Mobile GPU, RISC-V · **Benchmark:** KernelBench, SOL-ExecBench
 - **EdgeKernelBench: Unified LLM-Driven Kernel Generation for Edge Backends** [![arXiv](https://img.shields.io/badge/arXiv-26.10-red)](https://arxiv.org/abs/2610.24648) [![Stars](https://img.shields.io/github/stars/pillor9/EdgeKernelBench)](https://github.com/pillor9/EdgeKernelBench) [![Project](https://img.shields.io/badge/Project-Page-blue)](https://pillor9.github.io/EdgeKernelBench)
   - **Institution:** Westlake University, Zhejiang University
   - **Type:** Benchmark · **Kernel:** `TVM` · **Hardware:** Mobile GPU

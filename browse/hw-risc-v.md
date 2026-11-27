@@ -1,9 +1,12 @@
 # Hardware: RISC-V
 
-[← README](../README.md) · 6 entries, newest first
+[← README](../README.md) · 7 entries, newest first
 
 ## 2026
 
+- **ModelBlaster: Closing the Performance Gap through Learning-Augmented Agents Across Models, Kernels and Hardware Backends** [![arXiv](https://img.shields.io/badge/arXiv-26.11-red)](https://arxiv.org/abs/2611.04104) [![Stars](https://img.shields.io/github/stars/ucb-bar/ModelBlaster)](https://github.com/ucb-bar/ModelBlaster)
+  - **Institution:** NVIDIA, UC Berkeley
+  - **Type:** Agentic workflow · **Kernel:** `CUDA` `OpenCL` `RVV` · **Hardware:** NVIDIA, Mobile GPU, RISC-V · **Benchmark:** KernelBench, SOL-ExecBench
 - **RvvCoder: ISA-Grounded LLMs for High-Performance RISC-V Vector Kernel Generation** [![OpenReview](https://img.shields.io/badge/OpenReview-26.09-lightgrey)](https://openreview.net/forum?id=Xi1nczXKQL)
   - **Type:** Trained model · **Kernel:** `RVV` · **Hardware:** RISC-V
 - **Beyond Scaling: Self-Evolving LLM Agents for Hardware Kernel Optimization via an Experience-Driven Workflow and Experience Graph Memory** [![arXiv](https://img.shields.io/badge/arXiv-26.08-red)](https://arxiv.org/abs/2608.25570)

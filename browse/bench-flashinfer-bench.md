@@ -1,14 +1,24 @@
 # Benchmark: FlashInfer-Bench
 
-[← README](../README.md) · 18 entries, newest first
+[← README](../README.md) · 21 entries, newest first
 
 ## 2026
 
+- **JustGoal: With Only a Goal, the AI Baseline Is Above the Expert Kernels** [![arXiv](https://img.shields.io/badge/arXiv-26.10-red)](https://arxiv.org/abs/2610.36434) [![Stars](https://img.shields.io/github/stars/OpenBMB/JustGoal)](https://github.com/OpenBMB/JustGoal)
+  - **Institution:** Tsinghua University, ModelBest, Harbin Institute of Technology, University of Chinese Academy of Sciences
+  - **Type:** Empirical study · **Kernel:** `Triton` `CUDA` `CuTe` · **Hardware:** NVIDIA · **Benchmark:** FlashInfer-Bench
+- **Evolving Agent Teams** [![NeurIPS 2026](https://img.shields.io/badge/NeurIPS-26-green)](https://arxiv.org/abs/2610.36848) [![Stars](https://img.shields.io/github/stars/caoshiyi/EAT)](https://github.com/caoshiyi/EAT) [![Artifacts](https://img.shields.io/badge/Artifacts-GitHub-lightgrey)](https://github.com/caoshiyi/eat-kernels)
+  - **Institution:** UC Berkeley
+  - **Type:** General-purpose system · **Kernel:** `CUDA` `CuTe` `HIP` · **Hardware:** NVIDIA, AMD, Apple · **Benchmark:** FlashInfer-Bench
 - **VibeKernel: Long-Horizon GPU Kernel Optimization with General-Purpose Coding Agents** [![NeurIPS Workshop 2026](https://img.shields.io/badge/NeurIPS_Workshop-26-green)](https://openreview.net/forum?id=WIihTnl976)
   - **Institution:** ETH Zurich
   - **Type:** Agentic workflow · **Kernel:** `Triton` · **Hardware:** NVIDIA · **Benchmark:** FlashInfer-Bench, SOL-ExecBench
-- **BIEvolve: God Does Not Play Dice: Enforcing Batch Invariance in Agentic Kernel Generation** [![OpenReview](https://img.shields.io/badge/OpenReview-26.09-lightgrey)](https://openreview.net/forum?id=hvO7ZzQiqG) [![Code](https://img.shields.io/badge/Code-Anonymous-lightgrey)](https://anonymous.4open.science/r/BIEvolve-50F0)
-  - **Type:** Agentic workflow · **Hardware:** NVIDIA · **Benchmark:** FlashInfer-Bench
+- **ForgeKernel: Self-Evolving Kernels Catching and Surpassing Experts and Agents** [![arXiv](https://img.shields.io/badge/arXiv-26.11-red)](https://arxiv.org/abs/2611.04998) [![Stars](https://img.shields.io/github/stars/OpenBMB/ForgeKernel)](https://github.com/OpenBMB/ForgeKernel)
+  - **Institution:** Tsinghua University, ModelBest, University of Chinese Academy of Sciences, Harbin Institute of Technology
+  - **Type:** Agentic workflow · **Kernel:** `CUDA` `CuTe` · **Hardware:** NVIDIA, Ascend · **Benchmark:** CANN-Bench, SOL-ExecBench, FlashInfer-Bench
+- **BIEvolve: God Does Not Play Dice: Enforcing Batch Invariance in Agentic Kernel Generation** [![arXiv](https://img.shields.io/badge/arXiv-26.10-red)](https://arxiv.org/abs/2610.36623) [![Code unavailable](https://img.shields.io/badge/Code-unavailable-lightgrey)](https://github.com/STAR-Computing/BIEvolve)
+  - **Institution:** George Mason University, National University of Singapore
+  - **Type:** Tool · **Hardware:** NVIDIA · **Benchmark:** KernelBench.com, FlashInfer-Bench
 - **Structure Before Tuning: Decoupling Structural Search and Local Optimization for LLM-Generated GPU Kernels** [![OpenReview](https://img.shields.io/badge/OpenReview-26.09-lightgrey)](https://openreview.net/forum?id=zUPEDRs09x)
   - **Type:** Search & evolution · **Hardware:** NVIDIA · **Benchmark:** FlashInfer-Bench, SOL-ExecBench
 - **PTXBench: Evaluating and Adapting LLMs for GPU Kernel Optimization with Architecture-specific PTX** [![NeurIPS Workshop 2026](https://img.shields.io/badge/NeurIPS_Workshop-26-green)](https://arxiv.org/abs/2608.17379) [![Stars](https://img.shields.io/github/stars/zhang677/PTXBench)](https://github.com/zhang677/PTXBench) [![Model](https://img.shields.io/badge/Model-HuggingFace-yellow)](https://huggingface.co/collections/Genghan/ptxbench-qwen36-27b-sft-series) [![Dataset](https://img.shields.io/badge/Dataset-HuggingFace-yellow)](https://huggingface.co/datasets/AccRL/accrl-training) [![Blog](https://img.shields.io/badge/Blog-Stanford_University-blue)](https://zhang677.github.io/blog_md/ptxbench.html)

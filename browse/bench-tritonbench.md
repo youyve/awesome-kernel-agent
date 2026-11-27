@@ -1,9 +1,12 @@
 # Benchmark: TritonBench
 
-[← README](../README.md) · 14 entries, newest first
+[← README](../README.md) · 15 entries, newest first
 
 ## 2026
 
+- **KernelAudit: Contract-Aware Auditing of Validators for LLM-Generated GPU Kernels** [![arXiv](https://img.shields.io/badge/arXiv-26.11-red)](https://arxiv.org/abs/2611.15506) [![Code unavailable](https://img.shields.io/badge/Code-unavailable-lightgrey)](https://github.com/ZIYUANLI-star/KernelAudit)
+  - **Institution:** Southeast University, Beijing Tongming Lake Information Technology Application Innovation Center, University of Texas at Dallas, Fudan University, Peking University
+  - **Type:** Empirical study · **Kernel:** `CUDA` `Triton` · **Hardware:** NVIDIA · **Benchmark:** KernelBenchX, TritonBench, robust-kbench
 - **AscendAgent: Evolving Context to Fit the Harness in CANN Kernel Optimization** [![OpenReview](https://img.shields.io/badge/OpenReview-26.09-lightgrey)](https://openreview.net/forum?id=gtuspdBfQo)
   - **Type:** Search & evolution · **Hardware:** NVIDIA, Ascend · **Benchmark:** CANN-Bench, KernelBench, MultiKernelBench, TritonBench
 - **RealisticTritonBench: A Benchmark for Triton-Kernel Generation in Real-World AI Frameworks** [![ASE 2026](https://img.shields.io/badge/ASE-26-green)](https://arxiv.org/abs/2608.12004) [![Stars](https://img.shields.io/github/stars/ZJU-CTAG/RealisticTritonBench)](https://github.com/ZJU-CTAG/RealisticTritonBench)

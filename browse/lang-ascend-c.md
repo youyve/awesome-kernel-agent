@@ -1,15 +1,22 @@
 # Kernel language: Ascend C
 
-[← README](../README.md) · 13 entries, newest first
+[← README](../README.md) · 15 entries, newest first
 
 ## 2026
 
+- **AscendGYM: A Cost-Aware Kernel Optimization Benchmark for Real-World Workloads on Ascend NPUs** [![arXiv](https://img.shields.io/badge/arXiv-26.11-red)](https://arxiv.org/abs/2611.17621) [![Stars](https://img.shields.io/github/stars/SLAI-AITP/AscendGYM)](https://github.com/SLAI-AITP/AscendGYM) [![Dataset](https://img.shields.io/badge/Dataset-HuggingFace-yellow)](https://huggingface.co/datasets/SLAI-AITP/AscendGYM) [![Project](https://img.shields.io/badge/Project-Page-blue)](https://slai-aitp.github.io/AscendGYM/)
+  - **Institution:** Shenzhen Loop Area Institute
+  - **Type:** Benchmark · **Kernel:** `Ascend C` · **Hardware:** Ascend
+- **CANNBot-CAKE: Collaborative Agentic Kernel Evolution for Ascend NPU** [![arXiv](https://img.shields.io/badge/arXiv-26.10-red)](https://arxiv.org/abs/2610.31034) [![Code](https://img.shields.io/badge/Code-GitHub-blue)](https://github.com/hicann/cannbot/tree/master/plugins-community/collaborative-agent-kernel-evolution)
+  - **Institution:** Huawei
+  - **Type:** Agentic workflow · **Kernel:** `Ascend C` · **Hardware:** Ascend · **Benchmark:** CANN-Bench
 - **TileCas: Cascading Kernel Development Across Programming Abstractions** [![arXiv](https://img.shields.io/badge/arXiv-26.10-red)](https://arxiv.org/abs/2610.14740) [![Stars](https://img.shields.io/github/stars/TongmingLAIC/tilecas)](https://github.com/TongmingLAIC/tilecas)
   - **Institution:** Fudan University, University of Texas at Dallas, Peking University, Beijing Tongming Lake Information Technology Application Innovation Center
   - **Type:** Agentic workflow · **Kernel:** `TileLang` `Ascend C` `HIP` · **Hardware:** AMD, Ascend · **Benchmark:** KernelBench
 - **Evoke: Structured Construction and Search for Llm-Based Native Kernel Evolution** [![OpenReview](https://img.shields.io/badge/OpenReview-26.09-lightgrey)](https://openreview.net/forum?id=iatY8aCCHw)
   - **Type:** Search & evolution · **Kernel:** `Ascend C` · **Hardware:** Ascend
-- **AscendEvolve: Experience Is Not Enough: Knowledge-Grounded Evolutionary Search for Ascend C Kernel Generation** [![OpenReview](https://img.shields.io/badge/OpenReview-26.09-lightgrey)](https://openreview.net/forum?id=c9fIYOvuw8)
+- **AscendEvolve: Beyond Experience: Knowledge-Guided Evolution for NPU Kernel Generation** [![arXiv](https://img.shields.io/badge/arXiv-26.10-red)](https://arxiv.org/abs/2610.27588)
+  - **Institution:** Shenzhen Loop Area Institute, Guangzhou University, Shanghai Jiao Tong University, Southwestern University of Finance and Economics, Chinese University of Hong Kong (Shenzhen)
   - **Type:** Search & evolution · **Kernel:** `Ascend C` · **Hardware:** Ascend · **Benchmark:** CANN-Bench
 - **Ascend Debug Agent** [![arXiv](https://img.shields.io/badge/arXiv-26.08-red)](https://arxiv.org/abs/2608.02712)
   - *Domain-specific repair loop for near-miss operators that already compile and run.*

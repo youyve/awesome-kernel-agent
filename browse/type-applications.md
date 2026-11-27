@@ -1,11 +1,14 @@
 # Applications
 
-[← README](../README.md) · 6 entries, newest first
+[← README](../README.md) · 7 entries, newest first
 
 _Domain systems where LLM-written kernels are part of the development or evaluation._
 
 ## 2026
 
+- **Migrating a Legacy Scientific Application with an AI Coding Agent: NICAM from Fortran to Kokkos** [![arXiv](https://img.shields.io/badge/arXiv-26.10-red)](https://arxiv.org/abs/2610.41313)
+  - **Institution:** University of Tokyo, National Institute for Environmental Studies
+  - **Type:** Application · **Kernel:** `Kokkos` · **Hardware:** NVIDIA, AMD
 - **FOMTools: Development and AI-Assisted Code Generation for First-Order Methods** [![arXiv](https://img.shields.io/badge/arXiv-26.10-red)](https://arxiv.org/abs/2610.26743) [![Stars](https://img.shields.io/github/stars/stellatogrp/fomtools)](https://github.com/stellatogrp/fomtools)
   - **Institution:** MIT, Princeton University
   - **Type:** Application · **Kernel:** `C` `CUDA` · **Hardware:** NVIDIA, Apple
