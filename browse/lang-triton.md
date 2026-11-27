@@ -1,9 +1,21 @@
 # Kernel language: Triton
 
-[← README](../README.md) · 71 entries, newest first
+[← README](../README.md) · 76 entries, newest first
 
 ## 2026
 
+- **CompoundingKernel: Self-Improving from Zero to First** [![arXiv](https://img.shields.io/badge/arXiv-26.11-red)](https://arxiv.org/abs/2611.19230) [![Artifacts](https://img.shields.io/badge/Artifacts-HuggingFace-lightgrey)](https://huggingface.co/spaces/QianQu/CompoundingKernel-Explorer)
+  - **Institution:** Amazon
+  - **Type:** Search & evolution · **Kernel:** `CUDA` `CuTe` `Triton` · **Hardware:** NVIDIA · **Benchmark:** SOL-ExecBench
+- **KernelAudit: Contract-Aware Auditing of Validators for LLM-Generated GPU Kernels** [![arXiv](https://img.shields.io/badge/arXiv-26.11-red)](https://arxiv.org/abs/2611.15506) [![Code unavailable](https://img.shields.io/badge/Code-unavailable-lightgrey)](https://github.com/ZIYUANLI-star/KernelAudit)
+  - **Institution:** Southeast University, Beijing Tongming Lake Information Technology Application Innovation Center, University of Texas at Dallas, Fudan University, Peking University
+  - **Type:** Empirical study · **Kernel:** `CUDA` `Triton` · **Hardware:** NVIDIA · **Benchmark:** KernelBenchX, TritonBench, robust-kbench
+- **Warpline: Binary-Level Tracing and Unified Evidence for Agentic GPU Kernel Optimization** [![arXiv](https://img.shields.io/badge/arXiv-26.11-red)](https://arxiv.org/abs/2611.04331)
+  - **Institution:** George Mason University, NVIDIA
+  - **Type:** Tool · **Kernel:** `Triton` `CuTe` `CUDA` `PTX` · **Hardware:** NVIDIA · **Benchmark:** SOL-ExecBench
+- **JustGoal: With Only a Goal, the AI Baseline Is Above the Expert Kernels** [![arXiv](https://img.shields.io/badge/arXiv-26.10-red)](https://arxiv.org/abs/2610.36434) [![Stars](https://img.shields.io/github/stars/OpenBMB/JustGoal)](https://github.com/OpenBMB/JustGoal)
+  - **Institution:** Tsinghua University, ModelBest, Harbin Institute of Technology, University of Chinese Academy of Sciences
+  - **Type:** Empirical study · **Kernel:** `Triton` `CUDA` `CuTe` · **Hardware:** NVIDIA · **Benchmark:** FlashInfer-Bench
 - **What Language Should LLMs Write GPU Kernels In? Disentangling Abstraction Level from Resource Level** [![NeurIPS Workshop 2026](https://img.shields.io/badge/NeurIPS_Workshop-26-green)](https://openreview.net/forum?id=9Ppcp9PK8i)
   - **Institution:** Pusan National University, Electronics and Telecommunications Research Institute
   - **Type:** Empirical study · **Kernel:** `CUDA` `PTX` `Triton` `TileLang` · **Hardware:** NVIDIA · **Benchmark:** KernelBench
@@ -32,6 +44,9 @@
   - **Type:** Benchmark · **Kernel:** `CUDA` `Triton` · **Hardware:** NVIDIA
 - **EvokeAgent: A Hardware-Aware, Knowledge-Base-Co-Driven Self-Evolving Agent System for GPU Kernel Optimization** [![OpenReview](https://img.shields.io/badge/OpenReview-26.09-lightgrey)](https://openreview.net/forum?id=wu2vgmepgJ)
   - **Type:** Agentic workflow · **Kernel:** `CUDA` `Triton` · **Hardware:** NVIDIA · **Benchmark:** KernelBench
+- **AutoProfiler: Less is more: learning what to profile for GPU kernel optimization** [![arXiv](https://img.shields.io/badge/arXiv-26.10-red)](https://arxiv.org/abs/2610.36576) [![Stars](https://img.shields.io/github/stars/Satissss/AutoProfiler)](https://github.com/Satissss/AutoProfiler)
+  - **Institution:** Renmin University of China, University of International Business and Economics
+  - **Type:** Agentic workflow · **Kernel:** `Triton` · **Hardware:** NVIDIA · **Benchmark:** KernelBench
 - **DitronGen: Compiler–LLM Coordination for Adaptive Kernel Generation and Computation–Communication Overlap** [![OpenReview](https://img.shields.io/badge/OpenReview-26.09-lightgrey)](https://openreview.net/forum?id=UHZ5QcK1kW)
   - **Type:** Agentic workflow · **Kernel:** `Triton` · **Hardware:** NVIDIA
 - **FlashVector: Agent for Hierarchical Model Serving Stack Optimization** [![arXiv](https://img.shields.io/badge/arXiv-26.09-red)](https://arxiv.org/abs/2609.17391)

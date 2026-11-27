@@ -1,11 +1,14 @@
 # Benchmarks
 
-[← README](../README.md) · 35 entries, newest first
+[← README](../README.md) · 36 entries, newest first
 
 _Benchmarks and datasets for evaluating LLM-generated kernels._
 
 ## 2026
 
+- **AscendGYM: A Cost-Aware Kernel Optimization Benchmark for Real-World Workloads on Ascend NPUs** [![arXiv](https://img.shields.io/badge/arXiv-26.11-red)](https://arxiv.org/abs/2611.17621) [![Stars](https://img.shields.io/github/stars/SLAI-AITP/AscendGYM)](https://github.com/SLAI-AITP/AscendGYM) [![Dataset](https://img.shields.io/badge/Dataset-HuggingFace-yellow)](https://huggingface.co/datasets/SLAI-AITP/AscendGYM) [![Project](https://img.shields.io/badge/Project-Page-blue)](https://slai-aitp.github.io/AscendGYM/)
+  - **Institution:** Shenzhen Loop Area Institute
+  - **Type:** Benchmark · **Kernel:** `Ascend C` · **Hardware:** Ascend
 - **EdgeKernelBench: Unified LLM-Driven Kernel Generation for Edge Backends** [![arXiv](https://img.shields.io/badge/arXiv-26.10-red)](https://arxiv.org/abs/2610.24648) [![Stars](https://img.shields.io/github/stars/pillor9/EdgeKernelBench)](https://github.com/pillor9/EdgeKernelBench) [![Project](https://img.shields.io/badge/Project-Page-blue)](https://pillor9.github.io/EdgeKernelBench)
   - **Institution:** Westlake University, Zhejiang University
   - **Type:** Benchmark · **Kernel:** `TVM` · **Hardware:** Mobile GPU
@@ -29,8 +32,9 @@ _Benchmarks and datasets for evaluating LLM-generated kernels._
   - **Type:** Benchmark · **Hardware:** NVIDIA
 - **SWE-KERNEL-BENCH: A Live Benchmark for GPU Kernel Generation** [![OpenReview](https://img.shields.io/badge/OpenReview-26.09-lightgrey)](https://openreview.net/forum?id=MQHsVFGcVK)
   - **Type:** Benchmark · **Kernel:** `CUDA` `Triton` · **Hardware:** NVIDIA
-- **KernelShift: Benchmarking Kernel Optimization Across Evolving Hardware** [![OpenReview](https://img.shields.io/badge/OpenReview-26.09-lightgrey)](https://openreview.net/forum?id=Px2KW4H05v)
-  - **Type:** Benchmark · **Hardware:** AWS Neuron, Apple
+- **KernelShift: Benchmarking Kernel Optimization Across Evolving Hardware** [![arXiv](https://img.shields.io/badge/arXiv-26.11-red)](https://arxiv.org/abs/2611.29590) [![Stars](https://img.shields.io/github/stars/cmu-l3/kernel-shift)](https://github.com/cmu-l3/kernel-shift) [![Dataset](https://img.shields.io/badge/Dataset-HuggingFace-yellow)](https://huggingface.co/datasets/l3lab/KernelShift) [![Project](https://img.shields.io/badge/Project-Page-blue)](https://cmu-l3.github.io/kernel-shift/)
+  - **Institution:** Carnegie Mellon University, Arm
+  - **Type:** Benchmark · **Kernel:** `C++` · **Hardware:** CPU, Apple
 - **KernelAudit: Can LLM-Generated GPU Kernels Be Both Reliable and Competitive on Real-World Workloads?** [![OpenReview](https://img.shields.io/badge/OpenReview-26.09-lightgrey)](https://openreview.net/forum?id=yTa4gvQUGG) [![Code](https://img.shields.io/badge/Code-Anonymous-lightgrey)](https://anonymous.4open.science/r/kernelaudit-BD8D)
   - **Type:** Benchmark · **Hardware:** NVIDIA
 - **AutoTuneBench: Trustworthy Measurement for Agent Auto-Tuning of LLM Serving Engines** [![arXiv](https://img.shields.io/badge/arXiv-26.09-red)](https://arxiv.org/abs/2609.18123) [![Stars](https://img.shields.io/github/stars/li-ch/autotunebench)](https://github.com/li-ch/autotunebench)

@@ -1,9 +1,15 @@
 # Kernel language: PTX
 
-[← README](../README.md) · 8 entries, newest first
+[← README](../README.md) · 10 entries, newest first
 
 ## 2026
 
+- **Warpline: Binary-Level Tracing and Unified Evidence for Agentic GPU Kernel Optimization** [![arXiv](https://img.shields.io/badge/arXiv-26.11-red)](https://arxiv.org/abs/2611.04331)
+  - **Institution:** George Mason University, NVIDIA
+  - **Type:** Tool · **Kernel:** `Triton` `CuTe` `CUDA` `PTX` · **Hardware:** NVIDIA · **Benchmark:** SOL-ExecBench
+- **LARK: Lean-Assisted Reasoning for LLM-Generated GPU Kernels** [![arXiv](https://img.shields.io/badge/arXiv-26.11-red)](https://arxiv.org/abs/2611.02028)
+  - **Institution:** Imperial College London, University of Cambridge, Quettaflop AI, University of Edinburgh, EPFL
+  - **Type:** Tool · **Kernel:** `PTX` `CUDA` `HIP` · **Hardware:** NVIDIA, AMD · **Benchmark:** KernelCraft
 - **What Language Should LLMs Write GPU Kernels In? Disentangling Abstraction Level from Resource Level** [![NeurIPS Workshop 2026](https://img.shields.io/badge/NeurIPS_Workshop-26-green)](https://openreview.net/forum?id=9Ppcp9PK8i)
   - **Institution:** Pusan National University, Electronics and Telecommunications Research Institute
   - **Type:** Empirical study · **Kernel:** `CUDA` `PTX` `Triton` `TileLang` · **Hardware:** NVIDIA · **Benchmark:** KernelBench

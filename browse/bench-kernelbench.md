@@ -1,9 +1,27 @@
 # Benchmark: KernelBench
 
-[← README](../README.md) · 81 entries, newest first
+[← README](../README.md) · 87 entries, newest first
 
 ## 2026
 
+- **MLEvolver: Demystifying the Autoresearch Harness: How Context and Skills Shape Self-Evolving Agents** [![arXiv](https://img.shields.io/badge/arXiv-26.11-red)](https://arxiv.org/abs/2611.28244)
+  - **Institution:** Hong Kong University of Science and Technology, University of Tokyo, National Taiwan University, NVIDIA
+  - **Type:** General-purpose system · **Kernel:** `CUDA` · **Hardware:** NVIDIA · **Benchmark:** KernelBench
+- **KernelMutate: Mutation-Guided Validation of Generated GPU Kernels** [![arXiv](https://img.shields.io/badge/arXiv-26.11-red)](https://arxiv.org/abs/2611.15441) [![Code unavailable](https://img.shields.io/badge/Code-unavailable-lightgrey)](https://github.com/ZIYUANLI-star/KernelMutate)
+  - **Institution:** Southeast University, Beijing Tongming Lake Information Technology Application Innovation Center, University of Texas at Dallas, Fudan University, Peking University
+  - **Type:** Empirical study · **Kernel:** `CUDA` · **Hardware:** NVIDIA · **Benchmark:** KernelBench
+- **KernelArmor: End-to-End Agentic System for Establishing Memory and Thread Safety for CUDA** [![arXiv](https://img.shields.io/badge/arXiv-26.11-red)](https://arxiv.org/abs/2611.18754)
+  - **Institution:** NVIDIA, Stanford University
+  - **Type:** Tool · **Kernel:** `CUDA` · **Hardware:** NVIDIA · **Benchmark:** KernelBench, SOL-ExecBench
+- **Correct First, Fast Second: What a Local 7B Code Model Can and Cannot Do for GPU Kernel Optimization** [![arXiv](https://img.shields.io/badge/arXiv-26.11-red)](https://arxiv.org/abs/2611.12079) [![Stars](https://img.shields.io/github/stars/pango0/KernelBench-Agentic)](https://github.com/pango0/KernelBench-Agentic)
+  - **Institution:** National Taiwan University
+  - **Type:** Empirical study · **Kernel:** `CUDA` · **Hardware:** NVIDIA · **Benchmark:** KernelBench
+- **ModelBlaster: Closing the Performance Gap through Learning-Augmented Agents Across Models, Kernels and Hardware Backends** [![arXiv](https://img.shields.io/badge/arXiv-26.11-red)](https://arxiv.org/abs/2611.04104) [![Stars](https://img.shields.io/github/stars/ucb-bar/ModelBlaster)](https://github.com/ucb-bar/ModelBlaster)
+  - **Institution:** NVIDIA, UC Berkeley
+  - **Type:** Agentic workflow · **Kernel:** `CUDA` `OpenCL` `RVV` · **Hardware:** NVIDIA, Mobile GPU, RISC-V · **Benchmark:** KernelBench, SOL-ExecBench
+- **Lean and VerCors GPU Verification: Proving LLM-Generated GPU Kernels Correct and Safe: Floating-Point Verification in Lean and VerCors** [![arXiv](https://img.shields.io/badge/arXiv-26.10-red)](https://arxiv.org/abs/2610.24548)
+  - **Institution:** Imperial College London, Logos Research
+  - **Type:** Tool · **Kernel:** `CUDA` · **Hardware:** CPU · **Benchmark:** KernelBench
 - **AReaL-RSI: Adaptive Scaling and Coordination of Recursive Self-Improvement** [![arXiv](https://img.shields.io/badge/arXiv-26.10-red)](https://arxiv.org/abs/2610.18083)
   - **Institution:** Ant Group, Zhejiang University, Hong Kong University of Science and Technology
   - **Type:** General-purpose system · **Hardware:** NVIDIA · **Benchmark:** KernelBench
@@ -24,14 +42,16 @@
   - **Type:** Search & evolution · **Kernel:** `Triton` `Helion` · **Hardware:** NVIDIA · **Benchmark:** KernelBench
 - **ProcessKernel: Calibrated Process Supervision for GPU Kernel Generation** [![OpenReview](https://img.shields.io/badge/OpenReview-26.09-lightgrey)](https://openreview.net/forum?id=gO1SLMPGbi) [![Code](https://img.shields.io/badge/Code-Anonymous-lightgrey)](https://anonymous.4open.science/r/ProcessKernel-733C)
   - **Type:** Search & evolution · **Hardware:** NVIDIA · **Benchmark:** KernelBench
-- **KernelMosaic: An Open Dataset and Agentic Framework for CUDA Kernel Generation** [![OpenReview](https://img.shields.io/badge/OpenReview-26.09-lightgrey)](https://openreview.net/forum?id=AMenxeeqRp)
+- **KernelMosaic: An Open Dataset and Agentic Framework for CUDA Kernel Generation** [![arXiv](https://img.shields.io/badge/arXiv-26.11-red)](https://arxiv.org/abs/2611.14604)
+  - **Institution:** City University of Hong Kong
   - **Type:** Trained model · **Kernel:** `CUDA` · **Hardware:** NVIDIA · **Benchmark:** KernelBench
 - **EvokeAgent: A Hardware-Aware, Knowledge-Base-Co-Driven Self-Evolving Agent System for GPU Kernel Optimization** [![OpenReview](https://img.shields.io/badge/OpenReview-26.09-lightgrey)](https://openreview.net/forum?id=wu2vgmepgJ)
   - **Type:** Agentic workflow · **Kernel:** `CUDA` `Triton` · **Hardware:** NVIDIA · **Benchmark:** KernelBench
 - **Evok: Evidence-Centric Multi-Agent Framework for GPU Kernel Generation** [![OpenReview](https://img.shields.io/badge/OpenReview-26.09-lightgrey)](https://openreview.net/forum?id=1iwOWSLQDb)
   - **Type:** Agentic workflow · **Hardware:** NVIDIA · **Benchmark:** KernelBench
-- **AutoProfiler: Less Is More: Learning What to Profile for GPU Kernel Optimization** [![OpenReview](https://img.shields.io/badge/OpenReview-26.09-lightgrey)](https://openreview.net/forum?id=tE3EQdUVsO)
-  - **Type:** Agentic workflow · **Hardware:** NVIDIA · **Benchmark:** KernelBench
+- **AutoProfiler: Less is more: learning what to profile for GPU kernel optimization** [![arXiv](https://img.shields.io/badge/arXiv-26.10-red)](https://arxiv.org/abs/2610.36576) [![Stars](https://img.shields.io/github/stars/Satissss/AutoProfiler)](https://github.com/Satissss/AutoProfiler)
+  - **Institution:** Renmin University of China, University of International Business and Economics
+  - **Type:** Agentic workflow · **Kernel:** `Triton` · **Hardware:** NVIDIA · **Benchmark:** KernelBench
 - **AscendAgent: Evolving Context to Fit the Harness in CANN Kernel Optimization** [![OpenReview](https://img.shields.io/badge/OpenReview-26.09-lightgrey)](https://openreview.net/forum?id=gtuspdBfQo)
   - **Type:** Search & evolution · **Hardware:** NVIDIA, Ascend · **Benchmark:** CANN-Bench, KernelBench, MultiKernelBench, TritonBench
 - **DLRM-Bench: How Much of a Real Workload Can LLM-Generated GPU Kernels Actually Reach?** [![arXiv](https://img.shields.io/badge/arXiv-26.09-red)](https://arxiv.org/abs/2609.21058) [![Stars](https://img.shields.io/github/stars/gauravapiscean/kernel-headroom)](https://github.com/gauravapiscean/kernel-headroom)

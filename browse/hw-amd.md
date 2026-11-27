@@ -1,9 +1,18 @@
 # Hardware: AMD
 
-[← README](../README.md) · 29 entries, newest first
+[← README](../README.md) · 33 entries, newest first
 
 ## 2026
 
+- **LARK: Lean-Assisted Reasoning for LLM-Generated GPU Kernels** [![arXiv](https://img.shields.io/badge/arXiv-26.11-red)](https://arxiv.org/abs/2611.02028)
+  - **Institution:** Imperial College London, University of Cambridge, Quettaflop AI, University of Edinburgh, EPFL
+  - **Type:** Tool · **Kernel:** `PTX` `CUDA` `HIP` · **Hardware:** NVIDIA, AMD · **Benchmark:** KernelCraft
+- **Migrating a Legacy Scientific Application with an AI Coding Agent: NICAM from Fortran to Kokkos** [![arXiv](https://img.shields.io/badge/arXiv-26.10-red)](https://arxiv.org/abs/2610.41313)
+  - **Institution:** University of Tokyo, National Institute for Environmental Studies
+  - **Type:** Application · **Kernel:** `Kokkos` · **Hardware:** NVIDIA, AMD
+- **Evolving Agent Teams** [![NeurIPS 2026](https://img.shields.io/badge/NeurIPS-26-green)](https://arxiv.org/abs/2610.36848) [![Stars](https://img.shields.io/github/stars/caoshiyi/EAT)](https://github.com/caoshiyi/EAT) [![Artifacts](https://img.shields.io/badge/Artifacts-GitHub-lightgrey)](https://github.com/caoshiyi/eat-kernels)
+  - **Institution:** UC Berkeley
+  - **Type:** General-purpose system · **Kernel:** `CUDA` `CuTe` `HIP` · **Hardware:** NVIDIA, AMD, Apple · **Benchmark:** FlashInfer-Bench
 - **HPCAgent-Bench: A Framework for Sound Benchmarking of Code-Optimizing Agents, Harnesses, and Skills** [![arXiv](https://img.shields.io/badge/arXiv-26.10-red)](https://arxiv.org/abs/2610.20673) [![Stars](https://img.shields.io/github/stars/spcl/HPCAgent-Bench)](https://github.com/spcl/HPCAgent-Bench)
   - **Institution:** ETH Zurich, Institute of High Performance Computing (A\*STAR)
   - **Type:** Benchmark · **Hardware:** NVIDIA, AMD
@@ -42,6 +51,9 @@
 - **AMDKernelVault: Large-Scale Datasets and Agentic Training for AMD GPU Kernel Optimization** [![arXiv](https://img.shields.io/badge/arXiv-26.09-red)](https://arxiv.org/abs/2609.12471) [![Stars](https://img.shields.io/github/stars/AMD-AGI/AMDKernelVault)](https://github.com/AMD-AGI/AMDKernelVault) [![Dataset](https://img.shields.io/badge/Dataset-HuggingFace-yellow)](https://huggingface.co/datasets/amd/AIG-Datasets)
   - **Institution:** AMD
   - **Type:** Trained model · **Kernel:** `HIP` `Triton` · **Hardware:** AMD · **Benchmark:** KernelBench, TritonBench
+- **Kernel Contracts: A Specification Language for ML Kernel Correctness Across Heterogeneous Silicon** [![arXiv](https://img.shields.io/badge/arXiv-26.04-red)](https://arxiv.org/abs/2604.22032) [![Stars](https://img.shields.io/github/stars/cv700/ashiba-verify)](https://github.com/cv700/ashiba-verify)
+  - **Institution:** Ashiba Research
+  - **Type:** Tool · **Hardware:** NVIDIA, AMD, Apple
 - **Ave: Guiding Agentic GPU Optimization Using Data-Flow Invariants** [![SOSP 2026](https://img.shields.io/badge/SOSP-26-green)](https://arxiv.org/abs/2604.18616)
   - **Institution:** CausalFlow, Hong Kong University of Science and Technology, University of Chinese Academy of Sciences, UC Riverside, Tsinghua University, Stanford University
   - **Type:** Agentic workflow · **Kernel:** `HIP` · **Hardware:** AMD · **Benchmark:** KernelBench

@@ -27,7 +27,8 @@ _Models trained (SFT, RL, distillation) specifically to write or optimize kernel
   - **Type:** Trained model · **Hardware:** NVIDIA, AMD
 - **ModelParts: Model-Grounded Tasks and Roofline Rewards for Training Kernel Agents on Emerging Accelerators** [![OpenReview](https://img.shields.io/badge/OpenReview-26.09-lightgrey)](https://openreview.net/forum?id=yUa4J3DuzA)
   - **Type:** Trained model · **Kernel:** `NKI` · **Hardware:** AWS Neuron
-- **KernelMosaic: An Open Dataset and Agentic Framework for CUDA Kernel Generation** [![OpenReview](https://img.shields.io/badge/OpenReview-26.09-lightgrey)](https://openreview.net/forum?id=AMenxeeqRp)
+- **KernelMosaic: An Open Dataset and Agentic Framework for CUDA Kernel Generation** [![arXiv](https://img.shields.io/badge/arXiv-26.11-red)](https://arxiv.org/abs/2611.14604)
+  - **Institution:** City University of Hong Kong
   - **Type:** Trained model · **Kernel:** `CUDA` · **Hardware:** NVIDIA · **Benchmark:** KernelBench
 - **CUDACoach: Guiding CUDA Kernel Optimization with Diverse Strategies Learned from Verified Code** [![OpenReview](https://img.shields.io/badge/OpenReview-26.09-lightgrey)](https://openreview.net/forum?id=QiCosML9uw)
   - **Type:** Trained model · **Kernel:** `CUDA` · **Hardware:** NVIDIA · **Benchmark:** KernelBench

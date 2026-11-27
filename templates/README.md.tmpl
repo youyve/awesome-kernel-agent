@@ -4,7 +4,7 @@
 
 [Benchmark catalog](https://github.com/youyve/awesome-kernel-benchmark) · [Data](data/entries.yaml) · [Contributing](CONTRIBUTING.md)
 
-{{STATS}} · research cutoff **2026-10-19**
+{{STATS}} · research cutoff **2026-11-27**
 
 ## Browse
 
@@ -42,6 +42,12 @@ _Benchmarks and datasets for evaluating LLM-generated kernels. The companion [aw
 - [Contract-Grade Verifier](https://arxiv.org/abs/2608.12700) — adversarial contract audit of 2,638 previously accepted generated kernels
 - [KernelQuest](https://www.turing.com/blog/kernelquest-benchmark-ai-agents-triton-kernels) — 100 engineer-authored Triton tasks with compiled baselines and adversarial verification
 - [D2K-Bench](https://arxiv.org/abs/2610.03226) — paired design-guided and unguided runs on 26 tasks / 85 workloads, separating design discovery from implementation
+- [Kernel Contracts](https://arxiv.org/abs/2604.22032) — 8-part formal specification language, 12 failure-mode contract classes, and reference verifier for cross-silicon ML kernel correctness
+- [Lean + VerCors GPU Verification](https://arxiv.org/abs/2610.24548) — agent-guided floating-point semantic equivalence proofs of translated sequential models in Lean/Velvet (under explicit translation and FP-function assumptions) and race-freedom proofs in VerCors
+- [LARK](https://arxiv.org/abs/2611.02028) — automated segmented Lean 4 functional and memory equivalence proofs under exact arithmetic across PTX, CUDA, and HIP kernels
+- [KernelAudit (Validator Auditing)](https://arxiv.org/abs/2611.15506) — contract-aware audit oracle measuring false-accept and false-reject rates across 6 GPU kernel validators and 716 candidates
+- [KernelMutate](https://arxiv.org/abs/2611.15441) — mutation-guided validation study exposing FP32 and low-precision witness boundaries across 838 generated CUDA candidates
+- [KernelArmor](https://arxiv.org/abs/2611.18754) — agentic SMT verifier analyzing 740 instances (1,370 CUDA kernels, proving 84 safe) and yielding verified kernels across all 77 optimization trajectories
 
 ## Competitions and leaderboards
 
@@ -99,4 +105,4 @@ Add or fix an entry in [`data/entries.yaml`](data/entries.yaml), run `python3 sc
 
 List content: [CC-BY-4.0](LICENSE) · scripts: [MIT](scripts/LICENSE).
 
-**Research cutoff:** 2026-10-19 · Maintained by [Lianzhong You](mailto:youyve@foxmail.com), HKUST (GZ)
+**Research cutoff:** 2026-11-27 · Maintained by [Lianzhong You](mailto:youyve@foxmail.com), HKUST (GZ)

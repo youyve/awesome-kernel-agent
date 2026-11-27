@@ -1,11 +1,17 @@
 # General-purpose systems with kernel results
 
-[← README](../README.md) · 41 entries, newest first
+[← README](../README.md) · 43 entries, newest first
 
 _General agents, optimizers, or code models whose evaluations include kernel tasks._
 
 ## 2026
 
+- **MLEvolver: Demystifying the Autoresearch Harness: How Context and Skills Shape Self-Evolving Agents** [![arXiv](https://img.shields.io/badge/arXiv-26.11-red)](https://arxiv.org/abs/2611.28244)
+  - **Institution:** Hong Kong University of Science and Technology, University of Tokyo, National Taiwan University, NVIDIA
+  - **Type:** General-purpose system · **Kernel:** `CUDA` · **Hardware:** NVIDIA · **Benchmark:** KernelBench
+- **Evolving Agent Teams** [![NeurIPS 2026](https://img.shields.io/badge/NeurIPS-26-green)](https://arxiv.org/abs/2610.36848) [![Stars](https://img.shields.io/github/stars/caoshiyi/EAT)](https://github.com/caoshiyi/EAT) [![Artifacts](https://img.shields.io/badge/Artifacts-GitHub-lightgrey)](https://github.com/caoshiyi/eat-kernels)
+  - **Institution:** UC Berkeley
+  - **Type:** General-purpose system · **Kernel:** `CUDA` `CuTe` `HIP` · **Hardware:** NVIDIA, AMD, Apple · **Benchmark:** FlashInfer-Bench
 - **Organon: From Evolutionary Search to Recursive Self-Improving Agents for Scientific Discovery** [![arXiv](https://img.shields.io/badge/arXiv-26.10-red)](https://arxiv.org/abs/2610.33046)
   - **Institution:** Huawei
   - **Type:** General-purpose system
@@ -39,8 +45,9 @@ _General agents, optimizers, or code models whose evaluations include kernel tas
 - **CliffCompaction: Cost-Efficient Compaction for Long-Horizon Coding Agents** [![arXiv](https://img.shields.io/badge/arXiv-26.09-red)](https://arxiv.org/abs/2609.26779)
   - **Institution:** Carnegie Mellon University, Bosch
   - **Type:** General-purpose system · **Kernel:** `CUDA`
-- **Test-Time Compute Scales Better with Parallel Agent Teams** [![OpenReview](https://img.shields.io/badge/OpenReview-26.09-lightgrey)](https://openreview.net/forum?id=ZweFYN4Dy1)
-  - **Type:** General-purpose system
+- **Test-Time Compute Scales Better with Parallel Agent Teams** [![arXiv](https://img.shields.io/badge/arXiv-26.11-red)](https://arxiv.org/abs/2611.09798) [![Code unavailable](https://img.shields.io/badge/Code-unavailable-lightgrey)](https://github.com/modal-projects/parallel-agent-teams-scaling)
+  - **Institution:** Duke University, Modal Labs, Princeton University, New York University
+  - **Type:** General-purpose system · **Hardware:** NVIDIA · **Benchmark:** KernelBench.com, KernelBench-Verified
 - **REL: Recursive Experience Learning: As Agents Learn, Worlds Evolve** [![OpenReview](https://img.shields.io/badge/OpenReview-26.09-lightgrey)](https://openreview.net/forum?id=pR1aRoteXn)
   - **Type:** General-purpose system
 - **AutoScaffold: AI-Guided Scaffolding for Reinforcement Learning of Language Models** [![OpenReview](https://img.shields.io/badge/OpenReview-26.09-lightgrey)](https://openreview.net/forum?id=KPRr8wWiqO)

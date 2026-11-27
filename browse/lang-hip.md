@@ -1,9 +1,15 @@
 # Kernel language: HIP
 
-[← README](../README.md) · 15 entries, newest first
+[← README](../README.md) · 17 entries, newest first
 
 ## 2026
 
+- **LARK: Lean-Assisted Reasoning for LLM-Generated GPU Kernels** [![arXiv](https://img.shields.io/badge/arXiv-26.11-red)](https://arxiv.org/abs/2611.02028)
+  - **Institution:** Imperial College London, University of Cambridge, Quettaflop AI, University of Edinburgh, EPFL
+  - **Type:** Tool · **Kernel:** `PTX` `CUDA` `HIP` · **Hardware:** NVIDIA, AMD · **Benchmark:** KernelCraft
+- **Evolving Agent Teams** [![NeurIPS 2026](https://img.shields.io/badge/NeurIPS-26-green)](https://arxiv.org/abs/2610.36848) [![Stars](https://img.shields.io/github/stars/caoshiyi/EAT)](https://github.com/caoshiyi/EAT) [![Artifacts](https://img.shields.io/badge/Artifacts-GitHub-lightgrey)](https://github.com/caoshiyi/eat-kernels)
+  - **Institution:** UC Berkeley
+  - **Type:** General-purpose system · **Kernel:** `CUDA` `CuTe` `HIP` · **Hardware:** NVIDIA, AMD, Apple · **Benchmark:** FlashInfer-Bench
 - **TileCas: Cascading Kernel Development Across Programming Abstractions** [![arXiv](https://img.shields.io/badge/arXiv-26.10-red)](https://arxiv.org/abs/2610.14740) [![Stars](https://img.shields.io/github/stars/TongmingLAIC/tilecas)](https://github.com/TongmingLAIC/tilecas)
   - **Institution:** Fudan University, University of Texas at Dallas, Peking University, Beijing Tongming Lake Information Technology Application Innovation Center
   - **Type:** Agentic workflow · **Kernel:** `TileLang` `Ascend C` `HIP` · **Hardware:** AMD, Ascend · **Benchmark:** KernelBench

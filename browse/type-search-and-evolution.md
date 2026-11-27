@@ -1,11 +1,17 @@
 # Search and evolution
 
-[← README](../README.md) · 33 entries, newest first
+[← README](../README.md) · 35 entries, newest first
 
 _LLMs embedded in evolutionary, tree, or beam search over kernel candidates._
 
 ## 2026
 
+- **CompoundingKernel: Self-Improving from Zero to First** [![arXiv](https://img.shields.io/badge/arXiv-26.11-red)](https://arxiv.org/abs/2611.19230) [![Artifacts](https://img.shields.io/badge/Artifacts-HuggingFace-lightgrey)](https://huggingface.co/spaces/QianQu/CompoundingKernel-Explorer)
+  - **Institution:** Amazon
+  - **Type:** Search & evolution · **Kernel:** `CUDA` `CuTe` `Triton` · **Hardware:** NVIDIA · **Benchmark:** SOL-ExecBench
+- **A Case Study of a Multi-Agent Kernel-Optimization Loop That Learns a New AI Accelerator** [![arXiv](https://img.shields.io/badge/arXiv-26.10-red)](https://arxiv.org/abs/2610.38329) [![Stars](https://img.shields.io/github/stars/bgchun-fs/multi-agent-kernel-gen-loop)](https://github.com/bgchun-fs/multi-agent-kernel-gen-loop)
+  - **Institution:** Fluidstack
+  - **Type:** Search & evolution · **Kernel:** `furiosa-opt` · **Hardware:** Other
 - **KernelOPT: Dispatch-Aware Agentic Search for GPU Kernel Optimization** [![arXiv](https://img.shields.io/badge/arXiv-26.09-red)](https://arxiv.org/abs/2609.30059) [![Code unavailable](https://img.shields.io/badge/Code-unavailable-lightgrey)](https://github.com/TorchedHat/KernelOPT)
   - **Institution:** Red Hat
   - **Type:** Search & evolution · **Kernel:** `Triton` `Helion` · **Hardware:** NVIDIA · **Benchmark:** KernelBench
@@ -15,7 +21,8 @@ _LLMs embedded in evolutionary, tree, or beam search over kernel candidates._
   - **Type:** Search & evolution · **Hardware:** NVIDIA · **Benchmark:** KernelBench
 - **AscendAgent: Evolving Context to Fit the Harness in CANN Kernel Optimization** [![OpenReview](https://img.shields.io/badge/OpenReview-26.09-lightgrey)](https://openreview.net/forum?id=gtuspdBfQo)
   - **Type:** Search & evolution · **Hardware:** NVIDIA, Ascend · **Benchmark:** CANN-Bench, KernelBench, MultiKernelBench, TritonBench
-- **AscendEvolve: Experience Is Not Enough: Knowledge-Grounded Evolutionary Search for Ascend C Kernel Generation** [![OpenReview](https://img.shields.io/badge/OpenReview-26.09-lightgrey)](https://openreview.net/forum?id=c9fIYOvuw8)
+- **AscendEvolve: Beyond Experience: Knowledge-Guided Evolution for NPU Kernel Generation** [![arXiv](https://img.shields.io/badge/arXiv-26.10-red)](https://arxiv.org/abs/2610.27588)
+  - **Institution:** Shenzhen Loop Area Institute, Guangzhou University, Shanghai Jiao Tong University, Southwestern University of Finance and Economics, Chinese University of Hong Kong (Shenzhen)
   - **Type:** Search & evolution · **Kernel:** `Ascend C` · **Hardware:** Ascend · **Benchmark:** CANN-Bench
 - **Distill Before You Measure: Dual Pruning for Evaluation-Efficient GPU Kernel Optimization** [![OpenReview](https://img.shields.io/badge/OpenReview-26.09-lightgrey)](https://openreview.net/forum?id=PJTW1QziqP)
   - **Type:** Search & evolution · **Hardware:** NVIDIA · **Benchmark:** KernelBench

@@ -1,11 +1,20 @@
 # Agentic workflows
 
-[← README](../README.md) · 72 entries, newest first
+[← README](../README.md) · 74 entries, newest first
 
 _Multi-step LLM agents that iterate with compiler, test, or profiler feedback._
 
 ## 2026
 
+- **ModelBlaster: Closing the Performance Gap through Learning-Augmented Agents Across Models, Kernels and Hardware Backends** [![arXiv](https://img.shields.io/badge/arXiv-26.11-red)](https://arxiv.org/abs/2611.04104) [![Stars](https://img.shields.io/github/stars/ucb-bar/ModelBlaster)](https://github.com/ucb-bar/ModelBlaster)
+  - **Institution:** NVIDIA, UC Berkeley
+  - **Type:** Agentic workflow · **Kernel:** `CUDA` `OpenCL` `RVV` · **Hardware:** NVIDIA, Mobile GPU, RISC-V · **Benchmark:** KernelBench, SOL-ExecBench
+- **KernelSeek: Ask, Don't Equip: Question-Driven Coding Agents for Deep Kernel Optimization** [![arXiv](https://img.shields.io/badge/arXiv-26.11-red)](https://arxiv.org/abs/2611.03517) [![Stars](https://img.shields.io/github/stars/Snowflake-AI-Research/flash-cuda)](https://github.com/Snowflake-AI-Research/flash-cuda) [![Project](https://img.shields.io/badge/Project-Page-blue)](https://kernelseek.github.io/)
+  - **Institution:** Snowflake, Carnegie Mellon University
+  - **Type:** Agentic workflow · **Kernel:** `CUDA` · **Hardware:** NVIDIA · **Benchmark:** SOL-ExecBench
+- **CANNBot-CAKE: Collaborative Agentic Kernel Evolution for Ascend NPU** [![arXiv](https://img.shields.io/badge/arXiv-26.10-red)](https://arxiv.org/abs/2610.31034) [![Code](https://img.shields.io/badge/Code-GitHub-blue)](https://github.com/hicann/cannbot/tree/master/plugins-community/collaborative-agent-kernel-evolution)
+  - **Institution:** Huawei
+  - **Type:** Agentic workflow · **Kernel:** `Ascend C` · **Hardware:** Ascend · **Benchmark:** CANN-Bench
 - **VibeKernel: Long-Horizon GPU Kernel Optimization with General-Purpose Coding Agents** [![NeurIPS Workshop 2026](https://img.shields.io/badge/NeurIPS_Workshop-26-green)](https://openreview.net/forum?id=WIihTnl976)
   - **Institution:** ETH Zurich
   - **Type:** Agentic workflow · **Kernel:** `Triton` · **Hardware:** NVIDIA · **Benchmark:** FlashInfer-Bench, SOL-ExecBench
@@ -21,20 +30,20 @@ _Multi-step LLM agents that iterate with compiler, test, or profiler feedback._
 - **AReaL-TIK: Stateful Agentic Optimization of Unified RL Kernels through an Optimization IR** [![arXiv](https://img.shields.io/badge/arXiv-26.09-red)](https://arxiv.org/abs/2609.35140) [![Stars](https://img.shields.io/github/stars/areal-project/AReaL-TIK)](https://github.com/areal-project/AReaL-TIK)
   - **Institution:** Hong Kong University of Science and Technology, University of Cambridge, Ant Group, Reflection AI
   - **Type:** Agentic workflow · **Hardware:** NVIDIA
-- **ForgeKernel: Self-Evolving Kernels Catching And Surpassing Experts And Agents** [![OpenReview](https://img.shields.io/badge/OpenReview-26.09-lightgrey)](https://openreview.net/forum?id=EtV3f5BPD4) [![Stars](https://img.shields.io/github/stars/OpenBMB/ForgeKernel)](https://github.com/OpenBMB/ForgeKernel)
-  - **Type:** Agentic workflow · **Hardware:** NVIDIA, Ascend · **Benchmark:** CANN-Bench
+- **ForgeKernel: Self-Evolving Kernels Catching and Surpassing Experts and Agents** [![arXiv](https://img.shields.io/badge/arXiv-26.11-red)](https://arxiv.org/abs/2611.04998) [![Stars](https://img.shields.io/github/stars/OpenBMB/ForgeKernel)](https://github.com/OpenBMB/ForgeKernel)
+  - **Institution:** Tsinghua University, ModelBest, University of Chinese Academy of Sciences, Harbin Institute of Technology
+  - **Type:** Agentic workflow · **Kernel:** `CUDA` `CuTe` · **Hardware:** NVIDIA, Ascend · **Benchmark:** CANN-Bench, SOL-ExecBench, FlashInfer-Bench
 - **EvokeAgent: A Hardware-Aware, Knowledge-Base-Co-Driven Self-Evolving Agent System for GPU Kernel Optimization** [![OpenReview](https://img.shields.io/badge/OpenReview-26.09-lightgrey)](https://openreview.net/forum?id=wu2vgmepgJ)
   - **Type:** Agentic workflow · **Kernel:** `CUDA` `Triton` · **Hardware:** NVIDIA · **Benchmark:** KernelBench
 - **Evok: Evidence-Centric Multi-Agent Framework for GPU Kernel Generation** [![OpenReview](https://img.shields.io/badge/OpenReview-26.09-lightgrey)](https://openreview.net/forum?id=1iwOWSLQDb)
   - **Type:** Agentic workflow · **Hardware:** NVIDIA · **Benchmark:** KernelBench
 - **BeliefOPT: Recursive Self-Evolving Agents for Autonomous Research** [![OpenReview](https://img.shields.io/badge/OpenReview-26.09-lightgrey)](https://openreview.net/forum?id=8tlQHDNJxM)
   - **Type:** Agentic workflow · **Hardware:** NVIDIA · **Benchmark:** SOL-ExecBench
-- **AutoProfiler: Less Is More: Learning What to Profile for GPU Kernel Optimization** [![OpenReview](https://img.shields.io/badge/OpenReview-26.09-lightgrey)](https://openreview.net/forum?id=tE3EQdUVsO)
-  - **Type:** Agentic workflow · **Hardware:** NVIDIA · **Benchmark:** KernelBench
+- **AutoProfiler: Less is more: learning what to profile for GPU kernel optimization** [![arXiv](https://img.shields.io/badge/arXiv-26.10-red)](https://arxiv.org/abs/2610.36576) [![Stars](https://img.shields.io/github/stars/Satissss/AutoProfiler)](https://github.com/Satissss/AutoProfiler)
+  - **Institution:** Renmin University of China, University of International Business and Economics
+  - **Type:** Agentic workflow · **Kernel:** `Triton` · **Hardware:** NVIDIA · **Benchmark:** KernelBench
 - **Glueball: Agentic Generation and Verification of Hardware-Optimized Gluon Kernels** [![OpenReview](https://img.shields.io/badge/OpenReview-26.09-lightgrey)](https://openreview.net/forum?id=4Lpg8unVZd)
   - **Type:** Agentic workflow · **Kernel:** `Gluon` · **Hardware:** NVIDIA
-- **BIEvolve: God Does Not Play Dice: Enforcing Batch Invariance in Agentic Kernel Generation** [![OpenReview](https://img.shields.io/badge/OpenReview-26.09-lightgrey)](https://openreview.net/forum?id=hvO7ZzQiqG) [![Code](https://img.shields.io/badge/Code-Anonymous-lightgrey)](https://anonymous.4open.science/r/BIEvolve-50F0)
-  - **Type:** Agentic workflow · **Hardware:** NVIDIA · **Benchmark:** FlashInfer-Bench
 - **SABER: Semantic Abstraction Boundaries for Efficient Refinement of Sparse GPU Kernels** [![OpenReview](https://img.shields.io/badge/OpenReview-26.09-lightgrey)](https://openreview.net/forum?id=ayAwDugvxo)
   - **Type:** Agentic workflow · **Hardware:** NVIDIA
 - **DitronGen: Compiler–LLM Coordination for Adaptive Kernel Generation and Computation–Communication Overlap** [![OpenReview](https://img.shields.io/badge/OpenReview-26.09-lightgrey)](https://openreview.net/forum?id=UHZ5QcK1kW)
